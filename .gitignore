@@ -18,3 +18,5 @@ generel.py
 geckodriver.log
 lager/test.py
 lager/geckodriver_macos
+.idea
+.DS_Store

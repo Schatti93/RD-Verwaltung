@@ -16,7 +16,7 @@ class Admin_Lager():
         self.lager = Database_Lagerverwaltung()
         self.fehlendes_material()
 
-def neues_produkt_table_insert(self):
+    def neues_produkt_table_insert(self):
         produkt = QtWidgets.QTableWidgetItem(self.ui.admin_new_prod_prod.text())
         produkt.setTextAlignment(Qt.AlignCenter)
         bestand = QtWidgets.QTableWidgetItem(self.ui.admin_new_prod_bes.text())
@@ -45,6 +45,7 @@ def neues_produkt_table_insert(self):
         self.ui.admin_new_prod_table.setItem(row, 7, QtWidgets.QTableWidgetItem(artikel_nr))
         self.ui.admin_new_prod_table.resizeColumnsToContents()
         self.ui.admin_new_prod_table.horizontalHeader().setSectionResizeMode(1)
+
     def sammeln(self):
         liste = []
         rows = self.ui.admin_new_prod_table.rowCount()
@@ -62,7 +63,6 @@ def neues_produkt_table_insert(self):
         rows = self.ui.admin_lager_fehlendes_material.rowCount()
         for i in range(0, rows):
             self.ui.admin_lager_fehlendes_material.removeRow(0)
-
 
         for i in range(0, len(liste)):
             if liste[i][2] < liste[i][3]:
