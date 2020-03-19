@@ -22,6 +22,7 @@ class Lagerverwaltung():
 
     def zwischenspeicher(self): # speichert die daten zunaechst in der tabelle zur ansicht
         self.ui.lager_error_label.setText(" ")
+        self.ui.lager_error_label.setStyleSheet("")
         barcode = self.ui.lager_textfeld_produkt.text()
         inhalt_menge = self.ui.lager_textfeld_menge.text()
         produkt = Database_Lagerverwaltung().produkt_abfrage(barcode)
@@ -44,8 +45,8 @@ class Lagerverwaltung():
         except (IndexError):
             row = self.ui.lager_table.rowCount()
             self.ui.lager_table.removeRow(row - 1)
-            self.ui.lager_error_label.setText("<html><head/><body><p><span style=\" color:#ff0000;\">"
-                                              "Produkt mit dem Barcode nicht vorhanden!</span></p></body></html>")
+            self.ui.lager_error_label.setText("Produkt mit dem Barcode nicht vorhanden!")
+            self.ui.lager_error_label.setStyleSheet("color:#ffffff; font-size:13pt; border: 1px solid red; border-radius: 5px")
 
     def durchgehen(self): #holt die daten aus der Tabelle und übergibt sie an die passende funktion zum entnehmen etc.
         row = self.ui.lager_table.rowCount()
@@ -71,8 +72,8 @@ class Lagerverwaltung():
                 except (TypeError, ValueError):
                     pass
             self.ui.lager_table.removeRow(0)
-        self.ui.lager_error_label.setText("<html><head/><body><p><span style=\" color:#00FF00;\">"
-                                          "Eingabe Gespeichert</span></p></body></html>")
+        self.ui.lager_error_label.setText("Eingabe Gespeichert")
+        self.ui.lager_error_label.setStyleSheet("color:#ffffff; font-size:13pt; border: 1px solid #00FF00; border-radius: 5px")
 
     def pruefung_auf_textfeld(self): # prueft auf welchem text gerade dei Combobox steht um das Einsatznummer feld anzuzeigen oder nicht.
         text = self.ui.combobox_lager.currentText()

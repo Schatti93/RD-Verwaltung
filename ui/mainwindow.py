@@ -145,7 +145,7 @@ class Ui_MainWindow(object):
         self.line_11.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_11.setObjectName("line_11")
         self.label_uebersicht_lager = QtWidgets.QLabel(self.tab_4)
-        self.label_uebersicht_lager.setGeometry(QtCore.QRect(20, 80, 439, 16))
+        self.label_uebersicht_lager.setGeometry(QtCore.QRect(20, 80, 151, 16))
         self.label_uebersicht_lager.setObjectName("label_uebersicht_lager")
         self.uebersicht_lager_table = QtWidgets.QTableWidget(self.tab_4)
         self.uebersicht_lager_table.setGeometry(QtCore.QRect(20, 100, 611, 771))
@@ -1459,8 +1459,8 @@ class Ui_MainWindow(object):
         self.line_17.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_17.setObjectName("line_17")
         self.gridLayout_8.addWidget(self.line_17, 1, 0, 1, 1)
-        self.bestellung_drucken = QtWidgets.QPushButton(self.gridLayoutWidget_9)
-        self.bestellung_drucken.setStyleSheet("QPushButton{\n"
+        self.pdf_erstellen = QtWidgets.QPushButton(self.gridLayoutWidget_9)
+        self.pdf_erstellen.setStyleSheet("QPushButton{\n"
 "   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "      border-style: solid;\n"
 "    border: 1px solid #1e1e1e;\n"
@@ -1494,8 +1494,8 @@ class Ui_MainWindow(object):
 "    color: white;\n"
 "\n"
 "}")
-        self.bestellung_drucken.setObjectName("bestellung_drucken")
-        self.gridLayout_8.addWidget(self.bestellung_drucken, 3, 1, 1, 1)
+        self.pdf_erstellen.setObjectName("pdf_erstellen")
+        self.gridLayout_8.addWidget(self.pdf_erstellen, 3, 1, 1, 1)
         self.admin_lager_fehlendes_material = QtWidgets.QTableWidget(self.gridLayoutWidget_9)
         self.admin_lager_fehlendes_material.setStyleSheet("QTableView {\n"
 "border: 1px inset darkgrey;\n"
@@ -1856,7 +1856,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.tabWidget.setCurrentIndex(4)
-        self.admin_bereich.setCurrentIndex(2)
+        self.admin_bereich.setCurrentIndex(0)
         self.lager_textfeld_produkt.returnPressed.connect(self.lager_textfeld_menge.setFocus)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.uebersicht_lager_table, self.combobox_lager)
@@ -1893,8 +1893,8 @@ class Ui_MainWindow(object):
         MainWindow.setTabOrder(self.admin_del_prod_table, self.admin_del_prod_btn)
         MainWindow.setTabOrder(self.admin_del_prod_btn, self.admin_lager_fehlendes_material)
         MainWindow.setTabOrder(self.admin_lager_fehlendes_material, self.lager_bestellung)
-        MainWindow.setTabOrder(self.lager_bestellung, self.bestellung_drucken)
-        MainWindow.setTabOrder(self.bestellung_drucken, self.fahrzeug_admin_funkkenn)
+        MainWindow.setTabOrder(self.lager_bestellung, self.pdf_erstellen)
+        MainWindow.setTabOrder(self.pdf_erstellen, self.fahrzeug_admin_funkkenn)
         MainWindow.setTabOrder(self.fahrzeug_admin_funkkenn, self.fahrzeug_admin_kennz)
         MainWindow.setTabOrder(self.fahrzeug_admin_kennz, self.fahrzeug_admin_ort)
         MainWindow.setTabOrder(self.fahrzeug_admin_ort, self.fahrzeug_admin_tuev)
@@ -2001,7 +2001,7 @@ class Ui_MainWindow(object):
         self.admin_logout_btn.setText(_translate("MainWindow", "Logout"))
         self.label_40.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; font-weight:600; color:#ffffff;\">Fehlendes Material</span></p></body></html>"))
         self.lager_bestellung.setText(_translate("MainWindow", "Bestellung online"))
-        self.bestellung_drucken.setText(_translate("MainWindow", "Bestellung Drucken"))
+        self.pdf_erstellen.setText(_translate("MainWindow", "PDF erstellen"))
         item = self.admin_lager_fehlendes_material.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "Produkt"))
         item = self.admin_lager_fehlendes_material.horizontalHeaderItem(1)

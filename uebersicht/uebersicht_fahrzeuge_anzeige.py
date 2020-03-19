@@ -51,19 +51,22 @@ class Fahrzeug_Anzeige():
             status_label.setText("<html><head/><body><p><span style=\" color:#ffffff;\">Status:</span></p></body></html>")
             ort_wert.setText("<html><head/><body><p><span style=\" color:#ffffff;\">" + ort + "</span></p></body></html>")
             ort_label.setText("<html><head/><body><p><span style=\" color:#ffffff;\">Ort:</span></p></body></html>")
-            bemerkung_label.setText("<html><head/><body><p><span style=\" color:#ffffff;\">" + bemerkung + "</span></p></body></html>")
+            if bemerkung == "":
+                bemerkung_label.setText("")
+            else:
+                bemerkung_label.setText("<html><head/><body><p><span style=\" color:#ffffff;\">" + "Bemerkung: " + bemerkung + "</span></p></body></html>")
             funk_label.setText("<html><head/><body><p><span style=\" color:#ffffff;\">Funkkenner:</span></p></body></html>")
             funk_wert.setText("<html><head/><body><p><span style=\" color:#ffffff;\">" + kennung + "</span></p></body></html>")
 
             if status == "Im Dienst":
-                status_wert.setText(
-                    "<html><head/><body><p><span style=\" color:#00FF00;\">" + status + "</span></p></body></html>")
+                status_wert.setText(status)
+                status_wert.setStyleSheet("color:#ffffff; font-size:13pt; border: 1px solid #00FF00; border-radius: 5px")
             elif status == "Außer Dienst":
-                status_wert.setText(
-                    "<html><head/><body><p><span style=\" color:#F29C36;\">" + status + "</span></p></body></html>")
+                status_wert.setText(status)
+                status_wert.setStyleSheet("color:#ffffff; font-size:13pt; border: 1px solid orange; border-radius: 5px")
             else:
-                status_wert.setText(
-                    "<html><head/><body><p><span style=\" color:#ff0000;\">" + status + "</span></p></body></html>")
+                status_wert.setText(status)
+                status_wert.setStyleSheet("color:#ffffff; font-size:13pt; border: 1px solid red; border-radius: 5px")
 
         elif counter >8 and counter < 18:
 

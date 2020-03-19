@@ -39,10 +39,12 @@ class Uebersicht():
                 self.ui.uebersicht_lager_table.setItem(row, 2, mindest)
                 self.ui.uebersicht_lager_table.setItem(row, 3, max)
                 self.ui.uebersicht_lager_table.horizontalHeader().setSectionResizeMode(1)
-                self.ui.label_uebersicht_lager.setText("<html><head/><body><p><span style=\" color:#FF0043;\">Fehlendes Material</span></p></body></html>")
+                self.ui.label_uebersicht_lager.setText("Fehlendes Material")
+                self.ui.label_uebersicht_lager.setStyleSheet("color:#ffffff; font-size:13pt; border: 1px solid red; border-radius: 5px")
             else:
                 continue
         if count == 0:
-            self.ui.label_uebersicht_lager.setText("<html><head/><body><p><span style=\" color:#00FF00;\">Lager ist Voll</span></p></body></html>")
+            self.ui.label_uebersicht_lager.setText("Lager ist Voll")
+            self.ui.label_uebersicht_lager.setStyleSheet("color:#ffffff; font-size:13pt; border: 1px solid #00FF00; border-radius: 5px")
             self.ui.uebersicht_lager_table.setVisible(False)
 
