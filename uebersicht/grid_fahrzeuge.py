@@ -7,18 +7,13 @@ class Grid_Fahrzeuge():
         #self.grid_fahrzeug_anzeige()
 
     def grid_fahrzeug_anzeige(self):
-
-        self.ui.verticalLayoutWidget = QtWidgets.QWidget(self.ui.tab_4)
-        self.ui.verticalLayoutWidget.setGeometry(QtCore.QRect(680, 100, 570, 784))
-        self.ui.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
-        self.ui.fahrzeug_grid = QtWidgets.QVBoxLayout(self.ui.verticalLayoutWidget)
-        self.ui.fahrzeug_grid.setContentsMargins(0, 0, 0, 0)
-        self.ui.fahrzeug_grid.setObjectName("fahrzeug_grid")
+        pass
+       # self.ui.verticalLayout = QtWidgets.QVBoxLayout()
+       # self.ui.verticalLayout.setObjectName("verticalLayout")
+      #  self.ui.gridLayout.addLayout(self.ui.verticalLayout, 4, 2, 1, 1)
 
     def second_grid(self):
-        self.ui.verticalLayoutWidget2 = QtWidgets.QWidget(self.ui.tab_4)
-        self.ui.verticalLayoutWidget2.setGeometry(QtCore.QRect(1300, 100, 570, 784))
-        self.ui.verticalLayoutWidget2.setObjectName("verticalLayoutWidget2")
-        self.ui.fahrzeug_grid2 = QtWidgets.QVBoxLayout(self.ui.verticalLayoutWidget2)
-        self.ui.fahrzeug_grid2.setContentsMargins(0, 0, 0, 0)
-        self.ui.fahrzeug_grid2.setObjectName("fahrzeug_grid2")
+        pass
+        #self.ui.verticalLayout2 = QtWidgets.QVBoxLayout()
+       # self.ui.verticalLayout2.setObjectName("verticalLayout2")
+       # self.ui.gridLayout.addLayout(self.ui.verticalLayout, 4, 3, 1, 1)

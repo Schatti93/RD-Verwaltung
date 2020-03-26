@@ -3,7 +3,7 @@ from lager.data_lagerverwaltung import Database_Lagerverwaltung
 from PyQt5.QtWidgets import QMessageBox
 from uebersicht.uebersicht import Uebersicht
 from PyQt5.QtCore import Qt
-from admin.ui_einstellungen_lager import Ui_Einstellungen_Lager
+
 
 class Admin_Lager():
     def __init__(self, ui):
@@ -29,8 +29,6 @@ class Admin_Lager():
         barcode.setTextAlignment(Qt.AlignCenter)
         inhalt = QtWidgets.QTableWidgetItem(self.ui.admin_new_prod_inhalt_menge.text())
         inhalt.setTextAlignment(Qt.AlignCenter)
-        url = QtWidgets.QTableWidgetItem(self.ui.admin_new_prod_url.text())
-        url.setTextAlignment(Qt.AlignCenter)
         artikel_nr = QtWidgets.QTableWidgetItem(self.ui.admin_new_prod_artikel.text())
         artikel_nr.setTextAlignment(Qt.AlignCenter)
         row = self.ui.admin_new_prod_table.rowCount()
@@ -41,8 +39,7 @@ class Admin_Lager():
         self.ui.admin_new_prod_table.setItem(row, 3, QtWidgets.QTableWidgetItem(max))
         self.ui.admin_new_prod_table.setItem(row, 4, QtWidgets.QTableWidgetItem(barcode))
         self.ui.admin_new_prod_table.setItem(row, 5, QtWidgets.QTableWidgetItem(inhalt))
-        self.ui.admin_new_prod_table.setItem(row, 6, QtWidgets.QTableWidgetItem(url))
-        self.ui.admin_new_prod_table.setItem(row, 7, QtWidgets.QTableWidgetItem(artikel_nr))
+        self.ui.admin_new_prod_table.setItem(row, 6, QtWidgets.QTableWidgetItem(artikel_nr))
         self.ui.admin_new_prod_table.resizeColumnsToContents()
         self.ui.admin_new_prod_table.horizontalHeader().setSectionResizeMode(1)
 
@@ -50,10 +47,10 @@ class Admin_Lager():
         liste = []
         rows = self.ui.admin_new_prod_table.rowCount()
         for i in range(0, rows):
-            for i in range(0, 8):
+            for i in range(0, 7):
                 liste.append(self.ui.admin_new_prod_table.item(0, i).text())
             self.ui.admin_new_prod_table.removeRow(0)
-            self.lager.new_produkt(liste[0], liste[1], liste[2], liste[3], liste[4], liste[5], liste[6], liste[7])
+            self.lager.new_produkt(liste[0], liste[1], liste[2], liste[3], liste[4], liste[5], liste[6])
             liste = []
 
 

@@ -24,8 +24,14 @@ class Fahrzeug_Mitarbeiter():
         zustand = text = self.ui.combo_zustand.currentText()
         fahrzeug = self.ui.combo_rtw.currentText()
         bemerkung = self.ui.fahrzeug_textedit.toPlainText()
-        self.ui.verticalLayoutWidget.setParent(None) #löscht das grid für neu aufbau
-        Grid_Fahrzeuge(self.ui).grid_fahrzeug_anzeige() #erstellt das grid neu
+
+        while self.ui.verticalLayout.count():
+            item = self.ui.verticalLayout.takeAt(0)
+            widget = item.widget()
+            if widget is not None:
+                widget.deleteLater()
+            else:
+                self.ui.verticalLayout.removeItem(item)
         self.data_fahrzeug.fahrzeug_zustand_aendern_sql(fahrzeug, zustand, bemerkung) # speichert die daten ueber den fahrzeug zustand
         Fahrzeuge_Uebersicht(self.ui).anzeige() # baut den inhalt der uebersicht neu auf
 

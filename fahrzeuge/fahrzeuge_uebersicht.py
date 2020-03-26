@@ -17,8 +17,7 @@ class Fahrzeuge_Uebersicht():
         liste = self.daten_holen()
         counter = 0
         for i in range(0, len(liste)):
-            if counter == 8:
-                Grid_Fahrzeuge(self.ui).second_grid()  # erstellt das zweite grid
+
             kennung = liste[i][1]
             kennzeichen = liste[i][2]
             ort = liste[i][3]

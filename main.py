@@ -10,7 +10,7 @@ from fahrzeuge.fahrzeuge_uebersicht import Fahrzeuge_Uebersicht
 from admin.admin_lager import Admin_Lager
 from fahrzeuge.fahrzeug import Fahrzeug_Mitarbeiter
 from uebersicht.grid_fahrzeuge import Grid_Fahrzeuge
-from admin.ui_einstellungen_lager import Ui_Einstellungen_Lager
+from admin.ui_einstellungen import Ui_Einstellungen
 from admin.pdf_bestellung import Pdf_Bestellung
 
 app = QtWidgets.QApplication(sys.argv)
@@ -31,7 +31,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.fahrzeuge_uebersicht.anzeige()
         self.admin_lager = Admin_Lager(self.ui)
         self.ui.fahrzeug = Fahrzeug_Mitarbeiter(self.ui)
-        self.einstellungen = Ui_Einstellungen_Lager(self.ui)
+        self.einstellungen = Ui_Einstellungen(self.ui)
         self.pdf = Pdf_Bestellung(self.ui)
 
 

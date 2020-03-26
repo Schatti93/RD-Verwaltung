@@ -19,10 +19,10 @@ class Database_Lagerverwaltung():
         self.conn.close()  # zum freigeben der Datenbank
 
     #verpackungsgröße mit einbeziehen
-    #url link eingabe generieren und button für standart wert
-    def new_produkt(self, produkt, bestand, mindest, maximal, barcode, inhalt, url, artikel_nr):
-        params = (produkt, bestand, mindest, maximal, barcode, inhalt, url, artikel_nr)
-        sql = "INSERT INTO lager VALUES (NULL, ?, ?, ?, ?, ?, ?, ?,?)"
+
+    def new_produkt(self, produkt, bestand, mindest, maximal, barcode, inhalt, artikel_nr):
+        params = (produkt, bestand, mindest, maximal, barcode, inhalt, artikel_nr)
+        sql = "INSERT INTO lager VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)"
         self.c.execute(sql, params)
         self.conn.commit()
 

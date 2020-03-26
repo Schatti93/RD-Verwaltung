@@ -16,7 +16,7 @@ class Online_Bestellung():
         menge = []
         for i in range(0, len(liste)):
             if int(liste[i][2]) < int(liste[i][3]):
-                nachbestellen.append(str(liste[i][7]) + str(liste[i][8]))
+                nachbestellen.append(str(liste[i][7]))
                 count = 0
                 counter = 0
                 bestand = liste[i][2]
@@ -44,7 +44,7 @@ class Online_Bestellung():
                 driver = webdriver.Firefox(executable_path=r"lager/geckodriver_win32.exe")
 
             for i in range(0, len(nachbestellen)):
-                url = nachbestellen[i]
+                url = "https://www.meetb.de/search?sSearch=" + nachbestellen[i]
                 driver.get(url)
                 driver.find_element_by_xpath("//*[@id='sQuantity']/option[text()=" + str(menge[i]) + "]").click()
 
