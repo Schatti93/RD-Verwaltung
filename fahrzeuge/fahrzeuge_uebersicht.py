@@ -1,4 +1,4 @@
-from uebersicht.grid_fahrzeuge import Grid_Fahrzeuge
+
 from uebersicht.uebersicht_fahrzeuge_anzeige import Fahrzeug_Anzeige
 import sqlite3
 
@@ -17,7 +17,7 @@ class Fahrzeuge_Uebersicht():
         liste = self.daten_holen()
         counter = 0
         for i in range(0, len(liste)):
-
+            print(str(len(liste)))
             kennung = liste[i][1]
             kennzeichen = liste[i][2]
             ort = liste[i][3]

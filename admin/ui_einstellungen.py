@@ -34,7 +34,6 @@ class Ui_Einstellungen():
 
     def einstellungen_umsetzen(self):
         liste = self.data.einstellungen_abfragen()
-        print(liste)
         for i in range(0, len(liste)):
             print(liste[i][1])
             if int(liste[i][1]) == 0:

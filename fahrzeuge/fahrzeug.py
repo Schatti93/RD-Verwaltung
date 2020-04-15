@@ -1,6 +1,6 @@
 from fahrzeuge.fahrzeug_data import Data_Fahrzeug
 from fahrzeuge.fahrzeuge_uebersicht import Fahrzeuge_Uebersicht
-from uebersicht.grid_fahrzeuge import Grid_Fahrzeuge
+
 
 
 class Fahrzeug_Mitarbeiter():
@@ -32,6 +32,15 @@ class Fahrzeug_Mitarbeiter():
                 widget.deleteLater()
             else:
                 self.ui.verticalLayout.removeItem(item)
+
+        while self.ui.verticalLayout2.count():
+            item = self.ui.verticalLayout2.takeAt(0)
+            widget = item.widget()
+            if widget is not None:
+                widget.deleteLater()
+            else:
+                self.ui.verticalLayout2.removeItem(item)
+
         self.data_fahrzeug.fahrzeug_zustand_aendern_sql(fahrzeug, zustand, bemerkung) # speichert die daten ueber den fahrzeug zustand
         Fahrzeuge_Uebersicht(self.ui).anzeige() # baut den inhalt der uebersicht neu auf
 

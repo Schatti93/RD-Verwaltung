@@ -37,7 +37,6 @@ class Uebersicht():
                 count = count + 1
                 row = self.ui.uebersicht_lager_table.rowCount()
                 self.ui.uebersicht_lager_table.insertRow(row)
-                print(status_anzeige)
                 #### daten modelieren - umwandeln in widget fuer die tabelle und anschließend mittig ausrichtig (align center)
                 produkt = QtWidgets.QTableWidgetItem(liste[i][1])
                 produkt.setTextAlignment(Qt.AlignCenter)

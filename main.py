@@ -9,7 +9,7 @@ from admin.fahrzeug_admin import Admin_Fahrzeug
 from fahrzeuge.fahrzeuge_uebersicht import Fahrzeuge_Uebersicht
 from admin.admin_lager import Admin_Lager
 from fahrzeuge.fahrzeug import Fahrzeug_Mitarbeiter
-from uebersicht.grid_fahrzeuge import Grid_Fahrzeuge
+
 from admin.ui_einstellungen import Ui_Einstellungen
 from admin.pdf_bestellung import Pdf_Bestellung
 
@@ -20,7 +20,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.setWindowTitle("Rettungsdienst Verwaltung")
-        self.grid_fahrzeug = Grid_Fahrzeuge(self.ui).grid_fahrzeug_anzeige() # erstellt das grid für die uebersicht anzeige der Fahrzeuge
+
 
         self.kleidung = Kleidung(self.ui)
         self.Lager = Lagerverwaltung(self.ui)
