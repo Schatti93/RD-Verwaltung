@@ -6,3 +6,4 @@ class Data_Einstellungen():
         self.c = self.conn.cursor()
 
     def standard_url_speichern(self):
+        pass

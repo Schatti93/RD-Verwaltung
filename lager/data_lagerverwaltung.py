@@ -20,9 +20,9 @@ class Database_Lagerverwaltung():
 
     #verpackungsgröße mit einbeziehen
 
-    def new_produkt(self, produkt, bestand, mindest, maximal, barcode, inhalt, artikel_nr):
-        params = (produkt, bestand, mindest, maximal, barcode, inhalt, artikel_nr)
-        sql = "INSERT INTO lager VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)"
+    def new_produkt(self, produkt, bestand, mindest, maximal, barcode, inhalt, artikel_nr, status):
+        params = (produkt, bestand, mindest, maximal, barcode, inhalt, artikel_nr, status)
+        sql = "INSERT INTO lager VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?)"
         self.c.execute(sql, params)
         self.conn.commit()
 
@@ -82,4 +82,17 @@ class Database_Lagerverwaltung():
         sql = "INSERT INTO lager_nachweis VALUES (NULL, ?, ?, ?)"
         self.c.execute(sql, params)
         self.conn.commit()
+
+    def daten_zu_produktname(self, produkt):
+        params = (produkt,)
+        sql = "SELECT * FROM lager WHERE Produkt = ?"
+        self.c.execute(sql, params)
+        return self.c.fetchall()
+
+    def update_status(self, name, status):
+        params = (status, name)
+        sql = "UPDATE lager SET status = ? WHERE produkt = ?"
+        self.c.execute(sql, params)
+        self.conn.commit()
+
 

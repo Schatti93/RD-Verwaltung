@@ -70,7 +70,7 @@ class Fahrzeug_Anzeige():
                 status_wert.setText(status)
                 status_wert.setStyleSheet("color:#ffffff; font-size:13pt; border: 1px solid red; border-radius: 5px")
 
-        elif counter >8 and counter < 18:
+        elif counter > 8 and counter < 18:
             count = QtWidgets.QGridLayout()
             count.setObjectName("count")
             kenn_wert = QtWidgets.QLabel(self.ui.tab_4)
