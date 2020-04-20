@@ -35,12 +35,9 @@ class Fahrzeug_Anzeige():
             ort_label = QtWidgets.QLabel(self.ui.tab_4)
             ort_label.setObjectName("ort_label")
             count.addWidget(ort_label, 0, 2, 1, 1)
-            if bemerkung == "":
-                pass
-            else:
-                bemerkung_label = QtWidgets.QLabel(self.ui.tab_4)
-                bemerkung_label.setObjectName("bemerkung_label")
-                count.addWidget(bemerkung_label, 3, 0, 1, 4)
+            bemerkung_label = QtWidgets.QLabel(self.ui.tab_4)
+            bemerkung_label.setObjectName("bemerkung_label")
+            count.addWidget(bemerkung_label, 3, 0, 1, 4)
             funk_label = QtWidgets.QLabel(self.ui.tab_4)
             funk_label.setObjectName("funk_label")
             count.addWidget(funk_label, 0, 0, 1, 1)
@@ -55,7 +52,8 @@ class Fahrzeug_Anzeige():
             ort_wert.setText("<html><head/><body><p><span style=\" color:#ffffff;\">" + ort + "</span></p></body></html>")
             ort_label.setText("<html><head/><body><p><span style=\" color:#ffffff;\">Ort:</span></p></body></html>")
             if bemerkung == "":
-                pass
+                bemerkung_label.setText("")
+                bemerkung_label.setMaximumSize(QtCore.QSize(0, 0))
             else:
                 bemerkung_label.setText("<html><head/><body><p><span style=\" color:#ffffff;\">" + "Bemerkung: " + bemerkung + "</span></p></body></html>")
             funk_label.setText("<html><head/><body><p><span style=\" color:#ffffff;\">Funkkenner:</span></p></body></html>")
@@ -69,6 +67,8 @@ class Fahrzeug_Anzeige():
             else:
                 status_wert.setText(status)
                 status_wert.setStyleSheet("color:#ffffff; font-size:13pt; border: 1px solid red; border-radius: 5px")
+            return count
+
 
         elif counter > 8 and counter < 18:
             count = QtWidgets.QGridLayout()
@@ -98,12 +98,9 @@ class Fahrzeug_Anzeige():
             ort_label = QtWidgets.QLabel(self.ui.tab_4)
             ort_label.setObjectName("ort_label")
             count.addWidget(ort_label, 0, 2, 1, 1)
-            if bemerkung == "":
-                pass
-            else:
-                bemerkung_label = QtWidgets.QLabel(self.ui.tab_4)
-                bemerkung_label.setObjectName("bemerkung_label")
-                count.addWidget(bemerkung_label, 3, 0, 1, 4)
+            bemerkung_label = QtWidgets.QLabel(self.ui.tab_4)
+            bemerkung_label.setObjectName("bemerkung_label")
+            count.addWidget(bemerkung_label, 3, 0, 1, 4)
             funk_label = QtWidgets.QLabel(self.ui.tab_4)
             funk_label.setObjectName("funk_label")
             count.addWidget(funk_label, 0, 0, 1, 1)
@@ -124,7 +121,8 @@ class Fahrzeug_Anzeige():
                 "<html><head/><body><p><span style=\" color:#ffffff;\">" + ort + "</span></p></body></html>")
             ort_label.setText("<html><head/><body><p><span style=\" color:#ffffff;\">Ort:</span></p></body></html>")
             if bemerkung == "":
-                pass
+                bemerkung_label.setText("")
+                bemerkung.label.setMaximumSize(QtCore.QSize(0, 0))
             else:
                 bemerkung_label.setText(
                     "<html><head/><body><p><span style=\" color:#ffffff;\">" + "Bemerkung: " + bemerkung + "</span></p></body></html>")

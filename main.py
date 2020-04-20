@@ -20,15 +20,12 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.setWindowTitle("Rettungsdienst Verwaltung")
-
-
         self.kleidung = Kleidung(self.ui)
         self.Lager = Lagerverwaltung(self.ui)
         self.uebersicht = Uebersicht(self.ui)
         self.admin_login = Login_Admin(self.ui)
         self.admin_fahrzeug = Admin_Fahrzeug(self.ui)
         self.fahrzeuge_uebersicht = Fahrzeuge_Uebersicht(self.ui)
-        self.fahrzeuge_uebersicht.anzeige()
         self.admin_lager = Admin_Lager(self.ui)
         self.ui.fahrzeug = Fahrzeug_Mitarbeiter(self.ui)
         self.einstellungen = Ui_Einstellungen(self.ui)

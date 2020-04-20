@@ -1,6 +1,6 @@
 from fahrzeuge.fahrzeug_data import Data_Fahrzeug
 from fahrzeuge.fahrzeuge_uebersicht import Fahrzeuge_Uebersicht
-
+from PyQt5 import QtCore
 
 
 class Fahrzeug_Mitarbeiter():
@@ -11,6 +11,11 @@ class Fahrzeug_Mitarbeiter():
         self.ui.button_fahrzeuge.clicked.connect(self.fahrzeug_zustand_aendern)
         self.data_fahrzeug = Data_Fahrzeug()
         self.ui.combo_rtw.currentTextChanged.connect(self.daten_fuer_combobox_zustand)
+        self.fahrzeuge = {}
+        self.fahrzeug_ansicht_initialisieren()
+
+    def fahrzeug_ansicht_initialisieren(self):
+        self.fahrzeuge = Fahrzeuge_Uebersicht(self.ui).anzeige()
 
 
 
@@ -24,26 +29,28 @@ class Fahrzeug_Mitarbeiter():
         zustand = text = self.ui.combo_zustand.currentText()
         fahrzeug = self.ui.combo_rtw.currentText()
         bemerkung = self.ui.fahrzeug_textedit.toPlainText()
-
-        while self.ui.verticalLayout.count():
-            item = self.ui.verticalLayout.takeAt(0)
-            widget = item.widget()
-            if widget is not None:
-                widget.deleteLater()
-            else:
-                self.ui.verticalLayout.removeItem(item)
-
-        while self.ui.verticalLayout2.count():
-            item = self.ui.verticalLayout2.takeAt(0)
-            widget = item.widget()
-            if widget is not None:
-                widget.deleteLater()
-            else:
-                self.ui.verticalLayout2.removeItem(item)
-
+        
         self.data_fahrzeug.fahrzeug_zustand_aendern_sql(fahrzeug, zustand, bemerkung) # speichert die daten ueber den fahrzeug zustand
-        Fahrzeuge_Uebersicht(self.ui).anzeige() # baut den inhalt der uebersicht neu auf
+        self.fahrzeuge[fahrzeug].itemAtPosition(1, 3).widget().setText(zustand)
+        if zustand == "Im Dienst":
+            self.fahrzeuge[fahrzeug].itemAtPosition(1, 3).widget().setStyleSheet("color:#ffffff; font-size:13pt; border: 1px solid #00FF00; border-radius: 5px")
+        if zustand == "Außer Dienst":
+            self.fahrzeuge[fahrzeug].itemAtPosition(1, 3).widget().setStyleSheet("color:#ffffff; font-size:13pt; border: 1px solid orange; border-radius: 5px")
+        if zustand == "Nicht Einsatzbereit":
+            self.fahrzeuge[fahrzeug].itemAtPosition(1, 3).widget().setStyleSheet("color:#ffffff; font-size:13pt; border: 1px solid red; border-radius: 5px")
 
+        if bemerkung == "":
+            if self.fahrzeuge[fahrzeug].itemAtPosition(3, 0).widget().text() == "":
+                pass
+            else:
+                self.fahrzeuge[fahrzeug].itemAtPosition(3, 0).widget().setText("")
+                self.fahrzeuge[fahrzeug].itemAtPosition(3, 0).widget().setMaximumSize(QtCore.QSize(0, 0))
+
+        if bemerkung != "":
+            self.fahrzeuge[fahrzeug].itemAtPosition(3, 0).widget().setText("<html><head/><body><p><span style=\" color:#ffffff;\">" + "Bemerkung: " + bemerkung + "</span></p></body></html>")
+            self.fahrzeuge[fahrzeug].itemAtPosition(3, 0).widget().setMaximumSize(QtCore.QSize(16677, 16677))
+            
+       
     def daten_fuer_combobox_zustand(self):
         self.ui.combo_zustand.clear() # leert die combobox um nue eintraege an zu nehmen
         fahrzeug_aktiv = self.ui.combo_rtw.currentText() #holt sich das zur zeit ausgewaelte fahrzeug aus der Combobox
