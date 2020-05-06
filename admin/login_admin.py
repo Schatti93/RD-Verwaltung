@@ -3,12 +3,12 @@ from datetime import date
 from PyQt5.QtWidgets import QLineEdit
 import hashlib
 from PyQt5 import QtCore
+from admin.admin_login_data import Admin_Login_Data
 
 class Login_Admin():
     def __init__(self, ui):
         self.ui = ui
-        self.conn = sqlite3.connect("Database.db")
-        self.c = self.conn.cursor()
+        self.data = Admin_Login_Data()
         self.ui.login_btn.clicked.connect(self.check)
         self.ui.admin_bereich.setVisible(False)
         self.ui.admin_logout_btn.clicked.connect(self.logout)
@@ -20,12 +20,10 @@ class Login_Admin():
         benutzer = self.ui.admin_text_ben.text()
         passwort = self.ui.admin_text_pw.text()
         passwort_hash = hashlib.sha1(passwort.encode('utf-8')).hexdigest()
-        params = (benutzer, passwort_hash)
-        sql = "SELECT benutzer FROM admin WHERE benutzer = ? AND passwort = ?"
-        self.c.execute(sql, params)
-        liste = self.c.fetchall()
+        liste = self.data.passwort_check(benutzer, passwort_hash)
 
         if len(liste) == 1:
+            self.data.eingeloggter_benutzer_speichern(benutzer)
             self.ui.admin_text_ben.setText("")
             self.ui.admin_text_pw.setText("")
             self.ui.admin_text_ben.setVisible(False)
@@ -56,6 +54,8 @@ class Login_Admin():
         pass
 
     def logout(self):
+        eingeloggter_user = self.data.alle_benutzer_abfragen()
+        self.data.benutzer_ausloggen(eingeloggter_user[0][0])
         self.ui.admin_text_ben.setVisible(True)
         self.ui.admin_text_pw.setVisible(True)
         self.ui.login_btn.setVisible(True)
