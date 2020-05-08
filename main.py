@@ -9,7 +9,7 @@ from admin.fahrzeug_admin import Admin_Fahrzeug
 from fahrzeuge.fahrzeuge_uebersicht import Fahrzeuge_Uebersicht
 from admin.admin_lager import Admin_Lager
 from fahrzeuge.fahrzeug import Fahrzeug_Mitarbeiter
-
+from admin.benutzer_verwaltung import Benutzer_Verwaltung
 from admin.ui_einstellungen import Ui_Einstellungen
 from admin.pdf_bestellung import Pdf_Bestellung
 
@@ -30,7 +30,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.fahrzeug = Fahrzeug_Mitarbeiter(self.ui)
         self.einstellungen = Ui_Einstellungen(self.ui)
         self.pdf = Pdf_Bestellung(self.ui)
-
+        self.benutzer_verwaltung = Benutzer_Verwaltung(self.ui)
 
 window = MainWindow()
 

@@ -27,3 +27,14 @@ class Benutzer_Data():
         sql = "SELECT * FROM admin"
         self.c.execute(sql)
         return self.c.fetchall()
+
+    def eingeloggter_benutzer_abfragen(self):
+        sql = "SELECT * FROM eingeloggt"
+        self.c.execute(sql)
+        return self.c.fetchall()
+
+    def benutzer_loeschen(self, benutzer):
+        params = (benutzer, )
+        sql = "DELETE FROM Admin WHERE benutzer = ?"
+        self.c.execute(sql, params)
+        self.conn.commit()
