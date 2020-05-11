@@ -12,6 +12,7 @@ from fahrzeuge.fahrzeug import Fahrzeug_Mitarbeiter
 from admin.benutzer_verwaltung import Benutzer_Verwaltung
 from admin.ui_einstellungen import Ui_Einstellungen
 from admin.pdf_bestellung import Pdf_Bestellung
+from admin.mpg_geraete import Mpg_Geraete
 
 app = QtWidgets.QApplication(sys.argv)
 class MainWindow(QtWidgets.QMainWindow):
@@ -31,6 +32,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.einstellungen = Ui_Einstellungen(self.ui)
         self.pdf = Pdf_Bestellung(self.ui)
         self.benutzer_verwaltung = Benutzer_Verwaltung(self.ui)
+        self.mpg_geraete = Mpg_Geraete(self.ui)
 
 window = MainWindow()
 
