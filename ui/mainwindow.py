@@ -2172,9 +2172,9 @@ class Ui_MainWindow(object):
         self.label_60 = QtWidgets.QLabel(self.tab_14)
         self.label_60.setObjectName("label_60")
         self.gridLayout_31.addWidget(self.label_60, 6, 1, 1, 1)
-        self.lineEdit_4 = QtWidgets.QLineEdit(self.tab_14)
-        self.lineEdit_4.setMaximumSize(QtCore.QSize(350, 16777215))
-        self.lineEdit_4.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.neues_geraet_ce = QtWidgets.QLineEdit(self.tab_14)
+        self.neues_geraet_ce.setMaximumSize(QtCore.QSize(350, 16777215))
+        self.neues_geraet_ce.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -2184,16 +2184,16 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
-        self.lineEdit_4.setObjectName("lineEdit_4")
-        self.gridLayout_31.addWidget(self.lineEdit_4, 5, 0, 1, 1)
+        self.neues_geraet_ce.setObjectName("neues_geraet_ce")
+        self.gridLayout_31.addWidget(self.neues_geraet_ce, 5, 0, 1, 1)
         self.line_24 = QtWidgets.QFrame(self.tab_14)
         self.line_24.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_24.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_24.setObjectName("line_24")
         self.gridLayout_31.addWidget(self.line_24, 1, 0, 1, 1)
-        self.lineEdit_18 = QtWidgets.QLineEdit(self.tab_14)
-        self.lineEdit_18.setMaximumSize(QtCore.QSize(350, 16777215))
-        self.lineEdit_18.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.neues_geraet_bemerkung = QtWidgets.QLineEdit(self.tab_14)
+        self.neues_geraet_bemerkung.setMaximumSize(QtCore.QSize(350, 16777215))
+        self.neues_geraet_bemerkung.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -2203,14 +2203,14 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
-        self.lineEdit_18.setObjectName("lineEdit_18")
-        self.gridLayout_31.addWidget(self.lineEdit_18, 6, 0, 1, 1)
+        self.neues_geraet_bemerkung.setObjectName("neues_geraet_bemerkung")
+        self.gridLayout_31.addWidget(self.neues_geraet_bemerkung, 6, 0, 1, 1)
         self.label_82 = QtWidgets.QLabel(self.tab_14)
         self.label_82.setObjectName("label_82")
         self.gridLayout_31.addWidget(self.label_82, 5, 1, 1, 1)
-        self.lineEdit = QtWidgets.QLineEdit(self.tab_14)
-        self.lineEdit.setMaximumSize(QtCore.QSize(350, 16777215))
-        self.lineEdit.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.neues_geraet_geraet = QtWidgets.QLineEdit(self.tab_14)
+        self.neues_geraet_geraet.setMaximumSize(QtCore.QSize(350, 16777215))
+        self.neues_geraet_geraet.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -2221,17 +2221,17 @@ class Ui_MainWindow(object):
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "\n"
 "")
-        self.lineEdit.setObjectName("lineEdit")
-        self.gridLayout_31.addWidget(self.lineEdit, 2, 0, 1, 1)
+        self.neues_geraet_geraet.setObjectName("neues_geraet_geraet")
+        self.gridLayout_31.addWidget(self.neues_geraet_geraet, 2, 0, 1, 1)
         self.label_61 = QtWidgets.QLabel(self.tab_14)
         self.label_61.setObjectName("label_61")
         self.gridLayout_31.addWidget(self.label_61, 5, 3, 1, 1)
         self.label_58 = QtWidgets.QLabel(self.tab_14)
         self.label_58.setObjectName("label_58")
         self.gridLayout_31.addWidget(self.label_58, 3, 3, 1, 1)
-        self.lineEdit_3 = QtWidgets.QLineEdit(self.tab_14)
-        self.lineEdit_3.setMaximumSize(QtCore.QSize(350, 16777215))
-        self.lineEdit_3.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.neues_geraet_inventarnummer = QtWidgets.QLineEdit(self.tab_14)
+        self.neues_geraet_inventarnummer.setMaximumSize(QtCore.QSize(350, 16777215))
+        self.neues_geraet_inventarnummer.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -2241,17 +2241,17 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
-        self.lineEdit_3.setObjectName("lineEdit_3")
-        self.gridLayout_31.addWidget(self.lineEdit_3, 4, 0, 1, 1)
+        self.neues_geraet_inventarnummer.setObjectName("neues_geraet_inventarnummer")
+        self.gridLayout_31.addWidget(self.neues_geraet_inventarnummer, 4, 0, 1, 1)
         self.label_62 = QtWidgets.QLabel(self.tab_14)
         font = QtGui.QFont()
         font.setPointSize(14)
         self.label_62.setFont(font)
         self.label_62.setObjectName("label_62")
         self.gridLayout_31.addWidget(self.label_62, 0, 0, 1, 1)
-        self.comboBox = QtWidgets.QComboBox(self.tab_14)
-        self.comboBox.setMaximumSize(QtCore.QSize(350, 16777215))
-        self.comboBox.setStyleSheet("QComboBox\n"
+        self.neues_geraet_standort_combo = QtWidgets.QComboBox(self.tab_14)
+        self.neues_geraet_standort_combo.setMaximumSize(QtCore.QSize(350, 16777215))
+        self.neues_geraet_standort_combo.setStyleSheet("QComboBox\n"
 "{\n"
 "    subcontrol-origin: padding;\n"
 "    subcontrol-position: top right;\n"
@@ -2315,8 +2315,8 @@ class Ui_MainWindow(object):
 "\n"
 "\n"
 "")
-        self.comboBox.setObjectName("comboBox")
-        self.gridLayout_31.addWidget(self.comboBox, 5, 2, 1, 1)
+        self.neues_geraet_standort_combo.setObjectName("neues_geraet_standort_combo")
+        self.gridLayout_31.addWidget(self.neues_geraet_standort_combo, 5, 2, 1, 1)
         self.tableWidget = QtWidgets.QTableWidget(self.tab_14)
         self.tableWidget.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.tableWidget.setStyleSheet("QTableView {\n"
@@ -2374,9 +2374,9 @@ class Ui_MainWindow(object):
         self.label_55 = QtWidgets.QLabel(self.tab_14)
         self.label_55.setObjectName("label_55")
         self.gridLayout_31.addWidget(self.label_55, 2, 1, 1, 1)
-        self.lineEdit_6 = QtWidgets.QLineEdit(self.tab_14)
-        self.lineEdit_6.setMaximumSize(QtCore.QSize(350, 16777215))
-        self.lineEdit_6.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.neues_geraet_prueffrist = QtWidgets.QLineEdit(self.tab_14)
+        self.neues_geraet_prueffrist.setMaximumSize(QtCore.QSize(350, 16777215))
+        self.neues_geraet_prueffrist.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -2386,11 +2386,11 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
-        self.lineEdit_6.setObjectName("lineEdit_6")
-        self.gridLayout_31.addWidget(self.lineEdit_6, 4, 2, 1, 1)
-        self.lineEdit_5 = QtWidgets.QLineEdit(self.tab_14)
-        self.lineEdit_5.setMaximumSize(QtCore.QSize(350, 16777215))
-        self.lineEdit_5.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.neues_geraet_prueffrist.setObjectName("neues_geraet_prueffrist")
+        self.gridLayout_31.addWidget(self.neues_geraet_prueffrist, 4, 2, 1, 1)
+        self.neues_geraet_pruefdatum = QtWidgets.QLineEdit(self.tab_14)
+        self.neues_geraet_pruefdatum.setMaximumSize(QtCore.QSize(350, 16777215))
+        self.neues_geraet_pruefdatum.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -2400,14 +2400,14 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
-        self.lineEdit_5.setObjectName("lineEdit_5")
-        self.gridLayout_31.addWidget(self.lineEdit_5, 3, 2, 1, 1)
+        self.neues_geraet_pruefdatum.setObjectName("neues_geraet_pruefdatum")
+        self.gridLayout_31.addWidget(self.neues_geraet_pruefdatum, 3, 2, 1, 1)
         self.label_59 = QtWidgets.QLabel(self.tab_14)
         self.label_59.setObjectName("label_59")
         self.gridLayout_31.addWidget(self.label_59, 4, 3, 1, 1)
-        self.lineEdit_2 = QtWidgets.QLineEdit(self.tab_14)
-        self.lineEdit_2.setMaximumSize(QtCore.QSize(350, 16777215))
-        self.lineEdit_2.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.neues_geraet_geraetenummer = QtWidgets.QLineEdit(self.tab_14)
+        self.neues_geraet_geraetenummer.setMaximumSize(QtCore.QSize(350, 16777215))
+        self.neues_geraet_geraetenummer.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -2417,8 +2417,8 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.gridLayout_31.addWidget(self.lineEdit_2, 3, 0, 1, 1)
+        self.neues_geraet_geraetenummer.setObjectName("neues_geraet_geraetenummer")
+        self.gridLayout_31.addWidget(self.neues_geraet_geraetenummer, 3, 0, 1, 1)
         self.label_63 = QtWidgets.QLabel(self.tab_14)
         font = QtGui.QFont()
         font.setPointSize(14)
