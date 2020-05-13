@@ -16,7 +16,8 @@ class Mpg_Geraete():
         self.einweisung_tabelle_fuellen()
         self.taetigkeit_combo_fuellen()
         self.taetigkeit_status_geaendert()
-        self.ui.geraete_verwalten_taetigkeit_combo.currentTextChanged.connect(self.taetigkeit_status_geaendert)
+        self.ui.geraete_verwalten_taetigkeit_combo.currentTextChanged.connect(
+            self.taetigkeit_status_geaendert)
         self.ui.geraet_combobox.currentTextChanged.connect(self.taetigkeit_geraet_ausgewaehlt)
         self.ui.verwertet_speichern_button.clicked.connect(self.geraet_verwerten)
         self.ui.geraete_verwalten_speichern_button.clicked.connect(self.neues_geraet_oder_update)
@@ -24,7 +25,8 @@ class Mpg_Geraete():
         self.ui.einweisung_standardwerte_loeschen_btn.clicked.connect(self.standard_werte_loeschen)
         self.ui.einweisung_tabelle_filtern_geraet_combo.currentTextChanged.connect(
             self.einweisung_tabelle_filtern_geraet_auswahl)
-        self.ui.einweisung_tabelle_filtern_software_combo.currentTextChanged.connect(self.einweisung_tabelle_filtern_nach_software)
+        self.ui.einweisung_tabelle_filtern_software_combo.currentTextChanged.connect(
+            self.einweisung_tabelle_filtern_nach_software)
 
     def taetigkeit_combo_fuellen(self):
         liste = ["Neues Gerät anlegen", "Daten von Gerät ändern"]
@@ -55,10 +57,19 @@ class Mpg_Geraete():
         ce = self.ui.geraete_verwalten_ce.text()
         bemerkung = self.ui.geraete_verwalten_bemerkung.text()
         pruefdatum = self.ui.geraete_verwalten_pruefdatum.text()
-        prueffrist = self.ui.geraete_verwalten_prueffrist.text()
-        standort = self.ui.geraete_verwalten_standort_combo.currentText()
-        self.data.geraet_updaten(geraet, geraetenummer, inventarnummer, ce, bemerkung, pruefdatum, prueffrist, standort, id)
-        self.update_tabellen_und_combos()
+        pruefung = self.datum_pruefen(pruefdatum)
+        if pruefung == 1:
+            prueffrist = self.ui.geraete_verwalten_prueffrist.text()
+            try:
+                int(prueffrist)
+                standort = self.ui.geraete_verwalten_standort_combo.currentText()
+                self.data.geraet_updaten(geraet, geraetenummer, inventarnummer, ce, bemerkung, pruefdatum,
+                                         prueffrist, standort, id)
+                self.update_tabellen_und_combos()
+            except ValueError:
+                pass # error label einfügen das anzeigt das monate nicht korrekt angegeben ist.
+        else:
+            pass # error label einfügen was falsches datum auswirft
 
     def taetigkeit_geraet_ausgewaehlt(self):
         geraet = self.ui.geraet_combobox.currentText()
@@ -86,13 +97,21 @@ class Mpg_Geraete():
         ce = self.ui.geraete_verwalten_ce.text()
         bemerkung = self.ui.geraete_verwalten_bemerkung.text()
         pruefdatum = self.ui.geraete_verwalten_pruefdatum.text()
-        prueffrist = self.ui.geraete_verwalten_prueffrist.text()
-        standort = self.ui.geraete_verwalten_standort_combo.currentText()
+        pruefung = self.datum_pruefen(pruefdatum)
+        if pruefung == 1:
+            prueffrist = self.ui.geraete_verwalten_prueffrist.text()
+            try:
+                int(prueffrist)
+                standort = self.ui.geraete_verwalten_standort_combo.currentText()
 
-        self.data.neues_geraet_speichern(geraet, geraetenummer, inventarnummer, ce,
-                                         bemerkung, pruefdatum, prueffrist, standort)
-        self.update_tabellen_und_combos()
-        self.geraete_verwalten_felder_leeren()
+                self.data.neues_geraet_speichern(geraet, geraetenummer, inventarnummer, ce,
+                                                 bemerkung, pruefdatum, prueffrist, standort)
+                self.update_tabellen_und_combos()
+                self.geraete_verwalten_felder_leeren()
+            except ValueError:
+                pass # error label einfügen das anzeigt das monate nicht korrekt angegeben ist.
+        else:
+            pass # error label einfügen was falsches datum auswirft
 
     def geraete_verwalten_felder_leeren(self):
         self.ui.geraete_verwalten_geraet.setText("")
@@ -127,12 +146,14 @@ class Mpg_Geraete():
                     naechste_pruefung = str(naechste_pruefung.strftime("%d.%m.%Y"))
                     einzusetzen = QtWidgets.QTableWidgetItem(naechste_pruefung)
                     einzusetzen.setTextAlignment(Qt.AlignCenter)
-                    self.ui.mpg_geraete_tabelle.setItem(rows, count, QtWidgets.QTableWidgetItem(einzusetzen))
+                    self.ui.mpg_geraete_tabelle.setItem(rows, count, QtWidgets.QTableWidgetItem(
+                        einzusetzen))
                     count += 1
                 else:
                     einzusetzen = QtWidgets.QTableWidgetItem(geraete[element][eigenschaft])
                     einzusetzen.setTextAlignment(Qt.AlignCenter)
-                    self.ui.mpg_geraete_tabelle.setItem(rows, count, QtWidgets.QTableWidgetItem(einzusetzen))
+                    self.ui.mpg_geraete_tabelle.setItem(rows, count, QtWidgets.QTableWidgetItem(
+                        einzusetzen))
                     count += 1
         self.ui.mpg_geraete_tabelle.horizontalHeader().setSectionResizeMode(1)
 
@@ -232,7 +253,8 @@ class Mpg_Geraete():
         else:
             original = self.ui.einweisung_original_standard.text()
 
-        self.data.einweisung_speichern(geraet, softwareversion, datum, eingewiesener, einweisender, original)
+        self.data.einweisung_speichern(geraet, softwareversion, datum, eingewiesener, einweisender,
+                                       original)
         rows = self.ui.einweisung_tabelle.rowCount()
         self.ui.einweisung_tabelle.insertRow(rows)
         liste_der_eintraege = [geraet, softwareversion, datum, eingewiesener, einweisender, original]
@@ -290,7 +312,9 @@ class Mpg_Geraete():
                 count += 1
         self.ui.einweisung_tabelle.horizontalHeader().setSectionResizeMode(1)
         eintraege = self.ui.einweisung_tabelle.rowCount()
-        self.ui.einweisung_tabelle_filtern_anzahl.setText("<html><head/><body><p><span style=\" color:#ffffff;\">"+ str(eintraege) + "</span></p></body></html>")
+        self.ui.einweisung_tabelle_filtern_anzahl.setText("<html><head/><body><p><span style=\" "
+                                                          "color:#ffffff;\">"+ str(eintraege) +
+                                                          "</span></p></body></html>")
 
     def tabelle_filtern_software_combo_fuellen(self):
         self.ui.einweisung_tabelle_filtern_software_combo.clear()
@@ -318,4 +342,15 @@ class Mpg_Geraete():
         self.ui.einweisung_tabelle.horizontalHeader().setSectionResizeMode(1)
         eintraege = self.ui.einweisung_tabelle.rowCount()
         self.ui.einweisung_tabelle_filtern_anzahl.setText(
-            "<html><head/><body><p><span style=\" color:#ffffff;\">" + str(eintraege) + "</span></p></body></html>")
+            "<html><head/><body><p><span style=\" color:#ffffff;\">" + str(eintraege) +
+            "</span></p></body></html>")
+
+    def datum_pruefen(self, datum):
+        liste_der_daten = datum.split(".")
+        wert = 1
+        try:
+            datetime.date(year=int(liste_der_daten[2]), month=int(liste_der_daten[1]),
+                              day=int(liste_der_daten[0]))
+        except ValueError:
+            wert = 0
+        return wert

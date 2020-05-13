@@ -2490,6 +2490,7 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
+        self.geraete_verwalten_prueffrist.setInputMethodHints(QtCore.Qt.ImhPreferNumbers)
         self.geraete_verwalten_prueffrist.setObjectName("geraete_verwalten_prueffrist")
         self.gridLayout_31.addWidget(self.geraete_verwalten_prueffrist, 5, 2, 1, 1)
         self.geraete_verwalten_pruefdatum = QtWidgets.QLineEdit(self.tab_14)
@@ -3906,7 +3907,7 @@ class Ui_MainWindow(object):
         self.tabWidget.setCurrentIndex(4)
         self.admin_bereich.setCurrentIndex(2)
         self.tabWidget_2.setCurrentIndex(0)
-        self.tabWidget_3.setCurrentIndex(2)
+        self.tabWidget_3.setCurrentIndex(0)
         self.lager_textfeld_produkt.returnPressed.connect(self.lager_textfeld_menge.setFocus)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.combobox_lager, self.lager_textfeld_produkt)
