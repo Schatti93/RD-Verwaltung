@@ -6,7 +6,6 @@ from PyQt5.QtCore import Qt
 
 class Kleidung():
     def __init__(self, ui):
-
         self.ui = ui
         self.ui.klamotten_button.clicked.connect(self.durchgehen)
         self.ui.klamotten_textfeld.returnPressed.connect(self.zwischenspeicher)

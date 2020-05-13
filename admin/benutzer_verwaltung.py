@@ -52,6 +52,8 @@ class Benutzer_Verwaltung():
                 print("passwörter stimmen nicht überein")
         else:
             print("hier muss das error label benutzer 'schon vorhanden' anzeigen")
+        self.tabelle_alle_admins_fuellen()
+        self.combo_admins_fuellen()
 
     def benutzer_loeschen(self):
         benutzer = self.ui.admin_loeschen_combo.currentText()
@@ -64,8 +66,11 @@ class Benutzer_Verwaltung():
             self.data.benutzer_loeschen(benutzer)
         else:
             print("passwort nicht korrekt")
+        self.combo_admins_fuellen()
+        self.tabelle_alle_admins_fuellen()
 
     def combo_admins_fuellen(self):
+        self.ui.admin_loeschen_combo.clear()
         alle_admins = self.data.alle_benutzer_abfragen()
         liste_der_admins = []
         for i in range(0, len(alle_admins)):
@@ -73,6 +78,7 @@ class Benutzer_Verwaltung():
         self.ui.admin_loeschen_combo.addItems(liste_der_admins)
 
     def tabelle_alle_admins_fuellen(self):
+        self.ui.tabelle_alle_admins.setRowCount(0)
         alle_admins = self.data.alle_benutzer_abfragen()
         for i in range(0, len(alle_admins)):
             row = self.ui.tabelle_alle_admins.rowCount()
