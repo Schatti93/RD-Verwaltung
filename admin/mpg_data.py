@@ -13,7 +13,7 @@ class Mpg_Data():
         self.c.execute(sql, params)
         self.conn.commit()
 
-    def standorte_abfragen(self):
+    def fahrzeuge_abfragen(self):
         sql = "SELECT * FROM fahrzeug_aktiv"
         self.c.execute(sql)
         return self.c.fetchall()
@@ -86,3 +86,20 @@ class Mpg_Data():
         sql = "SELECT * FROM mpg_einweisungen WHERE geraet = ? AND softwareversion = ?"
         self.c.execute(sql, params)
         return self.c.fetchall()
+
+    def neuen_standort_anlegen(self, name):
+        params = (name, )
+        sql = "INSERT INTO standorte VALUES (NULL, ?)"
+        self.c.execute(sql, params)
+        self.conn.commit()
+
+    def standorte_abfragen(self):
+        sql = "SELECT standort FROM standorte"
+        self.c.execute(sql)
+        return self.c.fetchall()
+
+    def standort_loeschen(self, name):
+        params = (name, )
+        sql = "DELETE FROM standorte WHERE standort = ?"
+        self.c.execute(sql, params)
+        self.conn.commit()

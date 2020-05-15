@@ -15,11 +15,7 @@ class Uebersicht():
         liste = Database_Lagerverwaltung().get_liste()
         count = 0
         status_anzeige = ""
-
-        rows = self.ui.uebersicht_lager_table.rowCount()
-        for i in range(0, rows):
-            self.ui.uebersicht_lager_table.removeRow(0)
-
+        self.ui.uebersicht_lager_table.setRowCount(0)
         for i in range(0, len(liste)):
             if liste[i][2] < liste[i][3]:
                 if liste[i][8] == "NULL":

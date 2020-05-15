@@ -3,7 +3,7 @@ from lager.data_lagerverwaltung import Database_Lagerverwaltung
 from PyQt5.QtWidgets import QMessageBox
 from uebersicht.uebersicht import Uebersicht
 from PyQt5.QtCore import Qt
-
+from uebersicht.uebersicht import Uebersicht
 
 class Admin_Lager():
     def __init__(self, ui):
@@ -232,6 +232,7 @@ class Admin_Lager():
             status = self.ui.table_bestellt.item(i, 1).text()
             self.lager.update_status(name, status)
             self.ui.table_bestellt.removeRow(i)
+            Uebersicht(self.ui)
 
     def combobox_bestellung_einpflegen(self):
         liste_der_daten = self.lager.get_liste()
@@ -262,4 +263,5 @@ class Admin_Lager():
             anzahl = int(self.ui.admin_material_speichern_table.item(0, 1).text())
             self.lager.auffuellen(produkt, anzahl)
             self.ui.admin_material_speichern_table.removeRow(0)
+        Uebersicht(self.ui)
 

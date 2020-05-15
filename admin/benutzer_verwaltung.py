@@ -15,6 +15,7 @@ class Benutzer_Verwaltung():
         self.ui.admin_loeschen_speichern.clicked.connect(self.benutzer_loeschen)
 
 
+
     def benuter_passwort_aendern(self):
         benutzer = self.data.eingeloggter_benutzer_abfragen()[0][1]
         passwort = self.ui.pw_aendern_altes_pw.text()

@@ -26,7 +26,7 @@ class Fahrzeug_Mitarbeiter():
         self.ui.combo_rtw.addItems(out)
 
     def fahrzeug_zustand_aendern(self):
-        zustand = text = self.ui.combo_zustand.currentText()
+        zustand = self.ui.combo_zustand.currentText()
         fahrzeug = self.ui.combo_rtw.currentText()
         bemerkung = self.ui.fahrzeug_textedit.toPlainText()
         
@@ -49,7 +49,7 @@ class Fahrzeug_Mitarbeiter():
         if bemerkung != "":
             self.fahrzeuge[fahrzeug].itemAtPosition(3, 0).widget().setText("<html><head/><body><p><span style=\" color:#ffffff;\">" + "Bemerkung: " + bemerkung + "</span></p></body></html>")
             self.fahrzeuge[fahrzeug].itemAtPosition(3, 0).widget().setMaximumSize(QtCore.QSize(16677, 16677))
-            
+            self.ui.fahrzeug_textedit.clear()
        
     def daten_fuer_combobox_zustand(self):
         self.ui.combo_zustand.clear() # leert die combobox um nue eintraege an zu nehmen

@@ -14,7 +14,14 @@ class Login_Admin():
         self.ui.admin_logout_btn.clicked.connect(self.logout)
         self.ui.admin_text_pw.returnPressed.connect(self.check)
         self.ui.admin_text_pw.setEchoMode(QLineEdit.Password)
+        self.bei_start_alte_admin_logins_loeschen()
+        self.ui.admin_logout_btn.setVisible(False)
 
+    def bei_start_alte_admin_logins_loeschen(self):
+        alte_nutzer = self.data.alle_benutzer_abfragen()
+        print(alte_nutzer)
+        for element in range(0, len(alte_nutzer)):
+            self.data.benutzer_ausloggen(alte_nutzer[element][0])
 
     def check(self):
         benutzer = self.ui.admin_text_ben.text()
@@ -44,14 +51,12 @@ class Login_Admin():
             self.ui.admin_bereich.setVisible(True)
             self.ui.admin_logout_btn.setVisible(True)
             self.ui.login_error_label.setText("")
+            self.ui.admin_logout_btn.setVisible(True)
 
 
 
         else:
             self.ui.login_error_label.setText("<html><head/><body><p><span style=\" color:#cc3300 ;\">Passwort / Benutzer falsch</span></p></body></html>")
-
-    def passwort_aendern(self):
-        pass
 
     def logout(self):
         eingeloggter_user = self.data.alle_benutzer_abfragen()
@@ -71,4 +76,5 @@ class Login_Admin():
         self.ui.admin_text_ben.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.ui.benutzer_label.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.ui.passwort_label.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.ui.admin_logout_btn.setVisible(False)
 

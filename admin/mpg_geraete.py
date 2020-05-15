@@ -27,6 +27,10 @@ class Mpg_Geraete():
             self.einweisung_tabelle_filtern_geraet_auswahl)
         self.ui.einweisung_tabelle_filtern_software_combo.currentTextChanged.connect(
             self.einweisung_tabelle_filtern_nach_software)
+        self.ui.mpg_standort_speichern_btn.clicked.connect(self.mpg_standort_hinzufuegen)
+        self.standorte_tabelle_fuellen()
+        self.standort_loeschen_combo_fuellen()
+        self.ui.mpg_standorte_loeschen_btn.clicked.connect(self.standort_loeschen)
 
     def taetigkeit_combo_fuellen(self):
         liste = ["Neues Gerät anlegen", "Daten von Gerät ändern"]
@@ -124,11 +128,17 @@ class Mpg_Geraete():
         self.ui.geraete_verwalten_standort_combo.setCurrentIndex(0)
 
     def standort_combo_fuellen(self):
-        alle_fahrzeuge = self.data.standorte_abfragen()
-        liste_der_eintraege = ["---", "Lager"]
+        alle_fahrzeuge = self.data.fahrzeuge_abfragen()
+        liste_der_eintraege = ["---"]
         for element in range(0, len(alle_fahrzeuge)):
             liste_der_eintraege.append(alle_fahrzeuge[element][2])
+
+        standorte = self.data.standorte_abfragen()
+        for element in range(0, len(standorte)):
+            liste_der_eintraege.append(standorte[element][0])
         self.ui.geraete_verwalten_standort_combo.addItems(liste_der_eintraege)
+
+
 
     def geraete_tabelle_fuellen(self):
         self.ui.mpg_geraete_tabelle.setRowCount(0)
@@ -354,3 +364,40 @@ class Mpg_Geraete():
         except ValueError:
             wert = 0
         return wert
+
+    def standorte_tabelle_fuellen(self):
+        self.ui.mpg_standorte_tabelle.setRowCount(0)
+        standorte = self.data.standorte_abfragen()
+        for element in range(0, len(standorte)):
+            rows = self.ui.mpg_standorte_tabelle.rowCount()
+            self.ui.mpg_standorte_tabelle.insertRow(rows)
+            einzusetzen = QtWidgets.QTableWidgetItem(standorte[element][0])
+            einzusetzen.setTextAlignment(Qt.AlignCenter)
+            self.ui.mpg_standorte_tabelle.setItem(rows, 0, QtWidgets.QTableWidgetItem(einzusetzen))
+
+        self.ui.mpg_standorte_tabelle.horizontalHeader().setSectionResizeMode(1)
+
+    def mpg_standort_hinzufuegen(self):
+        name = self.ui.mpg_standort_text.text()
+        self.data.neuen_standort_anlegen(name)
+        self.standorte_tabelle_fuellen()
+        self.standort_loeschen_combo_fuellen()
+        self.standort_combo_fuellen()
+
+    def standort_loeschen_combo_fuellen(self):
+        self.ui.mpg_standorte_combo.clear()
+        standorte = self.data.standorte_abfragen()
+        liste_der_eintraege = ["---"]
+        for element in range(0, len(standorte)):
+            liste_der_eintraege.append(standorte[element][0])
+        self.ui.mpg_standorte_combo.addItems(liste_der_eintraege)
+
+    def standort_loeschen(self):
+        name = self.ui.mpg_standorte_combo.currentText()
+        self.data.standort_loeschen(name)
+        self.standorte_tabelle_fuellen()
+        self.standort_loeschen_combo_fuellen()
+        self.standort_combo_fuellen()
+
+
+
