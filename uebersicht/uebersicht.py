@@ -59,7 +59,7 @@ class Uebersicht():
             self.ui.label_uebersicht_lager.setStyleSheet(
                 "color:#ffffff; font-size:13pt; border: 1px solid red; border-radius: 5px")
         else:
-            self.ui.label_uebersicht_lager.setText("Bestellt / Nicht Lieferbar / wird bestellt")
+            self.ui.label_uebersicht_lager.setText("Bestellt / wird bestellt")
             self.ui.label_uebersicht_lager.setStyleSheet(
                 "color:#ffffff; font-size:13pt; border: 1px solid orange; border-radius: 5px")
 

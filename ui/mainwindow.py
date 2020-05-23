@@ -3749,60 +3749,22 @@ class Ui_MainWindow(object):
         self.tab_12.setObjectName("tab_12")
         self.gridLayout_25 = QtWidgets.QGridLayout(self.tab_12)
         self.gridLayout_25.setObjectName("gridLayout_25")
-        self.label_52 = QtWidgets.QLabel(self.tab_12)
-        self.label_52.setObjectName("label_52")
-        self.gridLayout_25.addWidget(self.label_52, 5, 7, 1, 1)
-        self.pw_aendern_altes_pw = QtWidgets.QLineEdit(self.tab_12)
-        self.pw_aendern_altes_pw.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"border: 1px inset darkgrey;\n"
-"border-radius: 10px;\n"
-"padding: 0 8px;\n"
-"selection-background-color: darkgray;\n"
-"font-size: 13px;\n"
-"color: white;\n"
-"}\n"
-"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
-"")
-        self.pw_aendern_altes_pw.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.pw_aendern_altes_pw.setObjectName("pw_aendern_altes_pw")
-        self.gridLayout_25.addWidget(self.pw_aendern_altes_pw, 4, 0, 1, 1)
-        self.tabelle_alle_admins = QtWidgets.QTableWidget(self.tab_12)
-        self.tabelle_alle_admins.setStyleSheet("QTableView {\n"
-"border: 1px inset darkgrey;\n"
-"border-radius: 5px;\n"
-"padding: 0 8px;\n"
-"font-size: 13px;\n"
-"color: white;\n"
-"gridline-color: rgb(164, 164, 165);\n"
-"Background-color: rgb(164, 164, 165);\n"
-"\n"
-"}\n"
-"QHeaderView::section{\n"
-"\n"
-"border-style: none;\n"
-"Color: white;\n"
-"gridline-color: rgb(164, 164, 165);\n"
-"background-color: rgb(164, 164, 165);\n"
-"border-bottom: 1px inset black;\n"
-"\n"
-"}\n"
-"QTableView::item{\n"
-"border-bottom : 1px inset black;\n"
-"gridline-color: rgb(164, 164, 165);\n"
-"text-align: center;\n"
-"}")
-        self.tabelle_alle_admins.setObjectName("tabelle_alle_admins")
-        self.tabelle_alle_admins.setColumnCount(1)
-        self.tabelle_alle_admins.setRowCount(0)
-        item = QtWidgets.QTableWidgetItem()
-        self.tabelle_alle_admins.setHorizontalHeaderItem(0, item)
-        self.tabelle_alle_admins.horizontalHeader().setCascadingSectionResizes(True)
-        self.tabelle_alle_admins.horizontalHeader().setStretchLastSection(True)
-        self.tabelle_alle_admins.verticalHeader().setVisible(False)
-        self.tabelle_alle_admins.verticalHeader().setHighlightSections(False)
-        self.gridLayout_25.addWidget(self.tabelle_alle_admins, 10, 3, 1, 1)
-        spacerItem19 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_25.addItem(spacerItem19, 11, 0, 1, 1)
+        self.line_16 = QtWidgets.QFrame(self.tab_12)
+        self.line_16.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_16.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_16.setObjectName("line_16")
+        self.gridLayout_25.addWidget(self.line_16, 3, 3, 1, 1)
+        self.line_20 = QtWidgets.QFrame(self.tab_12)
+        self.line_20.setFrameShape(QtWidgets.QFrame.VLine)
+        self.line_20.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_20.setObjectName("line_20")
+        self.gridLayout_25.addWidget(self.line_20, 3, 2, 6, 1)
+        self.label_47 = QtWidgets.QLabel(self.tab_12)
+        self.label_47.setObjectName("label_47")
+        self.gridLayout_25.addWidget(self.label_47, 6, 1, 1, 1)
+        self.label_46 = QtWidgets.QLabel(self.tab_12)
+        self.label_46.setObjectName("label_46")
+        self.gridLayout_25.addWidget(self.label_46, 5, 1, 1, 1)
         self.pw_aendern_speichern = QtWidgets.QPushButton(self.tab_12)
         self.pw_aendern_speichern.setStyleSheet("QPushButton{\n"
 "   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
@@ -3839,7 +3801,47 @@ class Ui_MainWindow(object):
 "\n"
 "}")
         self.pw_aendern_speichern.setObjectName("pw_aendern_speichern")
-        self.gridLayout_25.addWidget(self.pw_aendern_speichern, 7, 0, 1, 1)
+        self.gridLayout_25.addWidget(self.pw_aendern_speichern, 8, 0, 1, 1)
+        self.label_50 = QtWidgets.QLabel(self.tab_12)
+        self.label_50.setObjectName("label_50")
+        self.gridLayout_25.addWidget(self.label_50, 5, 4, 1, 1)
+        self.line_22 = QtWidgets.QFrame(self.tab_12)
+        self.line_22.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_22.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_22.setObjectName("line_22")
+        self.gridLayout_25.addWidget(self.line_22, 9, 3, 1, 1)
+        self.pw_aendern_neues_pw_wied = QtWidgets.QLineEdit(self.tab_12)
+        self.pw_aendern_neues_pw_wied.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"border: 1px inset darkgrey;\n"
+"border-radius: 10px;\n"
+"padding: 0 8px;\n"
+"selection-background-color: darkgray;\n"
+"font-size: 13px;\n"
+"color: white;\n"
+"}\n"
+"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
+"")
+        self.pw_aendern_neues_pw_wied.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.pw_aendern_neues_pw_wied.setObjectName("pw_aendern_neues_pw_wied")
+        self.gridLayout_25.addWidget(self.pw_aendern_neues_pw_wied, 6, 0, 1, 1)
+        self.label_49 = QtWidgets.QLabel(self.tab_12)
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.label_49.setFont(font)
+        self.label_49.setObjectName("label_49")
+        self.gridLayout_25.addWidget(self.label_49, 1, 3, 1, 1)
+        self.label_44 = QtWidgets.QLabel(self.tab_12)
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.label_44.setFont(font)
+        self.label_44.setObjectName("label_44")
+        self.gridLayout_25.addWidget(self.label_44, 1, 0, 1, 1)
+        self.label_53 = QtWidgets.QLabel(self.tab_12)
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.label_53.setFont(font)
+        self.label_53.setObjectName("label_53")
+        self.gridLayout_25.addWidget(self.label_53, 1, 6, 1, 1)
         self.pw_aendern_neues_pw = QtWidgets.QLineEdit(self.tab_12)
         self.pw_aendern_neues_pw.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
@@ -3854,33 +3856,135 @@ class Ui_MainWindow(object):
         self.pw_aendern_neues_pw.setEchoMode(QtWidgets.QLineEdit.Password)
         self.pw_aendern_neues_pw.setObjectName("pw_aendern_neues_pw")
         self.gridLayout_25.addWidget(self.pw_aendern_neues_pw, 5, 0, 1, 1)
-        self.label_48 = QtWidgets.QLabel(self.tab_12)
-        self.label_48.setObjectName("label_48")
-        self.gridLayout_25.addWidget(self.label_48, 4, 4, 1, 1)
-        self.line_20 = QtWidgets.QFrame(self.tab_12)
-        self.line_20.setFrameShape(QtWidgets.QFrame.VLine)
-        self.line_20.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line_20.setObjectName("line_20")
-        self.gridLayout_25.addWidget(self.line_20, 3, 2, 5, 1)
-        self.label_53 = QtWidgets.QLabel(self.tab_12)
+        self.pw_aendern_altes_pw = QtWidgets.QLineEdit(self.tab_12)
+        self.pw_aendern_altes_pw.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"border: 1px inset darkgrey;\n"
+"border-radius: 10px;\n"
+"padding: 0 8px;\n"
+"selection-background-color: darkgray;\n"
+"font-size: 13px;\n"
+"color: white;\n"
+"}\n"
+"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
+"")
+        self.pw_aendern_altes_pw.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.pw_aendern_altes_pw.setObjectName("pw_aendern_altes_pw")
+        self.gridLayout_25.addWidget(self.pw_aendern_altes_pw, 4, 0, 1, 1)
+        spacerItem19 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_25.addItem(spacerItem19, 12, 0, 1, 1)
+        self.tabelle_alle_admins = QtWidgets.QTableWidget(self.tab_12)
+        self.tabelle_alle_admins.setStyleSheet("QTableView {\n"
+"border: 1px inset darkgrey;\n"
+"border-radius: 5px;\n"
+"padding: 0 8px;\n"
+"font-size: 13px;\n"
+"color: white;\n"
+"gridline-color: rgb(164, 164, 165);\n"
+"Background-color: rgb(164, 164, 165);\n"
+"\n"
+"}\n"
+"QHeaderView::section{\n"
+"\n"
+"border-style: none;\n"
+"Color: white;\n"
+"gridline-color: rgb(164, 164, 165);\n"
+"background-color: rgb(164, 164, 165);\n"
+"border-bottom: 1px inset black;\n"
+"\n"
+"}\n"
+"QTableView::item{\n"
+"border-bottom : 1px inset black;\n"
+"gridline-color: rgb(164, 164, 165);\n"
+"text-align: center;\n"
+"}")
+        self.tabelle_alle_admins.setObjectName("tabelle_alle_admins")
+        self.tabelle_alle_admins.setColumnCount(1)
+        self.tabelle_alle_admins.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.tabelle_alle_admins.setHorizontalHeaderItem(0, item)
+        self.tabelle_alle_admins.horizontalHeader().setCascadingSectionResizes(True)
+        self.tabelle_alle_admins.horizontalHeader().setStretchLastSection(True)
+        self.tabelle_alle_admins.verticalHeader().setVisible(False)
+        self.tabelle_alle_admins.verticalHeader().setHighlightSections(False)
+        self.gridLayout_25.addWidget(self.tabelle_alle_admins, 11, 3, 1, 1)
+        self.label_54 = QtWidgets.QLabel(self.tab_12)
         font = QtGui.QFont()
         font.setPointSize(14)
-        self.label_53.setFont(font)
-        self.label_53.setObjectName("label_53")
-        self.gridLayout_25.addWidget(self.label_53, 1, 6, 1, 1)
-        self.line_19 = QtWidgets.QFrame(self.tab_12)
-        self.line_19.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line_19.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line_19.setObjectName("line_19")
-        self.gridLayout_25.addWidget(self.line_19, 3, 6, 1, 1)
-        self.label_45 = QtWidgets.QLabel(self.tab_12)
-        self.label_45.setObjectName("label_45")
-        self.gridLayout_25.addWidget(self.label_45, 4, 1, 1, 1)
-        self.line_16 = QtWidgets.QFrame(self.tab_12)
-        self.line_16.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line_16.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line_16.setObjectName("line_16")
-        self.gridLayout_25.addWidget(self.line_16, 3, 3, 1, 1)
+        self.label_54.setFont(font)
+        self.label_54.setObjectName("label_54")
+        self.gridLayout_25.addWidget(self.label_54, 10, 3, 1, 1)
+        self.label_52 = QtWidgets.QLabel(self.tab_12)
+        self.label_52.setObjectName("label_52")
+        self.gridLayout_25.addWidget(self.label_52, 5, 7, 1, 1)
+        self.neuer_admin_speichern = QtWidgets.QPushButton(self.tab_12)
+        self.neuer_admin_speichern.setStyleSheet("QPushButton{\n"
+"   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"      border-style: solid;\n"
+"    border: 1px solid #1e1e1e;\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"    font: 13px;\n"
+"    min-width: 10em;\n"
+"    padding: 5px;\n"
+"    color: white;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"      border-style: solid;\n"
+"    border: 1px solid rgb(59, 204, 179);\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"    font: 13px;\n"
+"    min-width: 10em;\n"
+"    padding: 5px;\n"
+"    color: white;\n"
+"}\n"
+"QPushButton:pressed {\n"
+"background-color: rgb(130, 152, 152);\n"
+"      border-style: solid;\n"
+"    border: 1px solid #1EFFFF;\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"    font: 13px;\n"
+"    min-width: 10em;\n"
+"    padding: 5px;\n"
+"    color: white;\n"
+"\n"
+"}")
+        self.neuer_admin_speichern.setObjectName("neuer_admin_speichern")
+        self.gridLayout_25.addWidget(self.neuer_admin_speichern, 8, 3, 1, 1)
+        self.admin_loeschen_pw = QtWidgets.QLineEdit(self.tab_12)
+        self.admin_loeschen_pw.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"border: 1px inset darkgrey;\n"
+"border-radius: 10px;\n"
+"padding: 0 8px;\n"
+"selection-background-color: darkgray;\n"
+"font-size: 13px;\n"
+"color: white;\n"
+"}\n"
+"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
+"")
+        self.admin_loeschen_pw.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.admin_loeschen_pw.setObjectName("admin_loeschen_pw")
+        self.gridLayout_25.addWidget(self.admin_loeschen_pw, 5, 6, 1, 1)
+        self.neuer_admin_name = QtWidgets.QLineEdit(self.tab_12)
+        self.neuer_admin_name.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"border: 1px inset darkgrey;\n"
+"border-radius: 10px;\n"
+"padding: 0 8px;\n"
+"selection-background-color: darkgray;\n"
+"font-size: 13px;\n"
+"color: white;\n"
+"}\n"
+"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
+"")
+        self.neuer_admin_name.setObjectName("neuer_admin_name")
+        self.gridLayout_25.addWidget(self.neuer_admin_name, 4, 3, 1, 1)
+        self.line_21 = QtWidgets.QFrame(self.tab_12)
+        self.line_21.setFrameShape(QtWidgets.QFrame.VLine)
+        self.line_21.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_21.setObjectName("line_21")
+        self.gridLayout_25.addWidget(self.line_21, 3, 5, 6, 1)
         self.admin_loeschen_combo = QtWidgets.QComboBox(self.tab_12)
         self.admin_loeschen_combo.setStyleSheet("QComboBox\n"
 "{\n"
@@ -3948,46 +4052,19 @@ class Ui_MainWindow(object):
 "")
         self.admin_loeschen_combo.setObjectName("admin_loeschen_combo")
         self.gridLayout_25.addWidget(self.admin_loeschen_combo, 4, 6, 1, 1)
-        self.neuer_admin_name = QtWidgets.QLineEdit(self.tab_12)
-        self.neuer_admin_name.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"border: 1px inset darkgrey;\n"
-"border-radius: 10px;\n"
-"padding: 0 8px;\n"
-"selection-background-color: darkgray;\n"
-"font-size: 13px;\n"
-"color: white;\n"
-"}\n"
-"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
-"")
-        self.neuer_admin_name.setObjectName("neuer_admin_name")
-        self.gridLayout_25.addWidget(self.neuer_admin_name, 4, 3, 1, 1)
-        self.line_21 = QtWidgets.QFrame(self.tab_12)
-        self.line_21.setFrameShape(QtWidgets.QFrame.VLine)
-        self.line_21.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line_21.setObjectName("line_21")
-        self.gridLayout_25.addWidget(self.line_21, 3, 5, 5, 1)
-        self.label_47 = QtWidgets.QLabel(self.tab_12)
-        self.label_47.setObjectName("label_47")
-        self.gridLayout_25.addWidget(self.label_47, 6, 1, 1, 1)
-        self.neuer_admin_pw_wied = QtWidgets.QLineEdit(self.tab_12)
-        self.neuer_admin_pw_wied.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"border: 1px inset darkgrey;\n"
-"border-radius: 10px;\n"
-"padding: 0 8px;\n"
-"selection-background-color: darkgray;\n"
-"font-size: 13px;\n"
-"color: white;\n"
-"}\n"
-"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
-"")
-        self.neuer_admin_pw_wied.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.neuer_admin_pw_wied.setObjectName("neuer_admin_pw_wied")
-        self.gridLayout_25.addWidget(self.neuer_admin_pw_wied, 6, 3, 1, 1)
-        self.line_22 = QtWidgets.QFrame(self.tab_12)
-        self.line_22.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line_22.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line_22.setObjectName("line_22")
-        self.gridLayout_25.addWidget(self.line_22, 8, 3, 1, 1)
+        self.label_48 = QtWidgets.QLabel(self.tab_12)
+        self.label_48.setObjectName("label_48")
+        self.gridLayout_25.addWidget(self.label_48, 4, 4, 1, 1)
+        self.line_19 = QtWidgets.QFrame(self.tab_12)
+        self.line_19.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_19.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_19.setObjectName("line_19")
+        self.gridLayout_25.addWidget(self.line_19, 3, 6, 1, 1)
+        self.line_7 = QtWidgets.QFrame(self.tab_12)
+        self.line_7.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_7.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_7.setObjectName("line_7")
+        self.gridLayout_25.addWidget(self.line_7, 3, 0, 1, 1)
         self.neuer_admin_pw = QtWidgets.QLineEdit(self.tab_12)
         self.neuer_admin_pw.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
@@ -4002,45 +4079,8 @@ class Ui_MainWindow(object):
         self.neuer_admin_pw.setEchoMode(QtWidgets.QLineEdit.Password)
         self.neuer_admin_pw.setObjectName("neuer_admin_pw")
         self.gridLayout_25.addWidget(self.neuer_admin_pw, 5, 3, 1, 1)
-        self.neuer_admin_speichern = QtWidgets.QPushButton(self.tab_12)
-        self.neuer_admin_speichern.setStyleSheet("QPushButton{\n"
-"   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"      border-style: solid;\n"
-"    border: 1px solid #1e1e1e;\n"
-"    border-radius: 5;\n"
-"    padding: 1px 0px 1px 20px;\n"
-"    font: 13px;\n"
-"    min-width: 10em;\n"
-"    padding: 5px;\n"
-"    color: white;\n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"      border-style: solid;\n"
-"    border: 1px solid rgb(59, 204, 179);\n"
-"    border-radius: 5;\n"
-"    padding: 1px 0px 1px 20px;\n"
-"    font: 13px;\n"
-"    min-width: 10em;\n"
-"    padding: 5px;\n"
-"    color: white;\n"
-"}\n"
-"QPushButton:pressed {\n"
-"background-color: rgb(130, 152, 152);\n"
-"      border-style: solid;\n"
-"    border: 1px solid #1EFFFF;\n"
-"    border-radius: 5;\n"
-"    padding: 1px 0px 1px 20px;\n"
-"    font: 13px;\n"
-"    min-width: 10em;\n"
-"    padding: 5px;\n"
-"    color: white;\n"
-"\n"
-"}")
-        self.neuer_admin_speichern.setObjectName("neuer_admin_speichern")
-        self.gridLayout_25.addWidget(self.neuer_admin_speichern, 7, 3, 1, 1)
-        self.admin_loeschen_pw = QtWidgets.QLineEdit(self.tab_12)
-        self.admin_loeschen_pw.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.neuer_admin_pw_wied = QtWidgets.QLineEdit(self.tab_12)
+        self.neuer_admin_pw_wied.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -4050,49 +4090,27 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
-        self.admin_loeschen_pw.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.admin_loeschen_pw.setObjectName("admin_loeschen_pw")
-        self.gridLayout_25.addWidget(self.admin_loeschen_pw, 5, 6, 1, 1)
-        self.label_49 = QtWidgets.QLabel(self.tab_12)
-        font = QtGui.QFont()
-        font.setPointSize(14)
-        self.label_49.setFont(font)
-        self.label_49.setObjectName("label_49")
-        self.gridLayout_25.addWidget(self.label_49, 1, 3, 1, 1)
-        self.pw_aendern_neues_pw_wied = QtWidgets.QLineEdit(self.tab_12)
-        self.pw_aendern_neues_pw_wied.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"border: 1px inset darkgrey;\n"
-"border-radius: 10px;\n"
-"padding: 0 8px;\n"
-"selection-background-color: darkgray;\n"
-"font-size: 13px;\n"
-"color: white;\n"
-"}\n"
-"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
-"")
-        self.pw_aendern_neues_pw_wied.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.pw_aendern_neues_pw_wied.setObjectName("pw_aendern_neues_pw_wied")
-        self.gridLayout_25.addWidget(self.pw_aendern_neues_pw_wied, 6, 0, 1, 1)
+        self.neuer_admin_pw_wied.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.neuer_admin_pw_wied.setObjectName("neuer_admin_pw_wied")
+        self.gridLayout_25.addWidget(self.neuer_admin_pw_wied, 6, 3, 1, 1)
+        self.label_45 = QtWidgets.QLabel(self.tab_12)
+        self.label_45.setObjectName("label_45")
+        self.gridLayout_25.addWidget(self.label_45, 4, 1, 1, 1)
         self.label_51 = QtWidgets.QLabel(self.tab_12)
         self.label_51.setObjectName("label_51")
         self.gridLayout_25.addWidget(self.label_51, 6, 4, 1, 1)
-        self.line_7 = QtWidgets.QFrame(self.tab_12)
-        self.line_7.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line_7.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line_7.setObjectName("line_7")
-        self.gridLayout_25.addWidget(self.line_7, 3, 0, 1, 1)
-        self.label_44 = QtWidgets.QLabel(self.tab_12)
-        font = QtGui.QFont()
-        font.setPointSize(14)
-        self.label_44.setFont(font)
-        self.label_44.setObjectName("label_44")
-        self.gridLayout_25.addWidget(self.label_44, 1, 0, 1, 1)
-        self.label_50 = QtWidgets.QLabel(self.tab_12)
-        self.label_50.setObjectName("label_50")
-        self.gridLayout_25.addWidget(self.label_50, 5, 4, 1, 1)
-        self.label_46 = QtWidgets.QLabel(self.tab_12)
-        self.label_46.setObjectName("label_46")
-        self.gridLayout_25.addWidget(self.label_46, 5, 1, 1, 1)
+        self.pw_aendern_label = QtWidgets.QLabel(self.tab_12)
+        self.pw_aendern_label.setText("")
+        self.pw_aendern_label.setObjectName("pw_aendern_label")
+        self.gridLayout_25.addWidget(self.pw_aendern_label, 7, 0, 1, 1)
+        self.neuer_admin_label = QtWidgets.QLabel(self.tab_12)
+        self.neuer_admin_label.setText("")
+        self.neuer_admin_label.setObjectName("neuer_admin_label")
+        self.gridLayout_25.addWidget(self.neuer_admin_label, 7, 3, 1, 1)
+        self.admin_loeschen_label = QtWidgets.QLabel(self.tab_12)
+        self.admin_loeschen_label.setText("")
+        self.admin_loeschen_label.setObjectName("admin_loeschen_label")
+        self.gridLayout_25.addWidget(self.admin_loeschen_label, 6, 6, 1, 1)
         self.admin_loeschen_speichern = QtWidgets.QPushButton(self.tab_12)
         self.admin_loeschen_speichern.setStyleSheet("QPushButton{\n"
 "   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
@@ -4130,12 +4148,6 @@ class Ui_MainWindow(object):
 "}")
         self.admin_loeschen_speichern.setObjectName("admin_loeschen_speichern")
         self.gridLayout_25.addWidget(self.admin_loeschen_speichern, 7, 6, 1, 1)
-        self.label_54 = QtWidgets.QLabel(self.tab_12)
-        font = QtGui.QFont()
-        font.setPointSize(14)
-        self.label_54.setFont(font)
-        self.label_54.setObjectName("label_54")
-        self.gridLayout_25.addWidget(self.label_54, 9, 3, 1, 1)
         self.admin_bereich.addTab(self.tab_12, "")
         self.tab_8 = QtWidgets.QWidget()
         self.tab_8.setObjectName("tab_8")
@@ -4380,7 +4392,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.tabWidget.setCurrentIndex(5)
-        self.admin_bereich.setCurrentIndex(4)
+        self.admin_bereich.setCurrentIndex(3)
         self.tabWidget_2.setCurrentIndex(3)
         self.tabWidget_3.setCurrentIndex(3)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -4490,8 +4502,7 @@ class Ui_MainWindow(object):
         MainWindow.setTabOrder(self.neuer_admin_pw_wied, self.neuer_admin_speichern)
         MainWindow.setTabOrder(self.neuer_admin_speichern, self.admin_loeschen_combo)
         MainWindow.setTabOrder(self.admin_loeschen_combo, self.admin_loeschen_pw)
-        MainWindow.setTabOrder(self.admin_loeschen_pw, self.admin_loeschen_speichern)
-        MainWindow.setTabOrder(self.admin_loeschen_speichern, self.tabelle_alle_admins)
+        MainWindow.setTabOrder(self.admin_loeschen_pw, self.tabelle_alle_admins)
         MainWindow.setTabOrder(self.tabelle_alle_admins, self.check_uebersicht)
         MainWindow.setTabOrder(self.check_uebersicht, self.check_lager)
         MainWindow.setTabOrder(self.check_lager, self.check_fahrzeuge)
@@ -4587,7 +4598,7 @@ class Ui_MainWindow(object):
         item = self.admin_new_prod_table.horizontalHeaderItem(4)
         item.setText(_translate("MainWindow", "Barcode"))
         item = self.admin_new_prod_table.horizontalHeaderItem(5)
-        item.setText(_translate("MainWindow", "Inahalt"))
+        item.setText(_translate("MainWindow", "Inhalt"))
         item = self.admin_new_prod_table.horizontalHeaderItem(6)
         item.setText(_translate("MainWindow", "Artikel Nr."))
         self.label_36.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Inhalt menge</span></p></body></html>"))
@@ -4745,22 +4756,22 @@ class Ui_MainWindow(object):
         self.label_97.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Standort Löschen</span></p></body></html>"))
         self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_18), _translate("MainWindow", "Standorte"))
         self.admin_bereich.setTabText(self.admin_bereich.indexOf(self.tab_13), _translate("MainWindow", "MPG"))
-        self.label_52.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Passwort</span></p></body></html>"))
+        self.label_47.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Neues Passwort Wiederholen</span></p></body></html>"))
+        self.label_46.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Neues Passwort</span></p></body></html>"))
+        self.pw_aendern_speichern.setText(_translate("MainWindow", "Speichern"))
+        self.label_50.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Passwort</span></p></body></html>"))
+        self.label_49.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Neuer Admin</span></p></body></html>"))
+        self.label_44.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Passwort ändern</span></p></body></html>"))
+        self.label_53.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Admin Löschen</span></p></body></html>"))
         item = self.tabelle_alle_admins.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "Name"))
-        self.pw_aendern_speichern.setText(_translate("MainWindow", "Speichern"))
-        self.label_48.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Name</span></p></body></html>"))
-        self.label_53.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Admin Löschen</span></p></body></html>"))
-        self.label_45.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Altes Passwort</span></p></body></html>"))
-        self.label_47.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Neues Passwort Wiederholen</span></p></body></html>"))
-        self.neuer_admin_speichern.setText(_translate("MainWindow", "Speichern"))
-        self.label_49.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Neuer Admin</span></p></body></html>"))
-        self.label_51.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Passwort Wiederholen</span></p></body></html>"))
-        self.label_44.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Passwort ändern</span></p></body></html>"))
-        self.label_50.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Passwort</span></p></body></html>"))
-        self.label_46.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Neues Passwort</span></p></body></html>"))
-        self.admin_loeschen_speichern.setText(_translate("MainWindow", "Speichern"))
         self.label_54.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Alle Admins</span></p></body></html>"))
+        self.label_52.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Passwort</span></p></body></html>"))
+        self.neuer_admin_speichern.setText(_translate("MainWindow", "Speichern"))
+        self.label_48.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Name</span></p></body></html>"))
+        self.label_45.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Altes Passwort</span></p></body></html>"))
+        self.label_51.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Passwort Wiederholen</span></p></body></html>"))
+        self.admin_loeschen_speichern.setText(_translate("MainWindow", "Speichern"))
         self.admin_bereich.setTabText(self.admin_bereich.indexOf(self.tab_12), _translate("MainWindow", "Admin Accounts"))
         self.check_lager.setText(_translate("MainWindow", "Lagerverwaltung"))
         self.einstellungen_speichern.setText(_translate("MainWindow", "Speichern"))

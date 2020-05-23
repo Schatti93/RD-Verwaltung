@@ -27,6 +27,9 @@ class Benutzer_Verwaltung():
             if neues_passwort == neues_passwort_vergleich:
                 passwort_hash = hashlib.sha1(neues_passwort.encode('utf-8')).hexdigest()
                 self.data.passwort_update(benutzer, passwort_hash)
+                self.ui.pw_aendern_altes_pw.setText("")
+                self.ui.pw_aendern_neues_pw.setText("")
+                self.ui.pw_aendern_neues_pw_wied.setText("")
             else:
                 print("neue Passwörter stimmen nicht uberein")
         else:
@@ -39,6 +42,7 @@ class Benutzer_Verwaltung():
         passwort_vergleich = self.ui.neuer_admin_pw_wied.text()
         count = 0
         alle_benutzer = self.data.alle_benutzer_abfragen()
+        gespeichert = 0
         for i in range(0, len(alle_benutzer)):
     
             if alle_benutzer[i][1] == benutzer:
@@ -48,12 +52,23 @@ class Benutzer_Verwaltung():
             if passwort == passwort_vergleich:
                 passwort_hash = hashlib.sha1(passwort.encode('utf-8')).hexdigest()
                 self.data.neuer_benutzer(benutzer, passwort_hash)
+                gespeichert = 1
             else:
-                print("passwörter stimmen nicht überein")
+                self.ui.neuer_admin_label.setText("Passwörter stimmen nicht überein")
+                self.ui.neuer_admin_label.setStyleSheet(
+                    "color:#ffffff; font-size:9pt; border: 1px solid red; border-radius: 5px")
         else:
-            print("hier muss das error label benutzer 'schon vorhanden' anzeigen")
-        self.tabelle_alle_admins_fuellen()
-        self.combo_admins_fuellen()
+            self.ui.neuer_admin_label.setText("Benutzer schon vorhanden")
+            self.ui.neuer_admin_label.setStyleSheet(
+                "color:#ffffff; font-size:9pt; border: 1px solid red; border-radius: 5px")
+        if gespeichert == 1:
+            self.ui.neuer_admin_label.setStyleSheet("")
+            self.ui.neuer_admin_label.setText("")
+            self.tabelle_alle_admins_fuellen()
+            self.combo_admins_fuellen()
+            self.ui.neuer_admin_name.setText("")
+            self.ui.neuer_admin_pw.setText("")
+            self.ui.neuer_admin_pw_wied.setText("")
 
     def benutzer_loeschen(self):
         benutzer = self.ui.admin_loeschen_combo.currentText()
@@ -61,18 +76,25 @@ class Benutzer_Verwaltung():
         passwort = self.ui.admin_loeschen_pw.text()
         passwort_hash = hashlib.sha1(passwort.encode('utf-8')).hexdigest()
         benutzer_daten = self.data.benutzerdaten_abfragen(eingeloggter_admin)
-        print(passwort_hash + " " + benutzer_daten[0][2])
+        gespeichert = 0
         if passwort_hash == benutzer_daten[0][2]:
             self.data.benutzer_loeschen(benutzer)
+            gespeichert = 1
         else:
-            print("passwort nicht korrekt")
-        self.combo_admins_fuellen()
-        self.tabelle_alle_admins_fuellen()
+            self.ui.admin_loeschen_label.setText("passwort nicht korrekt")
+            self.ui.admin_loeschen_label.setStyleSheet(
+                "color:#ffffff; font-size:9pt; border: 1px solid red; border-radius: 5px")
+        if gespeichert == 1:
+            self.ui.admin_loeschen_label.setText("")
+            self.ui.admin_loeschen_label.setStyleSheet("")
+            self.combo_admins_fuellen()
+            self.tabelle_alle_admins_fuellen()
+            self.ui.admin_loeschen_pw.setText("")
 
     def combo_admins_fuellen(self):
         self.ui.admin_loeschen_combo.clear()
         alle_admins = self.data.alle_benutzer_abfragen()
-        liste_der_admins = []
+        liste_der_admins = ["---"]
         for i in range(0, len(alle_admins)):
             liste_der_admins.append(alle_admins[i][1])
         self.ui.admin_loeschen_combo.addItems(liste_der_admins)
