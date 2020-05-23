@@ -2,8 +2,10 @@ import sqlite3
 
 class Mpg_Data():
     def __init__(self):
-        self.conn = sqlite3.connect("Database.db")
+        self.conn = sqlite3.connect("mpg.db")
         self.c = self.conn.cursor()
+        self.conn_data = sqlite3.connect("Database.db")
+        self.c_data = self.conn_data.cursor()
 
     def neues_geraet_speichern(self, geraet, geraetenummer, inventarnummmer, ce,
                                bemerkung, pruefdatum, prueffrist, standort):
@@ -15,17 +17,17 @@ class Mpg_Data():
 
     def fahrzeuge_abfragen(self):
         sql = "SELECT * FROM fahrzeug_aktiv"
-        self.c.execute(sql)
-        return self.c.fetchall()
+        self.c_data.execute(sql)
+        return self.c_data.fetchall()
 
     def geraete_abfragen(self):
         sql = "SELECT * FROM mpg_geraete"
         self.c.execute(sql)
         return self.c.fetchall()
 
-    def geraet_verwerten(self, geraet, datum, geraetenummer):
-        params = (geraet, datum)
-        sql = "INSERT INTO mpg_verwertet VALUES (NULL, ?, ?)"
+    def geraet_verwerten(self, geraet, datum, geraetenummer, bemerkung):
+        params = (geraet, datum, bemerkung)
+        sql = "INSERT INTO mpg_verwertet VALUES (NULL, ?, ?, ?)"
         self.c.execute(sql, params)
         params = (geraetenummer, )
         sql = "DELETE FROM mpg_geraete WHERE geraetenummer = ?"

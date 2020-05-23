@@ -24,6 +24,7 @@ class Fahrzeuge_Uebersicht():
             ort = liste[i][3]
             status = liste[i][4]
             bemerkung = liste[i][6]
+
             fahrzeug_objekte[kennzeichen] = Fahrzeug_Anzeige(self.ui).anzeige(kennung, kennzeichen, ort, status, bemerkung, counter)
             counter += 1
 

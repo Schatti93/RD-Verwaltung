@@ -1,7 +1,6 @@
 from PyQt5 import QtWidgets
 from lager.data_lagerverwaltung import Database_Lagerverwaltung
 from PyQt5.QtWidgets import QMessageBox
-from uebersicht.uebersicht import Uebersicht
 from PyQt5.QtCore import Qt
 from uebersicht.uebersicht import Uebersicht
 
@@ -11,9 +10,9 @@ class Admin_Lager():
         self.lager = Database_Lagerverwaltung()
 
         ### aufruf bei start des programms
-        self.combo_bestell_status_fuellen()
         self.fehlendes_material()
         self.combobox_bestellung_einpflegen()
+        self.alle_produkte_anzeigen_table()
 
         ### verbindungen mit Enter
         self.ui.admin_new_prod_artikel.returnPressed.connect(self.neues_produkt_table_insert)
@@ -22,13 +21,12 @@ class Admin_Lager():
         self.ui.admin_del_prod_prod.returnPressed.connect(self.produkt_loeschen_tabelle_fuellen)
         self.ui.admin_del_prod_bar.returnPressed.connect(self.produkt_loeschen_tabelle_fuellen)
 
+
         ### verbindungen mit buttons
         self.ui.admin_new_prod_btn.clicked.connect(self.sammeln)
         self.ui.admin_del_prod_btn.clicked.connect(self.del_message_box)
-        self.ui.button_bestellung_vor.clicked.connect(self.bestellung_vor)
-        self.ui.button_bestellung_zurueck.clicked.connect(self.bestellung_zurueck)
-        self.ui.Bestellung_speichern.clicked.connect(self.status_speichern)
         self.ui.admin_material_speichern_button.clicked.connect(self.bestellung_einpflegen)
+        self.ui.admin_produkte_update.clicked.connect(self.produkte_aendern)
 
     def neues_produkt_table_insert(self):
         produkt = QtWidgets.QTableWidgetItem(self.ui.admin_new_prod_prod.text())
@@ -45,8 +43,6 @@ class Admin_Lager():
         inhalt.setTextAlignment(Qt.AlignCenter)
         artikel_nr = QtWidgets.QTableWidgetItem(self.ui.admin_new_prod_artikel.text())
         artikel_nr.setTextAlignment(Qt.AlignCenter)
-        #ablauf_datum = QtWidgets.QTableWidgetItem(self.ui.admin_new_prod_ablauf_datum.text())
-        #ablauf_datum.setTextAlignment(Qt.AlignCenter)
         row = self.ui.admin_new_prod_table.rowCount()
         self.ui.admin_new_prod_table.insertRow(row)
         self.ui.admin_new_prod_table.setItem(row, 0, QtWidgets.QTableWidgetItem(produkt))
@@ -73,44 +69,46 @@ class Admin_Lager():
     def fehlendes_material(self):
         liste = Database_Lagerverwaltung().get_liste()
         count = 0
-        rows = self.ui.admin_lager_fehlendes_material.rowCount()
-        for i in range(0, rows):
-            self.ui.admin_lager_fehlendes_material.removeRow(0)
+        self.ui.admin_lager_fehlendes_material.setRowCount(0)
 
         for i in range(0, len(liste)):
-            if liste[i][8] == "Bestellt":
-                pass
-            else:
-                if liste[i][2] < liste[i][3]:
-                    if liste[i][8] == "NULL":
-                        self.lager.update_status(liste[i][1], "Bestand zu gering")
-                        status = QtWidgets.QTableWidgetItem("Bestand zu gering")
-                        status.setTextAlignment(Qt.AlignCenter)
-                    else:
-                        status = QtWidgets.QTableWidgetItem(str(liste[i][8]))
-                        status.setTextAlignment(Qt.AlignCenter)
-
-                    produkt = QtWidgets.QTableWidgetItem(liste[i][1])
-                    produkt.setTextAlignment(Qt.AlignCenter)
-                    vorhanden = QtWidgets.QTableWidgetItem(str(liste[i][2]))
-                    vorhanden.setTextAlignment(Qt.AlignCenter)
-                    mindest = QtWidgets.QTableWidgetItem(str(liste[i][3]))
-                    mindest.setTextAlignment(Qt.AlignCenter)
-                    max = QtWidgets.QTableWidgetItem(str(liste[i][4]))
-                    max.setTextAlignment(Qt.AlignCenter)
-                    count = count + 1
-
-
-                    row = self.ui.admin_lager_fehlendes_material.rowCount()
-                    self.ui.admin_lager_fehlendes_material.insertRow(row)
-                    self.ui.admin_lager_fehlendes_material.setItem(row, 0, QtWidgets.QTableWidgetItem(produkt))
-                    self.ui.admin_lager_fehlendes_material.setItem(row, 1, QtWidgets.QTableWidgetItem(vorhanden))
-                    self.ui.admin_lager_fehlendes_material.setItem(row, 2, QtWidgets.QTableWidgetItem(mindest))
-                    self.ui.admin_lager_fehlendes_material.setItem(row, 3, QtWidgets.QTableWidgetItem(max))
-                    self.ui.admin_lager_fehlendes_material.setItem(row, 4, QtWidgets.QTableWidgetItem(status))
-                    self.ui.admin_lager_fehlendes_material.horizontalHeader().setSectionResizeMode(1)
+            if liste[i][2] >= liste[i][3]:
+                if liste[i][8] == "Ausreichend":
+                    pass
                 else:
-                    continue
+                    Database_Lagerverwaltung().update_status(liste[i][1], "Ausreichend")
+            else:
+                if liste[i][8] == "NULL":
+                    Database_Lagerverwaltung().update_status(liste[i][1], "Bestand zu gering")
+                    status = QtWidgets.QTableWidgetItem("Bestand zu gering")
+                    status.setTextAlignment(Qt.AlignCenter)
+                    status_anzeige = "Bestand zu gering"
+                else:
+                    if liste[i][8] == "Bestand zu gering":
+                        status_anzeige = "Bestand zu gering"
+                    status = QtWidgets.QTableWidgetItem(str(liste[i][8]))
+                    status.setTextAlignment(Qt.AlignCenter)
+
+                produkt = QtWidgets.QTableWidgetItem(liste[i][1])
+                produkt.setTextAlignment(Qt.AlignCenter)
+                vorhanden = QtWidgets.QTableWidgetItem(str(liste[i][2]))
+                vorhanden.setTextAlignment(Qt.AlignCenter)
+                mindest = QtWidgets.QTableWidgetItem(str(liste[i][3]))
+                mindest.setTextAlignment(Qt.AlignCenter)
+                max = QtWidgets.QTableWidgetItem(str(liste[i][4]))
+                max.setTextAlignment(Qt.AlignCenter)
+                count = count + 1
+
+
+                row = self.ui.admin_lager_fehlendes_material.rowCount()
+                self.ui.admin_lager_fehlendes_material.insertRow(row)
+                self.ui.admin_lager_fehlendes_material.setItem(row, 0, QtWidgets.QTableWidgetItem(produkt))
+                self.ui.admin_lager_fehlendes_material.setItem(row, 1, QtWidgets.QTableWidgetItem(vorhanden))
+                self.ui.admin_lager_fehlendes_material.setItem(row, 2, QtWidgets.QTableWidgetItem(mindest))
+                self.ui.admin_lager_fehlendes_material.setItem(row, 3, QtWidgets.QTableWidgetItem(max))
+                self.ui.admin_lager_fehlendes_material.setItem(row, 4, QtWidgets.QTableWidgetItem(status))
+                self.ui.admin_lager_fehlendes_material.horizontalHeader().setSectionResizeMode(1)
+
 
     def produkt_loeschen_tabelle_fuellen(self):
         produkt = self.ui.admin_del_prod_prod.text()
@@ -169,8 +167,8 @@ class Admin_Lager():
             self.ui.admin_del_prod_table.removeRow(0)
             self.ui.admin_del_prod_label.setText("<html><head/><body><p><span style=\" color:#00FF00;\">"
                                           "Eingabe Gespeichert</span></p></body></html>")
-        self.fehlendes_material()
-        Uebersicht(self.ui).lager_uebersicht()
+        self.update()
+
 
     def del_message_box(self):
         msgBox = QMessageBox()
@@ -178,52 +176,9 @@ class Admin_Lager():
         msgBox.setText("Möchten Sie die Produkte wirklich löschen? \nDie Produkte werden unwiderruflich aus der Datenbank gelöscht.")
         msgBox.setWindowTitle("Wirklich löschen?")
         msgBox.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
-
-
         returnValue = msgBox.exec()
         if returnValue == QMessageBox.Ok:
             self.produkt_loeschen()
-
-    def combo_bestell_status_fuellen(self):
-        liste = ["Bestellt", "Nicht Lieferbar", "Eintrag wargenommen"]
-        self.ui.combo_bestell_status.addItems(liste)
-
-    def bestellung_vor(self):
-        indexes = self.ui.admin_lager_fehlendes_material.selectionModel().selectedRows()
-        for index in reversed(indexes):
-            aktueller_eintrag = self.ui.combo_bestell_status.currentText()
-            status = QtWidgets.QTableWidgetItem(aktueller_eintrag)
-            status.setTextAlignment(Qt.AlignCenter)
-            rows = self.ui.table_bestellt.rowCount()
-            name = QtWidgets.QTableWidgetItem(self.ui.admin_lager_fehlendes_material.item(index.row(), 0).text())
-            name.setTextAlignment(Qt.AlignCenter)
-            self.ui.table_bestellt.insertRow(rows)
-            self.ui.table_bestellt.setItem(rows, 0, name)
-            self.ui.table_bestellt.setItem(rows, 1, status)
-            self.ui.admin_lager_fehlendes_material.removeRow(index.row())
-
-    def bestellung_zurueck(self):
-        indexes = self.ui.table_bestellt.selectionModel().selectedRows()
-        for index in reversed(indexes):
-            rows = self.ui.admin_lager_fehlendes_material.rowCount()
-            eintrag = self.ui.table_bestellt.item(index.row(), 0).text()
-            name = QtWidgets.QTableWidgetItem(eintrag)
-            name.setTextAlignment(Qt.AlignCenter)
-            liste = self.lager.daten_zu_produktname(eintrag)
-            if len(liste) > 0:
-                vorhanden = QtWidgets.QTableWidgetItem(str(liste[0][2]))
-                vorhanden.setTextAlignment(Qt.AlignCenter)
-                mindest = QtWidgets.QTableWidgetItem(str(liste[0][3]))
-                mindest.setTextAlignment(Qt.AlignCenter)
-                max = QtWidgets.QTableWidgetItem(str(liste[0][4]))
-                max.setTextAlignment(Qt.AlignCenter)
-                self.ui.admin_lager_fehlendes_material.insertRow(rows)
-                self.ui.admin_lager_fehlendes_material.setItem(rows, 0, name)
-                self.ui.admin_lager_fehlendes_material.setItem(rows, 1, QtWidgets.QTableWidgetItem(vorhanden))
-                self.ui.admin_lager_fehlendes_material.setItem(rows, 2, QtWidgets.QTableWidgetItem(mindest))
-                self.ui.admin_lager_fehlendes_material.setItem(rows, 3, QtWidgets.QTableWidgetItem(max))
-                self.ui.table_bestellt.removeRow(index.row())
-
 
     def status_speichern(self):
         rows = self.ui.table_bestellt.rowCount()
@@ -232,7 +187,7 @@ class Admin_Lager():
             status = self.ui.table_bestellt.item(i, 1).text()
             self.lager.update_status(name, status)
             self.ui.table_bestellt.removeRow(i)
-            Uebersicht(self.ui)
+        self.update()
 
     def combobox_bestellung_einpflegen(self):
         liste_der_daten = self.lager.get_liste()
@@ -256,6 +211,7 @@ class Admin_Lager():
         self.ui.admin_material_speichern_table.setItem(rows, 0, QtWidgets.QTableWidgetItem(produkt))
         self.ui.admin_material_speichern_table.setItem(rows, 1, QtWidgets.QTableWidgetItem(anzahl))
 
+
     def bestellung_einpflegen(self):
         rows = self.ui.admin_material_speichern_table.rowCount()
         for eintrag in range(0, rows):
@@ -263,5 +219,39 @@ class Admin_Lager():
             anzahl = int(self.ui.admin_material_speichern_table.item(0, 1).text())
             self.lager.auffuellen(produkt, anzahl)
             self.ui.admin_material_speichern_table.removeRow(0)
-        Uebersicht(self.ui)
+        self.update()
 
+    def produkte_aendern(self):
+        rows = self.ui.admin_lager_alle_produkte.rowCount()
+        for element in range(0, rows):
+            id = self.ui.admin_lager_alle_produkte.item(element, 0).text()
+            produkt = self.ui.admin_lager_alle_produkte.item(element, 1).text()
+            bestand = self.ui.admin_lager_alle_produkte.item(element, 2).text()
+            minimal = self.ui.admin_lager_alle_produkte.item(element, 3).text()
+            maximal = self.ui.admin_lager_alle_produkte.item(element, 4).text()
+            barcode = self.ui.admin_lager_alle_produkte.item(element, 5).text()
+            inhalt = self.ui.admin_lager_alle_produkte.item(element, 6).text()
+            artikelnr = self.ui.admin_lager_alle_produkte.item(element, 7).text()
+            self.lager.update_alle_produkte(id, produkt, bestand, minimal, maximal, barcode, inhalt, artikelnr)
+        self.update()
+
+    def alle_produkte_anzeigen_table(self):
+        self.ui.admin_lager_alle_produkte.setRowCount(0)
+        alle_produkte = self.lager.get_liste()
+        for element in range(0, len(alle_produkte)):
+
+            rows = self.ui.admin_lager_alle_produkte.rowCount()
+            count = 0
+            self.ui.admin_lager_alle_produkte.insertRow(rows)
+            for eigenschaft in range(0, 8):
+                einzusetzen = QtWidgets.QTableWidgetItem(str(alle_produkte[element][eigenschaft]))
+                einzusetzen.setTextAlignment(Qt.AlignCenter)
+                self.ui.admin_lager_alle_produkte.setItem(rows, count, QtWidgets.QTableWidgetItem(einzusetzen))
+                count += 1
+        self.ui.admin_lager_alle_produkte.horizontalHeader().setSectionResizeMode(1)
+
+    def update(self):
+        Uebersicht(self.ui).lager_uebersicht()
+        self.fehlendes_material()
+        self.combobox_bestellung_einpflegen()
+        self.alle_produkte_anzeigen_table()

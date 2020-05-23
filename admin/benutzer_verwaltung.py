@@ -9,7 +9,6 @@ class Benutzer_Verwaltung():
         self.data = Benutzer_Data()
         self.combo_admins_fuellen()
         self.tabelle_alle_admins_fuellen()
-
         self.ui.neuer_admin_speichern.clicked.connect(self.neuer_benutzer)
         self.ui.pw_aendern_speichern.clicked.connect(self.benuter_passwort_aendern)
         self.ui.admin_loeschen_speichern.clicked.connect(self.benutzer_loeschen)

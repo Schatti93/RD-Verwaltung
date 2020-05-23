@@ -32,13 +32,13 @@ class Database_Lagerverwaltung():
         self.c.execute(sql, params)
         self.conn.commit()
 
-    #Einsazunummer einfügen
     def entnahme(self, produkt, menge):
         params = (produkt, )
         liste = []
         sql = "SELECT Bestand FROM lager WHERE Produkt = ?"
         self.c.execute(sql, params)
         for row in self.c.fetchall():
+            print(row)
             liste.append(int(row[0]))
         neue_menge = liste[0] - menge
         params = (neue_menge, produkt)
@@ -77,9 +77,9 @@ class Database_Lagerverwaltung():
         self.c.execute(sql)
         return self.c.fetchall()
 
-    def einsatz_nachweis(self, nummer, item, menge):
-        params = (item, nummer, menge)
-        sql = "INSERT INTO lager_nachweis VALUES (NULL, ?, ?, ?)"
+    def einsatz_nachweis(self, nummer, item, menge, datum):
+        params = (item, nummer, menge, datum)
+        sql = "INSERT INTO lager_nachweis VALUES (NULL, ?, ?, ?, ?)"
         self.c.execute(sql, params)
         self.conn.commit()
 
@@ -95,4 +95,10 @@ class Database_Lagerverwaltung():
         self.c.execute(sql, params)
         self.conn.commit()
 
+    def update_alle_produkte(self, id, produkt, bestand, mindest, maximun, barcode, inhalt, artnr):
+        params = (produkt, bestand, mindest, maximun, barcode, inhalt, artnr, id)
+        sql = "UPDATE lager SET Produkt = ?, Bestand = ?, 'Mindest bestand' = ?, 'Maximal Bestand' = ?," \
+              " Barcode = ?, inhalt_menge = ?, artikel_nr = ? WHERE id = ?"
+        self.c.execute(sql, params)
+        self.conn.commit()
 

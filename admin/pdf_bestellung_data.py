@@ -14,3 +14,13 @@ class Pdf_Bestellung_Data():
         self.c.execute(sql, params)
         return self.c.fetchall()
 
+    def alle_produkte(self):
+        sql = "SELECT * FROM lager"
+        self.c.execute(sql)
+        return self.c.fetchall()
+
+    def status_aendern(self, produkt):
+        params = ("Bestellt", produkt)
+        sql = "UPDATE lager SET status = ? WHERE Produkt = ?"
+        self.c.execute(sql, params)
+        self.conn.commit()

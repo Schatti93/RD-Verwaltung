@@ -196,7 +196,8 @@ class Mpg_Geraete():
         geraet = self.ui.verwertet_geraete_combo.currentText()
         datum = self.ui.verwertet_datum.text()
         geraetenummer = str(geraet).split("/ ")[1]
-        self.data.geraet_verwerten(geraet, datum, geraetenummer)
+        bemerkung = self.ui.verwertet_bemerkung.text()
+        self.data.geraet_verwerten(geraet, datum, geraetenummer, bemerkung)
         rows = self.ui.verwertet_tabelle.rowCount()
         self.ui.verwertet_tabelle.insertRow(rows)
         self.update_tabellen_und_combos()
@@ -270,7 +271,6 @@ class Mpg_Geraete():
         liste_der_eintraege = [geraet, softwareversion, datum, eingewiesener, einweisender, original]
         count = 0
         for element in range(0, len(liste_der_eintraege)):
-            print(liste_der_eintraege[element])
             einzusetzen = QtWidgets.QTableWidgetItem(liste_der_eintraege[element])
             einzusetzen.setTextAlignment(Qt.AlignCenter)
             self.ui.einweisung_tabelle.setItem(rows, count, QtWidgets.QTableWidgetItem(einzusetzen))

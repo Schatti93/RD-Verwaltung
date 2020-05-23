@@ -17,8 +17,6 @@ class Fahrzeug_Mitarbeiter():
     def fahrzeug_ansicht_initialisieren(self):
         self.fahrzeuge = Fahrzeuge_Uebersicht(self.ui).anzeige()
 
-
-
     #erstellt die daten für die combobox fahrzeug auswahl wo die MA den Fahrzeug status aendern koennen
     def daten_fuer_comboboxen_kennzeichen(self):
         fahrzeuge = Data_Fahrzeug().daten_combo_fahrzeug_mitarbeiter()

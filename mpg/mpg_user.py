@@ -68,9 +68,23 @@ class Mpg_User():
     def neuen_standort_von_geraet_speichern(self):
         neuer_standort = self.ui.mpg_user_geraete_standort_combo.currentText()
         inventarnummer = self.ui.mpg_user_geraete_barcode.text()
+
+        bemerkung = self.ui.mpg_user_bemerkung.text()
+        bemerkung_datenbank = self.data.bemerkung_abfragen(inventarnummer)[0][0]
+        if bemerkung == "":
+            neue_bemerkung = bemerkung_datenbank
+        else:
+            neue_bemerkung = bemerkung + "; " + bemerkung_datenbank
+
+        self.data.update_standort_von_geraet(neuer_standort, inventarnummer, neue_bemerkung)
+        self.geraete_fahrzeug_tabelle_fuellen()
+        self.fahrzeug_combo_erneut_fuellen()
+        Mpg_Geraete(self.ui)
+
         self.data.update_standort_von_geraet(neuer_standort, inventarnummer)
         self.geraete_fahrzeug_tabelle_fuellen()
         self.fahrzeug_combo_erneut_fuellen()
+
 
     def fahrzeug_combo_erneut_fuellen(self):
         standort = self.ui.mpg_Fahrzeuge_combo.currentText()

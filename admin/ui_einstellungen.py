@@ -1,4 +1,3 @@
-from PyQt5 import QtWidgets
 from admin.ui_einstellungen_data import Ui_Einstellungen_Data
 class Ui_Einstellungen():
     def __init__(self, ui):
