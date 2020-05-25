@@ -71,11 +71,13 @@ class Mpg_Geraete():
                 self.data.geraet_updaten(geraet, geraetenummer, inventarnummer, ce, bemerkung, pruefdatum,
                                          prueffrist, standort, id)
                 self.update_tabellen_und_combos()
+                Mpg_User(self.ui).update()
             except ValueError:
                 pass # error label einfügen das anzeigt das monate nicht korrekt angegeben ist.
         else:
             pass # error label einfügen was falsches datum auswirft
-        Mpg_User(self.ui).update()
+
+
 
     def taetigkeit_geraet_ausgewaehlt(self):
         geraet = self.ui.geraet_combobox.currentText()
@@ -118,8 +120,6 @@ class Mpg_Geraete():
                 pass # error label einfügen das anzeigt das monate nicht korrekt angegeben ist.
         else:
             pass # error label einfügen was falsches datum auswirft
-        Mpg_User(self.ui).update()
-        self.update_tabellen_und_combos()
 
     def geraete_verwalten_felder_leeren(self):
         self.ui.geraete_verwalten_geraet.setText("")
@@ -142,6 +142,8 @@ class Mpg_Geraete():
         for element in range(0, len(standorte)):
             liste_der_eintraege.append(standorte[element][0])
         self.ui.geraete_verwalten_standort_combo.addItems(liste_der_eintraege)
+
+
 
     def geraete_tabelle_fuellen(self):
         self.ui.mpg_geraete_tabelle.setRowCount(0)
@@ -204,10 +206,9 @@ class Mpg_Geraete():
         rows = self.ui.verwertet_tabelle.rowCount()
         self.ui.verwertet_tabelle.insertRow(rows)
         self.update_tabellen_und_combos()
-
+        Mpg_User(self.ui).update()
         self.ui.verwertet_geraete_combo.setCurrentIndex(0)
         self.ui.verwertet_datum.setText("")
-        Mpg_User(self.ui).update()
 
     def einweisung_tabelle_fuellen(self):
         self.ui.einweisung_tabelle.setRowCount(0)
@@ -236,7 +237,6 @@ class Mpg_Geraete():
                 self.ui.verwertet_tabelle.setItem(rows, count, QtWidgets.QTableWidgetItem(einzusetzen))
                 count += 1
         self.ui.verwertet_tabelle.horizontalHeader().setSectionResizeMode(1)
-
 
     def geraete_einweisung(self):
         if self.ui.einweisung_geraete_combo_standard.currentText() == "---":
@@ -388,7 +388,6 @@ class Mpg_Geraete():
         self.standorte_tabelle_fuellen()
         self.standort_loeschen_combo_fuellen()
         self.standort_combo_fuellen()
-        self.ui.mpg_standort_text.setText("")
         Mpg_User(self.ui).update()
 
     def standort_loeschen_combo_fuellen(self):

@@ -3,12 +3,15 @@ from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt
 
 
+from lager.data_lagerverwaltung import Database_Lagerverwaltung
+from PyQt5 import QtWidgets
+from PyQt5.QtCore import Qt
+
+
 class Uebersicht():
     def __init__(self, ui):
         self.ui = ui
         self.lager_uebersicht()
-
-
 
     # status bestellt einfuehren / nicht lieferbar / nicht bestellt
     def lager_uebersicht(self):

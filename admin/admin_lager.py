@@ -59,8 +59,8 @@ class Admin_Lager():
         liste = []
         rows = self.ui.admin_new_prod_table.rowCount()
         for i in range(0, rows):
-            for i in range(0, 7):
-                liste.append(self.ui.admin_new_prod_table.item(0, i).text())
+            for J in range(0, 7):
+                liste.append(self.ui.admin_new_prod_table.item(0, J).text())
             self.ui.admin_new_prod_table.removeRow(0)
             self.lager.new_produkt(liste[0], liste[1], liste[2], liste[3], liste[4], liste[5], liste[6], "NULL")
             liste = []
@@ -82,10 +82,10 @@ class Admin_Lager():
                     Database_Lagerverwaltung().update_status(liste[i][1], "Bestand zu gering")
                     status = QtWidgets.QTableWidgetItem("Bestand zu gering")
                     status.setTextAlignment(Qt.AlignCenter)
-                    status_anzeige = "Bestand zu gering"
+
                 else:
                     if liste[i][8] == "Bestand zu gering":
-                        status_anzeige = "Bestand zu gering"
+                        status = "Bestand zu gering"
                     status = QtWidgets.QTableWidgetItem(str(liste[i][8]))
                     status.setTextAlignment(Qt.AlignCenter)
 

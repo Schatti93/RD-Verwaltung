@@ -3,6 +3,7 @@ import hashlib
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt
 
+
 class Benutzer_Verwaltung():
     def __init__(self, ui):
         self.ui = ui
@@ -12,8 +13,6 @@ class Benutzer_Verwaltung():
         self.ui.neuer_admin_speichern.clicked.connect(self.neuer_benutzer)
         self.ui.pw_aendern_speichern.clicked.connect(self.benuter_passwort_aendern)
         self.ui.admin_loeschen_speichern.clicked.connect(self.benutzer_loeschen)
-
-
 
     def benuter_passwort_aendern(self):
         benutzer = self.data.eingeloggter_benutzer_abfragen()[0][1]
@@ -30,11 +29,16 @@ class Benutzer_Verwaltung():
                 self.ui.pw_aendern_altes_pw.setText("")
                 self.ui.pw_aendern_neues_pw.setText("")
                 self.ui.pw_aendern_neues_pw_wied.setText("")
+                self.ui.pw_aendern_label.setText("")
+                self.ui.pw_aendern_label.setStyleSheet("")
             else:
-                print("neue Passwörter stimmen nicht uberein")
+                self.ui.pw_aendern_label.setText("Neue Passwörter stimmen nicht überein")
+                self.ui.pw_aendern_label.setStyleSheet(
+                    "color:#ffffff; font-size:9pt; border: 1px solid red; border-radius: 5px")
         else:
-            print("altes passwort nicht korrekt")
-
+            self.ui.pw_aendern_label.setText("Altes Passwort nicht korrekt.")
+            self.ui.pw_aendern_label.setStyleSheet(
+                "color:#ffffff; font-size:9pt; border: 1px solid red; border-radius: 5px")
 
     def neuer_benutzer(self):
         benutzer = self.ui.neuer_admin_name.text()
@@ -44,7 +48,7 @@ class Benutzer_Verwaltung():
         alle_benutzer = self.data.alle_benutzer_abfragen()
         gespeichert = 0
         for i in range(0, len(alle_benutzer)):
-    
+
             if alle_benutzer[i][1] == benutzer:
                 count += 1
 

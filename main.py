@@ -33,7 +33,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.einstellungen = Ui_Einstellungen(self.ui)
         self.pdf = Pdf_Bestellung(self.ui)
         self.benutzer_verwaltung = Benutzer_Verwaltung(self.ui)
-        #self.mpg_geraete = Mpg_Geraete(self.ui)
+        self.mpg_geraete = Mpg_Geraete(self.ui)
         self.mpg_user = Mpg_User(self.ui)
 
 window = MainWindow()

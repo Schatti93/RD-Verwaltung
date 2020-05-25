@@ -71,11 +71,7 @@ class Fahrzeug_Anzeige():
             else:
                 status_wert.setText(status)
                 status_wert.setStyleSheet("color:#ffffff; border: 1px solid red; border-radius: 5px")
-
-                status_wert.setStyleSheet("color:#ffffff; font-size:13pt; border:1px solid red; border-radius: 5px")
             return count
-
-
 
         elif counter > 8 and counter < 18:
             count = QtWidgets.QGridLayout()

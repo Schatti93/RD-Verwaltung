@@ -4,7 +4,6 @@ from PyQt5.QtWidgets import QLineEdit
 import hashlib
 from PyQt5 import QtCore
 from admin.admin_login_data import Admin_Login_Data
-from admin.mpg_geraete import Mpg_Geraete
 
 class Login_Admin():
     def __init__(self, ui):
@@ -18,9 +17,9 @@ class Login_Admin():
         self.bei_start_alte_admin_logins_loeschen()
         self.ui.admin_logout_btn.setVisible(False)
 
-
     def bei_start_alte_admin_logins_loeschen(self):
         alte_nutzer = self.data.alle_benutzer_abfragen()
+        print(alte_nutzer)
         for element in range(0, len(alte_nutzer)):
             self.data.benutzer_ausloggen(alte_nutzer[element][0])
 
@@ -48,11 +47,13 @@ class Login_Admin():
             self.ui.admin_text_ben.setMaximumSize(QtCore.QSize(0, 0))
             self.ui.benutzer_label.setMaximumSize(QtCore.QSize(0, 0))
             self.ui.passwort_label.setMaximumSize(QtCore.QSize(0, 0))
+
             self.ui.admin_bereich.setVisible(True)
             self.ui.admin_logout_btn.setVisible(True)
             self.ui.login_error_label.setText("")
             self.ui.admin_logout_btn.setVisible(True)
-            Mpg_Geraete(self.ui)
+
+
 
         else:
             self.ui.login_error_label.setText("<html><head/><body><p><span style=\" color:#cc3300 ;\">Passwort / Benutzer falsch</span></p></body></html>")

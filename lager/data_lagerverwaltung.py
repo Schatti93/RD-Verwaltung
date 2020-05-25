@@ -32,13 +32,13 @@ class Database_Lagerverwaltung():
         self.c.execute(sql, params)
         self.conn.commit()
 
+    #Einsazunummer einfügen
     def entnahme(self, produkt, menge):
         params = (produkt, )
         liste = []
         sql = "SELECT Bestand FROM lager WHERE Produkt = ?"
         self.c.execute(sql, params)
         for row in self.c.fetchall():
-            print(row)
             liste.append(int(row[0]))
         neue_menge = liste[0] - menge
         params = (neue_menge, produkt)
