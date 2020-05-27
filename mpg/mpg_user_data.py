@@ -29,9 +29,9 @@ class Mpg_User_Data():
         self.c.execute(sql, params)
         return self.c.fetchall()
 
-    def update_standort_von_geraet(self, standort, inventarnummer, bemerkung):
-        params = (standort, bemerkung, inventarnummer)
-        sql = "UPDATE mpg_geraete SET standort = ? WHERE inventarnummer = ?"
+    def update_standort_von_geraet(self, standort, inventarnummer, neue_bemerkung):
+        params = (standort, neue_bemerkung, inventarnummer)
+        sql = "UPDATE mpg_geraete SET standort = ?, bemerkung = ? WHERE inventarnummer = ?"
         self.c.execute(sql, params)
         self.conn.commit()
 
@@ -41,7 +41,7 @@ class Mpg_User_Data():
         return self.c.fetchall()
 
     def bemerkung_abfragen(self, inventarnummer):
-        params = (inventarnummer)
+        params = (inventarnummer, )
         sql = "SELECT bemerkung from mpg_geraete WHERE inventarnummer = ?"
         self.c.execute(sql, params)
         return self.c.fetchall()

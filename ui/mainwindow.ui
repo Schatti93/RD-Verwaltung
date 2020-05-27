@@ -1823,7 +1823,7 @@ QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1,
              <enum>QTabWidget::North</enum>
             </property>
             <property name="currentIndex">
-             <number>3</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="tab_6">
              <attribute name="title">
@@ -1833,7 +1833,7 @@ QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1,
               <item row="1" column="0" rowspan="2">
                <widget class="QTabWidget" name="tabWidget_2">
                 <property name="currentIndex">
-                 <number>1</number>
+                 <number>3</number>
                 </property>
                 <widget class="QWidget" name="tab_9">
                  <attribute name="title">
@@ -2354,7 +2354,7 @@ QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1,
                      <widget class="QPushButton" name="admin_del_prod_btn">
                       <property name="minimumSize">
                        <size>
-                        <width>192</width>
+                        <width>172</width>
                         <height>0</height>
                        </size>
                       </property>
@@ -3261,7 +3261,7 @@ background-color: rgb(130, 152, 152);
               <item row="0" column="0">
                <widget class="QTabWidget" name="tabWidget_3">
                 <property name="currentIndex">
-                 <number>1</number>
+                 <number>0</number>
                 </property>
                 <widget class="QWidget" name="tab_14">
                  <attribute name="title">
@@ -3270,346 +3270,6 @@ background-color: rgb(130, 152, 152);
                  <layout class="QGridLayout" name="gridLayout_22">
                   <item row="2" column="1">
                    <layout class="QGridLayout" name="gridLayout_31">
-                    <item row="2" column="0">
-                     <widget class="QComboBox" name="geraete_verwalten_taetigkeit_combo">
-                      <property name="styleSheet">
-                       <string notr="true">QComboBox
-{
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-    selection-background-color: #111;
-    selection-color: white;
-
-    background-color: #464646;
-    border-style: solid;
-    border: 1px solid #1e1e1e;
-    border-radius: 5;
-    padding: 1px 0px 1px 20px;
-}
-
-
-QComboBox:hover, QPushButton:hover
-{
-    border: 1px solid teal;
-
-}
-
-QComboBox:editable {
-    background: red;
-    color: white;
-}
-
-QComboBox:on
-{
-    padding-top: 0px;
-    padding-left: 0px;
-
-    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
-    selection-background-color: rgb(67, 131, 202);
-}
-
-QComboBox:!on
-{
-
-    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #666, stop: 0.1 #555, stop: 0.5 #555, stop: 0.9 #444, stop: 1 #333);
-}
-
-QComboBox QAbstractItemView
-{
-    border: 2px solid darkgray;
-    color: black;
-    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #333);
-}
-
-QComboBox::drop-down
-{
-     subcontrol-origin: padding;
-     subcontrol-position: top right;
-     width: 15px;
-
-     border-left-width: 1px;
-     border-left-color: darkgray;
-     border-left-style: solid; /* just a single line */
-     border-top-right-radius: 3px; /* same radius as the QComboBox */
-     border-bottom-right-radius: 3px;
-     padding-left: 10px;
- }
-
-
-</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="8" column="1">
-                     <widget class="QPushButton" name="geraete_verwalten_speichern_button">
-                      <property name="maximumSize">
-                       <size>
-                        <width>150</width>
-                        <height>40</height>
-                       </size>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QPushButton{
-   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
-  	border-style: solid;
-    border: 1px solid #1e1e1e;
-    border-radius: 5;
-    padding: 1px 0px 1px 20px;
-    font: 13px;
-    min-width: 10em;
-    padding: 5px;
-	color: white;
-}
-QPushButton:hover{
-	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
-  	border-style: solid;
-    border: 1px solid rgb(59, 204, 179);
-    border-radius: 5;
-    padding: 1px 0px 1px 20px;
-    font: 13px;
-    min-width: 10em;
-    padding: 5px;
-	color: white;
-}
-QPushButton:pressed {
-background-color: rgb(130, 152, 152);
-  	border-style: solid;
-    border: 1px solid #1EFFFF;
-    border-radius: 5;
-    padding: 1px 0px 1px 20px;
-    font: 13px;
-    min-width: 10em;
-    padding: 5px;
-	color: white;
-
-}</string>
-                      </property>
-                      <property name="text">
-                       <string>Speichern</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="6" column="0">
-                     <widget class="QLineEdit" name="geraete_verwalten_ce">
-                      <property name="maximumSize">
-                       <size>
-                        <width>350</width>
-                        <height>16777215</height>
-                       </size>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
-border: 1px inset darkgrey;
-border-radius: 10px;
-padding: 0 8px;
-selection-background-color: darkgray;
-font-size: 13px;
-color: white;
-}
-QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}
-</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="7" column="1">
-                     <widget class="QLabel" name="label_60">
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Bemerkung&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="6" column="2">
-                     <widget class="QLineEdit" name="geraete_verwalten_prueffrist">
-                      <property name="maximumSize">
-                       <size>
-                        <width>350</width>
-                        <height>16777215</height>
-                       </size>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
-border: 1px inset darkgrey;
-border-radius: 10px;
-padding: 0 8px;
-selection-background-color: darkgray;
-font-size: 13px;
-color: white;
-}
-QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}
-</string>
-                      </property>
-                      <property name="inputMethodHints">
-                       <set>Qt::ImhNone</set>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="7" column="2">
-                     <widget class="QComboBox" name="geraete_verwalten_standort_combo">
-                      <property name="maximumSize">
-                       <size>
-                        <width>350</width>
-                        <height>16777215</height>
-                       </size>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QComboBox
-{
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-    selection-background-color: #111;
-    selection-color: white;
-    color: white;
-    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
-    border-style: solid;
-    border: 1px solid #1e1e1e;
-    border-radius: 5;
-    padding: 1px 0px 1px 20px;
-}
-
-
-QComboBox:hover, QPushButton:hover
-{
-    border: 1px solid teal;
-    color: white;
-}
-
-QComboBox:editable {
-    background: red;
-    color: pink;
-}
-
-QComboBox:on
-{
-    padding-top: 0px;
-    padding-left: 0px;
-    color: white;
-    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
-    selection-background-color: rgb(67, 131, 202);
-}
-
-QComboBox:!on
-{
-    color: white;
-    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #666, stop: 0.1 #555, stop: 0.5 #555, stop: 0.9 #444, stop: 1 #333);
-}
-
-QComboBox QAbstractItemView
-{
-    border: 2px solid darkgray;
-    color: black;
-    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #333);
-}
-
-QComboBox::drop-down
-{
-     subcontrol-origin: padding;
-     subcontrol-position: top right;
-     width: 15px;
-     color: white;
-     border-left-width: 1px;
-     border-left-color: darkgray;
-     border-left-style: solid; /* just a single line */
-     border-top-right-radius: 3px; /* same radius as the QComboBox */
-     border-bottom-right-radius: 3px;
-     padding-left: 10px;
- }
-
-
-</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="6" column="1">
-                     <widget class="QLabel" name="label_82">
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;CE Kennung&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="2" column="2">
-                     <widget class="QComboBox" name="geraet_combobox">
-                      <property name="styleSheet">
-                       <string notr="true">QComboBox
-{
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-    selection-background-color: #111;
-    selection-color: white;
-
-    background-color: #464646;
-    border-style: solid;
-    border: 1px solid #1e1e1e;
-    border-radius: 5;
-    padding: 1px 0px 1px 20px;
-}
-
-
-QComboBox:hover, QPushButton:hover
-{
-    border: 1px solid teal;
-
-}
-
-QComboBox:editable {
-    background: red;
-    color: white;
-}
-
-QComboBox:on
-{
-    padding-top: 0px;
-    padding-left: 0px;
-
-    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
-    selection-background-color: rgb(67, 131, 202);
-}
-
-QComboBox:!on
-{
-
-    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #666, stop: 0.1 #555, stop: 0.5 #555, stop: 0.9 #444, stop: 1 #333);
-}
-
-QComboBox QAbstractItemView
-{
-    border: 2px solid darkgray;
-    color: black;
-    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #333);
-}
-
-QComboBox::drop-down
-{
-     subcontrol-origin: padding;
-     subcontrol-position: top right;
-     width: 15px;
-
-     border-left-width: 1px;
-     border-left-color: darkgray;
-     border-left-style: solid; /* just a single line */
-     border-top-right-radius: 3px; /* same radius as the QComboBox */
-     border-bottom-right-radius: 3px;
-     padding-left: 10px;
- }
-
-
-</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="4" column="1">
-                     <widget class="QLabel" name="label_57">
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Inventarnummer&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="0">
-                     <widget class="Line" name="line_24">
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                     </widget>
-                    </item>
                     <item row="4" column="0">
                      <widget class="QLineEdit" name="geraete_verwalten_inventarnummer">
                       <property name="maximumSize">
@@ -3632,17 +3292,182 @@ QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1,
                       </property>
                      </widget>
                     </item>
-                    <item row="6" column="3">
-                     <widget class="QLabel" name="label_59">
+                    <item row="10" column="0">
+                     <widget class="Line" name="line_23">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="9" column="0">
+                     <widget class="QLabel" name="label_63">
+                      <property name="font">
+                       <font>
+                        <pointsize>14</pointsize>
+                       </font>
+                      </property>
                       <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Prüffrist in Monaten&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Geräte&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="5" column="0">
+                     <widget class="QLineEdit" name="geraete_verwalten_geraetenummer">
+                      <property name="maximumSize">
+                       <size>
+                        <width>350</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+border: 1px inset darkgrey;
+border-radius: 10px;
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 13px;
+color: white;
+}
+QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}
+</string>
                       </property>
                      </widget>
                     </item>
                     <item row="2" column="3">
                      <widget class="QLabel" name="geraet_label">
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Artikel Nr.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="7" column="2">
+                     <widget class="QComboBox" name="geraete_verwalten_standort_combo">
+                      <property name="maximumSize">
+                       <size>
+                        <width>350</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QComboBox
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    selection-background-color: #111;
+    selection-color: white;
+
+    background-color: #464646;
+    border-style: solid;
+    border: 1px solid #1e1e1e;
+    border-radius: 5;
+    padding: 1px 0px 1px 20px;
+}
+
+
+QComboBox:hover, QPushButton:hover
+{
+    border: 1px solid teal;
+
+}
+
+QComboBox:editable {
+    background: red;
+    color: white;
+}
+
+QComboBox:on
+{
+    padding-top: 0px;
+    padding-left: 0px;
+
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+    selection-background-color: rgb(67, 131, 202);
+}
+
+QComboBox:!on
+{
+
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #666, stop: 0.1 #555, stop: 0.5 #555, stop: 0.9 #444, stop: 1 #333);
+}
+
+QComboBox QAbstractItemView
+{
+    border: 2px solid darkgray;
+    color: black;
+    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #333);
+}
+
+QComboBox::drop-down
+{
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 15px;
+
+     border-left-width: 1px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 3px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 3px;
+     padding-left: 10px;
+ }
+
+
+</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="4" column="3">
+                     <widget class="QLabel" name="label_55">
                       <property name="text">
                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Gerät&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="4" column="2">
+                     <widget class="QLineEdit" name="geraete_verwalten_geraet">
+                      <property name="maximumSize">
+                       <size>
+                        <width>350</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+border: 1px inset darkgrey;
+border-radius: 10px;
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 13px;
+color: white;
+}
+QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}
+
+</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <widget class="Line" name="line_24">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_62">
+                      <property name="font">
+                       <font>
+                        <pointsize>14</pointsize>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Geräte Verwalten&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                       </property>
                      </widget>
                     </item>
@@ -3700,6 +3525,11 @@ text-align: center;
                       </attribute>
                       <column>
                        <property name="text">
+                        <string>id</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
                         <string>Gerät</string>
                        </property>
                       </column>
@@ -3730,6 +3560,11 @@ text-align: center;
                       </column>
                       <column>
                        <property name="text">
+                        <string>Prüffrist</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
                         <string>Nächste Prüfung</string>
                        </property>
                       </column>
@@ -3738,19 +3573,39 @@ text-align: center;
                         <string>Standort</string>
                        </property>
                       </column>
+                      <column>
+                       <property name="text">
+                        <string>Artikel Nr.</string>
+                       </property>
+                      </column>
                      </widget>
                     </item>
-                    <item row="7" column="3">
-                     <widget class="QLabel" name="label_61">
+                    <item row="7" column="1">
+                     <widget class="QLabel" name="label_60">
                       <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Standort&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Bemerkung&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                       </property>
                      </widget>
                     </item>
-                    <item row="10" column="0">
-                     <widget class="Line" name="line_23">
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
+                    <item row="6" column="0">
+                     <widget class="QLineEdit" name="geraete_verwalten_ce">
+                      <property name="maximumSize">
+                       <size>
+                        <width>350</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+border: 1px inset darkgrey;
+border-radius: 10px;
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 13px;
+color: white;
+}
+QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}
+</string>
                       </property>
                      </widget>
                     </item>
@@ -3776,39 +3631,15 @@ QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1,
                       </property>
                      </widget>
                     </item>
-                    <item row="2" column="1">
-                     <widget class="QLabel" name="label_83">
+                    <item row="7" column="3">
+                     <widget class="QLabel" name="label_61">
                       <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Tätigkeit&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Standort&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                       </property>
                      </widget>
                     </item>
-                    <item row="9" column="0">
-                     <widget class="QLabel" name="label_63">
-                      <property name="font">
-                       <font>
-                        <pointsize>14</pointsize>
-                       </font>
-                      </property>
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Geräte&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_62">
-                      <property name="font">
-                       <font>
-                        <pointsize>14</pointsize>
-                       </font>
-                      </property>
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Geräte Verwalten&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="5" column="0">
-                     <widget class="QLineEdit" name="geraete_verwalten_geraetenummer">
+                    <item row="6" column="2">
+                     <widget class="QLineEdit" name="geraete_verwalten_prueffrist">
                       <property name="maximumSize">
                        <size>
                         <width>350</width>
@@ -3827,12 +3658,85 @@ color: white;
 QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}
 </string>
                       </property>
+                      <property name="inputMethodHints">
+                       <set>Qt::ImhNone</set>
+                      </property>
                      </widget>
                     </item>
                     <item row="5" column="1">
                      <widget class="QLabel" name="label_56">
                       <property name="text">
                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Seriennummer&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="4" column="1">
+                     <widget class="QLabel" name="label_57">
+                      <property name="text">
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Inventarnummer&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="6" column="3">
+                     <widget class="QLabel" name="label_59">
+                      <property name="text">
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Prüffrist in Monaten&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="6" column="1">
+                     <widget class="QLabel" name="label_82">
+                      <property name="text">
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;CE Kennung&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="8" column="1">
+                     <widget class="QPushButton" name="geraete_verwalten_speichern_button">
+                      <property name="maximumSize">
+                       <size>
+                        <width>150</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+  	border-style: solid;
+    border: 1px solid #1e1e1e;
+    border-radius: 5;
+    padding: 1px 0px 1px 20px;
+    font: 13px;
+    min-width: 10em;
+    padding: 5px;
+	color: white;
+}
+QPushButton:hover{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+  	border-style: solid;
+    border: 1px solid rgb(59, 204, 179);
+    border-radius: 5;
+    padding: 1px 0px 1px 20px;
+    font: 13px;
+    min-width: 10em;
+    padding: 5px;
+	color: white;
+}
+QPushButton:pressed {
+background-color: rgb(130, 152, 152);
+  	border-style: solid;
+    border: 1px solid #1EFFFF;
+    border-radius: 5;
+    padding: 1px 0px 1px 20px;
+    font: 13px;
+    min-width: 10em;
+    padding: 5px;
+	color: white;
+
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Speichern</string>
                       </property>
                      </widget>
                     </item>
@@ -3858,8 +3762,58 @@ QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1,
                       </property>
                      </widget>
                     </item>
-                    <item row="4" column="2">
-                     <widget class="QLineEdit" name="geraete_verwalten_geraet">
+                    <item row="5" column="3">
+                     <widget class="QLabel" name="label_58">
+                      <property name="text">
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;letzte Prüfung&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="12" column="1">
+                     <widget class="QPushButton" name="geraete_verwalten_aenderung_speichern_btn">
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+  	border-style: solid;
+    border: 1px solid #1e1e1e;
+    border-radius: 5;
+    padding: 1px 0px 1px 20px;
+    font: 13px;
+    min-width: 10em;
+    padding: 5px;
+	color: white;
+}
+QPushButton:hover{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+  	border-style: solid;
+    border: 1px solid rgb(59, 204, 179);
+    border-radius: 5;
+    padding: 1px 0px 1px 20px;
+    font: 13px;
+    min-width: 10em;
+    padding: 5px;
+	color: white;
+}
+QPushButton:pressed {
+background-color: rgb(130, 152, 152);
+  	border-style: solid;
+    border: 1px solid #1EFFFF;
+    border-radius: 5;
+    padding: 1px 0px 1px 20px;
+    font: 13px;
+    min-width: 10em;
+    padding: 5px;
+	color: white;
+
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Änderungen Speichern</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="2">
+                     <widget class="QLineEdit" name="geraete_verwalten_artikelnr">
                       <property name="maximumSize">
                        <size>
                         <width>350</width>
@@ -3881,17 +3835,10 @@ QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1,
                       </property>
                      </widget>
                     </item>
-                    <item row="5" column="3">
-                     <widget class="QLabel" name="label_58">
+                    <item row="2" column="0">
+                     <widget class="QLabel" name="label_83">
                       <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;letzte Prüfung&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="4" column="3">
-                     <widget class="QLabel" name="label_55">
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Gerät&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; color:#ffffff;&quot;&gt;Neues Gerät anlegen&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                       </property>
                      </widget>
                     </item>
@@ -6228,27 +6175,44 @@ background-color: rgb(130, 152, 152);
      <x>0</x>
      <y>0</y>
      <width>1388</width>
-     <height>30</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
  </widget>
  <tabstops>
+  <tabstop>admin_text_ben</tabstop>
+  <tabstop>admin_text_pw</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>uebersicht_lager_table</tabstop>
   <tabstop>combobox_lager</tabstop>
+  <tabstop>lager_textfeld_einsatz</tabstop>
   <tabstop>lager_textfeld_produkt</tabstop>
+  <tabstop>lager_uebernehmen_btn</tabstop>
   <tabstop>lager_table</tabstop>
   <tabstop>lager_btn</tabstop>
+  <tabstop>lager_eintrag_loeschen</tabstop>
+  <tabstop>lager_tabelle_leeren</tabstop>
   <tabstop>combo_rtw</tabstop>
   <tabstop>combo_zustand</tabstop>
   <tabstop>fahrzeug_textedit</tabstop>
   <tabstop>button_fahrzeuge</tabstop>
+  <tabstop>mpg_Fahrzeuge_combo</tabstop>
+  <tabstop>mpg_geraete_tabelle_fahrzeug</tabstop>
+  <tabstop>mpg_user_geraete_barcode</tabstop>
+  <tabstop>mpg_user_geraete_aufrufen_btn</tabstop>
+  <tabstop>mpg_user_geraete_standort_combo</tabstop>
+  <tabstop>mpg_user_bemerkung</tabstop>
+  <tabstop>mpg_user_geraete_speichern_btn</tabstop>
   <tabstop>klamotten_textfeld</tabstop>
   <tabstop>aufnahme</tabstop>
   <tabstop>klamotten_button</tabstop>
   <tabstop>klamotten_tabelle</tabstop>
   <tabstop>kleidung_zurueck_tabelle</tabstop>
-  <tabstop>admin_text_ben</tabstop>
-  <tabstop>admin_text_pw</tabstop>
+  <tabstop>admin_bereich</tabstop>
+  <tabstop>tabWidget_2</tabstop>
+  <tabstop>admin_lager_alle_produkte</tabstop>
+  <tabstop>admin_produkte_update</tabstop>
   <tabstop>admin_new_prod_prod</tabstop>
   <tabstop>admin_new_prod_bes</tabstop>
   <tabstop>admin_new_prod_min</tabstop>
@@ -6262,12 +6226,77 @@ background-color: rgb(130, 152, 152);
   <tabstop>admin_del_prod_bar</tabstop>
   <tabstop>admin_del_prod_table</tabstop>
   <tabstop>admin_del_prod_btn</tabstop>
+  <tabstop>admin_lager_fehlendes_material</tabstop>
+  <tabstop>lager_bestellung</tabstop>
+  <tabstop>pdf_erstellen</tabstop>
+  <tabstop>admin_material_speichern_barcode</tabstop>
+  <tabstop>admin_material_speichern_anzahl</tabstop>
+  <tabstop>admin_material_speichern_combo</tabstop>
+  <tabstop>admin_material_speichern_table</tabstop>
+  <tabstop>admin_material_speichern_button</tabstop>
   <tabstop>fahrzeug_admin_funkkenn</tabstop>
   <tabstop>fahrzeug_admin_kennz</tabstop>
   <tabstop>fahrzeug_admin_ort</tabstop>
   <tabstop>fahrzeug_admin_tuev</tabstop>
   <tabstop>fahrzeug_admin_save_btn</tabstop>
-  <tabstop>tabWidget</tabstop>
+  <tabstop>tabWidget_3</tabstop>
+  <tabstop>verwertet_geraete_combo</tabstop>
+  <tabstop>verwertet_datum</tabstop>
+  <tabstop>verwertet_bemerkung</tabstop>
+  <tabstop>verwertet_speichern_button</tabstop>
+  <tabstop>verwertet_tabelle</tabstop>
+  <tabstop>einweisung_geraete_combo</tabstop>
+  <tabstop>einweisung_softwareversion</tabstop>
+  <tabstop>einweisung_datum</tabstop>
+  <tabstop>einweisung_eingewiesener</tabstop>
+  <tabstop>einweisung_einweisender</tabstop>
+  <tabstop>einweisung_original</tabstop>
+  <tabstop>einweisung_speichern_btn</tabstop>
+  <tabstop>einweisung_tabelle</tabstop>
+  <tabstop>einweisung_tabelle_filtern_geraet_combo</tabstop>
+  <tabstop>einweisung_tabelle_filtern_software_combo</tabstop>
+  <tabstop>einweisung_geraete_combo_standard</tabstop>
+  <tabstop>einweisung_softwareversion_standard</tabstop>
+  <tabstop>einweisung_datum_standard</tabstop>
+  <tabstop>einweisung_eingewiesener_standard</tabstop>
+  <tabstop>einweisung_einweisender_standard</tabstop>
+  <tabstop>einweisung_original_standard</tabstop>
+  <tabstop>einweisung_standardwerte_loeschen_btn</tabstop>
+  <tabstop>mpg_standort_text</tabstop>
+  <tabstop>mpg_standort_speichern_btn</tabstop>
+  <tabstop>mpg_standorte_tabelle</tabstop>
+  <tabstop>mpg_standorte_combo</tabstop>
+  <tabstop>mpg_standorte_loeschen_btn</tabstop>
+  <tabstop>pw_aendern_altes_pw</tabstop>
+  <tabstop>pw_aendern_neues_pw</tabstop>
+  <tabstop>pw_aendern_neues_pw_wied</tabstop>
+  <tabstop>pw_aendern_speichern</tabstop>
+  <tabstop>neuer_admin_name</tabstop>
+  <tabstop>neuer_admin_pw</tabstop>
+  <tabstop>neuer_admin_pw_wied</tabstop>
+  <tabstop>neuer_admin_speichern</tabstop>
+  <tabstop>admin_loeschen_combo</tabstop>
+  <tabstop>admin_loeschen_pw</tabstop>
+  <tabstop>admin_loeschen_speichern</tabstop>
+  <tabstop>tabelle_alle_admins</tabstop>
+  <tabstop>check_uebersicht</tabstop>
+  <tabstop>check_lager</tabstop>
+  <tabstop>check_fahrzeuge</tabstop>
+  <tabstop>check_dienstbekleidung</tabstop>
+  <tabstop>einstellungen_speichern</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>login_btn</tabstop>
+  <tabstop>admin_logout_btn</tabstop>
+  <tabstop>geraete_verwalten_standort_combo</tabstop>
+  <tabstop>geraete_verwalten_speichern_button</tabstop>
+  <tabstop>geraete_verwalten_geraet</tabstop>
+  <tabstop>geraete_verwalten_inventarnummer</tabstop>
+  <tabstop>geraete_verwalten_ce</tabstop>
+  <tabstop>geraete_verwalten_bemerkung</tabstop>
+  <tabstop>geraete_verwalten_geraetenummer</tabstop>
+  <tabstop>mpg_geraete_tabelle</tabstop>
+  <tabstop>geraete_verwalten_pruefdatum</tabstop>
+  <tabstop>geraete_verwalten_prueffrist</tabstop>
  </tabstops>
  <resources/>
  <connections/>

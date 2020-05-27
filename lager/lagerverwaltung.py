@@ -5,7 +5,7 @@ from PyQt5.QtCore import Qt
 from uebersicht.uebersicht import Uebersicht
 from datetime import date
 from PyQt5.QtGui import QIntValidator
-
+from admin.admin_lager import Admin_Lager
 
 class Lagerverwaltung():
     def __init__(self, ui):
@@ -149,6 +149,7 @@ class Lagerverwaltung():
         self.ui.lager_error_label.setStyleSheet("color:#ffffff; font-size:13pt; border: 1px solid #00FF00; border-radius: 5px")
         self.ui.lager_textfeld_einsatz.setText("")
         Uebersicht(self.ui)
+        Admin_Lager(self.ui).update()
 
 
     def pruefung_auf_textfeld(self): # prueft auf welchem text gerade dei Combobox steht um das Einsatznummer feld anzuzeigen oder nicht.

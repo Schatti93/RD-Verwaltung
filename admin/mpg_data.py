@@ -8,10 +8,10 @@ class Mpg_Data():
         self.c_data = self.conn_data.cursor()
 
     def neues_geraet_speichern(self, geraet, geraetenummer, inventarnummmer, ce,
-                               bemerkung, pruefdatum, prueffrist, standort):
+                               bemerkung, pruefdatum, prueffrist, standort, artikelnr):
         params = (geraet, geraetenummer, inventarnummmer, ce, bemerkung, pruefdatum,
-                  prueffrist, standort)
-        sql = "INSERT INTO mpg_geraete VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?)"
+                  prueffrist, standort, artikelnr)
+        sql = "INSERT INTO mpg_geraete VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
         self.c.execute(sql, params)
         self.conn.commit()
 
@@ -57,11 +57,11 @@ class Mpg_Data():
         return self.c.fetchall()
 
     def geraet_updaten(self, geraet, geraetenummer, inventarnummmer, ce,
-                               bemerkung, pruefdatum, prueffrist, standort, id):
+                               bemerkung, pruefdatum, prueffrist, standort, artikelnr, id):
         params = (geraet, inventarnummmer, ce, bemerkung, pruefdatum,
-                  prueffrist, standort, geraetenummer, id)
+                  prueffrist, standort, geraetenummer, artikelnr, id)
         sql = "UPDATE mpg_geraete SET geraet = ?, inventarnummer = ?, ce = ?, bemerkung = ?, pruefdatum = ?, prueffrist = ?" \
-              ", standort = ?, geraetenummer = ? WHERE id = ?"
+              ", standort = ?, geraetenummer = ?, artikelnr = ? WHERE id = ?"
         self.c.execute(sql, params)
         self.conn.commit()
 
