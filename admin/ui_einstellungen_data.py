@@ -23,3 +23,13 @@ class Ui_Einstellungen_Data():
         self.c.execute(sql, params)
         self.conn.commit()
 
+    def pdf_speicherort(self, speicherort, id):
+        params = (speicherort, id )
+        sql = "UPDATE speicherort_bestellung SET speicherort = ? WHERE id = ?"
+        self.conn.execute(sql, params)
+        self.conn.commit()
+
+    def speicherort_abfragen(self):
+        sql = "SELECT * FROM speicherort_bestellung"
+        self.c.execute(sql)
+        return self.c.fetchall()

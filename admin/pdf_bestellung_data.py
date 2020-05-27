@@ -24,3 +24,8 @@ class Pdf_Bestellung_Data():
         sql = "UPDATE lager SET status = ? WHERE Produkt = ?"
         self.c.execute(sql, params)
         self.conn.commit()
+
+    def speicherort_abfragen(self):
+        sql = "SELECT * FROM speicherort_bestellung"
+        self.c.execute(sql)
+        return self.c.fetchall()
