@@ -97,6 +97,8 @@ class Admin_Lager():
                 mindest.setTextAlignment(Qt.AlignCenter)
                 max = QtWidgets.QTableWidgetItem(str(liste[i][4]))
                 max.setTextAlignment(Qt.AlignCenter)
+                artikelnr = QtWidgets.QTableWidgetItem(str(liste[i][7]))
+                artikelnr.setTextAlignment(Qt.AlignCenter)
                 count = count + 1
 
 
@@ -106,7 +108,8 @@ class Admin_Lager():
                 self.ui.admin_lager_fehlendes_material.setItem(row, 1, QtWidgets.QTableWidgetItem(vorhanden))
                 self.ui.admin_lager_fehlendes_material.setItem(row, 2, QtWidgets.QTableWidgetItem(mindest))
                 self.ui.admin_lager_fehlendes_material.setItem(row, 3, QtWidgets.QTableWidgetItem(max))
-                self.ui.admin_lager_fehlendes_material.setItem(row, 4, QtWidgets.QTableWidgetItem(status))
+                self.ui.admin_lager_fehlendes_material.setItem(row, 4, QtWidgets.QTableWidgetItem(artikelnr))
+                self.ui.admin_lager_fehlendes_material.setItem(row, 5, QtWidgets.QTableWidgetItem(status))
                 self.ui.admin_lager_fehlendes_material.horizontalHeader().setSectionResizeMode(1)
 
 

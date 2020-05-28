@@ -41,7 +41,7 @@ class Pdf_Bestellung():
             today = datetime.date.today()
             today = today.strftime("%d.%m.%Y")
             speicherort = self.data.speicherort_abfragen()[0][1]
-            print(speicherort)
+
             try:
                 pdf = canvas.Canvas(speicherort + "/benoetigtes material vom " + today + ".pdf", pagesize=A4, bottomup=0)
                 pdf.setStrokeColorRGB(0.3, 0.5, 0.7)

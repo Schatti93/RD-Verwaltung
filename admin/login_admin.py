@@ -20,7 +20,6 @@ class Login_Admin():
 
     def bei_start_alte_admin_logins_loeschen(self):
         alte_nutzer = self.data.alle_benutzer_abfragen()
-        print(alte_nutzer)
         for element in range(0, len(alte_nutzer)):
             self.data.benutzer_ausloggen(alte_nutzer[element][0])
 

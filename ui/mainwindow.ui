@@ -2037,7 +2037,7 @@ background-color: rgb(130, 152, 152);
              <enum>QTabWidget::North</enum>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>4</number>
             </property>
             <widget class="QWidget" name="tab_6">
              <attribute name="title">

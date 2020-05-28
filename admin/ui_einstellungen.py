@@ -38,7 +38,7 @@ class Ui_Einstellungen():
     def einstellungen_umsetzen(self):
         liste = self.data.einstellungen_abfragen()
         for i in range(0, len(liste)):
-            print(liste[i][1])
+
             if int(liste[i][1]) == 0:
                 if liste[i][2] == "dienstbekleidung":
                     self.ui.tabWidget.removeTab(3)
@@ -53,7 +53,7 @@ class Ui_Einstellungen():
         speicherort = QFileDialog.getExistingDirectory(self.mainwindow, "Datei Öffnen", "/")
         if len(speicherort) > 0:
             id = self.data.speicherort_abfragen()[0][0]
-            print(id)
+
             self.data.pdf_speicherort(speicherort, id)
             self.ui.pdf_speicherort_label.setText(speicherort)
             self.ui.pdf_speicherort_label.setStyleSheet(
