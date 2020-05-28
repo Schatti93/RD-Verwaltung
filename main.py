@@ -30,7 +30,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.fahrzeuge_uebersicht = Fahrzeuge_Uebersicht(self.ui)
         self.admin_lager = Admin_Lager(self.ui)
         self.ui.fahrzeug = Fahrzeug_Mitarbeiter(self.ui)
-        self.einstellungen = Ui_Einstellungen(self.ui)
+        self.einstellungen = Ui_Einstellungen(self.ui, self)
         self.pdf = Pdf_Bestellung(self.ui)
         self.benutzer_verwaltung = Benutzer_Verwaltung(self.ui)
         self.mpg_geraete = Mpg_Geraete(self.ui)
