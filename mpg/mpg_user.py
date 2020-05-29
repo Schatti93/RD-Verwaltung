@@ -24,11 +24,7 @@ class Mpg_User():
             else:
                 liste_der_eintraege.append(standorte[element][0])
         wachen = self.data.wachen_abfragen()
-        for element in range(0, len(wachen)):
-            if standorte[element][0] in liste_der_eintraege:
-                pass
-            else:
-                liste_der_eintraege.append(standorte[element][0])
+        
         self.ui.mpg_Fahrzeuge_combo.addItems(liste_der_eintraege)
 
     def geraete_fahrzeug_tabelle_fuellen(self):
