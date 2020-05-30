@@ -11,13 +11,16 @@ class Lagerverwaltung():
     def __init__(self, ui):
         self.ui = ui
         self.lagerverwaltung = Database_Lagerverwaltung()
+
+        #in admin einfügen
         self.bestellen = Online_Bestellung()
-        self.ui.lager_btn.clicked.connect(self.durchgehen)
         self.ui.lager_bestellung.clicked.connect(self.bestellen.nachbestellen)
+        ##
+
+        self.ui.lager_btn.clicked.connect(self.durchgehen)
         self.ui.combobox_lager.currentTextChanged.connect(self.pruefung_auf_textfeld)
         self.ui.lager_textfeld_produkt.returnPressed.connect(self.zwischenspeicher)
         self.ui.lager_uebernehmen_btn.clicked.connect(self.zwischenspeicher)
-
         self.ui.lager_tabelle_leeren.clicked.connect(self.tabelle_leeren)
         self.ui.lager_eintrag_loeschen.clicked.connect(self.eintrag_loeschen)
         self.einsatznummer_nur_int()

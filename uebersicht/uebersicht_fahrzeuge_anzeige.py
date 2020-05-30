@@ -125,7 +125,7 @@ class Fahrzeug_Anzeige():
             ort_label.setText("<html><head/><body><p><span style=\" color:#ffffff;\">Ort:</span></p></body></html>")
             if bemerkung == "":
                 bemerkung_label.setText("")
-                bemerkung.label.setMaximumSize(QtCore.QSize(0, 0))
+                bemerkung_label.setMaximumSize(QtCore.QSize(0, 0))
             else:
                 bemerkung_label.setText(
                     "<html><head/><body><p><span style=\" color:#ffffff;\">" + "Bemerkung: " + bemerkung + "</span></p></body></html>")

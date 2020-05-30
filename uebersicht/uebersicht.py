@@ -21,11 +21,12 @@ class Uebersicht():
                     status = QtWidgets.QTableWidgetItem("Bestand zu gering")
                     status.setTextAlignment(Qt.AlignCenter)
                     status_anzeige = "Bestand zu gering"
+                if liste[i][8] == "Bestellt":
+                    status_anzeige = "Bestellt"
                 else:
-                    if liste[i][8] == "Bestand zu gering":
-                        status_anzeige = "Bestand zu gering"
-                    status = QtWidgets.QTableWidgetItem(str(liste[i][8]))
-                    status.setTextAlignment(Qt.AlignCenter)
+                    status_anzeige = "Bestand zu gering"
+                status = QtWidgets.QTableWidgetItem(str(status_anzeige))
+                status.setTextAlignment(Qt.AlignCenter)
 
 
                 count = count + 1

@@ -6,14 +6,21 @@ class Mpg_Data():
         self.c = self.conn.cursor()
         self.conn_data = sqlite3.connect("Database.db")
         self.c_data = self.conn_data.cursor()
+        self.conn_ma = sqlite3.connect("mitarbeiter.db")
+        self.c_ma = self.conn_ma.cursor()
 
     def neues_geraet_speichern(self, geraet, geraetenummer, inventarnummmer, ce,
-                               bemerkung, pruefdatum, prueffrist, standort, artikelnr):
-        params = (geraet, geraetenummer, inventarnummmer, ce, bemerkung, pruefdatum,
+                               bemerkung, anschaffung, pruefdatum, prueffrist, standort, artikelnr):
+        params = (geraet, geraetenummer, inventarnummmer, ce, bemerkung, anschaffung, pruefdatum,
                   prueffrist, standort, artikelnr)
-        sql = "INSERT INTO mpg_geraete VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        sql = "INSERT INTO mpg_geraete VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
         self.c.execute(sql, params)
         self.conn.commit()
+
+    def mitarbeiter_abfragen(self):
+        sql = "SELECT * FROM mitarbeiter"
+        self.c_ma.execute(sql)
+        return self.c_ma.fetchall()
 
     def fahrzeuge_abfragen(self):
         sql = "SELECT * FROM fahrzeug_aktiv"
@@ -57,7 +64,7 @@ class Mpg_Data():
         return self.c.fetchall()
 
     def geraet_updaten(self, geraet, geraetenummer, inventarnummmer, ce,
-                               bemerkung, pruefdatum, prueffrist, standort, artikelnr, id):
+                               bemerkung, anschaffung, pruefdatum, prueffrist, standort, artikelnr, id):
         params = (geraet, inventarnummmer, ce, bemerkung, pruefdatum,
                   prueffrist, standort, geraetenummer, artikelnr, id)
         sql = "UPDATE mpg_geraete SET geraet = ?, inventarnummer = ?, ce = ?, bemerkung = ?, pruefdatum = ?, prueffrist = ?" \

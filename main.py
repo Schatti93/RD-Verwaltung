@@ -14,6 +14,7 @@ from admin.ui_einstellungen import Ui_Einstellungen
 from admin.pdf_bestellung import Pdf_Bestellung
 from admin.mpg_geraete import Mpg_Geraete
 from mpg.mpg_user import Mpg_User
+from admin.mitarbeiter.mitarbeiter import Mitarbeiter
 
 app = QtWidgets.QApplication(sys.argv)
 class MainWindow(QtWidgets.QMainWindow):
@@ -35,6 +36,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.benutzer_verwaltung = Benutzer_Verwaltung(self.ui)
         self.mpg_geraete = Mpg_Geraete(self.ui)
         self.mpg_user = Mpg_User(self.ui)
+        self.mitarbeiter = Mitarbeiter(self.ui)
 
 window = MainWindow()
 

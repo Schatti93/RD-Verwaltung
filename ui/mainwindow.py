@@ -2393,6 +2393,35 @@ class Ui_MainWindow(object):
         self.gridLayout_22.setObjectName("gridLayout_22")
         self.gridLayout_31 = QtWidgets.QGridLayout()
         self.gridLayout_31.setObjectName("gridLayout_31")
+        self.geraete_verwalten_geraet = QtWidgets.QLineEdit(self.tab_14)
+        self.geraete_verwalten_geraet.setMaximumSize(QtCore.QSize(350, 16777215))
+        self.geraete_verwalten_geraet.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"border: 1px inset darkgrey;\n"
+"border-radius: 10px;\n"
+"padding: 0 8px;\n"
+"selection-background-color: darkgray;\n"
+"font-size: 13px;\n"
+"color: white;\n"
+"}\n"
+"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
+"\n"
+"")
+        self.geraete_verwalten_geraet.setObjectName("geraete_verwalten_geraet")
+        self.gridLayout_31.addWidget(self.geraete_verwalten_geraet, 4, 2, 1, 1)
+        self.label_59 = QtWidgets.QLabel(self.tab_14)
+        self.label_59.setObjectName("label_59")
+        self.gridLayout_31.addWidget(self.label_59, 6, 3, 1, 1)
+        self.label_56 = QtWidgets.QLabel(self.tab_14)
+        self.label_56.setObjectName("label_56")
+        self.gridLayout_31.addWidget(self.label_56, 5, 1, 1, 1)
+        self.line_23 = QtWidgets.QFrame(self.tab_14)
+        self.line_23.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_23.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_23.setObjectName("line_23")
+        self.gridLayout_31.addWidget(self.line_23, 11, 0, 1, 1)
+        self.label_58 = QtWidgets.QLabel(self.tab_14)
+        self.label_58.setObjectName("label_58")
+        self.gridLayout_31.addWidget(self.label_58, 5, 3, 1, 1)
         self.geraete_verwalten_inventarnummer = QtWidgets.QLineEdit(self.tab_14)
         self.geraete_verwalten_inventarnummer.setMaximumSize(QtCore.QSize(350, 16777215))
         self.geraete_verwalten_inventarnummer.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
@@ -2407,20 +2436,47 @@ class Ui_MainWindow(object):
 "")
         self.geraete_verwalten_inventarnummer.setObjectName("geraete_verwalten_inventarnummer")
         self.gridLayout_31.addWidget(self.geraete_verwalten_inventarnummer, 4, 0, 1, 1)
-        self.line_23 = QtWidgets.QFrame(self.tab_14)
-        self.line_23.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line_23.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line_23.setObjectName("line_23")
-        self.gridLayout_31.addWidget(self.line_23, 10, 0, 1, 1)
-        self.label_63 = QtWidgets.QLabel(self.tab_14)
-        font = QtGui.QFont()
-        font.setPointSize(14)
-        self.label_63.setFont(font)
-        self.label_63.setObjectName("label_63")
-        self.gridLayout_31.addWidget(self.label_63, 9, 0, 1, 1)
-        self.geraete_verwalten_geraetenummer = QtWidgets.QLineEdit(self.tab_14)
-        self.geraete_verwalten_geraetenummer.setMaximumSize(QtCore.QSize(350, 16777215))
-        self.geraete_verwalten_geraetenummer.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.geraete_verwalten_speichern_button = QtWidgets.QPushButton(self.tab_14)
+        self.geraete_verwalten_speichern_button.setMaximumSize(QtCore.QSize(150, 40))
+        self.geraete_verwalten_speichern_button.setStyleSheet("QPushButton{\n"
+"   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"      border-style: solid;\n"
+"    border: 1px solid #1e1e1e;\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"    font: 13px;\n"
+"    min-width: 10em;\n"
+"    padding: 5px;\n"
+"    color: white;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"      border-style: solid;\n"
+"    border: 1px solid rgb(59, 204, 179);\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"    font: 13px;\n"
+"    min-width: 10em;\n"
+"    padding: 5px;\n"
+"    color: white;\n"
+"}\n"
+"QPushButton:pressed {\n"
+"background-color: rgb(130, 152, 152);\n"
+"      border-style: solid;\n"
+"    border: 1px solid #1EFFFF;\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"    font: 13px;\n"
+"    min-width: 10em;\n"
+"    padding: 5px;\n"
+"    color: white;\n"
+"\n"
+"}")
+        self.geraete_verwalten_speichern_button.setObjectName("geraete_verwalten_speichern_button")
+        self.gridLayout_31.addWidget(self.geraete_verwalten_speichern_button, 9, 1, 1, 1)
+        self.geraete_verwalten_ce = QtWidgets.QLineEdit(self.tab_14)
+        self.geraete_verwalten_ce.setMaximumSize(QtCore.QSize(350, 16777215))
+        self.geraete_verwalten_ce.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -2430,12 +2486,14 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
-        self.geraete_verwalten_geraetenummer.setObjectName("geraete_verwalten_geraetenummer")
-        self.gridLayout_31.addWidget(self.geraete_verwalten_geraetenummer, 5, 0, 1, 1)
-        self.geraet_label = QtWidgets.QLabel(self.tab_14)
-        self.geraet_label.setMaximumSize(QtCore.QSize(16777215, 30))
-        self.geraet_label.setObjectName("geraet_label")
-        self.gridLayout_31.addWidget(self.geraet_label, 2, 3, 1, 1)
+        self.geraete_verwalten_ce.setObjectName("geraete_verwalten_ce")
+        self.gridLayout_31.addWidget(self.geraete_verwalten_ce, 6, 0, 1, 1)
+        self.label_63 = QtWidgets.QLabel(self.tab_14)
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.label_63.setFont(font)
+        self.label_63.setObjectName("label_63")
+        self.gridLayout_31.addWidget(self.label_63, 10, 0, 1, 1)
         self.geraete_verwalten_standort_combo = QtWidgets.QComboBox(self.tab_14)
         self.geraete_verwalten_standort_combo.setMaximumSize(QtCore.QSize(350, 16777215))
         self.geraete_verwalten_standort_combo.setStyleSheet("QComboBox\n"
@@ -2503,209 +2561,24 @@ class Ui_MainWindow(object):
 "\n"
 "")
         self.geraete_verwalten_standort_combo.setObjectName("geraete_verwalten_standort_combo")
-        self.gridLayout_31.addWidget(self.geraete_verwalten_standort_combo, 7, 2, 1, 1)
+        self.gridLayout_31.addWidget(self.geraete_verwalten_standort_combo, 8, 2, 1, 1)
+        self.geraete_verwalten_geraetenummer = QtWidgets.QLineEdit(self.tab_14)
+        self.geraete_verwalten_geraetenummer.setMaximumSize(QtCore.QSize(350, 16777215))
+        self.geraete_verwalten_geraetenummer.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"border: 1px inset darkgrey;\n"
+"border-radius: 10px;\n"
+"padding: 0 8px;\n"
+"selection-background-color: darkgray;\n"
+"font-size: 13px;\n"
+"color: white;\n"
+"}\n"
+"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
+"")
+        self.geraete_verwalten_geraetenummer.setObjectName("geraete_verwalten_geraetenummer")
+        self.gridLayout_31.addWidget(self.geraete_verwalten_geraetenummer, 5, 0, 1, 1)
         self.label_55 = QtWidgets.QLabel(self.tab_14)
         self.label_55.setObjectName("label_55")
         self.gridLayout_31.addWidget(self.label_55, 4, 3, 1, 1)
-        self.geraete_verwalten_geraet = QtWidgets.QLineEdit(self.tab_14)
-        self.geraete_verwalten_geraet.setMaximumSize(QtCore.QSize(350, 16777215))
-        self.geraete_verwalten_geraet.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"border: 1px inset darkgrey;\n"
-"border-radius: 10px;\n"
-"padding: 0 8px;\n"
-"selection-background-color: darkgray;\n"
-"font-size: 13px;\n"
-"color: white;\n"
-"}\n"
-"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
-"\n"
-"")
-        self.geraete_verwalten_geraet.setObjectName("geraete_verwalten_geraet")
-        self.gridLayout_31.addWidget(self.geraete_verwalten_geraet, 4, 2, 1, 1)
-        self.line_24 = QtWidgets.QFrame(self.tab_14)
-        self.line_24.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line_24.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line_24.setObjectName("line_24")
-        self.gridLayout_31.addWidget(self.line_24, 1, 0, 1, 1)
-        self.label_62 = QtWidgets.QLabel(self.tab_14)
-        font = QtGui.QFont()
-        font.setPointSize(14)
-        self.label_62.setFont(font)
-        self.label_62.setObjectName("label_62")
-        self.gridLayout_31.addWidget(self.label_62, 0, 0, 1, 1)
-        self.mpg_geraete_tabelle = QtWidgets.QTableWidget(self.tab_14)
-        self.mpg_geraete_tabelle.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.mpg_geraete_tabelle.setStyleSheet("QTableView {\n"
-"border: 1px inset darkgrey;\n"
-"border-radius: 5px;\n"
-"padding: 0 8px;\n"
-"font-size: 13px;\n"
-"color: white;\n"
-"gridline-color: rgb(164, 164, 165);\n"
-"Background-color: rgb(164, 164, 165);\n"
-"\n"
-"}\n"
-"QHeaderView::section{\n"
-"\n"
-"border-style: none;\n"
-"Color: white;\n"
-"gridline-color: rgb(164, 164, 165);\n"
-"background-color: rgb(164, 164, 165);\n"
-"border-bottom: 1px inset black;\n"
-"\n"
-"}\n"
-"QTableView::item{\n"
-"border-bottom : 1px inset black;\n"
-"gridline-color: rgb(164, 164, 165);\n"
-"text-align: center;\n"
-"}")
-        self.mpg_geraete_tabelle.setObjectName("mpg_geraete_tabelle")
-        self.mpg_geraete_tabelle.setColumnCount(11)
-        self.mpg_geraete_tabelle.setRowCount(0)
-        item = QtWidgets.QTableWidgetItem()
-        self.mpg_geraete_tabelle.setHorizontalHeaderItem(0, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.mpg_geraete_tabelle.setHorizontalHeaderItem(1, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.mpg_geraete_tabelle.setHorizontalHeaderItem(2, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.mpg_geraete_tabelle.setHorizontalHeaderItem(3, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.mpg_geraete_tabelle.setHorizontalHeaderItem(4, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.mpg_geraete_tabelle.setHorizontalHeaderItem(5, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.mpg_geraete_tabelle.setHorizontalHeaderItem(6, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.mpg_geraete_tabelle.setHorizontalHeaderItem(7, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.mpg_geraete_tabelle.setHorizontalHeaderItem(8, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.mpg_geraete_tabelle.setHorizontalHeaderItem(9, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.mpg_geraete_tabelle.setHorizontalHeaderItem(10, item)
-        self.mpg_geraete_tabelle.horizontalHeader().setCascadingSectionResizes(True)
-        self.mpg_geraete_tabelle.horizontalHeader().setStretchLastSection(True)
-        self.mpg_geraete_tabelle.verticalHeader().setVisible(False)
-        self.mpg_geraete_tabelle.verticalHeader().setCascadingSectionResizes(False)
-        self.mpg_geraete_tabelle.verticalHeader().setHighlightSections(False)
-        self.gridLayout_31.addWidget(self.mpg_geraete_tabelle, 11, 0, 1, 4)
-        self.label_60 = QtWidgets.QLabel(self.tab_14)
-        self.label_60.setObjectName("label_60")
-        self.gridLayout_31.addWidget(self.label_60, 7, 1, 1, 1)
-        self.geraete_verwalten_ce = QtWidgets.QLineEdit(self.tab_14)
-        self.geraete_verwalten_ce.setMaximumSize(QtCore.QSize(350, 16777215))
-        self.geraete_verwalten_ce.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"border: 1px inset darkgrey;\n"
-"border-radius: 10px;\n"
-"padding: 0 8px;\n"
-"selection-background-color: darkgray;\n"
-"font-size: 13px;\n"
-"color: white;\n"
-"}\n"
-"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
-"")
-        self.geraete_verwalten_ce.setObjectName("geraete_verwalten_ce")
-        self.gridLayout_31.addWidget(self.geraete_verwalten_ce, 6, 0, 1, 1)
-        self.geraete_verwalten_bemerkung = QtWidgets.QLineEdit(self.tab_14)
-        self.geraete_verwalten_bemerkung.setMaximumSize(QtCore.QSize(350, 16777215))
-        self.geraete_verwalten_bemerkung.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"border: 1px inset darkgrey;\n"
-"border-radius: 10px;\n"
-"padding: 0 8px;\n"
-"selection-background-color: darkgray;\n"
-"font-size: 13px;\n"
-"color: white;\n"
-"}\n"
-"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
-"")
-        self.geraete_verwalten_bemerkung.setObjectName("geraete_verwalten_bemerkung")
-        self.gridLayout_31.addWidget(self.geraete_verwalten_bemerkung, 7, 0, 1, 1)
-        self.label_61 = QtWidgets.QLabel(self.tab_14)
-        self.label_61.setObjectName("label_61")
-        self.gridLayout_31.addWidget(self.label_61, 7, 3, 1, 1)
-        self.geraete_verwalten_prueffrist = QtWidgets.QLineEdit(self.tab_14)
-        self.geraete_verwalten_prueffrist.setMaximumSize(QtCore.QSize(350, 16777215))
-        self.geraete_verwalten_prueffrist.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"border: 1px inset darkgrey;\n"
-"border-radius: 10px;\n"
-"padding: 0 8px;\n"
-"selection-background-color: darkgray;\n"
-"font-size: 13px;\n"
-"color: white;\n"
-"}\n"
-"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
-"")
-        self.geraete_verwalten_prueffrist.setInputMethodHints(QtCore.Qt.ImhNone)
-        self.geraete_verwalten_prueffrist.setObjectName("geraete_verwalten_prueffrist")
-        self.gridLayout_31.addWidget(self.geraete_verwalten_prueffrist, 6, 2, 1, 1)
-        self.label_56 = QtWidgets.QLabel(self.tab_14)
-        self.label_56.setObjectName("label_56")
-        self.gridLayout_31.addWidget(self.label_56, 5, 1, 1, 1)
-        self.label_57 = QtWidgets.QLabel(self.tab_14)
-        self.label_57.setObjectName("label_57")
-        self.gridLayout_31.addWidget(self.label_57, 4, 1, 1, 1)
-        self.label_59 = QtWidgets.QLabel(self.tab_14)
-        self.label_59.setObjectName("label_59")
-        self.gridLayout_31.addWidget(self.label_59, 6, 3, 1, 1)
-        self.label_82 = QtWidgets.QLabel(self.tab_14)
-        self.label_82.setObjectName("label_82")
-        self.gridLayout_31.addWidget(self.label_82, 6, 1, 1, 1)
-        self.geraete_verwalten_speichern_button = QtWidgets.QPushButton(self.tab_14)
-        self.geraete_verwalten_speichern_button.setMaximumSize(QtCore.QSize(150, 40))
-        self.geraete_verwalten_speichern_button.setStyleSheet("QPushButton{\n"
-"   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"      border-style: solid;\n"
-"    border: 1px solid #1e1e1e;\n"
-"    border-radius: 5;\n"
-"    padding: 1px 0px 1px 20px;\n"
-"    font: 13px;\n"
-"    min-width: 10em;\n"
-"    padding: 5px;\n"
-"    color: white;\n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"      border-style: solid;\n"
-"    border: 1px solid rgb(59, 204, 179);\n"
-"    border-radius: 5;\n"
-"    padding: 1px 0px 1px 20px;\n"
-"    font: 13px;\n"
-"    min-width: 10em;\n"
-"    padding: 5px;\n"
-"    color: white;\n"
-"}\n"
-"QPushButton:pressed {\n"
-"background-color: rgb(130, 152, 152);\n"
-"      border-style: solid;\n"
-"    border: 1px solid #1EFFFF;\n"
-"    border-radius: 5;\n"
-"    padding: 1px 0px 1px 20px;\n"
-"    font: 13px;\n"
-"    min-width: 10em;\n"
-"    padding: 5px;\n"
-"    color: white;\n"
-"\n"
-"}")
-        self.geraete_verwalten_speichern_button.setObjectName("geraete_verwalten_speichern_button")
-        self.gridLayout_31.addWidget(self.geraete_verwalten_speichern_button, 8, 1, 1, 1)
-        self.geraete_verwalten_pruefdatum = QtWidgets.QLineEdit(self.tab_14)
-        self.geraete_verwalten_pruefdatum.setMaximumSize(QtCore.QSize(350, 16777215))
-        self.geraete_verwalten_pruefdatum.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"border: 1px inset darkgrey;\n"
-"border-radius: 10px;\n"
-"padding: 0 8px;\n"
-"selection-background-color: darkgray;\n"
-"font-size: 13px;\n"
-"color: white;\n"
-"}\n"
-"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
-"")
-        self.geraete_verwalten_pruefdatum.setObjectName("geraete_verwalten_pruefdatum")
-        self.gridLayout_31.addWidget(self.geraete_verwalten_pruefdatum, 5, 2, 1, 1)
-        self.label_58 = QtWidgets.QLabel(self.tab_14)
-        self.label_58.setObjectName("label_58")
-        self.gridLayout_31.addWidget(self.label_58, 5, 3, 1, 1)
         self.geraete_verwalten_aenderung_speichern_btn = QtWidgets.QPushButton(self.tab_14)
         self.geraete_verwalten_aenderung_speichern_btn.setStyleSheet("QPushButton{\n"
 "   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
@@ -2742,7 +2615,118 @@ class Ui_MainWindow(object):
 "\n"
 "}")
         self.geraete_verwalten_aenderung_speichern_btn.setObjectName("geraete_verwalten_aenderung_speichern_btn")
-        self.gridLayout_31.addWidget(self.geraete_verwalten_aenderung_speichern_btn, 12, 1, 1, 1)
+        self.gridLayout_31.addWidget(self.geraete_verwalten_aenderung_speichern_btn, 13, 1, 1, 1)
+        self.label_61 = QtWidgets.QLabel(self.tab_14)
+        self.label_61.setObjectName("label_61")
+        self.gridLayout_31.addWidget(self.label_61, 8, 3, 1, 1)
+        self.mpg_geraete_tabelle = QtWidgets.QTableWidget(self.tab_14)
+        self.mpg_geraete_tabelle.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.mpg_geraete_tabelle.setStyleSheet("QTableView {\n"
+"border: 1px inset darkgrey;\n"
+"border-radius: 5px;\n"
+"padding: 0 8px;\n"
+"font-size: 13px;\n"
+"color: white;\n"
+"gridline-color: rgb(164, 164, 165);\n"
+"Background-color: rgb(164, 164, 165);\n"
+"\n"
+"}\n"
+"QHeaderView::section{\n"
+"\n"
+"border-style: none;\n"
+"Color: white;\n"
+"gridline-color: rgb(164, 164, 165);\n"
+"background-color: rgb(164, 164, 165);\n"
+"border-bottom: 1px inset black;\n"
+"\n"
+"}\n"
+"QTableView::item{\n"
+"border-bottom : 1px inset black;\n"
+"gridline-color: rgb(164, 164, 165);\n"
+"text-align: center;\n"
+"}")
+        self.mpg_geraete_tabelle.setObjectName("mpg_geraete_tabelle")
+        self.mpg_geraete_tabelle.setColumnCount(12)
+        self.mpg_geraete_tabelle.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.mpg_geraete_tabelle.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.mpg_geraete_tabelle.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.mpg_geraete_tabelle.setHorizontalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.mpg_geraete_tabelle.setHorizontalHeaderItem(3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.mpg_geraete_tabelle.setHorizontalHeaderItem(4, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.mpg_geraete_tabelle.setHorizontalHeaderItem(5, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.mpg_geraete_tabelle.setHorizontalHeaderItem(6, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.mpg_geraete_tabelle.setHorizontalHeaderItem(7, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.mpg_geraete_tabelle.setHorizontalHeaderItem(8, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.mpg_geraete_tabelle.setHorizontalHeaderItem(9, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.mpg_geraete_tabelle.setHorizontalHeaderItem(10, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.mpg_geraete_tabelle.setHorizontalHeaderItem(11, item)
+        self.mpg_geraete_tabelle.horizontalHeader().setCascadingSectionResizes(True)
+        self.mpg_geraete_tabelle.horizontalHeader().setStretchLastSection(True)
+        self.mpg_geraete_tabelle.verticalHeader().setVisible(False)
+        self.mpg_geraete_tabelle.verticalHeader().setCascadingSectionResizes(False)
+        self.mpg_geraete_tabelle.verticalHeader().setHighlightSections(False)
+        self.gridLayout_31.addWidget(self.mpg_geraete_tabelle, 12, 0, 1, 4)
+        self.label_57 = QtWidgets.QLabel(self.tab_14)
+        self.label_57.setObjectName("label_57")
+        self.gridLayout_31.addWidget(self.label_57, 4, 1, 1, 1)
+        self.label_83 = QtWidgets.QLabel(self.tab_14)
+        self.label_83.setObjectName("label_83")
+        self.gridLayout_31.addWidget(self.label_83, 2, 0, 1, 1)
+        self.geraete_verwalten_prueffrist = QtWidgets.QLineEdit(self.tab_14)
+        self.geraete_verwalten_prueffrist.setMaximumSize(QtCore.QSize(350, 16777215))
+        self.geraete_verwalten_prueffrist.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"border: 1px inset darkgrey;\n"
+"border-radius: 10px;\n"
+"padding: 0 8px;\n"
+"selection-background-color: darkgray;\n"
+"font-size: 13px;\n"
+"color: white;\n"
+"}\n"
+"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
+"")
+        self.geraete_verwalten_prueffrist.setInputMethodHints(QtCore.Qt.ImhNone)
+        self.geraete_verwalten_prueffrist.setObjectName("geraete_verwalten_prueffrist")
+        self.gridLayout_31.addWidget(self.geraete_verwalten_prueffrist, 6, 2, 1, 1)
+        self.label_62 = QtWidgets.QLabel(self.tab_14)
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.label_62.setFont(font)
+        self.label_62.setObjectName("label_62")
+        self.gridLayout_31.addWidget(self.label_62, 0, 0, 1, 1)
+        self.label_82 = QtWidgets.QLabel(self.tab_14)
+        self.label_82.setObjectName("label_82")
+        self.gridLayout_31.addWidget(self.label_82, 6, 1, 1, 1)
+        self.geraete_verwalten_pruefdatum = QtWidgets.QLineEdit(self.tab_14)
+        self.geraete_verwalten_pruefdatum.setMaximumSize(QtCore.QSize(350, 16777215))
+        self.geraete_verwalten_pruefdatum.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"border: 1px inset darkgrey;\n"
+"border-radius: 10px;\n"
+"padding: 0 8px;\n"
+"selection-background-color: darkgray;\n"
+"font-size: 13px;\n"
+"color: white;\n"
+"}\n"
+"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
+"")
+        self.geraete_verwalten_pruefdatum.setObjectName("geraete_verwalten_pruefdatum")
+        self.gridLayout_31.addWidget(self.geraete_verwalten_pruefdatum, 5, 2, 1, 1)
+        self.line_24 = QtWidgets.QFrame(self.tab_14)
+        self.line_24.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_24.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_24.setObjectName("line_24")
+        self.gridLayout_31.addWidget(self.line_24, 1, 0, 1, 1)
         self.geraete_verwalten_artikelnr = QtWidgets.QLineEdit(self.tab_14)
         self.geraete_verwalten_artikelnr.setMaximumSize(QtCore.QSize(350, 16777215))
         self.geraete_verwalten_artikelnr.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
@@ -2757,10 +2741,45 @@ class Ui_MainWindow(object):
 "\n"
 "")
         self.geraete_verwalten_artikelnr.setObjectName("geraete_verwalten_artikelnr")
-        self.gridLayout_31.addWidget(self.geraete_verwalten_artikelnr, 2, 2, 1, 1)
-        self.label_83 = QtWidgets.QLabel(self.tab_14)
-        self.label_83.setObjectName("label_83")
-        self.gridLayout_31.addWidget(self.label_83, 2, 0, 1, 1)
+        self.gridLayout_31.addWidget(self.geraete_verwalten_artikelnr, 7, 2, 1, 1)
+        self.geraet_label = QtWidgets.QLabel(self.tab_14)
+        self.geraet_label.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.geraet_label.setObjectName("geraet_label")
+        self.gridLayout_31.addWidget(self.geraet_label, 7, 3, 1, 1)
+        self.geraete_verwalten_bemerkung = QtWidgets.QLineEdit(self.tab_14)
+        self.geraete_verwalten_bemerkung.setMaximumSize(QtCore.QSize(350, 16777215))
+        self.geraete_verwalten_bemerkung.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"border: 1px inset darkgrey;\n"
+"border-radius: 10px;\n"
+"padding: 0 8px;\n"
+"selection-background-color: darkgray;\n"
+"font-size: 13px;\n"
+"color: white;\n"
+"}\n"
+"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
+"")
+        self.geraete_verwalten_bemerkung.setObjectName("geraete_verwalten_bemerkung")
+        self.gridLayout_31.addWidget(self.geraete_verwalten_bemerkung, 7, 0, 1, 1)
+        self.label_60 = QtWidgets.QLabel(self.tab_14)
+        self.label_60.setObjectName("label_60")
+        self.gridLayout_31.addWidget(self.label_60, 7, 1, 1, 1)
+        self.geraete_verwalten_anschaffung = QtWidgets.QLineEdit(self.tab_14)
+        self.geraete_verwalten_anschaffung.setMaximumSize(QtCore.QSize(350, 16777215))
+        self.geraete_verwalten_anschaffung.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"border: 1px inset darkgrey;\n"
+"border-radius: 10px;\n"
+"padding: 0 8px;\n"
+"selection-background-color: darkgray;\n"
+"font-size: 13px;\n"
+"color: white;\n"
+"}\n"
+"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
+"")
+        self.geraete_verwalten_anschaffung.setObjectName("geraete_verwalten_anschaffung")
+        self.gridLayout_31.addWidget(self.geraete_verwalten_anschaffung, 8, 0, 1, 1)
+        self.label_101 = QtWidgets.QLabel(self.tab_14)
+        self.label_101.setObjectName("label_101")
+        self.gridLayout_31.addWidget(self.label_101, 8, 1, 1, 1)
         self.gridLayout_22.addLayout(self.gridLayout_31, 2, 1, 1, 1)
         self.line_25 = QtWidgets.QFrame(self.tab_14)
         self.line_25.setFrameShape(QtWidgets.QFrame.HLine)
@@ -3194,19 +3213,6 @@ class Ui_MainWindow(object):
 "")
         self.einweisung_softwareversion_standard.setObjectName("einweisung_softwareversion_standard")
         self.gridLayout_27.addWidget(self.einweisung_softwareversion_standard, 5, 3, 1, 1)
-        self.einweisung_eingewiesener_standard = QtWidgets.QLineEdit(self.tab_15)
-        self.einweisung_eingewiesener_standard.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"border: 1px inset darkgrey;\n"
-"border-radius: 10px;\n"
-"padding: 0 8px;\n"
-"selection-background-color: darkgray;\n"
-"font-size: 13px;\n"
-"color: white;\n"
-"}\n"
-"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
-"")
-        self.einweisung_eingewiesener_standard.setObjectName("einweisung_eingewiesener_standard")
-        self.gridLayout_27.addWidget(self.einweisung_eingewiesener_standard, 7, 3, 1, 1)
         self.label_65 = QtWidgets.QLabel(self.tab_15)
         self.label_65.setObjectName("label_65")
         self.gridLayout_27.addWidget(self.label_65, 4, 1, 1, 1)
@@ -3388,19 +3394,6 @@ class Ui_MainWindow(object):
 "")
         self.einweisung_original_standard.setObjectName("einweisung_original_standard")
         self.gridLayout_27.addWidget(self.einweisung_original_standard, 9, 3, 1, 1)
-        self.einweisung_eingewiesener = QtWidgets.QLineEdit(self.tab_15)
-        self.einweisung_eingewiesener.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"border: 1px inset darkgrey;\n"
-"border-radius: 10px;\n"
-"padding: 0 8px;\n"
-"selection-background-color: darkgray;\n"
-"font-size: 13px;\n"
-"color: white;\n"
-"}\n"
-"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
-"")
-        self.einweisung_eingewiesener.setObjectName("einweisung_eingewiesener")
-        self.gridLayout_27.addWidget(self.einweisung_eingewiesener, 7, 0, 1, 1)
         self.einweisung_tabelle_filtern_geraet_combo = QtWidgets.QComboBox(self.tab_15)
         self.einweisung_tabelle_filtern_geraet_combo.setStyleSheet("QComboBox\n"
 "{\n"
@@ -3573,6 +3566,140 @@ class Ui_MainWindow(object):
         self.einweisung_tabelle_filtern_anzahl.setText("")
         self.einweisung_tabelle_filtern_anzahl.setObjectName("einweisung_tabelle_filtern_anzahl")
         self.gridLayout_27.addWidget(self.einweisung_tabelle_filtern_anzahl, 15, 1, 1, 1)
+        self.einweisung_ma_combo = QtWidgets.QComboBox(self.tab_15)
+        self.einweisung_ma_combo.setStyleSheet("QComboBox\n"
+"{\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: top right;\n"
+"    selection-background-color: #111;\n"
+"    selection-color: white;\n"
+"\n"
+"    background-color: #464646;\n"
+"    border-style: solid;\n"
+"    border: 1px solid #1e1e1e;\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"}\n"
+"\n"
+"\n"
+"QComboBox:hover, QPushButton:hover\n"
+"{\n"
+"    border: 1px solid teal;\n"
+"\n"
+"}\n"
+"\n"
+"QComboBox:editable {\n"
+"    background: red;\n"
+"    color: white;\n"
+"}\n"
+"\n"
+"QComboBox:on\n"
+"{\n"
+"    padding-top: 0px;\n"
+"    padding-left: 0px;\n"
+"\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
+"    selection-background-color: rgb(67, 131, 202);\n"
+"}\n"
+"\n"
+"QComboBox:!on\n"
+"{\n"
+"\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #666, stop: 0.1 #555, stop: 0.5 #555, stop: 0.9 #444, stop: 1 #333);\n"
+"}\n"
+"\n"
+"QComboBox QAbstractItemView\n"
+"{\n"
+"    border: 2px solid darkgray;\n"
+"    color: black;\n"
+"    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #333);\n"
+"}\n"
+"\n"
+"QComboBox::drop-down\n"
+"{\n"
+"     subcontrol-origin: padding;\n"
+"     subcontrol-position: top right;\n"
+"     width: 15px;\n"
+"\n"
+"     border-left-width: 1px;\n"
+"     border-left-color: darkgray;\n"
+"     border-left-style: solid; /* just a single line */\n"
+"     border-top-right-radius: 3px; /* same radius as the QComboBox */\n"
+"     border-bottom-right-radius: 3px;\n"
+"     padding-left: 10px;\n"
+" }\n"
+"\n"
+"\n"
+"")
+        self.einweisung_ma_combo.setObjectName("einweisung_ma_combo")
+        self.gridLayout_27.addWidget(self.einweisung_ma_combo, 7, 0, 1, 1)
+        self.einweisung_ma_standard_combo = QtWidgets.QComboBox(self.tab_15)
+        self.einweisung_ma_standard_combo.setStyleSheet("QComboBox\n"
+"{\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: top right;\n"
+"    selection-background-color: #111;\n"
+"    selection-color: white;\n"
+"\n"
+"    background-color: #464646;\n"
+"    border-style: solid;\n"
+"    border: 1px solid #1e1e1e;\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"}\n"
+"\n"
+"\n"
+"QComboBox:hover, QPushButton:hover\n"
+"{\n"
+"    border: 1px solid teal;\n"
+"\n"
+"}\n"
+"\n"
+"QComboBox:editable {\n"
+"    background: red;\n"
+"    color: white;\n"
+"}\n"
+"\n"
+"QComboBox:on\n"
+"{\n"
+"    padding-top: 0px;\n"
+"    padding-left: 0px;\n"
+"\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
+"    selection-background-color: rgb(67, 131, 202);\n"
+"}\n"
+"\n"
+"QComboBox:!on\n"
+"{\n"
+"\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #666, stop: 0.1 #555, stop: 0.5 #555, stop: 0.9 #444, stop: 1 #333);\n"
+"}\n"
+"\n"
+"QComboBox QAbstractItemView\n"
+"{\n"
+"    border: 2px solid darkgray;\n"
+"    color: black;\n"
+"    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #333);\n"
+"}\n"
+"\n"
+"QComboBox::drop-down\n"
+"{\n"
+"     subcontrol-origin: padding;\n"
+"     subcontrol-position: top right;\n"
+"     width: 15px;\n"
+"\n"
+"     border-left-width: 1px;\n"
+"     border-left-color: darkgray;\n"
+"     border-left-style: solid; /* just a single line */\n"
+"     border-top-right-radius: 3px; /* same radius as the QComboBox */\n"
+"     border-bottom-right-radius: 3px;\n"
+"     padding-left: 10px;\n"
+" }\n"
+"\n"
+"\n"
+"")
+        self.einweisung_ma_standard_combo.setObjectName("einweisung_ma_standard_combo")
+        self.gridLayout_27.addWidget(self.einweisung_ma_standard_combo, 7, 3, 1, 1)
         self.tabWidget_3.addTab(self.tab_15, "")
         self.tab_18 = QtWidgets.QWidget()
         self.tab_18.setObjectName("tab_18")
@@ -4203,6 +4330,246 @@ class Ui_MainWindow(object):
         self.admin_loeschen_speichern.setObjectName("admin_loeschen_speichern")
         self.gridLayout_25.addWidget(self.admin_loeschen_speichern, 7, 6, 1, 1)
         self.admin_bereich.addTab(self.tab_12, "")
+        self.tab_20 = QtWidgets.QWidget()
+        self.tab_20.setObjectName("tab_20")
+        self.gridLayout_35 = QtWidgets.QGridLayout(self.tab_20)
+        self.gridLayout_35.setObjectName("gridLayout_35")
+        self.ma_neu_vorname_text = QtWidgets.QLineEdit(self.tab_20)
+        self.ma_neu_vorname_text.setMaximumSize(QtCore.QSize(400, 16777215))
+        self.ma_neu_vorname_text.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"border: 1px inset darkgrey;\n"
+"border-radius: 10px;\n"
+"padding: 0 8px;\n"
+"selection-background-color: darkgray;\n"
+"font-size: 13px;\n"
+"color: white;\n"
+"}\n"
+"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
+"")
+        self.ma_neu_vorname_text.setObjectName("ma_neu_vorname_text")
+        self.gridLayout_35.addWidget(self.ma_neu_vorname_text, 4, 0, 1, 1)
+        self.ma_neu_nachname_text = QtWidgets.QLineEdit(self.tab_20)
+        self.ma_neu_nachname_text.setMaximumSize(QtCore.QSize(400, 16777215))
+        self.ma_neu_nachname_text.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"border: 1px inset darkgrey;\n"
+"border-radius: 10px;\n"
+"padding: 0 8px;\n"
+"selection-background-color: darkgray;\n"
+"font-size: 13px;\n"
+"color: white;\n"
+"}\n"
+"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
+"")
+        self.ma_neu_nachname_text.setObjectName("ma_neu_nachname_text")
+        self.gridLayout_35.addWidget(self.ma_neu_nachname_text, 5, 0, 1, 1)
+        self.line_38 = QtWidgets.QFrame(self.tab_20)
+        self.line_38.setFrameShape(QtWidgets.QFrame.VLine)
+        self.line_38.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_38.setObjectName("line_38")
+        self.gridLayout_35.addWidget(self.line_38, 4, 2, 3, 1)
+        self.label_104 = QtWidgets.QLabel(self.tab_20)
+        self.label_104.setObjectName("label_104")
+        self.gridLayout_35.addWidget(self.label_104, 5, 1, 1, 1)
+        self.line_37 = QtWidgets.QFrame(self.tab_20)
+        self.line_37.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_37.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_37.setObjectName("line_37")
+        self.gridLayout_35.addWidget(self.line_37, 3, 0, 1, 1)
+        self.label_103 = QtWidgets.QLabel(self.tab_20)
+        self.label_103.setMaximumSize(QtCore.QSize(100, 16777215))
+        self.label_103.setObjectName("label_103")
+        self.gridLayout_35.addWidget(self.label_103, 4, 1, 1, 1)
+        self.ma_neu_speichern_btn = QtWidgets.QPushButton(self.tab_20)
+        self.ma_neu_speichern_btn.setStyleSheet("QPushButton{\n"
+"   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"      border-style: solid;\n"
+"    border: 1px solid #1e1e1e;\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"    font: 13px;\n"
+"    min-width: 10em;\n"
+"    padding: 5px;\n"
+"    color: white;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"      border-style: solid;\n"
+"    border: 1px solid rgb(59, 204, 179);\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"    font: 13px;\n"
+"    min-width: 10em;\n"
+"    padding: 5px;\n"
+"    color: white;\n"
+"}\n"
+"QPushButton:pressed {\n"
+"background-color: rgb(130, 152, 152);\n"
+"      border-style: solid;\n"
+"    border: 1px solid #1EFFFF;\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"    font: 13px;\n"
+"    min-width: 10em;\n"
+"    padding: 5px;\n"
+"    color: white;\n"
+"\n"
+"}")
+        self.ma_neu_speichern_btn.setObjectName("ma_neu_speichern_btn")
+        self.gridLayout_35.addWidget(self.ma_neu_speichern_btn, 6, 0, 1, 1)
+        self.label_102 = QtWidgets.QLabel(self.tab_20)
+        self.label_102.setObjectName("label_102")
+        self.gridLayout_35.addWidget(self.label_102, 0, 0, 1, 1)
+        self.ma_loeschen_combo = QtWidgets.QComboBox(self.tab_20)
+        self.ma_loeschen_combo.setStyleSheet("QComboBox\n"
+"{\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: top right;\n"
+"    selection-background-color: #111;\n"
+"    selection-color: white;\n"
+"\n"
+"    background-color: #464646;\n"
+"    border-style: solid;\n"
+"    border: 1px solid #1e1e1e;\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"}\n"
+"\n"
+"\n"
+"QComboBox:hover, QPushButton:hover\n"
+"{\n"
+"    border: 1px solid teal;\n"
+"\n"
+"}\n"
+"\n"
+"QComboBox:editable {\n"
+"    background: red;\n"
+"    color: white;\n"
+"}\n"
+"\n"
+"QComboBox:on\n"
+"{\n"
+"    padding-top: 0px;\n"
+"    padding-left: 0px;\n"
+"\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
+"    selection-background-color: rgb(67, 131, 202);\n"
+"}\n"
+"\n"
+"QComboBox:!on\n"
+"{\n"
+"\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #666, stop: 0.1 #555, stop: 0.5 #555, stop: 0.9 #444, stop: 1 #333);\n"
+"}\n"
+"\n"
+"QComboBox QAbstractItemView\n"
+"{\n"
+"    border: 2px solid darkgray;\n"
+"    color: black;\n"
+"    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #333);\n"
+"}\n"
+"\n"
+"QComboBox::drop-down\n"
+"{\n"
+"     subcontrol-origin: padding;\n"
+"     subcontrol-position: top right;\n"
+"     width: 15px;\n"
+"\n"
+"     border-left-width: 1px;\n"
+"     border-left-color: darkgray;\n"
+"     border-left-style: solid; /* just a single line */\n"
+"     border-top-right-radius: 3px; /* same radius as the QComboBox */\n"
+"     border-bottom-right-radius: 3px;\n"
+"     padding-left: 10px;\n"
+" }\n"
+"\n"
+"\n"
+"")
+        self.ma_loeschen_combo.setObjectName("ma_loeschen_combo")
+        self.gridLayout_35.addWidget(self.ma_loeschen_combo, 4, 3, 1, 1)
+        self.ma_loeschen_btn = QtWidgets.QPushButton(self.tab_20)
+        self.ma_loeschen_btn.setStyleSheet("QPushButton{\n"
+"   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"      border-style: solid;\n"
+"    border: 1px solid #1e1e1e;\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"    font: 13px;\n"
+"    min-width: 10em;\n"
+"    padding: 5px;\n"
+"    color: white;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"      border-style: solid;\n"
+"    border: 1px solid rgb(59, 204, 179);\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"    font: 13px;\n"
+"    min-width: 10em;\n"
+"    padding: 5px;\n"
+"    color: white;\n"
+"}\n"
+"QPushButton:pressed {\n"
+"background-color: rgb(130, 152, 152);\n"
+"      border-style: solid;\n"
+"    border: 1px solid #1EFFFF;\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"    font: 13px;\n"
+"    min-width: 10em;\n"
+"    padding: 5px;\n"
+"    color: white;\n"
+"\n"
+"}")
+        self.ma_loeschen_btn.setObjectName("ma_loeschen_btn")
+        self.gridLayout_35.addWidget(self.ma_loeschen_btn, 5, 3, 1, 1)
+        self.line_39 = QtWidgets.QFrame(self.tab_20)
+        self.line_39.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_39.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_39.setObjectName("line_39")
+        self.gridLayout_35.addWidget(self.line_39, 3, 3, 1, 1)
+        self.label_105 = QtWidgets.QLabel(self.tab_20)
+        self.label_105.setObjectName("label_105")
+        self.gridLayout_35.addWidget(self.label_105, 0, 3, 1, 1)
+        self.ma_tabelle = QtWidgets.QTableWidget(self.tab_20)
+        self.ma_tabelle.setStyleSheet("QTableView {\n"
+"border: 1px inset darkgrey;\n"
+"border-radius: 5px;\n"
+"padding: 0 8px;\n"
+"font-size: 13px;\n"
+"color: white;\n"
+"gridline-color: rgb(164, 164, 165);\n"
+"Background-color: rgb(164, 164, 165);\n"
+"\n"
+"}\n"
+"QHeaderView::section{\n"
+"\n"
+"border-style: none;\n"
+"Color: white;\n"
+"gridline-color: rgb(164, 164, 165);\n"
+"background-color: rgb(164, 164, 165);\n"
+"border-bottom: 1px inset black;\n"
+"\n"
+"}\n"
+"QTableView::item{\n"
+"border-bottom : 1px inset black;\n"
+"gridline-color: rgb(164, 164, 165);\n"
+"text-align: center;\n"
+"}")
+        self.ma_tabelle.setObjectName("ma_tabelle")
+        self.ma_tabelle.setColumnCount(3)
+        self.ma_tabelle.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.ma_tabelle.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.ma_tabelle.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.ma_tabelle.setHorizontalHeaderItem(2, item)
+        self.ma_tabelle.horizontalHeader().setCascadingSectionResizes(True)
+        self.ma_tabelle.horizontalHeader().setStretchLastSection(True)
+        self.ma_tabelle.verticalHeader().setVisible(False)
+        self.gridLayout_35.addWidget(self.ma_tabelle, 7, 0, 1, 4)
+        self.admin_bereich.addTab(self.tab_20, "")
         self.tab_8 = QtWidgets.QWidget()
         self.tab_8.setObjectName("tab_8")
         self.gridLayout_19 = QtWidgets.QGridLayout(self.tab_8)
@@ -4386,9 +4753,9 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.tabWidget.setCurrentIndex(5)
-        self.admin_bereich.setCurrentIndex(4)
+        self.admin_bereich.setCurrentIndex(2)
         self.tabWidget_2.setCurrentIndex(2)
-        self.tabWidget_3.setCurrentIndex(0)
+        self.tabWidget_3.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.admin_text_ben, self.admin_text_pw)
         MainWindow.setTabOrder(self.admin_text_pw, self.tabWidget)
@@ -4456,8 +4823,7 @@ class Ui_MainWindow(object):
         MainWindow.setTabOrder(self.verwertet_tabelle, self.einweisung_geraete_combo)
         MainWindow.setTabOrder(self.einweisung_geraete_combo, self.einweisung_softwareversion)
         MainWindow.setTabOrder(self.einweisung_softwareversion, self.einweisung_datum)
-        MainWindow.setTabOrder(self.einweisung_datum, self.einweisung_eingewiesener)
-        MainWindow.setTabOrder(self.einweisung_eingewiesener, self.einweisung_einweisender)
+        MainWindow.setTabOrder(self.einweisung_datum, self.einweisung_einweisender)
         MainWindow.setTabOrder(self.einweisung_einweisender, self.einweisung_original)
         MainWindow.setTabOrder(self.einweisung_original, self.einweisung_speichern_btn)
         MainWindow.setTabOrder(self.einweisung_speichern_btn, self.einweisung_tabelle)
@@ -4466,8 +4832,7 @@ class Ui_MainWindow(object):
         MainWindow.setTabOrder(self.einweisung_tabelle_filtern_software_combo, self.einweisung_geraete_combo_standard)
         MainWindow.setTabOrder(self.einweisung_geraete_combo_standard, self.einweisung_softwareversion_standard)
         MainWindow.setTabOrder(self.einweisung_softwareversion_standard, self.einweisung_datum_standard)
-        MainWindow.setTabOrder(self.einweisung_datum_standard, self.einweisung_eingewiesener_standard)
-        MainWindow.setTabOrder(self.einweisung_eingewiesener_standard, self.einweisung_einweisender_standard)
+        MainWindow.setTabOrder(self.einweisung_datum_standard, self.einweisung_einweisender_standard)
         MainWindow.setTabOrder(self.einweisung_einweisender_standard, self.einweisung_original_standard)
         MainWindow.setTabOrder(self.einweisung_original_standard, self.einweisung_standardwerte_loeschen_btn)
         MainWindow.setTabOrder(self.einweisung_standardwerte_loeschen_btn, self.mpg_standort_text)
@@ -4500,8 +4865,7 @@ class Ui_MainWindow(object):
         MainWindow.setTabOrder(self.geraete_verwalten_speichern_button, self.geraete_verwalten_geraet)
         MainWindow.setTabOrder(self.geraete_verwalten_geraet, self.geraete_verwalten_inventarnummer)
         MainWindow.setTabOrder(self.geraete_verwalten_inventarnummer, self.geraete_verwalten_ce)
-        MainWindow.setTabOrder(self.geraete_verwalten_ce, self.geraete_verwalten_bemerkung)
-        MainWindow.setTabOrder(self.geraete_verwalten_bemerkung, self.geraete_verwalten_geraetenummer)
+        MainWindow.setTabOrder(self.geraete_verwalten_ce, self.geraete_verwalten_geraetenummer)
         MainWindow.setTabOrder(self.geraete_verwalten_geraetenummer, self.mpg_geraete_tabelle)
         MainWindow.setTabOrder(self.mpg_geraete_tabelle, self.geraete_verwalten_pruefdatum)
         MainWindow.setTabOrder(self.geraete_verwalten_pruefdatum, self.geraete_verwalten_prueffrist)
@@ -4669,10 +5033,14 @@ class Ui_MainWindow(object):
         self.label_34.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Ort des Fahrzeuges</span></p></body></html>"))
         self.fahrzeug_admin_save_btn.setText(_translate("MainWindow", "Speichern"))
         self.admin_bereich.setTabText(self.admin_bereich.indexOf(self.tab_7), _translate("MainWindow", "Fahrzeuge"))
+        self.label_59.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Prüffrist in Monaten</span></p></body></html>"))
+        self.label_56.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Seriennummer</span></p></body></html>"))
+        self.label_58.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">letzte Prüfung</span></p></body></html>"))
+        self.geraete_verwalten_speichern_button.setText(_translate("MainWindow", "Speichern"))
         self.label_63.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Geräte</span></p></body></html>"))
-        self.geraet_label.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Artikel Nr.</span></p><p><br/></p></body></html>"))
         self.label_55.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Gerät</span></p></body></html>"))
-        self.label_62.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Geräte Verwalten</span></p></body></html>"))
+        self.geraete_verwalten_aenderung_speichern_btn.setText(_translate("MainWindow", "Änderungen Speichern"))
+        self.label_61.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Standort</span></p></body></html>"))
         self.mpg_geraete_tabelle.setSortingEnabled(True)
         item = self.mpg_geraete_tabelle.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "id"))
@@ -4687,25 +5055,24 @@ class Ui_MainWindow(object):
         item = self.mpg_geraete_tabelle.horizontalHeaderItem(5)
         item.setText(_translate("MainWindow", "Bemerkung"))
         item = self.mpg_geraete_tabelle.horizontalHeaderItem(6)
-        item.setText(_translate("MainWindow", "Prüfdatum"))
+        item.setText(_translate("MainWindow", "Anschaffungsdatum"))
         item = self.mpg_geraete_tabelle.horizontalHeaderItem(7)
-        item.setText(_translate("MainWindow", "Prüffrist"))
+        item.setText(_translate("MainWindow", "Prüfdatum"))
         item = self.mpg_geraete_tabelle.horizontalHeaderItem(8)
-        item.setText(_translate("MainWindow", "Nächste Prüfung"))
+        item.setText(_translate("MainWindow", "Prüffrist"))
         item = self.mpg_geraete_tabelle.horizontalHeaderItem(9)
-        item.setText(_translate("MainWindow", "Standort"))
+        item.setText(_translate("MainWindow", "Nächste Prüfung"))
         item = self.mpg_geraete_tabelle.horizontalHeaderItem(10)
+        item.setText(_translate("MainWindow", "Standort"))
+        item = self.mpg_geraete_tabelle.horizontalHeaderItem(11)
         item.setText(_translate("MainWindow", "Artikel Nr."))
-        self.label_60.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Bemerkung</span></p></body></html>"))
-        self.label_61.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Standort</span></p></body></html>"))
-        self.label_56.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Seriennummer</span></p></body></html>"))
         self.label_57.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Inventarnummer</span></p></body></html>"))
-        self.label_59.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Prüffrist in Monaten</span></p></body></html>"))
-        self.label_82.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">CE Kennung</span></p></body></html>"))
-        self.geraete_verwalten_speichern_button.setText(_translate("MainWindow", "Speichern"))
-        self.label_58.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">letzte Prüfung</span></p></body></html>"))
-        self.geraete_verwalten_aenderung_speichern_btn.setText(_translate("MainWindow", "Änderungen Speichern"))
         self.label_83.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600; color:#ffffff;\">Neues Gerät anlegen</span></p></body></html>"))
+        self.label_62.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Geräte Verwalten</span></p></body></html>"))
+        self.label_82.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">CE Kennung</span></p></body></html>"))
+        self.geraet_label.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Artikel Nr.</span></p><p><br/></p></body></html>"))
+        self.label_60.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Bemerkung</span></p></body></html>"))
+        self.label_101.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Anschaffungsdatum</span></p></body></html>"))
         self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_14), _translate("MainWindow", "Geräte"))
         self.label_81.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Datum</span></p></body></html>"))
         self.verwertet_speichern_button.setText(_translate("MainWindow", "Speichern"))
@@ -4779,6 +5146,19 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "Name"))
         self.admin_loeschen_speichern.setText(_translate("MainWindow", "Speichern"))
         self.admin_bereich.setTabText(self.admin_bereich.indexOf(self.tab_12), _translate("MainWindow", "Admin Accounts"))
+        self.label_104.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Nachname</span></p></body></html>"))
+        self.label_103.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Vorname</span></p></body></html>"))
+        self.ma_neu_speichern_btn.setText(_translate("MainWindow", "Speichern"))
+        self.label_102.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Mitarbeiter anlegen</span></p></body></html>"))
+        self.ma_loeschen_btn.setText(_translate("MainWindow", "Löschen"))
+        self.label_105.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Mitarbeiter Löschen</span></p></body></html>"))
+        item = self.ma_tabelle.horizontalHeaderItem(0)
+        item.setText(_translate("MainWindow", "id"))
+        item = self.ma_tabelle.horizontalHeaderItem(1)
+        item.setText(_translate("MainWindow", "Vorname"))
+        item = self.ma_tabelle.horizontalHeaderItem(2)
+        item.setText(_translate("MainWindow", "Nachname"))
+        self.admin_bereich.setTabText(self.admin_bereich.indexOf(self.tab_20), _translate("MainWindow", "Mitarbeiter"))
         self.pushButton.setText(_translate("MainWindow", "Abbrechen"))
         self.check_uebersicht.setText(_translate("MainWindow", "Übersicht"))
         self.check_lager.setText(_translate("MainWindow", "Lagerverwaltung"))

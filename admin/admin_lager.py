@@ -83,11 +83,11 @@ class Admin_Lager():
                     status = QtWidgets.QTableWidgetItem("Bestand zu gering")
                     status.setTextAlignment(Qt.AlignCenter)
 
+
                 else:
-                    if liste[i][8] == "Bestand zu gering":
-                        status = "Bestand zu gering"
-                    status = QtWidgets.QTableWidgetItem(str(liste[i][8]))
-                    status.setTextAlignment(Qt.AlignCenter)
+                    status = "Bestand zu gering"
+                status = QtWidgets.QTableWidgetItem(str(liste[i][8]))
+                status.setTextAlignment(Qt.AlignCenter)
 
                 produkt = QtWidgets.QTableWidgetItem(liste[i][1])
                 produkt.setTextAlignment(Qt.AlignCenter)

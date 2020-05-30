@@ -23,8 +23,6 @@ class Mpg_User():
                 pass
             else:
                 liste_der_eintraege.append(standorte[element][0])
-        wachen = self.data.wachen_abfragen()
-        
         self.ui.mpg_Fahrzeuge_combo.addItems(liste_der_eintraege)
 
     def geraete_fahrzeug_tabelle_fuellen(self):
@@ -79,6 +77,8 @@ class Mpg_User():
             neue_bemerkung = bemerkung_datenbank + "; " + bemerkung
 
         self.data.update_standort_von_geraet(neuer_standort, inventarnummer, neue_bemerkung)
+        self.ui.mpg_user_geraete_barcode.setText("")
+        self.ui.mpg_user_bemerkung.setText("")
         self.update()
 
     def fahrzeug_combo_erneut_fuellen(self):
