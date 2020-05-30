@@ -90,6 +90,12 @@ class Mpg_Data():
         self.c.execute(sql, params)
         return self.c.fetchall()
 
+    def einweisungs_daten_gefiltert_ma(self, ma):
+        params = (ma, )
+        sql = "SELECT * FROM mpg_einweisungen WHERE eingewiesener = ?"
+        self.c.execute(sql, params)
+        return self.c.fetchall()
+
     def einweisungs_daten_gefiltert_software(self, geraet, software):
         params = (geraet, software)
         sql = "SELECT * FROM mpg_einweisungen WHERE geraet = ? AND softwareversion = ?"

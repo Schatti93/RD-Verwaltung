@@ -2992,17 +2992,13 @@ class Ui_MainWindow(object):
         self.tab_15.setObjectName("tab_15")
         self.gridLayout_27 = QtWidgets.QGridLayout(self.tab_15)
         self.gridLayout_27.setObjectName("gridLayout_27")
-        self.line_28 = QtWidgets.QFrame(self.tab_15)
-        self.line_28.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line_28.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line_28.setObjectName("line_28")
-        self.gridLayout_27.addWidget(self.line_28, 3, 3, 1, 1)
-        self.label_86 = QtWidgets.QLabel(self.tab_15)
-        self.label_86.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_86.setObjectName("label_86")
-        self.gridLayout_27.addWidget(self.label_86, 15, 0, 1, 1)
-        self.einweisung_original = QtWidgets.QLineEdit(self.tab_15)
-        self.einweisung_original.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.line_26 = QtWidgets.QFrame(self.tab_15)
+        self.line_26.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_26.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_26.setObjectName("line_26")
+        self.gridLayout_27.addWidget(self.line_26, 3, 0, 1, 1)
+        self.einweisung_einweisender_standard = QtWidgets.QLineEdit(self.tab_15)
+        self.einweisung_einweisender_standard.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -3012,123 +3008,25 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
-        self.einweisung_original.setObjectName("einweisung_original")
-        self.gridLayout_27.addWidget(self.einweisung_original, 9, 0, 1, 1)
-        self.label_72 = QtWidgets.QLabel(self.tab_15)
-        self.label_72.setObjectName("label_72")
-        self.gridLayout_27.addWidget(self.label_72, 4, 4, 1, 1)
-        self.einweisung_geraete_combo_standard = QtWidgets.QComboBox(self.tab_15)
-        self.einweisung_geraete_combo_standard.setStyleSheet("QComboBox\n"
-"{\n"
-"    subcontrol-origin: padding;\n"
-"    subcontrol-position: top right;\n"
-"    selection-background-color: #111;\n"
-"    selection-color: white;\n"
-"\n"
-"    background-color: #464646;\n"
-"    border-style: solid;\n"
-"    border: 1px solid #1e1e1e;\n"
-"    border-radius: 5;\n"
-"    padding: 1px 0px 1px 20px;\n"
-"}\n"
-"\n"
-"\n"
-"QComboBox:hover, QPushButton:hover\n"
-"{\n"
-"    border: 1px solid teal;\n"
-"\n"
-"}\n"
-"\n"
-"QComboBox:editable {\n"
-"    background: red;\n"
-"    color: white;\n"
-"}\n"
-"\n"
-"QComboBox:on\n"
-"{\n"
-"    padding-top: 0px;\n"
-"    padding-left: 0px;\n"
-"\n"
-"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
-"    selection-background-color: rgb(67, 131, 202);\n"
-"}\n"
-"\n"
-"QComboBox:!on\n"
-"{\n"
-"\n"
-"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #666, stop: 0.1 #555, stop: 0.5 #555, stop: 0.9 #444, stop: 1 #333);\n"
-"}\n"
-"\n"
-"QComboBox QAbstractItemView\n"
-"{\n"
-"    border: 2px solid darkgray;\n"
-"    color: black;\n"
-"    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #333);\n"
-"}\n"
-"\n"
-"QComboBox::drop-down\n"
-"{\n"
-"     subcontrol-origin: padding;\n"
-"     subcontrol-position: top right;\n"
-"     width: 15px;\n"
-"\n"
-"     border-left-width: 1px;\n"
-"     border-left-color: darkgray;\n"
-"     border-left-style: solid; /* just a single line */\n"
-"     border-top-right-radius: 3px; /* same radius as the QComboBox */\n"
-"     border-bottom-right-radius: 3px;\n"
-"     padding-left: 10px;\n"
-" }\n"
-"\n"
-"\n"
-"")
-        self.einweisung_geraete_combo_standard.setObjectName("einweisung_geraete_combo_standard")
-        self.gridLayout_27.addWidget(self.einweisung_geraete_combo_standard, 4, 3, 1, 1)
+        self.einweisung_einweisender_standard.setObjectName("einweisung_einweisender_standard")
+        self.gridLayout_27.addWidget(self.einweisung_einweisender_standard, 8, 3, 1, 1)
+        self.label_78 = QtWidgets.QLabel(self.tab_15)
+        self.label_78.setObjectName("label_78")
+        self.gridLayout_27.addWidget(self.label_78, 11, 3, 1, 1)
         self.label_66 = QtWidgets.QLabel(self.tab_15)
         self.label_66.setObjectName("label_66")
         self.gridLayout_27.addWidget(self.label_66, 5, 1, 1, 1)
-        self.einweisung_standardwerte_loeschen_btn = QtWidgets.QPushButton(self.tab_15)
-        self.einweisung_standardwerte_loeschen_btn.setStyleSheet("QPushButton{\n"
-"   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"      border-style: solid;\n"
-"    border: 1px solid #1e1e1e;\n"
-"    border-radius: 5;\n"
-"    padding: 1px 0px 1px 20px;\n"
-"    font: 13px;\n"
-"    min-width: 10em;\n"
-"    padding: 5px;\n"
-"    color: white;\n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"      border-style: solid;\n"
-"    border: 1px solid rgb(59, 204, 179);\n"
-"    border-radius: 5;\n"
-"    padding: 1px 0px 1px 20px;\n"
-"    font: 13px;\n"
-"    min-width: 10em;\n"
-"    padding: 5px;\n"
-"    color: white;\n"
-"}\n"
-"QPushButton:pressed {\n"
-"background-color: rgb(130, 152, 152);\n"
-"      border-style: solid;\n"
-"    border: 1px solid #1EFFFF;\n"
-"    border-radius: 5;\n"
-"    padding: 1px 0px 1px 20px;\n"
-"    font: 13px;\n"
-"    min-width: 10em;\n"
-"    padding: 5px;\n"
-"    color: white;\n"
-"\n"
-"}")
-        self.einweisung_standardwerte_loeschen_btn.setObjectName("einweisung_standardwerte_loeschen_btn")
-        self.gridLayout_27.addWidget(self.einweisung_standardwerte_loeschen_btn, 10, 3, 1, 1)
-        self.label_68 = QtWidgets.QLabel(self.tab_15)
-        self.label_68.setObjectName("label_68")
-        self.gridLayout_27.addWidget(self.label_68, 7, 1, 1, 1)
-        self.einweisung_datum_standard = QtWidgets.QLineEdit(self.tab_15)
-        self.einweisung_datum_standard.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.label_77 = QtWidgets.QLabel(self.tab_15)
+        self.label_77.setObjectName("label_77")
+        self.gridLayout_27.addWidget(self.label_77, 9, 4, 1, 1)
+        self.label_74 = QtWidgets.QLabel(self.tab_15)
+        self.label_74.setObjectName("label_74")
+        self.gridLayout_27.addWidget(self.label_74, 6, 4, 1, 1)
+        self.label_87 = QtWidgets.QLabel(self.tab_15)
+        self.label_87.setObjectName("label_87")
+        self.gridLayout_27.addWidget(self.label_87, 13, 0, 1, 1)
+        self.einweisung_original_standard = QtWidgets.QLineEdit(self.tab_15)
+        self.einweisung_original_standard.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -3138,164 +3036,14 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
-        self.einweisung_datum_standard.setObjectName("einweisung_datum_standard")
-        self.gridLayout_27.addWidget(self.einweisung_datum_standard, 6, 3, 1, 1)
-        self.label_73 = QtWidgets.QLabel(self.tab_15)
-        self.label_73.setObjectName("label_73")
-        self.gridLayout_27.addWidget(self.label_73, 5, 4, 1, 1)
-        self.label_85 = QtWidgets.QLabel(self.tab_15)
-        self.label_85.setObjectName("label_85")
-        self.gridLayout_27.addWidget(self.label_85, 14, 4, 1, 1)
-        self.einweisung_tabelle = QtWidgets.QTableWidget(self.tab_15)
-        self.einweisung_tabelle.setStyleSheet("QTableView {\n"
-"border: 1px inset darkgrey;\n"
-"border-radius: 5px;\n"
-"padding: 0 8px;\n"
-"font-size: 13px;\n"
-"color: white;\n"
-"gridline-color: rgb(164, 164, 165);\n"
-"Background-color: rgb(164, 164, 165);\n"
-"\n"
-"}\n"
-"QHeaderView::section{\n"
-"\n"
-"border-style: none;\n"
-"Color: white;\n"
-"gridline-color: rgb(164, 164, 165);\n"
-"background-color: rgb(164, 164, 165);\n"
-"border-bottom: 1px inset black;\n"
-"\n"
-"}\n"
-"QTableView::item{\n"
-"border-bottom : 1px inset black;\n"
-"gridline-color: rgb(164, 164, 165);\n"
-"text-align: center;\n"
-"}")
-        self.einweisung_tabelle.setObjectName("einweisung_tabelle")
-        self.einweisung_tabelle.setColumnCount(6)
-        self.einweisung_tabelle.setRowCount(0)
-        item = QtWidgets.QTableWidgetItem()
-        self.einweisung_tabelle.setHorizontalHeaderItem(0, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.einweisung_tabelle.setHorizontalHeaderItem(1, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.einweisung_tabelle.setHorizontalHeaderItem(2, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.einweisung_tabelle.setHorizontalHeaderItem(3, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.einweisung_tabelle.setHorizontalHeaderItem(4, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.einweisung_tabelle.setHorizontalHeaderItem(5, item)
-        self.einweisung_tabelle.horizontalHeader().setCascadingSectionResizes(True)
-        self.einweisung_tabelle.horizontalHeader().setStretchLastSection(True)
-        self.einweisung_tabelle.verticalHeader().setVisible(False)
-        self.einweisung_tabelle.verticalHeader().setHighlightSections(True)
-        self.gridLayout_27.addWidget(self.einweisung_tabelle, 12, 0, 1, 5)
-        self.label_69 = QtWidgets.QLabel(self.tab_15)
-        self.label_69.setObjectName("label_69")
-        self.gridLayout_27.addWidget(self.label_69, 8, 1, 1, 1)
-        self.label_84 = QtWidgets.QLabel(self.tab_15)
-        self.label_84.setObjectName("label_84")
-        self.gridLayout_27.addWidget(self.label_84, 14, 1, 1, 1)
-        self.label_70 = QtWidgets.QLabel(self.tab_15)
-        self.label_70.setObjectName("label_70")
-        self.gridLayout_27.addWidget(self.label_70, 9, 1, 1, 1)
-        self.einweisung_softwareversion_standard = QtWidgets.QLineEdit(self.tab_15)
-        self.einweisung_softwareversion_standard.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"border: 1px inset darkgrey;\n"
-"border-radius: 10px;\n"
-"padding: 0 8px;\n"
-"selection-background-color: darkgray;\n"
-"font-size: 13px;\n"
-"color: white;\n"
-"}\n"
-"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
-"")
-        self.einweisung_softwareversion_standard.setObjectName("einweisung_softwareversion_standard")
-        self.gridLayout_27.addWidget(self.einweisung_softwareversion_standard, 5, 3, 1, 1)
-        self.label_65 = QtWidgets.QLabel(self.tab_15)
-        self.label_65.setObjectName("label_65")
-        self.gridLayout_27.addWidget(self.label_65, 4, 1, 1, 1)
-        self.einweisung_softwareversion = QtWidgets.QLineEdit(self.tab_15)
-        self.einweisung_softwareversion.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"border: 1px inset darkgrey;\n"
-"border-radius: 10px;\n"
-"padding: 0 8px;\n"
-"selection-background-color: darkgray;\n"
-"font-size: 13px;\n"
-"color: white;\n"
-"}\n"
-"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
-"")
-        self.einweisung_softwareversion.setObjectName("einweisung_softwareversion")
-        self.gridLayout_27.addWidget(self.einweisung_softwareversion, 5, 0, 1, 1)
-        self.einweisung_tabelle_filtern_software_combo = QtWidgets.QComboBox(self.tab_15)
-        self.einweisung_tabelle_filtern_software_combo.setStyleSheet("QComboBox\n"
-"{\n"
-"    subcontrol-origin: padding;\n"
-"    subcontrol-position: top right;\n"
-"    selection-background-color: #111;\n"
-"    selection-color: white;\n"
-"\n"
-"    background-color: #464646;\n"
-"    border-style: solid;\n"
-"    border: 1px solid #1e1e1e;\n"
-"    border-radius: 5;\n"
-"    padding: 1px 0px 1px 20px;\n"
-"}\n"
-"\n"
-"\n"
-"QComboBox:hover, QPushButton:hover\n"
-"{\n"
-"    border: 1px solid teal;\n"
-"\n"
-"}\n"
-"\n"
-"QComboBox:editable {\n"
-"    background: red;\n"
-"    color: white;\n"
-"}\n"
-"\n"
-"QComboBox:on\n"
-"{\n"
-"    padding-top: 0px;\n"
-"    padding-left: 0px;\n"
-"\n"
-"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
-"    selection-background-color: rgb(67, 131, 202);\n"
-"}\n"
-"\n"
-"QComboBox:!on\n"
-"{\n"
-"\n"
-"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #666, stop: 0.1 #555, stop: 0.5 #555, stop: 0.9 #444, stop: 1 #333);\n"
-"}\n"
-"\n"
-"QComboBox QAbstractItemView\n"
-"{\n"
-"    border: 2px solid darkgray;\n"
-"    color: black;\n"
-"    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #333);\n"
-"}\n"
-"\n"
-"QComboBox::drop-down\n"
-"{\n"
-"     subcontrol-origin: padding;\n"
-"     subcontrol-position: top right;\n"
-"     width: 15px;\n"
-"\n"
-"     border-left-width: 1px;\n"
-"     border-left-color: darkgray;\n"
-"     border-left-style: solid; /* just a single line */\n"
-"     border-top-right-radius: 3px; /* same radius as the QComboBox */\n"
-"     border-bottom-right-radius: 3px;\n"
-"     padding-left: 10px;\n"
-" }\n"
-"\n"
-"\n"
-"")
-        self.einweisung_tabelle_filtern_software_combo.setObjectName("einweisung_tabelle_filtern_software_combo")
-        self.gridLayout_27.addWidget(self.einweisung_tabelle_filtern_software_combo, 14, 3, 1, 1)
+        self.einweisung_original_standard.setObjectName("einweisung_original_standard")
+        self.gridLayout_27.addWidget(self.einweisung_original_standard, 9, 3, 1, 1)
+        self.label_75 = QtWidgets.QLabel(self.tab_15)
+        self.label_75.setObjectName("label_75")
+        self.gridLayout_27.addWidget(self.label_75, 7, 4, 1, 1)
+        self.label_67 = QtWidgets.QLabel(self.tab_15)
+        self.label_67.setObjectName("label_67")
+        self.gridLayout_27.addWidget(self.label_67, 6, 1, 1, 1)
         self.einweisung_speichern_btn = QtWidgets.QPushButton(self.tab_15)
         self.einweisung_speichern_btn.setStyleSheet("QPushButton{\n"
 "   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
@@ -3333,239 +3081,6 @@ class Ui_MainWindow(object):
 "}")
         self.einweisung_speichern_btn.setObjectName("einweisung_speichern_btn")
         self.gridLayout_27.addWidget(self.einweisung_speichern_btn, 10, 0, 1, 1)
-        self.label_77 = QtWidgets.QLabel(self.tab_15)
-        self.label_77.setObjectName("label_77")
-        self.gridLayout_27.addWidget(self.label_77, 9, 4, 1, 1)
-        self.line_27 = QtWidgets.QFrame(self.tab_15)
-        self.line_27.setFrameShape(QtWidgets.QFrame.VLine)
-        self.line_27.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line_27.setObjectName("line_27")
-        self.gridLayout_27.addWidget(self.line_27, 3, 2, 8, 1)
-        self.label_67 = QtWidgets.QLabel(self.tab_15)
-        self.label_67.setObjectName("label_67")
-        self.gridLayout_27.addWidget(self.label_67, 6, 1, 1, 1)
-        self.einweisung_einweisender = QtWidgets.QLineEdit(self.tab_15)
-        self.einweisung_einweisender.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"border: 1px inset darkgrey;\n"
-"border-radius: 10px;\n"
-"padding: 0 8px;\n"
-"selection-background-color: darkgray;\n"
-"font-size: 13px;\n"
-"color: white;\n"
-"}\n"
-"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
-"")
-        self.einweisung_einweisender.setObjectName("einweisung_einweisender")
-        self.gridLayout_27.addWidget(self.einweisung_einweisender, 8, 0, 1, 1)
-        self.line_26 = QtWidgets.QFrame(self.tab_15)
-        self.line_26.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line_26.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line_26.setObjectName("line_26")
-        self.gridLayout_27.addWidget(self.line_26, 3, 0, 1, 1)
-        self.einweisung_einweisender_standard = QtWidgets.QLineEdit(self.tab_15)
-        self.einweisung_einweisender_standard.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"border: 1px inset darkgrey;\n"
-"border-radius: 10px;\n"
-"padding: 0 8px;\n"
-"selection-background-color: darkgray;\n"
-"font-size: 13px;\n"
-"color: white;\n"
-"}\n"
-"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
-"")
-        self.einweisung_einweisender_standard.setObjectName("einweisung_einweisender_standard")
-        self.gridLayout_27.addWidget(self.einweisung_einweisender_standard, 8, 3, 1, 1)
-        self.label_64 = QtWidgets.QLabel(self.tab_15)
-        font = QtGui.QFont()
-        font.setPointSize(14)
-        self.label_64.setFont(font)
-        self.label_64.setObjectName("label_64")
-        self.gridLayout_27.addWidget(self.label_64, 0, 0, 1, 1)
-        self.einweisung_original_standard = QtWidgets.QLineEdit(self.tab_15)
-        self.einweisung_original_standard.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"border: 1px inset darkgrey;\n"
-"border-radius: 10px;\n"
-"padding: 0 8px;\n"
-"selection-background-color: darkgray;\n"
-"font-size: 13px;\n"
-"color: white;\n"
-"}\n"
-"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
-"")
-        self.einweisung_original_standard.setObjectName("einweisung_original_standard")
-        self.gridLayout_27.addWidget(self.einweisung_original_standard, 9, 3, 1, 1)
-        self.einweisung_tabelle_filtern_geraet_combo = QtWidgets.QComboBox(self.tab_15)
-        self.einweisung_tabelle_filtern_geraet_combo.setStyleSheet("QComboBox\n"
-"{\n"
-"    subcontrol-origin: padding;\n"
-"    subcontrol-position: top right;\n"
-"    selection-background-color: #111;\n"
-"    selection-color: white;\n"
-"\n"
-"    background-color: #464646;\n"
-"    border-style: solid;\n"
-"    border: 1px solid #1e1e1e;\n"
-"    border-radius: 5;\n"
-"    padding: 1px 0px 1px 20px;\n"
-"}\n"
-"\n"
-"\n"
-"QComboBox:hover, QPushButton:hover\n"
-"{\n"
-"    border: 1px solid teal;\n"
-"\n"
-"}\n"
-"\n"
-"QComboBox:editable {\n"
-"    background: red;\n"
-"    color: white;\n"
-"}\n"
-"\n"
-"QComboBox:on\n"
-"{\n"
-"    padding-top: 0px;\n"
-"    padding-left: 0px;\n"
-"\n"
-"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
-"    selection-background-color: rgb(67, 131, 202);\n"
-"}\n"
-"\n"
-"QComboBox:!on\n"
-"{\n"
-"\n"
-"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #666, stop: 0.1 #555, stop: 0.5 #555, stop: 0.9 #444, stop: 1 #333);\n"
-"}\n"
-"\n"
-"QComboBox QAbstractItemView\n"
-"{\n"
-"    border: 2px solid darkgray;\n"
-"    color: black;\n"
-"    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #333);\n"
-"}\n"
-"\n"
-"QComboBox::drop-down\n"
-"{\n"
-"     subcontrol-origin: padding;\n"
-"     subcontrol-position: top right;\n"
-"     width: 15px;\n"
-"\n"
-"     border-left-width: 1px;\n"
-"     border-left-color: darkgray;\n"
-"     border-left-style: solid; /* just a single line */\n"
-"     border-top-right-radius: 3px; /* same radius as the QComboBox */\n"
-"     border-bottom-right-radius: 3px;\n"
-"     padding-left: 10px;\n"
-" }\n"
-"\n"
-"\n"
-"")
-        self.einweisung_tabelle_filtern_geraet_combo.setObjectName("einweisung_tabelle_filtern_geraet_combo")
-        self.gridLayout_27.addWidget(self.einweisung_tabelle_filtern_geraet_combo, 14, 0, 1, 1)
-        self.label_74 = QtWidgets.QLabel(self.tab_15)
-        self.label_74.setObjectName("label_74")
-        self.gridLayout_27.addWidget(self.label_74, 6, 4, 1, 1)
-        self.einweisung_geraete_combo = QtWidgets.QComboBox(self.tab_15)
-        self.einweisung_geraete_combo.setStyleSheet("QComboBox\n"
-"{\n"
-"    subcontrol-origin: padding;\n"
-"    subcontrol-position: top right;\n"
-"    selection-background-color: #111;\n"
-"    selection-color: white;\n"
-"\n"
-"    background-color: #464646;\n"
-"    border-style: solid;\n"
-"    border: 1px solid #1e1e1e;\n"
-"    border-radius: 5;\n"
-"    padding: 1px 0px 1px 20px;\n"
-"}\n"
-"\n"
-"\n"
-"QComboBox:hover, QPushButton:hover\n"
-"{\n"
-"    border: 1px solid teal;\n"
-"\n"
-"}\n"
-"\n"
-"QComboBox:editable {\n"
-"    background: red;\n"
-"    color: white;\n"
-"}\n"
-"\n"
-"QComboBox:on\n"
-"{\n"
-"    padding-top: 0px;\n"
-"    padding-left: 0px;\n"
-"\n"
-"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
-"    selection-background-color: rgb(67, 131, 202);\n"
-"}\n"
-"\n"
-"QComboBox:!on\n"
-"{\n"
-"\n"
-"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #666, stop: 0.1 #555, stop: 0.5 #555, stop: 0.9 #444, stop: 1 #333);\n"
-"}\n"
-"\n"
-"QComboBox QAbstractItemView\n"
-"{\n"
-"    border: 2px solid darkgray;\n"
-"    color: black;\n"
-"    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #333);\n"
-"}\n"
-"\n"
-"QComboBox::drop-down\n"
-"{\n"
-"     subcontrol-origin: padding;\n"
-"     subcontrol-position: top right;\n"
-"     width: 15px;\n"
-"\n"
-"     border-left-width: 1px;\n"
-"     border-left-color: darkgray;\n"
-"     border-left-style: solid; /* just a single line */\n"
-"     border-top-right-radius: 3px; /* same radius as the QComboBox */\n"
-"     border-bottom-right-radius: 3px;\n"
-"     padding-left: 10px;\n"
-" }\n"
-"\n"
-"\n"
-"")
-        self.einweisung_geraete_combo.setObjectName("einweisung_geraete_combo")
-        self.gridLayout_27.addWidget(self.einweisung_geraete_combo, 4, 0, 1, 1)
-        self.label_78 = QtWidgets.QLabel(self.tab_15)
-        self.label_78.setObjectName("label_78")
-        self.gridLayout_27.addWidget(self.label_78, 11, 3, 1, 1)
-        self.einweisung_datum = QtWidgets.QLineEdit(self.tab_15)
-        self.einweisung_datum.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"border: 1px inset darkgrey;\n"
-"border-radius: 10px;\n"
-"padding: 0 8px;\n"
-"selection-background-color: darkgray;\n"
-"font-size: 13px;\n"
-"color: white;\n"
-"}\n"
-"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
-"")
-        self.einweisung_datum.setObjectName("einweisung_datum")
-        self.gridLayout_27.addWidget(self.einweisung_datum, 6, 0, 1, 1)
-        self.label_75 = QtWidgets.QLabel(self.tab_15)
-        self.label_75.setObjectName("label_75")
-        self.gridLayout_27.addWidget(self.label_75, 7, 4, 1, 1)
-        self.label_76 = QtWidgets.QLabel(self.tab_15)
-        self.label_76.setObjectName("label_76")
-        self.gridLayout_27.addWidget(self.label_76, 8, 4, 1, 1)
-        self.label_71 = QtWidgets.QLabel(self.tab_15)
-        font = QtGui.QFont()
-        font.setPointSize(14)
-        self.label_71.setFont(font)
-        self.label_71.setObjectName("label_71")
-        self.gridLayout_27.addWidget(self.label_71, 0, 3, 1, 1)
-        self.label_87 = QtWidgets.QLabel(self.tab_15)
-        self.label_87.setObjectName("label_87")
-        self.gridLayout_27.addWidget(self.label_87, 13, 0, 1, 1)
-        self.einweisung_tabelle_filtern_anzahl = QtWidgets.QLabel(self.tab_15)
-        self.einweisung_tabelle_filtern_anzahl.setText("")
-        self.einweisung_tabelle_filtern_anzahl.setObjectName("einweisung_tabelle_filtern_anzahl")
-        self.gridLayout_27.addWidget(self.einweisung_tabelle_filtern_anzahl, 15, 1, 1, 1)
         self.einweisung_ma_combo = QtWidgets.QComboBox(self.tab_15)
         self.einweisung_ma_combo.setStyleSheet("QComboBox\n"
 "{\n"
@@ -3633,6 +3148,228 @@ class Ui_MainWindow(object):
 "")
         self.einweisung_ma_combo.setObjectName("einweisung_ma_combo")
         self.gridLayout_27.addWidget(self.einweisung_ma_combo, 7, 0, 1, 1)
+        self.label_84 = QtWidgets.QLabel(self.tab_15)
+        self.label_84.setObjectName("label_84")
+        self.gridLayout_27.addWidget(self.label_84, 14, 1, 1, 1)
+        self.einweisung_datum_standard = QtWidgets.QLineEdit(self.tab_15)
+        self.einweisung_datum_standard.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"border: 1px inset darkgrey;\n"
+"border-radius: 10px;\n"
+"padding: 0 8px;\n"
+"selection-background-color: darkgray;\n"
+"font-size: 13px;\n"
+"color: white;\n"
+"}\n"
+"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
+"")
+        self.einweisung_datum_standard.setObjectName("einweisung_datum_standard")
+        self.gridLayout_27.addWidget(self.einweisung_datum_standard, 6, 3, 1, 1)
+        self.line_28 = QtWidgets.QFrame(self.tab_15)
+        self.line_28.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_28.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_28.setObjectName("line_28")
+        self.gridLayout_27.addWidget(self.line_28, 3, 3, 1, 1)
+        self.einweisung_einweisender = QtWidgets.QLineEdit(self.tab_15)
+        self.einweisung_einweisender.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"border: 1px inset darkgrey;\n"
+"border-radius: 10px;\n"
+"padding: 0 8px;\n"
+"selection-background-color: darkgray;\n"
+"font-size: 13px;\n"
+"color: white;\n"
+"}\n"
+"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
+"")
+        self.einweisung_einweisender.setObjectName("einweisung_einweisender")
+        self.gridLayout_27.addWidget(self.einweisung_einweisender, 8, 0, 1, 1)
+        self.einweisung_geraete_combo_standard = QtWidgets.QComboBox(self.tab_15)
+        self.einweisung_geraete_combo_standard.setStyleSheet("QComboBox\n"
+"{\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: top right;\n"
+"    selection-background-color: #111;\n"
+"    selection-color: white;\n"
+"\n"
+"    background-color: #464646;\n"
+"    border-style: solid;\n"
+"    border: 1px solid #1e1e1e;\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"}\n"
+"\n"
+"\n"
+"QComboBox:hover, QPushButton:hover\n"
+"{\n"
+"    border: 1px solid teal;\n"
+"\n"
+"}\n"
+"\n"
+"QComboBox:editable {\n"
+"    background: red;\n"
+"    color: white;\n"
+"}\n"
+"\n"
+"QComboBox:on\n"
+"{\n"
+"    padding-top: 0px;\n"
+"    padding-left: 0px;\n"
+"\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
+"    selection-background-color: rgb(67, 131, 202);\n"
+"}\n"
+"\n"
+"QComboBox:!on\n"
+"{\n"
+"\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #666, stop: 0.1 #555, stop: 0.5 #555, stop: 0.9 #444, stop: 1 #333);\n"
+"}\n"
+"\n"
+"QComboBox QAbstractItemView\n"
+"{\n"
+"    border: 2px solid darkgray;\n"
+"    color: black;\n"
+"    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #333);\n"
+"}\n"
+"\n"
+"QComboBox::drop-down\n"
+"{\n"
+"     subcontrol-origin: padding;\n"
+"     subcontrol-position: top right;\n"
+"     width: 15px;\n"
+"\n"
+"     border-left-width: 1px;\n"
+"     border-left-color: darkgray;\n"
+"     border-left-style: solid; /* just a single line */\n"
+"     border-top-right-radius: 3px; /* same radius as the QComboBox */\n"
+"     border-bottom-right-radius: 3px;\n"
+"     padding-left: 10px;\n"
+" }\n"
+"\n"
+"\n"
+"")
+        self.einweisung_geraete_combo_standard.setObjectName("einweisung_geraete_combo_standard")
+        self.gridLayout_27.addWidget(self.einweisung_geraete_combo_standard, 4, 3, 1, 1)
+        self.line_27 = QtWidgets.QFrame(self.tab_15)
+        self.line_27.setFrameShape(QtWidgets.QFrame.VLine)
+        self.line_27.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_27.setObjectName("line_27")
+        self.gridLayout_27.addWidget(self.line_27, 3, 2, 8, 1)
+        self.einweisung_tabelle = QtWidgets.QTableWidget(self.tab_15)
+        self.einweisung_tabelle.setStyleSheet("QTableView {\n"
+"border: 1px inset darkgrey;\n"
+"border-radius: 5px;\n"
+"padding: 0 8px;\n"
+"font-size: 13px;\n"
+"color: white;\n"
+"gridline-color: rgb(164, 164, 165);\n"
+"Background-color: rgb(164, 164, 165);\n"
+"\n"
+"}\n"
+"QHeaderView::section{\n"
+"\n"
+"border-style: none;\n"
+"Color: white;\n"
+"gridline-color: rgb(164, 164, 165);\n"
+"background-color: rgb(164, 164, 165);\n"
+"border-bottom: 1px inset black;\n"
+"\n"
+"}\n"
+"QTableView::item{\n"
+"border-bottom : 1px inset black;\n"
+"gridline-color: rgb(164, 164, 165);\n"
+"text-align: center;\n"
+"}")
+        self.einweisung_tabelle.setObjectName("einweisung_tabelle")
+        self.einweisung_tabelle.setColumnCount(6)
+        self.einweisung_tabelle.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.einweisung_tabelle.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.einweisung_tabelle.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.einweisung_tabelle.setHorizontalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.einweisung_tabelle.setHorizontalHeaderItem(3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.einweisung_tabelle.setHorizontalHeaderItem(4, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.einweisung_tabelle.setHorizontalHeaderItem(5, item)
+        self.einweisung_tabelle.horizontalHeader().setCascadingSectionResizes(True)
+        self.einweisung_tabelle.horizontalHeader().setStretchLastSection(True)
+        self.einweisung_tabelle.verticalHeader().setVisible(False)
+        self.einweisung_tabelle.verticalHeader().setHighlightSections(True)
+        self.gridLayout_27.addWidget(self.einweisung_tabelle, 12, 0, 1, 5)
+        self.einweisung_standardwerte_loeschen_btn = QtWidgets.QPushButton(self.tab_15)
+        self.einweisung_standardwerte_loeschen_btn.setStyleSheet("QPushButton{\n"
+"   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"      border-style: solid;\n"
+"    border: 1px solid #1e1e1e;\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"    font: 13px;\n"
+"    min-width: 10em;\n"
+"    padding: 5px;\n"
+"    color: white;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"      border-style: solid;\n"
+"    border: 1px solid rgb(59, 204, 179);\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"    font: 13px;\n"
+"    min-width: 10em;\n"
+"    padding: 5px;\n"
+"    color: white;\n"
+"}\n"
+"QPushButton:pressed {\n"
+"background-color: rgb(130, 152, 152);\n"
+"      border-style: solid;\n"
+"    border: 1px solid #1EFFFF;\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"    font: 13px;\n"
+"    min-width: 10em;\n"
+"    padding: 5px;\n"
+"    color: white;\n"
+"\n"
+"}")
+        self.einweisung_standardwerte_loeschen_btn.setObjectName("einweisung_standardwerte_loeschen_btn")
+        self.gridLayout_27.addWidget(self.einweisung_standardwerte_loeschen_btn, 10, 3, 1, 1)
+        self.label_69 = QtWidgets.QLabel(self.tab_15)
+        self.label_69.setObjectName("label_69")
+        self.gridLayout_27.addWidget(self.label_69, 8, 1, 1, 1)
+        self.label_72 = QtWidgets.QLabel(self.tab_15)
+        self.label_72.setObjectName("label_72")
+        self.gridLayout_27.addWidget(self.label_72, 4, 4, 1, 1)
+        self.label_76 = QtWidgets.QLabel(self.tab_15)
+        self.label_76.setObjectName("label_76")
+        self.gridLayout_27.addWidget(self.label_76, 8, 4, 1, 1)
+        self.einweisung_datum = QtWidgets.QLineEdit(self.tab_15)
+        self.einweisung_datum.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"border: 1px inset darkgrey;\n"
+"border-radius: 10px;\n"
+"padding: 0 8px;\n"
+"selection-background-color: darkgray;\n"
+"font-size: 13px;\n"
+"color: white;\n"
+"}\n"
+"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
+"")
+        self.einweisung_datum.setObjectName("einweisung_datum")
+        self.gridLayout_27.addWidget(self.einweisung_datum, 6, 0, 1, 1)
+        self.label_71 = QtWidgets.QLabel(self.tab_15)
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.label_71.setFont(font)
+        self.label_71.setObjectName("label_71")
+        self.gridLayout_27.addWidget(self.label_71, 0, 3, 1, 1)
+        self.label_85 = QtWidgets.QLabel(self.tab_15)
+        self.label_85.setObjectName("label_85")
+        self.gridLayout_27.addWidget(self.label_85, 14, 4, 1, 1)
+        self.label_65 = QtWidgets.QLabel(self.tab_15)
+        self.label_65.setObjectName("label_65")
+        self.gridLayout_27.addWidget(self.label_65, 4, 1, 1, 1)
         self.einweisung_ma_standard_combo = QtWidgets.QComboBox(self.tab_15)
         self.einweisung_ma_standard_combo.setStyleSheet("QComboBox\n"
 "{\n"
@@ -3700,6 +3437,339 @@ class Ui_MainWindow(object):
 "")
         self.einweisung_ma_standard_combo.setObjectName("einweisung_ma_standard_combo")
         self.gridLayout_27.addWidget(self.einweisung_ma_standard_combo, 7, 3, 1, 1)
+        self.label_64 = QtWidgets.QLabel(self.tab_15)
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.label_64.setFont(font)
+        self.label_64.setObjectName("label_64")
+        self.gridLayout_27.addWidget(self.label_64, 0, 0, 1, 1)
+        self.label_68 = QtWidgets.QLabel(self.tab_15)
+        self.label_68.setObjectName("label_68")
+        self.gridLayout_27.addWidget(self.label_68, 7, 1, 1, 1)
+        self.einweisung_original = QtWidgets.QLineEdit(self.tab_15)
+        self.einweisung_original.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"border: 1px inset darkgrey;\n"
+"border-radius: 10px;\n"
+"padding: 0 8px;\n"
+"selection-background-color: darkgray;\n"
+"font-size: 13px;\n"
+"color: white;\n"
+"}\n"
+"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
+"")
+        self.einweisung_original.setObjectName("einweisung_original")
+        self.gridLayout_27.addWidget(self.einweisung_original, 9, 0, 1, 1)
+        self.einweisung_tabelle_filtern_anzahl = QtWidgets.QLabel(self.tab_15)
+        self.einweisung_tabelle_filtern_anzahl.setText("")
+        self.einweisung_tabelle_filtern_anzahl.setObjectName("einweisung_tabelle_filtern_anzahl")
+        self.gridLayout_27.addWidget(self.einweisung_tabelle_filtern_anzahl, 16, 1, 1, 1)
+        self.einweisung_softwareversion_standard = QtWidgets.QLineEdit(self.tab_15)
+        self.einweisung_softwareversion_standard.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"border: 1px inset darkgrey;\n"
+"border-radius: 10px;\n"
+"padding: 0 8px;\n"
+"selection-background-color: darkgray;\n"
+"font-size: 13px;\n"
+"color: white;\n"
+"}\n"
+"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
+"")
+        self.einweisung_softwareversion_standard.setObjectName("einweisung_softwareversion_standard")
+        self.gridLayout_27.addWidget(self.einweisung_softwareversion_standard, 5, 3, 1, 1)
+        self.einweisung_geraete_combo = QtWidgets.QComboBox(self.tab_15)
+        self.einweisung_geraete_combo.setStyleSheet("QComboBox\n"
+"{\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: top right;\n"
+"    selection-background-color: #111;\n"
+"    selection-color: white;\n"
+"\n"
+"    background-color: #464646;\n"
+"    border-style: solid;\n"
+"    border: 1px solid #1e1e1e;\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"}\n"
+"\n"
+"\n"
+"QComboBox:hover, QPushButton:hover\n"
+"{\n"
+"    border: 1px solid teal;\n"
+"\n"
+"}\n"
+"\n"
+"QComboBox:editable {\n"
+"    background: red;\n"
+"    color: white;\n"
+"}\n"
+"\n"
+"QComboBox:on\n"
+"{\n"
+"    padding-top: 0px;\n"
+"    padding-left: 0px;\n"
+"\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
+"    selection-background-color: rgb(67, 131, 202);\n"
+"}\n"
+"\n"
+"QComboBox:!on\n"
+"{\n"
+"\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #666, stop: 0.1 #555, stop: 0.5 #555, stop: 0.9 #444, stop: 1 #333);\n"
+"}\n"
+"\n"
+"QComboBox QAbstractItemView\n"
+"{\n"
+"    border: 2px solid darkgray;\n"
+"    color: black;\n"
+"    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #333);\n"
+"}\n"
+"\n"
+"QComboBox::drop-down\n"
+"{\n"
+"     subcontrol-origin: padding;\n"
+"     subcontrol-position: top right;\n"
+"     width: 15px;\n"
+"\n"
+"     border-left-width: 1px;\n"
+"     border-left-color: darkgray;\n"
+"     border-left-style: solid; /* just a single line */\n"
+"     border-top-right-radius: 3px; /* same radius as the QComboBox */\n"
+"     border-bottom-right-radius: 3px;\n"
+"     padding-left: 10px;\n"
+" }\n"
+"\n"
+"\n"
+"")
+        self.einweisung_geraete_combo.setObjectName("einweisung_geraete_combo")
+        self.gridLayout_27.addWidget(self.einweisung_geraete_combo, 4, 0, 1, 1)
+        self.einweisung_tabelle_filtern_software_combo = QtWidgets.QComboBox(self.tab_15)
+        self.einweisung_tabelle_filtern_software_combo.setStyleSheet("QComboBox\n"
+"{\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: top right;\n"
+"    selection-background-color: #111;\n"
+"    selection-color: white;\n"
+"\n"
+"    background-color: #464646;\n"
+"    border-style: solid;\n"
+"    border: 1px solid #1e1e1e;\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"}\n"
+"\n"
+"\n"
+"QComboBox:hover, QPushButton:hover\n"
+"{\n"
+"    border: 1px solid teal;\n"
+"\n"
+"}\n"
+"\n"
+"QComboBox:editable {\n"
+"    background: red;\n"
+"    color: white;\n"
+"}\n"
+"\n"
+"QComboBox:on\n"
+"{\n"
+"    padding-top: 0px;\n"
+"    padding-left: 0px;\n"
+"\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
+"    selection-background-color: rgb(67, 131, 202);\n"
+"}\n"
+"\n"
+"QComboBox:!on\n"
+"{\n"
+"\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #666, stop: 0.1 #555, stop: 0.5 #555, stop: 0.9 #444, stop: 1 #333);\n"
+"}\n"
+"\n"
+"QComboBox QAbstractItemView\n"
+"{\n"
+"    border: 2px solid darkgray;\n"
+"    color: black;\n"
+"    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #333);\n"
+"}\n"
+"\n"
+"QComboBox::drop-down\n"
+"{\n"
+"     subcontrol-origin: padding;\n"
+"     subcontrol-position: top right;\n"
+"     width: 15px;\n"
+"\n"
+"     border-left-width: 1px;\n"
+"     border-left-color: darkgray;\n"
+"     border-left-style: solid; /* just a single line */\n"
+"     border-top-right-radius: 3px; /* same radius as the QComboBox */\n"
+"     border-bottom-right-radius: 3px;\n"
+"     padding-left: 10px;\n"
+" }\n"
+"\n"
+"\n"
+"")
+        self.einweisung_tabelle_filtern_software_combo.setObjectName("einweisung_tabelle_filtern_software_combo")
+        self.gridLayout_27.addWidget(self.einweisung_tabelle_filtern_software_combo, 14, 3, 1, 1)
+        self.einweisung_softwareversion = QtWidgets.QLineEdit(self.tab_15)
+        self.einweisung_softwareversion.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"border: 1px inset darkgrey;\n"
+"border-radius: 10px;\n"
+"padding: 0 8px;\n"
+"selection-background-color: darkgray;\n"
+"font-size: 13px;\n"
+"color: white;\n"
+"}\n"
+"QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
+"")
+        self.einweisung_softwareversion.setObjectName("einweisung_softwareversion")
+        self.gridLayout_27.addWidget(self.einweisung_softwareversion, 5, 0, 1, 1)
+        self.label_86 = QtWidgets.QLabel(self.tab_15)
+        self.label_86.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_86.setObjectName("label_86")
+        self.gridLayout_27.addWidget(self.label_86, 16, 0, 1, 1)
+        self.label_73 = QtWidgets.QLabel(self.tab_15)
+        self.label_73.setObjectName("label_73")
+        self.gridLayout_27.addWidget(self.label_73, 5, 4, 1, 1)
+        self.label_70 = QtWidgets.QLabel(self.tab_15)
+        self.label_70.setObjectName("label_70")
+        self.gridLayout_27.addWidget(self.label_70, 9, 1, 1, 1)
+        self.einweisung_tabelle_filtern_geraet_combo = QtWidgets.QComboBox(self.tab_15)
+        self.einweisung_tabelle_filtern_geraet_combo.setStyleSheet("QComboBox\n"
+"{\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: top right;\n"
+"    selection-background-color: #111;\n"
+"    selection-color: white;\n"
+"\n"
+"    background-color: #464646;\n"
+"    border-style: solid;\n"
+"    border: 1px solid #1e1e1e;\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"}\n"
+"\n"
+"\n"
+"QComboBox:hover, QPushButton:hover\n"
+"{\n"
+"    border: 1px solid teal;\n"
+"\n"
+"}\n"
+"\n"
+"QComboBox:editable {\n"
+"    background: red;\n"
+"    color: white;\n"
+"}\n"
+"\n"
+"QComboBox:on\n"
+"{\n"
+"    padding-top: 0px;\n"
+"    padding-left: 0px;\n"
+"\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
+"    selection-background-color: rgb(67, 131, 202);\n"
+"}\n"
+"\n"
+"QComboBox:!on\n"
+"{\n"
+"\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #666, stop: 0.1 #555, stop: 0.5 #555, stop: 0.9 #444, stop: 1 #333);\n"
+"}\n"
+"\n"
+"QComboBox QAbstractItemView\n"
+"{\n"
+"    border: 2px solid darkgray;\n"
+"    color: black;\n"
+"    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #333);\n"
+"}\n"
+"\n"
+"QComboBox::drop-down\n"
+"{\n"
+"     subcontrol-origin: padding;\n"
+"     subcontrol-position: top right;\n"
+"     width: 15px;\n"
+"\n"
+"     border-left-width: 1px;\n"
+"     border-left-color: darkgray;\n"
+"     border-left-style: solid; /* just a single line */\n"
+"     border-top-right-radius: 3px; /* same radius as the QComboBox */\n"
+"     border-bottom-right-radius: 3px;\n"
+"     padding-left: 10px;\n"
+" }\n"
+"\n"
+"\n"
+"")
+        self.einweisung_tabelle_filtern_geraet_combo.setObjectName("einweisung_tabelle_filtern_geraet_combo")
+        self.gridLayout_27.addWidget(self.einweisung_tabelle_filtern_geraet_combo, 14, 0, 1, 1)
+        self.einweisung_tabelle_filtern_ma_combo = QtWidgets.QComboBox(self.tab_15)
+        self.einweisung_tabelle_filtern_ma_combo.setStyleSheet("QComboBox\n"
+"{\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: top right;\n"
+"    selection-background-color: #111;\n"
+"    selection-color: white;\n"
+"\n"
+"    background-color: #464646;\n"
+"    border-style: solid;\n"
+"    border: 1px solid #1e1e1e;\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"}\n"
+"\n"
+"\n"
+"QComboBox:hover, QPushButton:hover\n"
+"{\n"
+"    border: 1px solid teal;\n"
+"\n"
+"}\n"
+"\n"
+"QComboBox:editable {\n"
+"    background: red;\n"
+"    color: white;\n"
+"}\n"
+"\n"
+"QComboBox:on\n"
+"{\n"
+"    padding-top: 0px;\n"
+"    padding-left: 0px;\n"
+"\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
+"    selection-background-color: rgb(67, 131, 202);\n"
+"}\n"
+"\n"
+"QComboBox:!on\n"
+"{\n"
+"\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #666, stop: 0.1 #555, stop: 0.5 #555, stop: 0.9 #444, stop: 1 #333);\n"
+"}\n"
+"\n"
+"QComboBox QAbstractItemView\n"
+"{\n"
+"    border: 2px solid darkgray;\n"
+"    color: black;\n"
+"    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #333);\n"
+"}\n"
+"\n"
+"QComboBox::drop-down\n"
+"{\n"
+"     subcontrol-origin: padding;\n"
+"     subcontrol-position: top right;\n"
+"     width: 15px;\n"
+"\n"
+"     border-left-width: 1px;\n"
+"     border-left-color: darkgray;\n"
+"     border-left-style: solid; /* just a single line */\n"
+"     border-top-right-radius: 3px; /* same radius as the QComboBox */\n"
+"     border-bottom-right-radius: 3px;\n"
+"     padding-left: 10px;\n"
+" }\n"
+"\n"
+"\n"
+"")
+        self.einweisung_tabelle_filtern_ma_combo.setObjectName("einweisung_tabelle_filtern_ma_combo")
+        self.gridLayout_27.addWidget(self.einweisung_tabelle_filtern_ma_combo, 15, 0, 1, 1)
+        self.label_106 = QtWidgets.QLabel(self.tab_15)
+        self.label_106.setObjectName("label_106")
+        self.gridLayout_27.addWidget(self.label_106, 15, 1, 1, 1)
         self.tabWidget_3.addTab(self.tab_15, "")
         self.tab_18 = QtWidgets.QWidget()
         self.tab_18.setObjectName("tab_18")
@@ -5086,13 +5156,15 @@ class Ui_MainWindow(object):
         self.label_80.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Gerät / Seriennummer</span></p></body></html>"))
         self.label_21.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Bemerkung</span></p></body></html>"))
         self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_16), _translate("MainWindow", "Verwertet / Entsorgt"))
-        self.label_86.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Anzahl Gefilterte Ergebnisse:</span></p></body></html>"))
-        self.label_72.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Gerät</span></p></body></html>"))
+        self.label_78.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Diese Werte werden nach einem Neustart des Programms zurück gesetzt.</span></p><p><span style=\" color:#ffffff;\">Die Werte, die hier eingegeben werden, werden links Automatisch übernommen.</span></p></body></html>"))
         self.label_66.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Softwareversion</span></p></body></html>"))
-        self.einweisung_standardwerte_loeschen_btn.setText(_translate("MainWindow", "Löschen"))
-        self.label_68.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Eingewiesener</span></p></body></html>"))
-        self.label_73.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Softwareversion</span></p></body></html>"))
-        self.label_85.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Softwareversion</span></p></body></html>"))
+        self.label_77.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Original Dokument liegt in </span></p></body></html>"))
+        self.label_74.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Datum</span></p></body></html>"))
+        self.label_87.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Tabelle Filtern</span></p></body></html>"))
+        self.label_75.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Eingewiesener</span></p></body></html>"))
+        self.label_67.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Datum</span></p></body></html>"))
+        self.einweisung_speichern_btn.setText(_translate("MainWindow", "Speichern"))
+        self.label_84.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Gerät</span></p></body></html>"))
         item = self.einweisung_tabelle.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "Gerät"))
         item = self.einweisung_tabelle.horizontalHeaderItem(1)
@@ -5105,20 +5177,19 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "Einweisender"))
         item = self.einweisung_tabelle.horizontalHeaderItem(5)
         item.setText(_translate("MainWindow", "Original Doukument"))
+        self.einweisung_standardwerte_loeschen_btn.setText(_translate("MainWindow", "Löschen"))
         self.label_69.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Einweisender</span></p></body></html>"))
-        self.label_84.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Gerät</span></p></body></html>"))
-        self.label_70.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Original Dokument liegt in </span></p></body></html>"))
-        self.label_65.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Gerät</span></p></body></html>"))
-        self.einweisung_speichern_btn.setText(_translate("MainWindow", "Speichern"))
-        self.label_77.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Original Dokument liegt in </span></p></body></html>"))
-        self.label_67.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Datum</span></p></body></html>"))
-        self.label_64.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Einweisung</span></p></body></html>"))
-        self.label_74.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Datum</span></p></body></html>"))
-        self.label_78.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Diese Werte werden nach einem Neustart des Programms zurück gesetzt.</span></p><p><span style=\" color:#ffffff;\">Die Werte, die hier eingegeben werden, werden links Automatisch übernommen.</span></p></body></html>"))
-        self.label_75.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Eingewiesener</span></p></body></html>"))
+        self.label_72.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Gerät</span></p></body></html>"))
         self.label_76.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Einweisender</span></p></body></html>"))
         self.label_71.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Standard Werte</span></p></body></html>"))
-        self.label_87.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Tabelle Filtern</span></p></body></html>"))
+        self.label_85.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Softwareversion</span></p></body></html>"))
+        self.label_65.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Gerät</span></p></body></html>"))
+        self.label_64.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Einweisung</span></p></body></html>"))
+        self.label_68.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Eingewiesener</span></p></body></html>"))
+        self.label_86.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Anzahl Gefilterte Ergebnisse:</span></p></body></html>"))
+        self.label_73.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Softwareversion</span></p></body></html>"))
+        self.label_70.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Original Dokument liegt in </span></p></body></html>"))
+        self.label_106.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Mitarbeiter</span></p></body></html>"))
         self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_15), _translate("MainWindow", "Einweisung"))
         self.mpg_standort_speichern_btn.setText(_translate("MainWindow", "Speichern"))
         self.label_93.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Standort hinzufügen</span></p></body></html>"))

@@ -43,6 +43,7 @@ class Mitarbeiter():
         self.ui.ma_neu_vorname_text.setText("")
         self.ui.ma_neu_nachname_text.setText("")
         Mpg_Geraete(self.ui).combos_ma_fuellen()
+        Mpg_Geraete(self.ui).tabellen_filter_ma_combo_fuellen()
 
     def ma_loeschen(self):
         ma_id = self.ui.ma_loeschen_combo.currentText().split("/ ")[1]
@@ -50,5 +51,6 @@ class Mitarbeiter():
         self.mitarbeiter_tabelle_laden()
         self.ma_loeschen_combo_fuellen()
         Mpg_Geraete(self.ui).combos_ma_fuellen()
+        Mpg_Geraete(self.ui).tabellen_filter_ma_combo_fuellen()
 
 

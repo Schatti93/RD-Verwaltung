@@ -16,6 +16,9 @@ class Mpg_Geraete():
         self.einweisung_geraete_combos_fuellen()
         self.einweisung_tabelle_fuellen()
         self.combos_ma_fuellen()
+        self.tabellen_filter_ma_combo_fuellen()
+        self.ui.einweisung_tabelle_filtern_ma_combo.currentTextChanged.connect \
+            (self.tabelle_nach_ma_filtern)
         self.ui.geraete_verwalten_aenderung_speichern_btn.clicked.connect(self.geraet_update)
         self.ui.verwertet_speichern_button.clicked.connect(self.geraet_verwerten)
         self.ui.geraete_verwalten_speichern_button.clicked.connect(self.neues_geraet_anlegen)
@@ -43,6 +46,7 @@ class Mpg_Geraete():
             combo_eintraege.append(eintrag)
         self.ui.einweisung_ma_combo.addItems(sorted(combo_eintraege))
         self.ui.einweisung_ma_standard_combo.addItems(sorted(combo_eintraege))
+
     def standort_combo_fuellen(self):
         self.ui.geraete_verwalten_standort_combo.clear()
         alle_fahrzeuge = self.data.fahrzeuge_abfragen()
@@ -108,7 +112,16 @@ class Mpg_Geraete():
         self.ui.einweisung_tabelle_filtern_geraet_combo.addItems(liste_der_eintraege)
 
     def tabellen_filter_ma_combo_fuellen(self):
-        pass
+        self.ui.einweisung_tabelle_filtern_ma_combo.clear()
+        liste_der_daten = self.data.einweisungen_abfragen()
+        combo_eintraege = ["---"]
+        for element in range(0, len(liste_der_daten)):
+            eintrag = liste_der_daten[element][4]
+            if eintrag in combo_eintraege:
+                pass
+            else:
+                combo_eintraege.append(eintrag)
+        self.ui.einweisung_tabelle_filtern_ma_combo.addItems(sorted(combo_eintraege))
 
     def geraete_inventarnummer_combos_fuellen(self):
         self.ui.verwertet_geraete_combo.clear()
@@ -154,6 +167,29 @@ class Mpg_Geraete():
         self.geraete_tabelle_fuellen()
 
     # combos und tabellen fuellen ende
+
+    def tabelle_nach_ma_filtern(self):
+        
+        self.ui.einweisung_tabelle.setRowCount(0)
+        ma = self.ui.einweisung_tabelle_filtern_ma_combo.currentText()
+        daten = self.data.einweisungs_daten_gefiltert_ma(ma)
+        for element in range(0, len(daten)):
+            count = 0
+            rows = self.ui.einweisung_tabelle.rowCount()
+            self.ui.einweisung_tabelle.insertRow(rows)
+            for eigenschaft in range(1, len(daten[element])):
+                einzusetzen = QtWidgets.QTableWidgetItem(daten[element][eigenschaft])
+                einzusetzen.setTextAlignment(Qt.AlignCenter)
+                self.ui.einweisung_tabelle.setItem(rows, count, QtWidgets.QTableWidgetItem(einzusetzen))
+                count += 1
+        self.ui.einweisung_tabelle.horizontalHeader().setSectionResizeMode(1)
+        eintraege = self.ui.einweisung_tabelle.rowCount()
+        self.ui.einweisung_tabelle_filtern_anzahl.setText(
+            "<html><head/><body><p><span style=\" color:#ffffff;\">" + str(eintraege) +
+            "</span></p></body></html>")
+
+        if ma == "---":
+           self.einweisung_tabelle_fuellen()
 
     def geraet_update(self):
         rows = self.ui.mpg_geraete_tabelle.rowCount()
@@ -277,7 +313,7 @@ class Mpg_Geraete():
         self.ui.einweisung_geraete_combo.setCurrentIndex(0)
         self.ui.einweisung_softwareversion.setText("")
         self.ui.einweisung_datum.setText("")
-        self.ui.einweisung_ma_standard_combo.setCurrentIndex(0)
+        self.ui.einweisung_ma_combo.setCurrentIndex(0)
         self.ui.einweisung_einweisender.setText("")
         self.ui.einweisung_original.setText("")
 
@@ -292,8 +328,10 @@ class Mpg_Geraete():
     def einweisung_tabelle_filtern_geraet_auswahl(self):
         auswahl = self.ui.einweisung_tabelle_filtern_geraet_combo.currentText()
         if auswahl == "---":
+            self.tabelle_filtern_software_combo_fuellen()
             self.einweisung_tabelle_fuellen()
         else:
+            self.ui.einweisung_tabelle_filtern_ma_combo.setCurrentIndex(0)
             self.tabelle_filtern_software_combo_fuellen()
             self.einweisung_tabelle_filtern_geraet_anzeigen()
 
@@ -319,10 +357,14 @@ class Mpg_Geraete():
     def tabelle_filtern_software_combo_fuellen(self):
         self.ui.einweisung_tabelle_filtern_software_combo.clear()
         geraet = self.ui.einweisung_tabelle_filtern_geraet_combo.currentText()
-        daten = self.data.softwareversion_abfragen(geraet)
         liste_der_eintraege = ["---"]
-        for element in range(0, len(daten)):
-            liste_der_eintraege.append(daten[element][0])
+        if geraet == "---":
+            pass
+        else:
+            daten = self.data.softwareversion_abfragen(geraet)
+
+            for element in range(0, len(daten)):
+                liste_der_eintraege.append(daten[element][0])
         self.ui.einweisung_tabelle_filtern_software_combo.addItems(liste_der_eintraege)
 
     def einweisung_tabelle_filtern_nach_software(self):
@@ -344,6 +386,7 @@ class Mpg_Geraete():
         self.ui.einweisung_tabelle_filtern_anzahl.setText(
             "<html><head/><body><p><span style=\" color:#ffffff;\">" + str(eintraege) +
             "</span></p></body></html>")
+
 
     def datum_pruefen(self, datum):
         liste_der_daten = datum.split(".")
