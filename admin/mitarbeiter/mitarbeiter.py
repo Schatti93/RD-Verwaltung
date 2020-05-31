@@ -1,7 +1,8 @@
 from admin.mitarbeiter.mitarbeiter_data import Mitarbeiter_Data
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt
-from admin.mpg_geraete import Mpg_Geraete
+from admin.mpg.mpg_geraete import Mpg_Geraete
+from admin.mpg.einweisungen import Einweisungen
 
 class Mitarbeiter():
     def __init__(self, ui):
@@ -42,15 +43,15 @@ class Mitarbeiter():
         self.ma_loeschen_combo_fuellen()
         self.ui.ma_neu_vorname_text.setText("")
         self.ui.ma_neu_nachname_text.setText("")
-        Mpg_Geraete(self.ui).combos_ma_fuellen()
-        Mpg_Geraete(self.ui).tabellen_filter_ma_combo_fuellen()
+        Einweisungen(self.ui).combos_ma_fuellen()
+        Einweisungen(self.ui).tabellen_filter_ma_combo_fuellen()
 
     def ma_loeschen(self):
         ma_id = self.ui.ma_loeschen_combo.currentText().split("/ ")[1]
         self.data.ma_loeschen(ma_id)
         self.mitarbeiter_tabelle_laden()
         self.ma_loeschen_combo_fuellen()
-        Mpg_Geraete(self.ui).combos_ma_fuellen()
-        Mpg_Geraete(self.ui).tabellen_filter_ma_combo_fuellen()
+        Einweisungen(self.ui).combos_ma_fuellen()
+        Einweisungen(self.ui).tabellen_filter_ma_combo_fuellen()
 
 

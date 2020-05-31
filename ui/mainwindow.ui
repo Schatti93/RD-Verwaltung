@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1388</width>
-    <height>857</height>
+    <height>883</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -5030,70 +5030,64 @@ QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1,
                   <item row="4" column="0">
                    <widget class="QComboBox" name="einweisung_geraete_combo">
                     <property name="styleSheet">
-                     <string notr="true">QComboBox
-{
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-    selection-background-color: #111;
-    selection-color: white;
-
-    background-color: #464646;
-    border-style: solid;
-    border: 1px solid #1e1e1e;
-    border-radius: 5;
-    padding: 1px 0px 1px 20px;
+                     <string notr="true">QComboBox{
+subcontrol-origin: padding;
+subcontrol-position: top right;
+ selection-background-color: #111;
+selection-color: white;
+ color: white;
+background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+ border-style: solid;
+ border: 1px solid #1e1e1e;
+ border-radius: 5;
+ padding: 1px 0px 1px 20px;
 }
-
-
 QComboBox:hover, QPushButton:hover
 {
-    border: 1px solid teal;
-
+border: 1px solid teal;
+color: white;
 }
 
 QComboBox:editable {
-    background: red;
-    color: white;
+background: red;
+ color: pink;
 }
 
 QComboBox:on
 {
-    padding-top: 0px;
-    padding-left: 0px;
-
-    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
-    selection-background-color: rgb(67, 131, 202);
+padding-top: 0px;
+ padding-left: 0px;
+ color: white;
+ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+selection-background-color: rgb(67, 131, 202);
 }
 
 QComboBox:!on
 {
-
-    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #666, stop: 0.1 #555, stop: 0.5 #555, stop: 0.9 #444, stop: 1 #333);
+color: white;
+background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #666, stop: 0.1 #555, stop: 0.5 #555, stop: 0.9 #444, stop: 1 #333);
 }
 
 QComboBox QAbstractItemView
 {
-    border: 2px solid darkgray;
-    color: black;
-    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #333);
+border: 2px solid darkgray;
+ color: black;
+ selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #333);
 }
 
 QComboBox::drop-down
 {
-     subcontrol-origin: padding;
-     subcontrol-position: top right;
-     width: 15px;
-
-     border-left-width: 1px;
-     border-left-color: darkgray;
-     border-left-style: solid; /* just a single line */
-     border-top-right-radius: 3px; /* same radius as the QComboBox */
-     border-bottom-right-radius: 3px;
-     padding-left: 10px;
- }
-
-
-</string>
+subcontrol-origin: padding;
+ subcontrol-position: top right;
+width: 15px;
+ color: white;
+border-left-width: 1px;
+border-left-color: darkgray;
+ border-left-style: solid;
+  border-top-right-radius: 3px; 
+ border-bottom-right-radius: 3px;
+ padding-left: 10px;
+ }</string>
                     </property>
                    </widget>
                   </item>

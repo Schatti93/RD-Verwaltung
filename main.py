@@ -4,15 +4,15 @@ from ui.mainwindow import Ui_MainWindow
 from PyQt5 import QtWidgets
 from lager.lagerverwaltung import Lagerverwaltung
 from uebersicht.uebersicht import Uebersicht
-from admin.login_admin import Login_Admin
-from admin.fahrzeug_admin import Admin_Fahrzeug
+from admin.login.login_admin import Login_Admin
+from admin.fahrzeuge.fahrzeug_admin import Admin_Fahrzeug
 from fahrzeuge.fahrzeuge_uebersicht import Fahrzeuge_Uebersicht
-from admin.admin_lager import Admin_Lager
+from admin.lager.admin_lager import Admin_Lager
 from fahrzeuge.fahrzeug import Fahrzeug_Mitarbeiter
-from admin.benutzer_verwaltung import Benutzer_Verwaltung
-from admin.ui_einstellungen import Ui_Einstellungen
-from admin.pdf_bestellung import Pdf_Bestellung
-from admin.mpg_geraete import Mpg_Geraete
+from admin.benutzerverwaltung.benutzer_verwaltung import Benutzer_Verwaltung
+from admin.einstellungen.ui_einstellungen import Ui_Einstellungen
+from admin.pdf_bestellung.pdf_bestellung import Pdf_Bestellung
+from admin.mpg.mpg_geraete import Mpg_Geraete
 from mpg.mpg_user import Mpg_User
 from admin.mitarbeiter.mitarbeiter import Mitarbeiter
 

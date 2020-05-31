@@ -1,4 +1,4 @@
-from admin.ui_einstellungen_data import Ui_Einstellungen_Data
+from admin.einstellungen.ui_einstellungen_data import Ui_Einstellungen_Data
 from PyQt5.QtWidgets import QFileDialog
 class Ui_Einstellungen():
     def __init__(self, ui, mainwindow):

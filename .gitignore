@@ -13,7 +13,7 @@ ui/mainwindow.cpp
 ui/.DS_Store
 ui/main.cpp
 build.py
-Database.db
+
 generel.py
 geckodriver.log
 lager/test.py
@@ -36,3 +36,9 @@ uebersicht/grid_fahrzeuge.py
 admin/data_einstellungen.py
 bestellungen/benoetigtes material vom 23.05.2020.pdf
 bestellungen/benötigtes material vom 23.05.2020.pdf
+software_test.py
+RDV.ico
+RDV.psd
+bestellungen/benoetigtes material vom 25.05.2020.pdf
+bestellungen/benoetigtes material vom 25.05.2020.pdf
+lager/test.py

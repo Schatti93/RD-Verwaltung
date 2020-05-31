@@ -1,4 +1,4 @@
-from admin.fahrzeug_admin_data import Fahrzeug_Admin_Data
+from admin.fahrzeuge.fahrzeug_admin_data import Fahrzeug_Admin_Data
 from uebersicht.uebersicht_fahrzeuge_anzeige import Fahrzeug_Anzeige
 
 

@@ -5,7 +5,7 @@ from PyQt5.QtCore import Qt
 from uebersicht.uebersicht import Uebersicht
 from datetime import date
 from PyQt5.QtGui import QIntValidator
-from admin.admin_lager import Admin_Lager
+from admin.lager.admin_lager import Admin_Lager
 
 class Lagerverwaltung():
     def __init__(self, ui):

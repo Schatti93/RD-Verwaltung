@@ -1,4 +1,4 @@
-from admin.benutzer_data import Benutzer_Data
+from admin.benutzerverwaltung.benutzer_data import Benutzer_Data
 import hashlib
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt

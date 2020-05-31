@@ -44,27 +44,32 @@ class Mpg_User():
         self.ui.mpg_geraete_tabelle_fahrzeug.horizontalHeader().setSectionResizeMode(1)
 
     def standorte_sortiert_combo_fuellen(self):
-        self.ui.mpg_user_geraete_standort_combo.clear()
-        standorte = self.data.fahrzeuge_abfragen()
-        liste_der_eintraege = []
-        for element in range(0, len(standorte)):
-            if standorte[element][0] in liste_der_eintraege:
-                pass
-            else:
-                liste_der_eintraege.append(standorte[element][0])
-
-        wachen = self.data.wachen_abfragen()
-        for element in range(0, len(wachen)):
-            if wachen[element][0] in liste_der_eintraege:
-                pass
-            else:
-                liste_der_eintraege.append(wachen[element][0])
-
-        self.ui.mpg_user_geraete_standort_combo.addItems(liste_der_eintraege)
         inventarnummer = self.ui.mpg_user_geraete_barcode.text()
-        standort = self.data.standort_von_geraet_abfragen(inventarnummer)[0][0]
-        index = self.ui.mpg_user_geraete_standort_combo.findText(standort, QtCore.Qt.MatchFixedString)
-        self.ui.mpg_user_geraete_standort_combo.setCurrentIndex(index)
+        standort = self.data.standort_von_geraet_abfragen(inventarnummer)
+        if len(standort) > 0:
+            standort = standort[0][0]
+            self.ui.mpg_user_geraete_standort_combo.clear()
+            fahrzeuge = self.data.fahrzeuge_abfragen()
+            liste_der_eintraege = []
+            for element in range(0, len(fahrzeuge)):
+                if fahrzeuge[element][0] in liste_der_eintraege:
+                    pass
+                else:
+                    liste_der_eintraege.append(fahrzeuge[element][0])
+
+            wachen = self.data.wachen_abfragen()
+            for element in range(0, len(wachen)):
+                if wachen[element][0] in liste_der_eintraege:
+                    pass
+                else:
+                    liste_der_eintraege.append(wachen[element][0])
+
+            self.ui.mpg_user_geraete_standort_combo.addItems(liste_der_eintraege)
+
+            index = self.ui.mpg_user_geraete_standort_combo.findText(standort, QtCore.Qt.MatchFixedString)
+            self.ui.mpg_user_geraete_standort_combo.setCurrentIndex(index)
+
+
 
     def neuen_standort_von_geraet_speichern(self):
         neuer_standort = self.ui.mpg_user_geraete_standort_combo.currentText()
@@ -79,6 +84,7 @@ class Mpg_User():
         self.data.update_standort_von_geraet(neuer_standort, inventarnummer, neue_bemerkung)
         self.ui.mpg_user_geraete_barcode.setText("")
         self.ui.mpg_user_bemerkung.setText("")
+        self.ui.mpg_user_geraete_standort_combo.clear()
         self.update()
 
     def fahrzeug_combo_erneut_fuellen(self):

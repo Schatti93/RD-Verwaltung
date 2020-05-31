@@ -1,10 +1,8 @@
-import sqlite3
-from datetime import date
 from PyQt5.QtWidgets import QLineEdit
 import hashlib
 from PyQt5 import QtCore
-from admin.admin_login_data import Admin_Login_Data
-from admin.mpg_geraete import Mpg_Geraete
+from admin.login.admin_login_data import Admin_Login_Data
+from admin.mpg.update_mpg import Update_Mpg
 
 class Login_Admin():
     def __init__(self, ui):
@@ -47,7 +45,7 @@ class Login_Admin():
             self.ui.admin_text_ben.setMaximumSize(QtCore.QSize(0, 0))
             self.ui.benutzer_label.setMaximumSize(QtCore.QSize(0, 0))
             self.ui.passwort_label.setMaximumSize(QtCore.QSize(0, 0))
-            Mpg_Geraete(self.ui).update_tabellen_und_combos()
+            Update_Mpg(self.ui).update_tabellen_und_combos()
             self.ui.admin_bereich.setVisible(True)
             self.ui.admin_logout_btn.setVisible(True)
             self.ui.login_error_label.setText("")
