@@ -17,6 +17,7 @@ class Einweisungen():
         self.ui.einweisung_tabelle_filtern_software_combo.currentTextChanged.connect(
             self.einweisung_tabelle_filtern_nach_software)
 
+
     def combos_ma_fuellen(self):
         self.ui.einweisung_ma_combo.clear()
         self.ui.einweisung_ma_standard_combo.clear()
@@ -59,22 +60,7 @@ class Einweisungen():
     def einweisung_tabelle_fuellen(self):
         self.ui.einweisung_tabelle.setRowCount(0)
         einweisungen = self.data.einweisungen_abfragen()
-        for element in range(0, len(einweisungen)):
-            count = 0
-            status = self.ma_status_ermitteln(einweisungen[element][4])
-            rows = self.ui.einweisung_tabelle.rowCount()
-            self.ui.einweisung_tabelle.insertRow(rows)
-            for eigenschaft in range(1, len(einweisungen[element])):
-                einzusetzen = QtWidgets.QTableWidgetItem(einweisungen[element][eigenschaft])
-                einzusetzen.setTextAlignment(Qt.AlignCenter)
-                self.ui.einweisung_tabelle.setItem(rows, count, QtWidgets.QTableWidgetItem(einzusetzen))
-                count += 1
-                if eigenschaft == 4:
-                    einzusetzen = QtWidgets.QTableWidgetItem(status)
-                    einzusetzen.setTextAlignment(Qt.AlignCenter)
-                    self.ui.einweisung_tabelle.setItem(rows, count, QtWidgets.QTableWidgetItem(einzusetzen))
-                    count += 1
-        self.ui.einweisung_tabelle.horizontalHeader().setSectionResizeMode(1)
+        self.tabelle_gefiltert_fuellen(einweisungen)
 
     def geraete_einweisung(self):
         if self.ui.einweisung_geraete_combo_standard.currentText() == "---":
@@ -114,12 +100,12 @@ class Einweisungen():
         self.ui.einweisung_tabelle.insertRow(rows)
         liste_der_eintraege = [geraet, softwareversion, datum, eingewiesener, status\
                                ,einweisender, original]
-        count = 0
+
         for element in range(0, len(liste_der_eintraege)):
             einzusetzen = QtWidgets.QTableWidgetItem(liste_der_eintraege[element])
             einzusetzen.setTextAlignment(Qt.AlignCenter)
-            self.ui.einweisung_tabelle.setItem(rows, count, QtWidgets.QTableWidgetItem(einzusetzen))
-            count += 1
+            self.ui.einweisung_tabelle.setItem(rows, element, QtWidgets.QTableWidgetItem(einzusetzen))
+
 
         self.ui.einweisung_geraete_combo.setCurrentIndex(0)
         self.ui.einweisung_softwareversion.setText("")
@@ -137,10 +123,7 @@ class Einweisungen():
         self.ui.einweisung_einweisender_standard.setText("")
         self.ui.einweisung_original_standard.setText("")
 
-    def tabelle_nach_ma_filtern(self):
-        self.ui.einweisung_tabelle.setRowCount(0)
-        ma = self.ui.einweisung_tabelle_filtern_ma_combo.currentText()
-        daten = self.data.einweisungs_daten_gefiltert_ma(ma)
+    def tabelle_gefiltert_fuellen(self, daten):
         for element in range(0, len(daten)):
             count = 0
             rows = self.ui.einweisung_tabelle.rowCount()
@@ -162,8 +145,15 @@ class Einweisungen():
             "<html><head/><body><p><span style=\" color:#ffffff;\">" + str(eintraege) +
             "</span></p></body></html>")
 
+    def tabelle_nach_ma_filtern(self):
+        ma = self.ui.einweisung_tabelle_filtern_ma_combo.currentText()
         if ma == "---":
-           self.einweisung_tabelle_fuellen()
+            pass
+        else:
+            self.ui.einweisung_tabelle.setRowCount(0)
+            daten = self.data.einweisungs_daten_gefiltert_ma(ma)
+            self.tabelle_gefiltert_fuellen(daten)
+
 
     def einweisung_tabelle_filtern_geraet_auswahl(self):
         auswahl = self.ui.einweisung_tabelle_filtern_geraet_combo.currentText()
@@ -176,24 +166,16 @@ class Einweisungen():
             self.einweisung_tabelle_filtern_geraet_anzeigen()
 
     def einweisung_tabelle_filtern_nach_software(self):
-        self.ui.einweisung_tabelle.setRowCount(0)
-        geraet = self.ui.einweisung_tabelle_filtern_geraet_combo.currentText()
         software = self.ui.einweisung_tabelle_filtern_software_combo.currentText()
-        daten = self.data.einweisungs_daten_gefiltert_software(geraet, software)
-        for element in range(0, len(daten)):
-            count = 0
-            rows = self.ui.einweisung_tabelle.rowCount()
-            self.ui.einweisung_tabelle.insertRow(rows)
-            for eigenschaft in range(1, len(daten[element])):
-                einzusetzen = QtWidgets.QTableWidgetItem(daten[element][eigenschaft])
-                einzusetzen.setTextAlignment(Qt.AlignCenter)
-                self.ui.einweisung_tabelle.setItem(rows, count, QtWidgets.QTableWidgetItem(einzusetzen))
-                count += 1
-        self.ui.einweisung_tabelle.horizontalHeader().setSectionResizeMode(1)
-        eintraege = self.ui.einweisung_tabelle.rowCount()
-        self.ui.einweisung_tabelle_filtern_anzahl.setText(
-            "<html><head/><body><p><span style=\" color:#ffffff;\">" + str(eintraege) +
-            "</span></p></body></html>")
+        if software == "---":
+            pass
+        else:
+            self.ui.einweisung_tabelle.setRowCount(0)
+            geraet = self.ui.einweisung_tabelle_filtern_geraet_combo.currentText()
+
+            daten = self.data.einweisungs_daten_gefiltert_software(geraet, software)
+            self.tabelle_gefiltert_fuellen(daten)
+
 
     def tabelle_filtern_software_combo_fuellen(self):
         self.ui.einweisung_tabelle_filtern_software_combo.clear()
@@ -209,32 +191,20 @@ class Einweisungen():
         self.ui.einweisung_tabelle_filtern_software_combo.addItems(liste_der_eintraege)
 
     def einweisung_tabelle_filtern_geraet_anzeigen(self):
-        self.ui.einweisung_tabelle.setRowCount(0)
         geraet = self.ui.einweisung_tabelle_filtern_geraet_combo.currentText()
-        daten = self.data.einweisungs_daten_gefiltert_geraet(geraet)
-        for element in range(0, len(daten)):
-            count = 0
-            status = self.ma_status_ermitteln(daten[element][4])
-            rows = self.ui.einweisung_tabelle.rowCount()
-            self.ui.einweisung_tabelle.insertRow(rows)
-            for eigenschaft in range(1, len(daten[element])):
-                einzusetzen = QtWidgets.QTableWidgetItem(daten[element][eigenschaft])
-                einzusetzen.setTextAlignment(Qt.AlignCenter)
-                self.ui.einweisung_tabelle.setItem(rows, count, QtWidgets.QTableWidgetItem(einzusetzen))
-                count += 1
-                if eigenschaft == 4:
-                    einzusetzen = QtWidgets.QTableWidgetItem(status)
-                    einzusetzen.setTextAlignment(Qt.AlignCenter)
-                    self.ui.einweisung_tabelle.setItem(rows, count, QtWidgets.QTableWidgetItem(einzusetzen))
-                    count += 1
-        self.ui.einweisung_tabelle.horizontalHeader().setSectionResizeMode(1)
-        eintraege = self.ui.einweisung_tabelle.rowCount()
-        self.ui.einweisung_tabelle_filtern_anzahl.setText("<html><head/><body><p><span style=\" "
-                                                          "color:#ffffff;\">"+ str(eintraege) +
-                                                          "</span></p></body></html>")
+        if geraet == "---":
+            pass
+        else:
+            self.ui.einweisung_tabelle.setRowCount(0)
+
+            daten = self.data.einweisungs_daten_gefiltert_geraet(geraet)
+            self.tabelle_gefiltert_fuellen(daten)
 
     def ma_status_ermitteln(self, name):
-        nachname = name.split(", ")[0]
-        vorname = name.split(", ")[1]
-        status = self.data.mitarbeiter_status_abfragen(nachname, vorname)
-        return status[0][0]
+        try:
+            nachname = name.split(", ")[0]
+            vorname = name.split(", ")[1]
+            status = self.data.mitarbeiter_status_abfragen(nachname, vorname)
+            return status[0][0]
+        except:
+            return 0

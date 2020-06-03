@@ -53,11 +53,14 @@ class Mitarbeiter():
         Einweisungen(self.ui).tabellen_filter_ma_combo_fuellen()
 
     def ma_loeschen(self):
-        ma_id = self.ui.ma_loeschen_combo.currentText().split("/ ")[1]
-        self.data.ma_loeschen(ma_id)
-        self.mitarbeiter_tabelle_laden()
-        self.ma_loeschen_combo_fuellen()
-        Einweisungen(self.ui).combos_ma_fuellen()
-        Einweisungen(self.ui).tabellen_filter_ma_combo_fuellen()
+        if self.ui.ma_loeschen_combo.currentText() == "---":
+            pass
+        else:
+            ma_id = self.ui.ma_loeschen_combo.currentText().split("/ ")[1]
+            self.data.ma_loeschen(ma_id)
+            self.mitarbeiter_tabelle_laden()
+            self.ma_loeschen_combo_fuellen()
+            Einweisungen(self.ui).combos_ma_fuellen()
+            Einweisungen(self.ui).tabellen_filter_ma_combo_fuellen()
 
 
