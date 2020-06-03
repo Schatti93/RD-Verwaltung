@@ -61,6 +61,7 @@ class Einweisungen():
         einweisungen = self.data.einweisungen_abfragen()
         for element in range(0, len(einweisungen)):
             count = 0
+            status = self.ma_status_ermitteln(einweisungen[element][4])
             rows = self.ui.einweisung_tabelle.rowCount()
             self.ui.einweisung_tabelle.insertRow(rows)
             for eigenschaft in range(1, len(einweisungen[element])):
@@ -68,6 +69,11 @@ class Einweisungen():
                 einzusetzen.setTextAlignment(Qt.AlignCenter)
                 self.ui.einweisung_tabelle.setItem(rows, count, QtWidgets.QTableWidgetItem(einzusetzen))
                 count += 1
+                if eigenschaft == 4:
+                    einzusetzen = QtWidgets.QTableWidgetItem(status)
+                    einzusetzen.setTextAlignment(Qt.AlignCenter)
+                    self.ui.einweisung_tabelle.setItem(rows, count, QtWidgets.QTableWidgetItem(einzusetzen))
+                    count += 1
         self.ui.einweisung_tabelle.horizontalHeader().setSectionResizeMode(1)
 
     def geraete_einweisung(self):
@@ -90,6 +96,7 @@ class Einweisungen():
             eingewiesener = self.ui.einweisung_ma_combo.currentText()
         else:
             eingewiesener = self.ui.einweisung_ma_standard_combo.currentText()
+        status = self.ma_status_ermitteln(eingewiesener)
 
         if self.ui.einweisung_einweisender_standard.text() == "":
             einweisender = self.ui.einweisung_einweisender.text()
@@ -105,7 +112,8 @@ class Einweisungen():
                                        original)
         rows = self.ui.einweisung_tabelle.rowCount()
         self.ui.einweisung_tabelle.insertRow(rows)
-        liste_der_eintraege = [geraet, softwareversion, datum, eingewiesener, einweisender, original]
+        liste_der_eintraege = [geraet, softwareversion, datum, eingewiesener, status\
+                               ,einweisender, original]
         count = 0
         for element in range(0, len(liste_der_eintraege)):
             einzusetzen = QtWidgets.QTableWidgetItem(liste_der_eintraege[element])
@@ -136,12 +144,18 @@ class Einweisungen():
         for element in range(0, len(daten)):
             count = 0
             rows = self.ui.einweisung_tabelle.rowCount()
+            status = self.ma_status_ermitteln(daten[element][4])
             self.ui.einweisung_tabelle.insertRow(rows)
             for eigenschaft in range(1, len(daten[element])):
                 einzusetzen = QtWidgets.QTableWidgetItem(daten[element][eigenschaft])
                 einzusetzen.setTextAlignment(Qt.AlignCenter)
                 self.ui.einweisung_tabelle.setItem(rows, count, QtWidgets.QTableWidgetItem(einzusetzen))
                 count += 1
+                if eigenschaft == 4:
+                    einzusetzen = QtWidgets.QTableWidgetItem(status)
+                    einzusetzen.setTextAlignment(Qt.AlignCenter)
+                    self.ui.einweisung_tabelle.setItem(rows, count, QtWidgets.QTableWidgetItem(einzusetzen))
+                    count += 1
         self.ui.einweisung_tabelle.horizontalHeader().setSectionResizeMode(1)
         eintraege = self.ui.einweisung_tabelle.rowCount()
         self.ui.einweisung_tabelle_filtern_anzahl.setText(
@@ -200,6 +214,7 @@ class Einweisungen():
         daten = self.data.einweisungs_daten_gefiltert_geraet(geraet)
         for element in range(0, len(daten)):
             count = 0
+            status = self.ma_status_ermitteln(daten[element][4])
             rows = self.ui.einweisung_tabelle.rowCount()
             self.ui.einweisung_tabelle.insertRow(rows)
             for eigenschaft in range(1, len(daten[element])):
@@ -207,8 +222,19 @@ class Einweisungen():
                 einzusetzen.setTextAlignment(Qt.AlignCenter)
                 self.ui.einweisung_tabelle.setItem(rows, count, QtWidgets.QTableWidgetItem(einzusetzen))
                 count += 1
+                if eigenschaft == 4:
+                    einzusetzen = QtWidgets.QTableWidgetItem(status)
+                    einzusetzen.setTextAlignment(Qt.AlignCenter)
+                    self.ui.einweisung_tabelle.setItem(rows, count, QtWidgets.QTableWidgetItem(einzusetzen))
+                    count += 1
         self.ui.einweisung_tabelle.horizontalHeader().setSectionResizeMode(1)
         eintraege = self.ui.einweisung_tabelle.rowCount()
         self.ui.einweisung_tabelle_filtern_anzahl.setText("<html><head/><body><p><span style=\" "
                                                           "color:#ffffff;\">"+ str(eintraege) +
                                                           "</span></p></body></html>")
+
+    def ma_status_ermitteln(self, name):
+        nachname = name.split(", ")[0]
+        vorname = name.split(", ")[1]
+        status = self.data.mitarbeiter_status_abfragen(nachname, vorname)
+        return status[0][0]

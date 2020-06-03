@@ -22,6 +22,12 @@ class Mpg_Data():
         self.c_ma.execute(sql)
         return self.c_ma.fetchall()
 
+    def mitarbeiter_status_abfragen(self, nachname, vorname):
+        params = (nachname, vorname)
+        sql = "SELECT status from mitarbeiter WHERE nachname = ? AND vorname = ?"
+        self.c_ma.execute(sql, params)
+        return self.c_ma.fetchall()
+
     def fahrzeuge_abfragen(self):
         sql = "SELECT * FROM fahrzeug_aktiv"
         self.c_data.execute(sql)

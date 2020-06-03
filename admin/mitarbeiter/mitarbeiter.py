@@ -38,11 +38,17 @@ class Mitarbeiter():
     def neuer_mitarbeiter(self):
         vorname = self.ui.ma_neu_vorname_text.text()
         nachname = self.ui.ma_neu_nachname_text.text()
-        self.data.neuer_mitarbeiter_speichern(vorname, nachname)
+        status = self.ui.ma_neu_checkbox.isChecked()
+        if status == True:
+            status = "Mitarbeiter"
+        else:
+            status = "Extern"
+        self.data.neuer_mitarbeiter_speichern(vorname, nachname, status)
         self.mitarbeiter_tabelle_laden()
         self.ma_loeschen_combo_fuellen()
         self.ui.ma_neu_vorname_text.setText("")
         self.ui.ma_neu_nachname_text.setText("")
+        self.ui.ma_neu_checkbox.setChecked(1)
         Einweisungen(self.ui).combos_ma_fuellen()
         Einweisungen(self.ui).tabellen_filter_ma_combo_fuellen()
 

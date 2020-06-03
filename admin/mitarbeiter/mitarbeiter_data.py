@@ -5,9 +5,9 @@ class Mitarbeiter_Data():
         self.conn = sqlite3.connect("mitarbeiter.db")
         self.c = self.conn.cursor()
 
-    def neuer_mitarbeiter_speichern(self, vorname, nachname):
-        params = (vorname, nachname)
-        sql = "INSERT INTO mitarbeiter VALUES (NULL, ?, ?)"
+    def neuer_mitarbeiter_speichern(self, vorname, nachname, status):
+        params = (vorname, nachname, status)
+        sql = "INSERT INTO mitarbeiter VALUES (NULL, ?, ?, ?)"
         self.c.execute(sql, params)
         self.conn.commit()
 
