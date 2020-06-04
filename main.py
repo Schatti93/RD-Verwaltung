@@ -39,6 +39,5 @@ class MainWindow(QtWidgets.QMainWindow):
         self.mitarbeiter = Mitarbeiter(self.ui)
 
 window = MainWindow()
-
 window.show()
 sys.exit(app.exec_())

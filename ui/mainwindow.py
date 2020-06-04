@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1388, 883)
+        MainWindow.resize(1920, 895)
         MainWindow.setStyleSheet("background-color: rgb(128, 127, 129)")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -3780,52 +3780,14 @@ class Ui_MainWindow(object):
         self.label_107.setFont(font)
         self.label_107.setObjectName("label_107")
         self.gridLayout_27.addWidget(self.label_107, 0, 6, 1, 1)
-        self.pushButton_2 = QtWidgets.QPushButton(self.tab_15)
-        self.pushButton_2.setMaximumSize(QtCore.QSize(100, 16777215))
-        self.pushButton_2.setStyleSheet("QPushButton{\n"
-"   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"      border-style: solid;\n"
-"    border: 1px solid #1e1e1e;\n"
-"    border-radius: 5;\n"
-"    padding: 1px 0px 1px 20px;\n"
-"    font: 13px;\n"
-"    min-width: 10em;\n"
-"    padding: 5px;\n"
-"    color: white;\n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"      border-style: solid;\n"
-"    border: 1px solid rgb(59, 204, 179);\n"
-"    border-radius: 5;\n"
-"    padding: 1px 0px 1px 20px;\n"
-"    font: 13px;\n"
-"    min-width: 10em;\n"
-"    padding: 5px;\n"
-"    color: white;\n"
-"}\n"
-"QPushButton:pressed {\n"
-"background-color: rgb(130, 152, 152);\n"
-"      border-style: solid;\n"
-"    border: 1px solid #1EFFFF;\n"
-"    border-radius: 5;\n"
-"    padding: 1px 0px 1px 20px;\n"
-"    font: 13px;\n"
-"    min-width: 10em;\n"
-"    padding: 5px;\n"
-"    color: white;\n"
-"\n"
-"}")
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.gridLayout_27.addWidget(self.pushButton_2, 13, 3, 1, 1)
         self.line_40 = QtWidgets.QFrame(self.tab_15)
         self.line_40.setFrameShape(QtWidgets.QFrame.VLine)
         self.line_40.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_40.setObjectName("line_40")
         self.gridLayout_27.addWidget(self.line_40, 4, 5, 10, 1)
-        self.tableWidget = QtWidgets.QTableWidget(self.tab_15)
-        self.tableWidget.setMinimumSize(QtCore.QSize(350, 0))
-        self.tableWidget.setStyleSheet("QTableView {\n"
+        self.fehlende_einweisungen_table = QtWidgets.QTableWidget(self.tab_15)
+        self.fehlende_einweisungen_table.setMinimumSize(QtCore.QSize(350, 0))
+        self.fehlende_einweisungen_table.setStyleSheet("QTableView {\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 5px;\n"
 "padding: 0 8px;\n"
@@ -3849,19 +3811,19 @@ class Ui_MainWindow(object):
 "gridline-color: rgb(164, 164, 165);\n"
 "text-align: center;\n"
 "}")
-        self.tableWidget.setObjectName("tableWidget")
-        self.tableWidget.setColumnCount(3)
-        self.tableWidget.setRowCount(0)
+        self.fehlende_einweisungen_table.setObjectName("fehlende_einweisungen_table")
+        self.fehlende_einweisungen_table.setColumnCount(3)
+        self.fehlende_einweisungen_table.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(0, item)
+        self.fehlende_einweisungen_table.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(1, item)
+        self.fehlende_einweisungen_table.setHorizontalHeaderItem(1, item)
         item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(2, item)
-        self.tableWidget.horizontalHeader().setCascadingSectionResizes(True)
-        self.tableWidget.horizontalHeader().setStretchLastSection(True)
-        self.tableWidget.verticalHeader().setVisible(False)
-        self.gridLayout_27.addWidget(self.tableWidget, 4, 6, 9, 1)
+        self.fehlende_einweisungen_table.setHorizontalHeaderItem(2, item)
+        self.fehlende_einweisungen_table.horizontalHeader().setCascadingSectionResizes(True)
+        self.fehlende_einweisungen_table.horizontalHeader().setStretchLastSection(True)
+        self.fehlende_einweisungen_table.verticalHeader().setVisible(False)
+        self.gridLayout_27.addWidget(self.fehlende_einweisungen_table, 4, 6, 9, 1)
         self.tabWidget_3.addTab(self.tab_15, "")
         self.tab_18 = QtWidgets.QWidget()
         self.tab_18.setObjectName("tab_18")
@@ -4918,7 +4880,7 @@ class Ui_MainWindow(object):
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
         self.menuBar = QtWidgets.QMenuBar(MainWindow)
-        self.menuBar.setGeometry(QtCore.QRect(0, 0, 1388, 26))
+        self.menuBar.setGeometry(QtCore.QRect(0, 0, 1920, 26))
         self.menuBar.setObjectName("menuBar")
         MainWindow.setMenuBar(self.menuBar)
 
@@ -5294,12 +5256,11 @@ class Ui_MainWindow(object):
         self.label_64.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Einweisung</span></p></body></html>"))
         self.label_72.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Gerät</span></p></body></html>"))
         self.label_107.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Fehlende Einweisungen</span></p></body></html>"))
-        self.pushButton_2.setText(_translate("MainWindow", "Update"))
-        item = self.tableWidget.horizontalHeaderItem(0)
+        item = self.fehlende_einweisungen_table.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "Mitarbeiter"))
-        item = self.tableWidget.horizontalHeaderItem(1)
+        item = self.fehlende_einweisungen_table.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Gerät"))
-        item = self.tableWidget.horizontalHeaderItem(2)
+        item = self.fehlende_einweisungen_table.horizontalHeaderItem(2)
         item.setText(_translate("MainWindow", "Softwareversion"))
         self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_15), _translate("MainWindow", "Einweisung"))
         self.mpg_standort_speichern_btn.setText(_translate("MainWindow", "Speichern"))

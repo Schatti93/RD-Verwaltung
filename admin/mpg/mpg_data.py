@@ -96,6 +96,12 @@ class Mpg_Data():
         self.c.execute(sql, params)
         return self.c.fetchall()
 
+    def einweisung_checken(self, ma, geraet):
+        params = (ma, geraet)
+        sql = "SELECT softwareversion from mpg_einweisungen WHERE eingewiesener = ? and geraet = ?"
+        self.c.execute(sql, params)
+        return self.c.fetchall()
+
     def einweisungs_daten_gefiltert_ma(self, ma):
         params = (ma, )
         sql = "SELECT * FROM mpg_einweisungen WHERE eingewiesener = ?"
@@ -124,3 +130,19 @@ class Mpg_Data():
         sql = "DELETE FROM standorte WHERE standort = ?"
         self.c.execute(sql, params)
         self.conn.commit()
+
+    def einweisung_updaten(self, geraet, softwareversion, datum, eingewiesener, einweisender, original):
+        params = (softwareversion, datum, einweisender, original, geraet, eingewiesener)
+        sql = "UPDATE mpg_einweisungen SET softwareversion = ?, datum = ?, einweisender = ?," \
+        "original = ? WHERE geraet = ? and eingewiesener = ?"
+        self.c.execute(sql, params)
+        self.conn.commit()
+
+    def softwareversion_check(self, geraet):
+        params = (geraet, )
+        sql = "SELECT softwareversion, datum FROM mpg_einweisungen WHERE geraet = ?"
+        self.c.execute(sql, params)
+        return self.c.fetchall()
+
+
+

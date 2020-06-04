@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1388</width>
-    <height>883</height>
+    <width>1920</width>
+    <height>895</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -5390,55 +5390,6 @@ QComboBox::drop-down
                     </property>
                    </widget>
                   </item>
-                  <item row="13" column="3">
-                   <widget class="QPushButton" name="pushButton_2">
-                    <property name="maximumSize">
-                     <size>
-                      <width>100</width>
-                      <height>16777215</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QPushButton{
-   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
-  	border-style: solid;
-    border: 1px solid #1e1e1e;
-    border-radius: 5;
-    padding: 1px 0px 1px 20px;
-    font: 13px;
-    min-width: 10em;
-    padding: 5px;
-	color: white;
-}
-QPushButton:hover{
-	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
-  	border-style: solid;
-    border: 1px solid rgb(59, 204, 179);
-    border-radius: 5;
-    padding: 1px 0px 1px 20px;
-    font: 13px;
-    min-width: 10em;
-    padding: 5px;
-	color: white;
-}
-QPushButton:pressed {
-background-color: rgb(130, 152, 152);
-  	border-style: solid;
-    border: 1px solid #1EFFFF;
-    border-radius: 5;
-    padding: 1px 0px 1px 20px;
-    font: 13px;
-    min-width: 10em;
-    padding: 5px;
-	color: white;
-
-}</string>
-                    </property>
-                    <property name="text">
-                     <string>Update</string>
-                    </property>
-                   </widget>
-                  </item>
                   <item row="4" column="5" rowspan="10">
                    <widget class="Line" name="line_40">
                     <property name="orientation">
@@ -5447,7 +5398,7 @@ background-color: rgb(130, 152, 152);
                    </widget>
                   </item>
                   <item row="4" column="6" rowspan="9">
-                   <widget class="QTableWidget" name="tableWidget">
+                   <widget class="QTableWidget" name="fehlende_einweisungen_table">
                     <property name="minimumSize">
                      <size>
                       <width>350</width>
@@ -7001,7 +6952,7 @@ background-color: rgb(130, 152, 152);
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1388</width>
+     <width>1920</width>
      <height>26</height>
     </rect>
    </property>

@@ -28,16 +28,11 @@ class Mpg_Geraete():
         self.einweisungen.einweisung_tabelle_fuellen()
         self.einweisungen.combos_ma_fuellen()
         self.einweisungen.tabellen_filter_ma_combo_fuellen()
+        self.einweisungen.fehlende_einweisung_fuellen()
         #verwertet initialisieren
         self.verwertet = Verwertet(self.ui)
         self.verwertet.verwertet_tabelle_fuellen()
         self.verwertet.geraete_inventarnummer_combos_fuellen()
-
-
-    def update_tabellen_und_combos(self):
-        self.einweisung_geraete_combos_fuellen()
-        self.geraete_inventarnummer_combos_fuellen()
-        self.geraete_tabelle_fuellen()
 
 
 
