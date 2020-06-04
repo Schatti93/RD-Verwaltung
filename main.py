@@ -15,7 +15,7 @@ from admin.pdf_bestellung.pdf_bestellung import Pdf_Bestellung
 from admin.mpg.mpg_geraete import Mpg_Geraete
 from mpg.mpg_user import Mpg_User
 from admin.mitarbeiter.mitarbeiter import Mitarbeiter
-
+from admin.lager.sets import Sets
 app = QtWidgets.QApplication(sys.argv)
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, parent = None):
@@ -37,6 +37,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.mpg_geraete = Mpg_Geraete(self.ui)
         self.mpg_user = Mpg_User(self.ui)
         self.mitarbeiter = Mitarbeiter(self.ui)
+        self.sets = Sets(self.ui)
 
 window = MainWindow()
 window.show()
