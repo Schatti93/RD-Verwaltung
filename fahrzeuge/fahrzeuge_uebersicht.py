@@ -29,7 +29,7 @@ class Fahrzeuge_Uebersicht():
             counter += 1
 
         return fahrzeug_objekte
-        liste = []
+
 
     def daten_holen(self):
         sql = "SELECT * FROM fahrzeug_aktiv"

@@ -48,7 +48,10 @@ class Fahrzeug_Anzeige():
             funk_wert = QtWidgets.QLabel(self.ui.tab_4)
             funk_wert.setObjectName("funk_wert")
             count.addWidget(funk_wert, 0, 1, 1, 1)
+            spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
             self.ui.verticalLayout.addLayout(count)
+            self.ui.verticalLayout.addLayout(count)
+            self.ui.verticalLayout.addItem(spacerItem)
 
             kenn_label.setText("<html><head/><body><p><span style=\" color:#ffffff;\">Kennzeichen: </span></p></body></html>")
             kenn_wert.setText("<html><head/><body><p><span style=\" color:#ffffff;\">" + kennzeichen + "</span></p></body></html>")
