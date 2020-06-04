@@ -21,7 +21,6 @@ class Kleidung():
         self.ui.aufnahme.setItem(row, 0, name)
         self.ui.klamotten_textfeld.setText("")
 
-
     def durchgehen(self):
         row = self.ui.aufnahme.rowCount()
         for i in range(0, row):

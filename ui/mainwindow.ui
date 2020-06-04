@@ -2049,7 +2049,7 @@ background-color: rgb(130, 152, 152);
              <enum>QTabWidget::North</enum>
             </property>
             <property name="currentIndex">
-             <number>2</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="tab_6">
              <attribute name="title">
@@ -2059,7 +2059,7 @@ background-color: rgb(130, 152, 152);
               <item row="1" column="0" rowspan="2">
                <widget class="QTabWidget" name="tabWidget_2">
                 <property name="currentIndex">
-                 <number>2</number>
+                 <number>3</number>
                 </property>
                 <widget class="QWidget" name="tab_9">
                  <attribute name="title">
@@ -2656,14 +2656,7 @@ background-color: rgb(130, 152, 152);
                  <layout class="QGridLayout" name="gridLayout_33">
                   <item row="0" column="0">
                    <layout class="QGridLayout" name="gridLayout_28">
-                    <item row="3" column="0">
-                     <widget class="Line" name="line_36">
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="0">
+                    <item row="1" column="0" rowspan="2">
                      <widget class="QTableWidget" name="admin_lager_alle_produkte">
                       <property name="styleSheet">
                        <string notr="true">QTableView {
@@ -2745,14 +2738,14 @@ text-align: center;
                       </column>
                      </widget>
                     </item>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_14">
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Produkte&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <item row="4" column="0">
+                     <widget class="Line" name="line_36">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
                       </property>
                      </widget>
                     </item>
-                    <item row="2" column="0">
+                    <item row="3" column="0">
                      <widget class="QPushButton" name="admin_produkte_update">
                       <property name="styleSheet">
                        <string notr="true">QPushButton{
@@ -2792,6 +2785,19 @@ background-color: rgb(130, 152, 152);
                       </property>
                       <property name="text">
                        <string>Update</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_14">
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Produkte&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                       </property>
                      </widget>
                     </item>
@@ -3003,33 +3009,573 @@ background-color: rgb(130, 152, 152);
                   </item>
                  </layout>
                 </widget>
+                <widget class="QWidget" name="tab_21">
+                 <attribute name="title">
+                  <string>Sets</string>
+                 </attribute>
+                 <layout class="QGridLayout" name="gridLayout_36">
+                  <item row="0" column="0">
+                   <layout class="QGridLayout" name="gridLayout_34">
+                    <item row="1" column="2" rowspan="5">
+                     <widget class="Line" name="line_43">
+                      <property name="orientation">
+                       <enum>Qt::Vertical</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="5" column="0">
+                     <widget class="QTableWidget" name="new_set_table">
+                      <property name="maximumSize">
+                       <size>
+                        <width>800</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QTableView {
+border: 1px inset darkgrey;
+border-radius: 5px;
+padding: 0 8px;
+font-size: 13px;
+color: white;
+gridline-color: rgb(164, 164, 165);
+Background-color: rgb(164, 164, 165);
+
+}
+QHeaderView::section{
+
+border-style: none;
+Color: white;
+gridline-color: rgb(164, 164, 165);
+background-color: rgb(164, 164, 165);
+border-bottom: 1px inset black;
+
+}
+QTableView::item{
+border-bottom : 1px inset black;
+gridline-color: rgb(164, 164, 165);
+text-align: center;
+}</string>
+                      </property>
+                      <attribute name="horizontalHeaderCascadingSectionResizes">
+                       <bool>true</bool>
+                      </attribute>
+                      <attribute name="horizontalHeaderStretchLastSection">
+                       <bool>true</bool>
+                      </attribute>
+                      <attribute name="verticalHeaderVisible">
+                       <bool>false</bool>
+                      </attribute>
+                      <column>
+                       <property name="text">
+                        <string>Produkt</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Barcode</string>
+                       </property>
+                      </column>
+                     </widget>
+                    </item>
+                    <item row="4" column="1">
+                     <widget class="QLabel" name="label_111">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>180</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: white;</string>
+                      </property>
+                      <property name="text">
+                       <string>Inhalt des Sets (Barcodes)</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="0">
+                     <widget class="QLineEdit" name="new_set_barcode">
+                      <property name="maximumSize">
+                       <size>
+                        <width>800</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+border: 1px inset darkgrey;
+border-radius: 10px;
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 13px;
+color: white;
+}
+QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}
+</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="5">
+                     <widget class="QLabel" name="label_114">
+                      <property name="maximumSize">
+                       <size>
+                        <width>150</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: white;
+</string>
+                      </property>
+                      <property name="text">
+                       <string>Barcode hinzufügen</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="1">
+                     <widget class="QLabel" name="label_110">
+                      <property name="minimumSize">
+                       <size>
+                        <width>150</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: white;</string>
+                      </property>
+                      <property name="text">
+                       <string>Barcode</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="6" column="3">
+                     <widget class="QPushButton" name="edit_set_save_btn">
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+  	border-style: solid;
+    border: 1px solid #1e1e1e;
+    border-radius: 5;
+    padding: 1px 0px 1px 20px;
+    font: 13px;
+    min-width: 10em;
+    padding: 5px;
+	color: white;
+}
+QPushButton:hover{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+  	border-style: solid;
+    border: 1px solid rgb(59, 204, 179);
+    border-radius: 5;
+    padding: 1px 0px 1px 20px;
+    font: 13px;
+    min-width: 10em;
+    padding: 5px;
+	color: white;
+}
+QPushButton:pressed {
+background-color: rgb(130, 152, 152);
+  	border-style: solid;
+    border: 1px solid #1EFFFF;
+    border-radius: 5;
+    padding: 1px 0px 1px 20px;
+    font: 13px;
+    min-width: 10em;
+    padding: 5px;
+	color: white;
+
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Speichern</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="3">
+                     <widget class="QLabel" name="label_113">
+                      <property name="font">
+                       <font>
+                        <pointsize>14</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: white;</string>
+                      </property>
+                      <property name="text">
+                       <string>Sets Bearbeiten</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <widget class="Line" name="line_42">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="1">
+                     <widget class="QLabel" name="label_109">
+                      <property name="maximumSize">
+                       <size>
+                        <width>150</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: white;</string>
+                      </property>
+                      <property name="text">
+                       <string>name</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="3" colspan="2">
+                     <widget class="QLineEdit" name="edit_set_add_barcode">
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+border: 1px inset darkgrey;
+border-radius: 10px;
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 13px;
+color: white;
+}
+QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}
+</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="3">
+                     <widget class="Line" name="line_44">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="6" column="4">
+                     <widget class="QPushButton" name="edit_set_delete_entry_btn">
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+  	border-style: solid;
+    border: 1px solid #1e1e1e;
+    border-radius: 5;
+    padding: 1px 0px 1px 20px;
+    font: 13px;
+    min-width: 10em;
+    padding: 5px;
+	color: white;
+}
+QPushButton:hover{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+  	border-style: solid;
+    border: 1px solid rgb(59, 204, 179);
+    border-radius: 5;
+    padding: 1px 0px 1px 20px;
+    font: 13px;
+    min-width: 10em;
+    padding: 5px;
+	color: white;
+}
+QPushButton:pressed {
+background-color: rgb(130, 152, 152);
+  	border-style: solid;
+    border: 1px solid #1EFFFF;
+    border-radius: 5;
+    padding: 1px 0px 1px 20px;
+    font: 13px;
+    min-width: 10em;
+    padding: 5px;
+	color: white;
+
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Eintrag entfernen</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_108">
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>14</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: white;</string>
+                      </property>
+                      <property name="text">
+                       <string>Sets Erstellen</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="4" column="0">
+                     <widget class="QLineEdit" name="new_set_inhalt_text">
+                      <property name="maximumSize">
+                       <size>
+                        <width>800</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+border: 1px inset darkgrey;
+border-radius: 10px;
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 13px;
+color: white;
+}
+QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}
+</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="5" column="3" colspan="2">
+                     <widget class="QTableWidget" name="edit_set_table">
+                      <property name="styleSheet">
+                       <string notr="true">QTableView {
+border: 1px inset darkgrey;
+border-radius: 5px;
+padding: 0 8px;
+font-size: 13px;
+color: white;
+gridline-color: rgb(164, 164, 165);
+Background-color: rgb(164, 164, 165);
+
+}
+QHeaderView::section{
+
+border-style: none;
+Color: white;
+gridline-color: rgb(164, 164, 165);
+background-color: rgb(164, 164, 165);
+border-bottom: 1px inset black;
+
+}
+QTableView::item{
+border-bottom : 1px inset black;
+gridline-color: rgb(164, 164, 165);
+text-align: center;
+}</string>
+                      </property>
+                      <attribute name="horizontalHeaderCascadingSectionResizes">
+                       <bool>true</bool>
+                      </attribute>
+                      <attribute name="horizontalHeaderStretchLastSection">
+                       <bool>true</bool>
+                      </attribute>
+                      <attribute name="verticalHeaderVisible">
+                       <bool>false</bool>
+                      </attribute>
+                      <column>
+                       <property name="text">
+                        <string>Produkt</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Barcode</string>
+                       </property>
+                      </column>
+                     </widget>
+                    </item>
+                    <item row="2" column="5">
+                     <widget class="QLabel" name="label_112">
+                      <property name="styleSheet">
+                       <string notr="true">color: white;</string>
+                      </property>
+                      <property name="text">
+                       <string>Set</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="3" colspan="2">
+                     <widget class="QComboBox" name="edit_set_combo">
+                      <property name="styleSheet">
+                       <string notr="true">QComboBox
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    selection-background-color: #111;
+    selection-color: white;
+
+    background-color: #464646;
+    border-style: solid;
+    border: 1px solid #1e1e1e;
+    border-radius: 5;
+    padding: 1px 0px 1px 20px;
+}
+
+
+QComboBox:hover, QPushButton:hover
+{
+    border: 1px solid teal;
+
+}
+
+QComboBox:editable {
+    background: red;
+    color: white;
+}
+
+QComboBox:on
+{
+    padding-top: 0px;
+    padding-left: 0px;
+
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+    selection-background-color: rgb(67, 131, 202);
+}
+
+QComboBox:!on
+{
+
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #666, stop: 0.1 #555, stop: 0.5 #555, stop: 0.9 #444, stop: 1 #333);
+}
+
+QComboBox QAbstractItemView
+{
+    border: 2px solid darkgray;
+    color: black;
+    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #333);
+}
+
+QComboBox::drop-down
+{
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 15px;
+
+     border-left-width: 1px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 3px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 3px;
+     padding-left: 10px;
+ }
+
+
+</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="0">
+                     <widget class="QLineEdit" name="new_set_name">
+                      <property name="maximumSize">
+                       <size>
+                        <width>800</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+border: 1px inset darkgrey;
+border-radius: 10px;
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 13px;
+color: white;
+}
+QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}
+</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="6" column="0">
+                     <widget class="QPushButton" name="new_set_save_btn">
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+  	border-style: solid;
+    border: 1px solid #1e1e1e;
+    border-radius: 5;
+    padding: 1px 0px 1px 20px;
+    font: 13px;
+    min-width: 10em;
+    padding: 5px;
+	color: white;
+}
+QPushButton:hover{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+  	border-style: solid;
+    border: 1px solid rgb(59, 204, 179);
+    border-radius: 5;
+    padding: 1px 0px 1px 20px;
+    font: 13px;
+    min-width: 10em;
+    padding: 5px;
+	color: white;
+}
+QPushButton:pressed {
+background-color: rgb(130, 152, 152);
+  	border-style: solid;
+    border: 1px solid #1EFFFF;
+    border-radius: 5;
+    padding: 1px 0px 1px 20px;
+    font: 13px;
+    min-width: 10em;
+    padding: 5px;
+	color: white;
+
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Speichern</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="4" column="3" colspan="2">
+                     <widget class="QLineEdit" name="edit_set_barcode">
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+border: 1px inset darkgrey;
+border-radius: 10px;
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 13px;
+color: white;
+}
+QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}
+</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="4" column="5">
+                     <widget class="QLabel" name="label_115">
+                      <property name="styleSheet">
+                       <string notr="true">color: white;</string>
+                      </property>
+                      <property name="text">
+                       <string>Barcode des Sets</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </widget>
                 <widget class="QWidget" name="tab_11">
                  <attribute name="title">
                   <string>Material einpflegen</string>
                  </attribute>
                  <layout class="QGridLayout" name="gridLayout_21">
-                  <item row="0" column="2">
-                   <spacer name="horizontalSpacer_17">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item row="0" column="1">
+                  <item row="0" column="0">
                    <layout class="QGridLayout" name="gridLayout_20">
-                    <item row="2" column="2">
-                     <widget class="QLabel" name="label_37">
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Barcode&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                      </property>
-                     </widget>
-                    </item>
                     <item row="0" column="1">
                      <widget class="QLabel" name="label_43">
                       <property name="font">
@@ -3042,35 +3588,53 @@ background-color: rgb(130, 152, 152);
                       </property>
                      </widget>
                     </item>
-                    <item row="2" column="1">
-                     <widget class="QLineEdit" name="admin_material_speichern_barcode">
+                    <item row="6" column="1" colspan="2">
+                     <widget class="QPushButton" name="admin_material_speichern_button">
                       <property name="styleSheet">
-                       <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
-border: 1px inset darkgrey;
-border-radius: 10px;
-padding: 0 8px;
-selection-background-color: darkgray;
-font-size: 13px;
-color: white;
+                       <string notr="true">QPushButton{
+   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+  	border-style: solid;
+    border: 1px solid #1e1e1e;
+    border-radius: 5;
+    padding: 1px 0px 1px 20px;
+    font: 13px;
+    min-width: 10em;
+    padding: 5px;
+	color: white;
 }
-QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}
-</string>
+QPushButton:hover{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+  	border-style: solid;
+    border: 1px solid rgb(59, 204, 179);
+    border-radius: 5;
+    padding: 1px 0px 1px 20px;
+    font: 13px;
+    min-width: 10em;
+    padding: 5px;
+	color: white;
+}
+QPushButton:pressed {
+background-color: rgb(130, 152, 152);
+  	border-style: solid;
+    border: 1px solid #1EFFFF;
+    border-radius: 5;
+    padding: 1px 0px 1px 20px;
+    font: 13px;
+    min-width: 10em;
+    padding: 5px;
+	color: white;
+
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Speichern</string>
                       </property>
                      </widget>
                     </item>
-                    <item row="3" column="1">
-                     <widget class="QLineEdit" name="admin_material_speichern_anzahl">
-                      <property name="styleSheet">
-                       <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
-border: 1px inset darkgrey;
-border-radius: 10px;
-padding: 0 8px;
-selection-background-color: darkgray;
-font-size: 13px;
-color: white;
-}
-QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}
-</string>
+                    <item row="4" column="2">
+                     <widget class="QLabel" name="label_42">
+                      <property name="text">
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Produkt&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                       </property>
                      </widget>
                     </item>
@@ -3144,53 +3708,26 @@ QComboBox::drop-down
                       </property>
                      </widget>
                     </item>
-                    <item row="6" column="1" colspan="2">
-                     <widget class="QPushButton" name="admin_material_speichern_button">
+                    <item row="2" column="1">
+                     <widget class="QLineEdit" name="admin_material_speichern_barcode">
                       <property name="styleSheet">
-                       <string notr="true">QPushButton{
-   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
-  	border-style: solid;
-    border: 1px solid #1e1e1e;
-    border-radius: 5;
-    padding: 1px 0px 1px 20px;
-    font: 13px;
-    min-width: 10em;
-    padding: 5px;
-	color: white;
+                       <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+border: 1px inset darkgrey;
+border-radius: 10px;
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 13px;
+color: white;
 }
-QPushButton:hover{
-	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
-  	border-style: solid;
-    border: 1px solid rgb(59, 204, 179);
-    border-radius: 5;
-    padding: 1px 0px 1px 20px;
-    font: 13px;
-    min-width: 10em;
-    padding: 5px;
-	color: white;
-}
-QPushButton:pressed {
-background-color: rgb(130, 152, 152);
-  	border-style: solid;
-    border: 1px solid #1EFFFF;
-    border-radius: 5;
-    padding: 1px 0px 1px 20px;
-    font: 13px;
-    min-width: 10em;
-    padding: 5px;
-	color: white;
-
-}</string>
-                      </property>
-                      <property name="text">
-                       <string>Speichern</string>
+QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}
+</string>
                       </property>
                      </widget>
                     </item>
-                    <item row="4" column="2">
-                     <widget class="QLabel" name="label_42">
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Produkt&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <item row="1" column="1">
+                     <widget class="Line" name="line_5">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
                       </property>
                      </widget>
                     </item>
@@ -3250,27 +3787,30 @@ text-align: center;
                       </column>
                      </widget>
                     </item>
-                    <item row="1" column="1">
-                     <widget class="Line" name="line_5">
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
+                    <item row="2" column="2">
+                     <widget class="QLabel" name="label_37">
+                      <property name="text">
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Barcode&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="1">
+                     <widget class="QLineEdit" name="admin_material_speichern_anzahl">
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+border: 1px inset darkgrey;
+border-radius: 10px;
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 13px;
+color: white;
+}
+QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}
+</string>
                       </property>
                      </widget>
                     </item>
                    </layout>
-                  </item>
-                  <item row="0" column="0">
-                   <spacer name="horizontalSpacer_18">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
                   </item>
                  </layout>
                 </widget>
@@ -3492,7 +4032,7 @@ background-color: rgb(130, 152, 152);
               <item row="0" column="0">
                <widget class="QTabWidget" name="tabWidget_3">
                 <property name="currentIndex">
-                 <number>2</number>
+                 <number>3</number>
                 </property>
                 <widget class="QWidget" name="tab_14">
                  <attribute name="title">
@@ -6961,6 +7501,8 @@ background-color: rgb(130, 152, 152);
  <tabstops>
   <tabstop>admin_text_ben</tabstop>
   <tabstop>admin_text_pw</tabstop>
+  <tabstop>login_btn</tabstop>
+  <tabstop>admin_logout_btn</tabstop>
   <tabstop>tabWidget</tabstop>
   <tabstop>uebersicht_lager_table</tabstop>
   <tabstop>combobox_lager</tabstop>
@@ -6989,8 +7531,6 @@ background-color: rgb(130, 152, 152);
   <tabstop>kleidung_zurueck_tabelle</tabstop>
   <tabstop>admin_bereich</tabstop>
   <tabstop>tabWidget_2</tabstop>
-  <tabstop>admin_lager_alle_produkte</tabstop>
-  <tabstop>admin_produkte_update</tabstop>
   <tabstop>admin_new_prod_prod</tabstop>
   <tabstop>admin_new_prod_bes</tabstop>
   <tabstop>admin_new_prod_min</tabstop>
@@ -7004,9 +7544,10 @@ background-color: rgb(130, 152, 152);
   <tabstop>admin_del_prod_bar</tabstop>
   <tabstop>admin_del_prod_table</tabstop>
   <tabstop>admin_del_prod_btn</tabstop>
+  <tabstop>admin_lager_alle_produkte</tabstop>
+  <tabstop>admin_produkte_update</tabstop>
   <tabstop>admin_lager_fehlendes_material</tabstop>
   <tabstop>lager_bestellung</tabstop>
-  <tabstop>pdf_erstellen</tabstop>
   <tabstop>admin_material_speichern_barcode</tabstop>
   <tabstop>admin_material_speichern_anzahl</tabstop>
   <tabstop>admin_material_speichern_combo</tabstop>
@@ -7018,6 +7559,19 @@ background-color: rgb(130, 152, 152);
   <tabstop>fahrzeug_admin_tuev</tabstop>
   <tabstop>fahrzeug_admin_save_btn</tabstop>
   <tabstop>tabWidget_3</tabstop>
+  <tabstop>geraete_verwalten_inventarnummer</tabstop>
+  <tabstop>geraete_verwalten_geraetenummer</tabstop>
+  <tabstop>geraete_verwalten_ce</tabstop>
+  <tabstop>geraete_verwalten_bemerkung</tabstop>
+  <tabstop>geraete_verwalten_anschaffung</tabstop>
+  <tabstop>geraete_verwalten_geraet</tabstop>
+  <tabstop>geraete_verwalten_pruefdatum</tabstop>
+  <tabstop>geraete_verwalten_prueffrist</tabstop>
+  <tabstop>geraete_verwalten_artikelnr</tabstop>
+  <tabstop>geraete_verwalten_standort_combo</tabstop>
+  <tabstop>geraete_verwalten_speichern_button</tabstop>
+  <tabstop>mpg_geraete_tabelle</tabstop>
+  <tabstop>geraete_verwalten_aenderung_speichern_btn</tabstop>
   <tabstop>verwertet_geraete_combo</tabstop>
   <tabstop>verwertet_datum</tabstop>
   <tabstop>verwertet_bemerkung</tabstop>
@@ -7026,18 +7580,22 @@ background-color: rgb(130, 152, 152);
   <tabstop>einweisung_geraete_combo</tabstop>
   <tabstop>einweisung_softwareversion</tabstop>
   <tabstop>einweisung_datum</tabstop>
+  <tabstop>einweisung_ma_combo</tabstop>
   <tabstop>einweisung_einweisender</tabstop>
   <tabstop>einweisung_original</tabstop>
   <tabstop>einweisung_speichern_btn</tabstop>
-  <tabstop>einweisung_tabelle</tabstop>
-  <tabstop>einweisung_tabelle_filtern_geraet_combo</tabstop>
-  <tabstop>einweisung_tabelle_filtern_software_combo</tabstop>
   <tabstop>einweisung_geraete_combo_standard</tabstop>
   <tabstop>einweisung_softwareversion_standard</tabstop>
   <tabstop>einweisung_datum_standard</tabstop>
+  <tabstop>einweisung_ma_standard_combo</tabstop>
   <tabstop>einweisung_einweisender_standard</tabstop>
   <tabstop>einweisung_original_standard</tabstop>
   <tabstop>einweisung_standardwerte_loeschen_btn</tabstop>
+  <tabstop>einweisung_tabelle</tabstop>
+  <tabstop>einweisung_tabelle_filtern_geraet_combo</tabstop>
+  <tabstop>einweisung_tabelle_filtern_ma_combo</tabstop>
+  <tabstop>einweisung_tabelle_filtern_software_combo</tabstop>
+  <tabstop>fehlende_einweisungen_table</tabstop>
   <tabstop>mpg_standort_text</tabstop>
   <tabstop>mpg_standort_speichern_btn</tabstop>
   <tabstop>mpg_standorte_tabelle</tabstop>
@@ -7055,23 +7613,21 @@ background-color: rgb(130, 152, 152);
   <tabstop>admin_loeschen_pw</tabstop>
   <tabstop>admin_loeschen_speichern</tabstop>
   <tabstop>tabelle_alle_admins</tabstop>
+  <tabstop>ma_neu_vorname_text</tabstop>
+  <tabstop>ma_neu_nachname_text</tabstop>
+  <tabstop>ma_neu_checkbox</tabstop>
+  <tabstop>ma_neu_speichern_btn</tabstop>
+  <tabstop>ma_tabelle</tabstop>
+  <tabstop>ma_loeschen_combo</tabstop>
+  <tabstop>ma_loeschen_btn</tabstop>
   <tabstop>check_uebersicht</tabstop>
   <tabstop>check_lager</tabstop>
   <tabstop>check_fahrzeuge</tabstop>
   <tabstop>check_dienstbekleidung</tabstop>
   <tabstop>einstellungen_speichern</tabstop>
+  <tabstop>pdf_speicheror_btn</tabstop>
   <tabstop>pushButton</tabstop>
-  <tabstop>login_btn</tabstop>
-  <tabstop>admin_logout_btn</tabstop>
-  <tabstop>geraete_verwalten_standort_combo</tabstop>
-  <tabstop>geraete_verwalten_speichern_button</tabstop>
-  <tabstop>geraete_verwalten_geraet</tabstop>
-  <tabstop>geraete_verwalten_inventarnummer</tabstop>
-  <tabstop>geraete_verwalten_ce</tabstop>
-  <tabstop>geraete_verwalten_geraetenummer</tabstop>
-  <tabstop>mpg_geraete_tabelle</tabstop>
-  <tabstop>geraete_verwalten_pruefdatum</tabstop>
-  <tabstop>geraete_verwalten_prueffrist</tabstop>
+  <tabstop>pdf_erstellen</tabstop>
  </tabstops>
  <resources/>
  <connections/>
