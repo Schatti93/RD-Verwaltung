@@ -19,8 +19,8 @@ class Lagerverwaltung():
 
         self.ui.lager_btn.clicked.connect(self.durchgehen)
         self.ui.combobox_lager.currentTextChanged.connect(self.pruefung_auf_textfeld)
-        self.ui.lager_textfeld_produkt.returnPressed.connect(self.zwischenspeicher)
-        self.ui.lager_uebernehmen_btn.clicked.connect(self.zwischenspeicher)
+        self.ui.lager_textfeld_produkt.returnPressed.connect(self.zwischenspeicher_check)
+        self.ui.lager_uebernehmen_btn.clicked.connect(self.zwischenspeicher_check)
         self.ui.lager_tabelle_leeren.clicked.connect(self.tabelle_leeren)
         self.ui.lager_eintrag_loeschen.clicked.connect(self.eintrag_loeschen)
         self.einsatznummer_nur_int()
@@ -65,7 +65,7 @@ class Lagerverwaltung():
                 count = 1
         return count
 
-    def zwischenspeicher(self): # speichert die daten zunaechst in der tabelle zur ansicht
+    def zwischenspeicher_check(self): # speichert die daten zunaechst in der tabelle zur ansicht
         modus = self.ui.combobox_lager.currentText()
         einsatznummer = self.ui.lager_textfeld_einsatz.text()
         durchfuehren = 1
@@ -81,44 +81,78 @@ class Lagerverwaltung():
             self.ui.lager_error_label.setStyleSheet("")
             barcode = self.ui.lager_textfeld_produkt.text()
             produkt = Database_Lagerverwaltung().produkt_abfrage(barcode)
-            text = self.ui.combobox_lager.currentText()
-            rows = self.ui.lager_table.rowCount()
-            keyword = ""
-            if text == "Auffüllen nach Einsatz":
-                keyword = self.ui.lager_textfeld_einsatz.text()
-            if text == "Auffüllen wegen Fehlbestand":
-                keyword = "Auffüllen"
-            if text == "Falsch Entnahme - wieder zurück geben":
-                keyword = "Zurück"
             if len(produkt) == 0:
-                self.ui.lager_error_label.setText("Produkt mit dem Barcode nicht vorhanden!")
-                self.ui.lager_error_label.setStyleSheet("color:#ffffff; border: 1px solid red; border-radius: 5px")
-
+                produkt = Database_Lagerverwaltung().get_set_products(barcode)
+                if len(produkt) > 0:
+                    self.zwischenspeicher_set(produkt[0][0])
+                if len(produkt) == 0:
+                    self.ui.lager_error_label.setText("Produkt mit dem Barcode nicht vorhanden!")
+                    self.ui.lager_error_label.setStyleSheet(
+                        "color:#ffffff; border: 1px solid red; border-radius: 5px")
             else:
-                pruefung = self.pruefung_eintrag_vorhanden_tabelle(produkt[0][0], keyword)
-                if pruefung == 0:
-                    row = self.ui.lager_table.rowCount()
-                    self.ui.lager_table.insertRow(row)
-                    produkt = QtWidgets.QTableWidgetItem(str(produkt[0][0]))
-                    produkt.setTextAlignment(Qt.AlignCenter)
-                    self.ui.lager_table.setItem(row, 0, QtWidgets.QTableWidgetItem(produkt))
-                    anzahl = QtWidgets.QTableWidgetItem(str(1))
-                    anzahl.setTextAlignment(Qt.AlignCenter)
-                    self.ui.lager_table.setItem(row, 1, QtWidgets.QTableWidgetItem(anzahl))
-                    if text == "Auffüllen nach Einsatz":
-                        keyword = QtWidgets.QTableWidgetItem(str(keyword))
-                        keyword.setTextAlignment(Qt.AlignCenter)
-                        self.ui.lager_table.setItem(row, 2, QtWidgets.QTableWidgetItem(keyword))
-                    if text == "Auffüllen wegen Fehlbestand":
-                        keyword = QtWidgets.QTableWidgetItem(str(keyword))
-                        keyword.setTextAlignment(Qt.AlignCenter)
-                        self.ui.lager_table.setItem(row, 2, QtWidgets.QTableWidgetItem(keyword))
-                    if text == "Falsch Entnahme - wieder zurück geben":
-                        keyword = QtWidgets.QTableWidgetItem(str(keyword))
-                        keyword.setTextAlignment(Qt.AlignCenter)
-                        self.ui.lager_table.setItem(row, 2, QtWidgets.QTableWidgetItem(keyword))
+                self.zwischenspeicher_produkt(produkt)
 
-                    self.ui.lager_textfeld_produkt.setText("")
+    def modus_check(self, text):
+        keyword = ""
+        if text == "Auffüllen nach Einsatz":
+            keyword = self.ui.lager_textfeld_einsatz.text()
+        if text == "Auffüllen wegen Fehlbestand":
+            keyword = "Auffüllen"
+        if text == "Falsch Entnahme - wieder zurück geben":
+            keyword = "Zurück"
+        return keyword
+
+    def zwischenspeicher_set(self, produkt):
+        text = self.ui.combobox_lager.currentText()
+        keyword = self.modus_check(text)
+        try:
+            barcode = produkt.split(", ")
+        except:
+            barcode = [produkt]
+        for element in range(0, len(barcode)):
+            produkt = Database_Lagerverwaltung().produkt_abfrage(barcode[element])
+            pruefung = self.pruefung_eintrag_vorhanden_tabelle(barcode[element], keyword)
+            if pruefung == 0:
+                row = self.ui.lager_table.rowCount()
+                self.ui.lager_table.insertRow(row)
+
+                produkt = QtWidgets.QTableWidgetItem(str(produkt[0][0]))
+                produkt.setTextAlignment(Qt.AlignCenter)
+                self.ui.lager_table.setItem(row, 0, QtWidgets.QTableWidgetItem(produkt))
+
+                anzahl = QtWidgets.QTableWidgetItem(str(1))
+                anzahl.setTextAlignment(Qt.AlignCenter)
+                self.ui.lager_table.setItem(row, 1, QtWidgets.QTableWidgetItem(anzahl))
+
+                entry = QtWidgets.QTableWidgetItem(str(keyword))
+                entry.setTextAlignment(Qt.AlignCenter)
+                self.ui.lager_table.setItem(row, 2, QtWidgets.QTableWidgetItem(entry))
+
+                self.ui.lager_textfeld_produkt.setText("")
+        self.ui.lager_table.resizeColumnsToContents()
+        self.ui.lager_table.horizontalHeader().setSectionResizeMode(1)
+
+    def zwischenspeicher_produkt(self, produkt,):
+        text = self.ui.combobox_lager.currentText()
+        keyword = self.modus_check(text)
+        pruefung = self.pruefung_eintrag_vorhanden_tabelle(produkt[0][0], keyword)
+        if pruefung == 0:
+            row = self.ui.lager_table.rowCount()
+            self.ui.lager_table.insertRow(row)
+
+            produkt = QtWidgets.QTableWidgetItem(str(produkt[0][0]))
+            produkt.setTextAlignment(Qt.AlignCenter)
+            self.ui.lager_table.setItem(row, 0, QtWidgets.QTableWidgetItem(produkt))
+
+            anzahl = QtWidgets.QTableWidgetItem(str(1))
+            anzahl.setTextAlignment(Qt.AlignCenter)
+            self.ui.lager_table.setItem(row, 1, QtWidgets.QTableWidgetItem(anzahl))
+
+            keyword = QtWidgets.QTableWidgetItem(str(keyword))
+            keyword.setTextAlignment(Qt.AlignCenter)
+            self.ui.lager_table.setItem(row, 2, QtWidgets.QTableWidgetItem(keyword))
+
+            self.ui.lager_textfeld_produkt.setText("")
         self.ui.lager_table.resizeColumnsToContents()
         self.ui.lager_table.horizontalHeader().setSectionResizeMode(1)
 

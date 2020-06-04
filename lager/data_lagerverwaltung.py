@@ -11,12 +11,21 @@ class Database_Lagerverwaltung():
     def __init__(self):
         self.conn = sqlite3.connect("Database.db")
         self.c = self.conn.cursor()
+        self.conn_sets = sqlite3.connect("sets.db")
+        self.c_sets = self.conn_sets.cursor()
         self.today = today = date.today()
         self.datum = str(today.day) + '.' + str(today.month) + '.' + str(today.year)
 
 
     def __del__(self):
         self.conn.close()  # zum freigeben der Datenbank
+
+    def get_set_products(self, barcode):
+        params = (barcode,)
+        sql = "SELECT produkte from sets WHERE barcode = ?"
+        self.c_sets.execute(sql, params)
+        return self.c_sets.fetchall()
+
 
     #verpackungsgröße mit einbeziehen
 

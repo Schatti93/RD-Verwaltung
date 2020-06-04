@@ -27,7 +27,7 @@ class Sets():
                 barcodes = barcodes + ", " + str((self.ui.new_set_table.item(element, 1).text()))
         self.data.save_set(name, barcode, barcodes)
         self.edit_set_combo_fill()
-        self.ui.edit_set_table.setRowCount(0)
+        self.ui.new_set_table.setRowCount(0)
         self.ui.new_set_name.setText("")
         self.ui.new_set_barcode.setText("")
 
@@ -98,17 +98,24 @@ class Sets():
             self.ui.edit_set_add_barcode.setText("")
             self.ui.edit_set_table.setRowCount(0)
         else:
-            set = self.data.get_set_products(set_text)[0][0].split(", ")
-            for element in range(0, len(set)):
-                rows = self.ui.edit_set_table.rowCount()
-                self.ui.edit_set_table.insertRow(rows)
-                product_name = self.data.ask_product_name(set[element])[0][0]
-                entry = QtWidgets.QTableWidgetItem(product_name)
-                entry.setTextAlignment(Qt.AlignCenter)
-                self.ui.edit_set_table.setItem(rows, 0, QtWidgets.QTableWidgetItem(entry))
-                entry = QtWidgets.QTableWidgetItem(set[element])
-                entry.setTextAlignment(Qt.AlignCenter)
-                self.ui.edit_set_table.setItem(rows, 1, QtWidgets.QTableWidgetItem(entry))
-            self.ui.edit_set_table.horizontalHeader().setSectionResizeMode(1)
-            barcode = self.data.get_set_barcode(set_text)[0][0]
-            self.ui.edit_set_barcode.setText(barcode)
+
+            set = self.data.get_set_products(set_text)
+            if len(set) == 0:
+                pass
+            else:
+                set = set[0][0]
+                if "," in set:
+                    set = set.split(", ")
+                for element in range(0, len(set)):
+                    rows = self.ui.edit_set_table.rowCount()
+                    self.ui.edit_set_table.insertRow(rows)
+                    product_name = self.data.ask_product_name(set[element])[0][0]
+                    entry = QtWidgets.QTableWidgetItem(product_name)
+                    entry.setTextAlignment(Qt.AlignCenter)
+                    self.ui.edit_set_table.setItem(rows, 0, QtWidgets.QTableWidgetItem(entry))
+                    entry = QtWidgets.QTableWidgetItem(set[element])
+                    entry.setTextAlignment(Qt.AlignCenter)
+                    self.ui.edit_set_table.setItem(rows, 1, QtWidgets.QTableWidgetItem(entry))
+                self.ui.edit_set_table.horizontalHeader().setSectionResizeMode(1)
+                barcode = self.data.get_set_barcode(set_text)[0][0]
+                self.ui.edit_set_barcode.setText(barcode)
