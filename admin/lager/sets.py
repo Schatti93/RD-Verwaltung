@@ -6,15 +6,22 @@ class Sets():
     def __init__(self, ui):
         self.ui = ui
         self.data = Sets_Data()
-        self.edit_set_combo_fill()
+
         self.ui.new_set_inhalt_text.returnPressed.connect(self.write_entry_in_new_set_table)
         self.ui.edit_set_combo.currentTextChanged.connect(self.edit_set_table_fill)
         self.ui.new_set_save_btn.clicked.connect(self.new_set)
         self.ui.edit_set_save_btn.clicked.connect(self.update_set)
         self.ui.edit_set_delete_entry_btn.clicked.connect(self.delete_entry)
         self.ui.edit_set_add_barcode.returnPressed.connect(self.new_entry_edit_set)
+        self.ui.edit_set_delete_btn.clicked.connect(self.delete_set)
 
     # actions from buttons
+
+    def delete_set(self):
+        barcode = self.ui.edit_set_barcode.text()
+        self.data.delete_set(barcode)
+        self.edit_set_combo_fill()
+
     def new_set(self):
         name = self.ui.new_set_name.text()
         barcode = self.ui.new_set_barcode.text()
@@ -48,7 +55,7 @@ class Sets():
         row = self.ui.edit_set_table.currentRow()
         self.ui.edit_set_table.removeRow(row)
 
-    # action from pressed enter
+    # actions from pressed enter
     def write_entry_in_new_set_table(self):
         barcode = self.ui.new_set_inhalt_text.text()
         produkt = self.data.ask_product_name(barcode)
@@ -89,7 +96,7 @@ class Sets():
             entry_list.append(entrys[element][0])
         self.ui.edit_set_combo.addItems(entry_list)
 
-   #action from combobox
+   #actions from combobox
     def edit_set_table_fill(self):
         self.ui.edit_set_table.setRowCount(0)
         set_text = self.ui.edit_set_combo.currentText()

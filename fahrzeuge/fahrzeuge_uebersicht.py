@@ -1,4 +1,3 @@
-
 from uebersicht.uebersicht_fahrzeuge_anzeige import Fahrzeug_Anzeige
 import sqlite3
 

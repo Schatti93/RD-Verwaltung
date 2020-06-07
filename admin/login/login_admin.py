@@ -24,7 +24,7 @@ class Login_Admin():
     def check(self):
         benutzer = self.ui.admin_text_ben.text()
         passwort = self.ui.admin_text_pw.text()
-        passwort_hash = hashlib.sha1(passwort.encode('utf-8')).hexdigest()
+        passwort_hash = hashlib.sha512(passwort.encode('utf-8')).hexdigest()
         liste = self.data.passwort_check(benutzer, passwort_hash)
 
         if len(liste) == 1:
@@ -50,8 +50,6 @@ class Login_Admin():
             self.ui.admin_logout_btn.setVisible(True)
             self.ui.login_error_label.setText("")
             self.ui.admin_logout_btn.setVisible(True)
-
-
 
         else:
             self.ui.login_error_label.setText("<html><head/><body><p><span style=\" color:#cc3300 ;\">Passwort / Benutzer falsch</span></p></body></html>")

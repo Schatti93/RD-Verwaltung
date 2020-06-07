@@ -3,14 +3,12 @@ from reportlab.lib.pagesizes import A4
 import datetime
 from admin.pdf_bestellung.pdf_bestellung_data import Pdf_Bestellung_Data
 from uebersicht.uebersicht import Uebersicht
-from admin.lager.admin_lager import Admin_Lager
-
+from admin.lager.update_lager import Update_Lager
 
 class Pdf_Bestellung():
     def __init__(self, ui):
         self.ui = ui
         self.data = Pdf_Bestellung_Data()
-        self.ui.pdf_erstellen.clicked.connect(self.pdf_erstellen)
 
     def unter_mindest_bestand(self):
         alle_daten = self.data.alle_produkte()
@@ -26,9 +24,6 @@ class Pdf_Bestellung():
     def status_aendern(self, liste):
         for i in range(0, len(liste)):
             self.data.status_aendern(liste[i])
-        Uebersicht(self.ui).lager_uebersicht()
-        Admin_Lager(self.ui).update()
-
 
     def pdf_erstellen(self):
         material_liste = self.unter_mindest_bestand()

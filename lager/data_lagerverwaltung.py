@@ -1,12 +1,6 @@
 from datetime import date
 import sqlite3
 
-
-# Warnung wenn mindest bestand unterschritten
-
-
-
-
 class Database_Lagerverwaltung():
     def __init__(self):
         self.conn = sqlite3.connect("Database.db")
@@ -15,7 +9,6 @@ class Database_Lagerverwaltung():
         self.c_sets = self.conn_sets.cursor()
         self.today = today = date.today()
         self.datum = str(today.day) + '.' + str(today.month) + '.' + str(today.year)
-
 
     def __del__(self):
         self.conn.close()  # zum freigeben der Datenbank
@@ -26,22 +19,6 @@ class Database_Lagerverwaltung():
         self.c_sets.execute(sql, params)
         return self.c_sets.fetchall()
 
-
-    #verpackungsgröße mit einbeziehen
-
-    def new_produkt(self, produkt, bestand, mindest, maximal, barcode, inhalt, artikel_nr, status):
-        params = (produkt, bestand, mindest, maximal, barcode, inhalt, artikel_nr, status)
-        sql = "INSERT INTO lager VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?)"
-        self.c.execute(sql, params)
-        self.conn.commit()
-
-    def del_produkt(self, produkt):
-        params = (produkt, )
-        sql = "DELETE FROM lager WHERE Produkt = ?"
-        self.c.execute(sql, params)
-        self.conn.commit()
-
-    #Einsazunummer einfügen
     def entnahme(self, produkt, menge):
         params = (produkt, )
         liste = []
@@ -69,18 +46,6 @@ class Database_Lagerverwaltung():
         self.c.execute(sql, params)
         self.conn.commit()
 
-    def produkt_abfrage(self, barcode):
-        params = (barcode, )
-        sql = "SELECT Produkt FROM lager WHERE Barcode = ?"
-        self.c.execute(sql, params)
-        return self.c.fetchall()
-
-    def barcode_abfrage(self, produkt):
-        params = (produkt,)
-        sql = "SELECT barcode FROM lager WHERE Produkt = ?"
-        self.c.execute(sql, params)
-        return self.c.fetchall()
-
     def get_liste(self):
         sql = "SELECT * FROM lager"
         self.c.execute(sql)
@@ -104,10 +69,10 @@ class Database_Lagerverwaltung():
         self.c.execute(sql, params)
         self.conn.commit()
 
-    def update_alle_produkte(self, id, produkt, bestand, mindest, maximun, barcode, inhalt, artnr):
-        params = (produkt, bestand, mindest, maximun, barcode, inhalt, artnr, id)
-        sql = "UPDATE lager SET Produkt = ?, Bestand = ?, 'Mindest bestand' = ?, 'Maximal Bestand' = ?," \
-              " Barcode = ?, inhalt_menge = ?, artikel_nr = ? WHERE id = ?"
+    def produkt_abfrage(self, barcode):
+        params = (barcode, )
+        sql = "SELECT Produkt FROM lager WHERE Barcode = ?"
         self.c.execute(sql, params)
-        self.conn.commit()
+        return self.c.fetchall()
+
 

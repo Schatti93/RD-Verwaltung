@@ -1,21 +1,16 @@
 from lager.data_lagerverwaltung import Database_Lagerverwaltung
-from lager.online_bestellung import Online_Bestellung
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt
+from PyQt5 import QtCore
 from uebersicht.uebersicht import Uebersicht
 from datetime import date
 from PyQt5.QtGui import QIntValidator
-from admin.lager.admin_lager import Admin_Lager
+from admin.lager.update_lager import Update_Lager
 
 class Lagerverwaltung():
     def __init__(self, ui):
         self.ui = ui
-        self.lagerverwaltung = Database_Lagerverwaltung()
-
-        #in admin einfügen
-        self.bestellen = Online_Bestellung()
-        self.ui.lager_bestellung.clicked.connect(self.bestellen.nachbestellen)
-        ##
+        self.data = Database_Lagerverwaltung()
 
         self.ui.lager_btn.clicked.connect(self.durchgehen)
         self.ui.combobox_lager.currentTextChanged.connect(self.pruefung_auf_textfeld)
@@ -54,9 +49,10 @@ class Lagerverwaltung():
             produkt_tabelle = self.ui.lager_table.item(i, 0).text()
             keyword_tabelle = self.ui.lager_table.item(i, 2).text()
             if produkt_tabelle == produkt and keyword_tabelle == keyword:
-                anzahl = int(self.ui.lager_table.item(i, 1).text())
-                anzahl += 1
-                anzahl = QtWidgets.QTableWidgetItem(str(anzahl))
+                menge = int(self.ui.lager_table.item(i, 1).text())
+                menge += 1
+                anzahl = QtWidgets.QTableWidgetItem()
+                anzahl.setData(QtCore.Qt.EditRole, menge)
                 anzahl.setTextAlignment(Qt.AlignCenter)
                 self.ui.lager_table.setItem(i, 1, QtWidgets.QTableWidgetItem(anzahl))
                 self.ui.lager_textfeld_produkt.setText("")
@@ -89,6 +85,7 @@ class Lagerverwaltung():
                     self.ui.lager_error_label.setText("Produkt mit dem Barcode nicht vorhanden!")
                     self.ui.lager_error_label.setStyleSheet(
                         "color:#ffffff; border: 1px solid red; border-radius: 5px")
+                    self.ui.lager_textfeld_produkt.setText("")
             else:
                 self.zwischenspeicher_produkt(produkt)
 
@@ -105,9 +102,9 @@ class Lagerverwaltung():
     def zwischenspeicher_set(self, produkt):
         text = self.ui.combobox_lager.currentText()
         keyword = self.modus_check(text)
-        try:
+        if "," in produkt:
             barcode = produkt.split(", ")
-        except:
+        else:
             barcode = [produkt]
         for element in range(0, len(barcode)):
             produkt = Database_Lagerverwaltung().produkt_abfrage(barcode[element])
@@ -118,14 +115,17 @@ class Lagerverwaltung():
 
                 produkt = QtWidgets.QTableWidgetItem(str(produkt[0][0]))
                 produkt.setTextAlignment(Qt.AlignCenter)
+                produkt.setFlags(QtCore.Qt.ItemIsEnabled)
                 self.ui.lager_table.setItem(row, 0, QtWidgets.QTableWidgetItem(produkt))
 
-                anzahl = QtWidgets.QTableWidgetItem(str(1))
+                anzahl = QtWidgets.QTableWidgetItem()
+                anzahl.setData(QtCore.Qt.EditRole, 1)
                 anzahl.setTextAlignment(Qt.AlignCenter)
                 self.ui.lager_table.setItem(row, 1, QtWidgets.QTableWidgetItem(anzahl))
 
                 entry = QtWidgets.QTableWidgetItem(str(keyword))
                 entry.setTextAlignment(Qt.AlignCenter)
+                entry.setFlags(QtCore.Qt.ItemIsEnabled)
                 self.ui.lager_table.setItem(row, 2, QtWidgets.QTableWidgetItem(entry))
 
                 self.ui.lager_textfeld_produkt.setText("")
@@ -142,14 +142,17 @@ class Lagerverwaltung():
 
             produkt = QtWidgets.QTableWidgetItem(str(produkt[0][0]))
             produkt.setTextAlignment(Qt.AlignCenter)
+            produkt.setFlags(QtCore.Qt.ItemIsEnabled)
             self.ui.lager_table.setItem(row, 0, QtWidgets.QTableWidgetItem(produkt))
 
-            anzahl = QtWidgets.QTableWidgetItem(str(1))
+            anzahl = QtWidgets.QTableWidgetItem()
             anzahl.setTextAlignment(Qt.AlignCenter)
+            anzahl.setData(QtCore.Qt.EditRole, 1)
             self.ui.lager_table.setItem(row, 1, QtWidgets.QTableWidgetItem(anzahl))
 
             keyword = QtWidgets.QTableWidgetItem(str(keyword))
             keyword.setTextAlignment(Qt.AlignCenter)
+            keyword.setFlags(QtCore.Qt.ItemIsEnabled)
             self.ui.lager_table.setItem(row, 2, QtWidgets.QTableWidgetItem(keyword))
 
             self.ui.lager_textfeld_produkt.setText("")
@@ -170,6 +173,7 @@ class Lagerverwaltung():
             else:
                 item = self.ui.lager_table.item(0, 0).text()
                 menge = self.ui.lager_table.item(0, 1).text()
+                print(item + ": " + str(menge))
                 Database_Lagerverwaltung().entnahme(item, int(menge))
 
                 try:
@@ -178,7 +182,7 @@ class Lagerverwaltung():
                         nummer = self.ui.lager_table.item(0, 2).text()
                         today = date.today()
                         heute = str(today.day) + '.' + str(today.month) + '.' + str(today.year)
-                        self.lagerverwaltung.einsatz_nachweis(nummer, item, menge, heute)
+                        self.data.einsatz_nachweis(nummer, item, menge, heute)
                 except (TypeError, ValueError):
                     pass
             self.ui.lager_table.removeRow(0)
@@ -186,7 +190,7 @@ class Lagerverwaltung():
         self.ui.lager_error_label.setStyleSheet("color:#ffffff; font-size:13pt; border: 1px solid #00FF00; border-radius: 5px")
         self.ui.lager_textfeld_einsatz.setText("")
         Uebersicht(self.ui)
-        Admin_Lager(self.ui).update()
+        Update_Lager(self.ui).update()
 
 
     def pruefung_auf_textfeld(self): # prueft auf welchem text gerade dei Combobox steht um das Einsatznummer feld anzuzeigen oder nicht.

@@ -104,10 +104,14 @@ class Einweisungen():
         combo_eintraege = ["---"]
         for element in range(0, len(liste_der_daten)):
             eintrag = liste_der_daten[element][4]
+            status = self.ma_status_ermitteln(eintrag)
             if eintrag in combo_eintraege:
                 pass
             else:
-                combo_eintraege.append(eintrag)
+                if status == 0:
+                    pass
+                else:
+                    combo_eintraege.append(eintrag)
         self.ui.einweisung_tabelle_filtern_ma_combo.addItems(sorted(combo_eintraege))
 
     def einweisung_tabelle_fuellen(self):
@@ -137,7 +141,6 @@ class Einweisungen():
             eingewiesener = self.ui.einweisung_ma_combo.currentText()
         else:
             eingewiesener = self.ui.einweisung_ma_standard_combo.currentText()
-        status = self.ma_status_ermitteln(eingewiesener)
 
         if self.ui.einweisung_einweisender_standard.text() == "":
             einweisender = self.ui.einweisung_einweisender.text()
@@ -171,7 +174,6 @@ class Einweisungen():
         self.einweisung_tabelle_fuellen()
         self.fehlende_einweisung_fuellen()
 
-
     def standard_werte_loeschen(self):
         self.ui.einweisung_geraete_combo_standard.setCurrentIndex(0)
         self.ui.einweisung_softwareversion_standard.setText("")
@@ -199,7 +201,6 @@ class Einweisungen():
                         count += 1
         self.ui.einweisung_tabelle.horizontalHeader().setSectionResizeMode(1)
 
-
     def tabelle_nach_ma_filtern(self):
         ma = self.ui.einweisung_tabelle_filtern_ma_combo.currentText()
         if ma == "---":
@@ -217,7 +218,6 @@ class Einweisungen():
             eintraege = self.ui.einweisung_tabelle.rowCount()
             self.ui.einweisung_tabelle_filtern_anzahl.setText(str(eintraege))
             self.ui.einweisung_tabelle_filtern_anzahl.setStyleSheet("color:#ffffff;")
-
 
     def einweisung_tabelle_filtern_geraet_auswahl(self):
         auswahl = self.ui.einweisung_tabelle_filtern_geraet_combo.currentText()
@@ -278,7 +278,10 @@ class Einweisungen():
             nachname = name.split(", ")[0]
             vorname = name.split(", ")[1]
             status = self.data.mitarbeiter_status_abfragen(nachname, vorname)
-            return status[0][0]
+            if len(status) > 0:
+                return status[0][0]
+            else:
+                return 0
         else:
             return 0
 

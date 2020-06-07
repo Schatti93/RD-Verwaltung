@@ -1,7 +1,4 @@
 from admin.mpg.mpg_data import Mpg_Data
-from PyQt5 import QtWidgets
-from PyQt5.QtCore import Qt
-import datetime
 from admin.mpg.geraete import Geraete
 from admin.mpg.standorte import Standorte
 from admin.mpg.einweisungen import Einweisungen

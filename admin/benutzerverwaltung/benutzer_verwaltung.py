@@ -17,14 +17,14 @@ class Benutzer_Verwaltung():
     def benuter_passwort_aendern(self):
         benutzer = self.data.eingeloggter_benutzer_abfragen()[0][1]
         passwort = self.ui.pw_aendern_altes_pw.text()
-        passwort_hash = hashlib.sha1(passwort.encode('utf-8')).hexdigest()
+        passwort_hash = hashlib.sha512(passwort.encode('utf-8')).hexdigest()
         benutzer_daten = self.data.benutzerdaten_abfragen(benutzer)
         neues_passwort = self.ui.pw_aendern_neues_pw.text()
         neues_passwort_vergleich = self.ui.pw_aendern_neues_pw_wied.text()
 
         if passwort_hash == benutzer_daten[0][2]:
             if neues_passwort == neues_passwort_vergleich:
-                passwort_hash = hashlib.sha1(neues_passwort.encode('utf-8')).hexdigest()
+                passwort_hash = hashlib.sha512(neues_passwort.encode('utf-8')).hexdigest()
                 self.data.passwort_update(benutzer, passwort_hash)
                 self.ui.pw_aendern_altes_pw.setText("")
                 self.ui.pw_aendern_neues_pw.setText("")
@@ -54,7 +54,7 @@ class Benutzer_Verwaltung():
 
         if count == 0:
             if passwort == passwort_vergleich:
-                passwort_hash = hashlib.sha1(passwort.encode('utf-8')).hexdigest()
+                passwort_hash = hashlib.sha512(passwort.encode('utf-8')).hexdigest()
                 self.data.neuer_benutzer(benutzer, passwort_hash)
                 gespeichert = 1
             else:
@@ -78,7 +78,7 @@ class Benutzer_Verwaltung():
         benutzer = self.ui.admin_loeschen_combo.currentText()
         eingeloggter_admin = self.data.eingeloggter_benutzer_abfragen()[0][1]
         passwort = self.ui.admin_loeschen_pw.text()
-        passwort_hash = hashlib.sha1(passwort.encode('utf-8')).hexdigest()
+        passwort_hash = hashlib.sha512(passwort.encode('utf-8')).hexdigest()
         benutzer_daten = self.data.benutzerdaten_abfragen(eingeloggter_admin)
         gespeichert = 0
         if passwort_hash == benutzer_daten[0][2]:

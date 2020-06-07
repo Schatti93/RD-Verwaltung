@@ -41,3 +41,9 @@ class Sets_Data():
         sql = "UPDATE sets SET produkte = ? WHERE name = ? and barcode = ?"
         self.c.execute(sql, params)
         self.conn.commit()
+
+    def delete_set(self, barcode):
+        params = (barcode, )
+        sql = "DELETE FROM sets WHERE barcode = ?"
+        self.c.execute(sql, params)
+        self.conn.commit()
