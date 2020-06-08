@@ -2,6 +2,7 @@ from admin.mpg.mpg_data import Mpg_Data
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt
 import datetime
+from PyQt5 import QtCore
 
 class Einweisungen():
     def __init__(self, ui):
@@ -192,12 +193,13 @@ class Einweisungen():
                 for eigenschaft in range(1, len(daten[element])):
                     einzusetzen = QtWidgets.QTableWidgetItem(daten[element][eigenschaft])
                     einzusetzen.setTextAlignment(Qt.AlignCenter)
-                    self.ui.einweisung_tabelle.setItem(rows, count, QtWidgets.QTableWidgetItem(einzusetzen))
+                    self.ui.einweisung_tabelle.setItem(rows, count, einzusetzen)
                     count += 1
                     if eigenschaft == 4:
                         einzusetzen = QtWidgets.QTableWidgetItem(status)
                         einzusetzen.setTextAlignment(Qt.AlignCenter)
-                        self.ui.einweisung_tabelle.setItem(rows, count, QtWidgets.QTableWidgetItem(einzusetzen))
+                        einzusetzen.setFlags(QtCore.Qt.ItemIsEnabled)
+                        self.ui.einweisung_tabelle.setItem(rows, count, einzusetzen)
                         count += 1
         self.ui.einweisung_tabelle.horizontalHeader().setSectionResizeMode(1)
 

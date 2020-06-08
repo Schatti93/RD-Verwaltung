@@ -6,7 +6,6 @@ from lager.lagerverwaltung import Lagerverwaltung
 from uebersicht.uebersicht import Uebersicht
 from admin.login.login_admin import Login_Admin
 from admin.fahrzeuge.fahrzeug_admin import Admin_Fahrzeug
-from fahrzeuge.fahrzeuge_uebersicht import Fahrzeuge_Uebersicht
 from admin.lager.admin_lager import Admin_Lager
 from fahrzeuge.fahrzeug import Fahrzeug_Mitarbeiter
 from admin.benutzerverwaltung.benutzer_verwaltung import Benutzer_Verwaltung
@@ -16,7 +15,9 @@ from admin.mpg.mpg_geraete import Mpg_Geraete
 from mpg.mpg_user import Mpg_User
 from admin.mitarbeiter.mitarbeiter import Mitarbeiter
 from admin.mission.missions import Missions_Proof
+
 app = QtWidgets.QApplication(sys.argv)
+
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, parent = None):
         super().__init__(parent)
@@ -28,9 +29,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.uebersicht = Uebersicht(self.ui)
         self.admin_login = Login_Admin(self.ui)
         self.admin_fahrzeug = Admin_Fahrzeug(self.ui)
-        self.fahrzeuge_uebersicht = Fahrzeuge_Uebersicht(self.ui)
         self.admin_lager = Admin_Lager(self.ui)
-        self.ui.fahrzeug = Fahrzeug_Mitarbeiter(self.ui)
+        self.fahrzeug = Fahrzeug_Mitarbeiter(self.ui)
         self.einstellungen = Ui_Einstellungen(self.ui, self)
         self.pdf = Pdf_Bestellung(self.ui)
         self.benutzer_verwaltung = Benutzer_Verwaltung(self.ui)

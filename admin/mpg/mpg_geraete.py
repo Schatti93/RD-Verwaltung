@@ -9,11 +9,9 @@ from mpg.mpg_user import Mpg_User
 class Mpg_Geraete():
     def __init__(self, ui):
         self.ui = ui
-        self.data = Mpg_Data()
         #geraete initialisieren
         self.geraete = Geraete(self.ui)
         self.geraete.standort_combo_fuellen()
-        self.geraete.data = Mpg_Data()
         self.geraete.geraete_tabelle_fuellen()
         #standorte initialisieren
         self.standorte = Standorte(self.ui)

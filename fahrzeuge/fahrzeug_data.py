@@ -11,7 +11,7 @@ class Data_Fahrzeug():
         self.conn.close()  # zum freigeben der Datenbank
 
     def daten_combo_fahrzeug_mitarbeiter(self):
-        sql = ("SELECT kennzeichen from fahrzeug_aktiv")
+        sql = "SELECT kennzeichen from fahrzeug_aktiv"
         self.c.execute(sql)
         return self.c.fetchall()
 
@@ -25,4 +25,9 @@ class Data_Fahrzeug():
         params = (kennzeichen, )
         sql = ("SELECT zustand FROM fahrzeug_aktiv WHERE kennzeichen = ?")
         self.c.execute(sql, params)
+        return self.c.fetchall()
+
+    def fahrzeug_daten_holen(self):
+        sql = "SELECT * FROM fahrzeug_aktiv"
+        self.c.execute(sql)
         return self.c.fetchall()

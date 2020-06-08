@@ -69,7 +69,7 @@ class Sets():
             for i in range(0, 2):
                 entry = QtWidgets.QTableWidgetItem(entry_list[i])
                 entry.setTextAlignment(Qt.AlignCenter)
-                self.ui.new_set_table.setItem(rows, i, QtWidgets.QTableWidgetItem(entry))
+                self.ui.new_set_table.setItem(rows, i, entry)
         self.ui.new_set_table.horizontalHeader().setSectionResizeMode(1)
         self.ui.new_set_inhalt_text.setText("")
 
@@ -82,10 +82,10 @@ class Sets():
             name = name[0][0]
             entry = QtWidgets.QTableWidgetItem(name)
             entry.setTextAlignment(Qt.AlignCenter)
-            self.ui.edit_set_table.setItem(rows, 0, QtWidgets.QTableWidgetItem(entry))
+            self.ui.edit_set_table.setItem(rows, 0, entry)
             entry = QtWidgets.QTableWidgetItem(barcode)
             entry.setTextAlignment(Qt.AlignCenter)
-            self.ui.edit_set_table.setItem(rows, 1, QtWidgets.QTableWidgetItem(entry))
+            self.ui.edit_set_table.setItem(rows, 1, entry)
         self.ui.edit_set_add_barcode.setText("")
 
     # just loading, not doing anything with user
@@ -122,10 +122,10 @@ class Sets():
                     product_name = self.data.ask_product_name(set[element])[0][0]
                     entry = QtWidgets.QTableWidgetItem(product_name)
                     entry.setTextAlignment(Qt.AlignCenter)
-                    self.ui.edit_set_table.setItem(rows, 0, QtWidgets.QTableWidgetItem(entry))
+                    self.ui.edit_set_table.setItem(rows, 0, entry)
                     entry = QtWidgets.QTableWidgetItem(set[element])
                     entry.setTextAlignment(Qt.AlignCenter)
-                    self.ui.edit_set_table.setItem(rows, 1, QtWidgets.QTableWidgetItem(entry))
+                    self.ui.edit_set_table.setItem(rows, 1, entry)
                 self.ui.edit_set_table.horizontalHeader().setSectionResizeMode(1)
                 barcode = self.data.get_set_barcode(set_text)[0][0]
                 self.ui.edit_set_barcode.setText(barcode)

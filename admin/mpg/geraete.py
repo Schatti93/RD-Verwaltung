@@ -3,8 +3,11 @@ from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt
 from dateutil.relativedelta import relativedelta
 import datetime
+from datetime import date
 from mpg.mpg_user import Mpg_User
 from admin.mpg.update_mpg import Update_Mpg
+from PyQt5 import QtCore
+from PyQt5 import QtGui
 
 class Geraete():
     def __init__(self, ui):
@@ -38,28 +41,36 @@ class Geraete():
             self.ui.mpg_geraete_tabelle.insertRow(rows)
             for eigenschaft in range(0, len(geraete[element])):
                 if count == 8:
-                    einzusetzen = QtWidgets.QTableWidgetItem(str(geraete[element][eigenschaft]))
+                    einzusetzen = QtWidgets.QTableWidgetItem()
                     einzusetzen.setTextAlignment(Qt.AlignCenter)
-                    self.ui.mpg_geraete_tabelle.setItem(rows, feld, QtWidgets.QTableWidgetItem(
-                        einzusetzen))
+                    einzusetzen.setData(QtCore.Qt.EditRole, geraete[element][eigenschaft])
+                    self.ui.mpg_geraete_tabelle.setItem(rows, feld, einzusetzen)
 
                     feld += 1
                     pruefdatum_splitted = geraete[element][7].split(".")
                     datum = datetime.date(int(pruefdatum_splitted[2]), int(pruefdatum_splitted[1]),
                                           int(pruefdatum_splitted[0]))
-                    naechste_pruefung = datum + relativedelta(months=int(geraete[element][eigenschaft]))
+                    naechste_pruefung = datum + relativedelta(months=int(geraete[element]
+                                                                         [eigenschaft]))
+                    today = date.today()
+                    kritisch = naechste_pruefung - today
+
                     naechste_pruefung = str(naechste_pruefung.strftime("%d.%m.%Y"))
-                    einzusetzen = QtWidgets.QTableWidgetItem(naechste_pruefung)
-                    einzusetzen.setTextAlignment(Qt.AlignCenter)
-                    self.ui.mpg_geraete_tabelle.setItem(rows, feld, QtWidgets.QTableWidgetItem(
-                        einzusetzen))
+
+                    entry = QtWidgets.QTableWidgetItem(naechste_pruefung)
+                    if int(kritisch.days) <= 60:
+                        entry.setForeground(QtGui.QColor(255, 0, 0))
+                    entry.setTextAlignment(Qt.AlignCenter)
+
+                    self.ui.mpg_geraete_tabelle.setItem(rows, feld, entry)
                     count += 1
                     feld += 1
                 else:
                     einzusetzen = QtWidgets.QTableWidgetItem(str(geraete[element][eigenschaft]))
                     einzusetzen.setTextAlignment(Qt.AlignCenter)
-                    self.ui.mpg_geraete_tabelle.setItem(rows, feld, QtWidgets.QTableWidgetItem(
-                        einzusetzen))
+                    if eigenschaft == 0:
+                        einzusetzen.setFlags(QtCore.Qt.ItemIsEnabled)
+                    self.ui.mpg_geraete_tabelle.setItem(rows, feld, einzusetzen)
                     feld += 1
                     count += 1
         self.ui.mpg_geraete_tabelle.horizontalHeader().setSectionResizeMode(1)
