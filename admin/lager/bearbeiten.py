@@ -2,6 +2,7 @@ from admin.lager.admin_lager_data import Admin_Lager_Data
 from admin.lager.update_lager import Update_Lager
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt
+from PyQt5 import QtCore
 
 class Bearbeiten():
     def __init__(self, ui):
@@ -34,6 +35,12 @@ class Bearbeiten():
             for eigenschaft in range(0, 8):
                 einzusetzen = QtWidgets.QTableWidgetItem(str(alle_produkte[element][eigenschaft]))
                 einzusetzen.setTextAlignment(Qt.AlignCenter)
+                if eigenschaft == 0:
+                    einzusetzen.setFlags(QtCore.Qt.ItemIsEnabled)
+                if eigenschaft == 2 or eigenschaft == 3 or eigenschaft == 4 or eigenschaft == 6:
+                    einzusetzen = QtWidgets.QTableWidgetItem()
+                    einzusetzen.setTextAlignment(Qt.AlignCenter)
+                    einzusetzen.setData(QtCore.Qt.EditRole, alle_produkte[element][eigenschaft])
                 self.ui.admin_lager_alle_produkte.setItem(rows, count, QtWidgets.QTableWidgetItem(einzusetzen))
                 count += 1
         self.ui.admin_lager_alle_produkte.horizontalHeader().setSectionResizeMode(1)

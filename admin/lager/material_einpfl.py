@@ -2,6 +2,7 @@ from admin.lager.admin_lager_data import Admin_Lager_Data
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt
 from admin.lager.update_lager import Update_Lager
+from PyQt5 import QtCore
 
 class Material_einpflegen():
     def __init__(self, ui):
@@ -37,8 +38,16 @@ class Material_einpflegen():
         anzahl = self.ui.admin_material_speichern_anzahl.text()
         rows = self.ui.admin_material_speichern_table.rowCount()
         self.ui.admin_material_speichern_table.insertRow(rows)
-        self.ui.admin_material_speichern_table.setItem(rows, 0, QtWidgets.QTableWidgetItem(produkt))
-        self.ui.admin_material_speichern_table.setItem(rows, 1, QtWidgets.QTableWidgetItem(anzahl))
+
+        produkt = QtWidgets.QTableWidgetItem(produkt)
+        produkt.setTextAlignment(Qt.AlignCenter)
+        produkt.setFlags(QtCore.Qt.ItemIsEnabled)
+
+        count = QtWidgets.QTableWidgetItem()
+        count.setTextAlignment(Qt.AlignCenter)
+        count.setData(QtCore.Qt.EditRole, int(anzahl))
+        self.ui.admin_material_speichern_table.setItem(rows, 0, produkt)
+        self.ui.admin_material_speichern_table.setItem(rows, 1, count)
 
     def bestellung_einpflegen(self):
         rows = self.ui.admin_material_speichern_table.rowCount()

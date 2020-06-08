@@ -173,8 +173,7 @@ class Lagerverwaltung():
             else:
                 item = self.ui.lager_table.item(0, 0).text()
                 menge = self.ui.lager_table.item(0, 1).text()
-                print(item + ": " + str(menge))
-                Database_Lagerverwaltung().entnahme(item, int(menge))
+                self.data.entnahme(item, int(menge))
 
                 try:
                     nummer = int(text)

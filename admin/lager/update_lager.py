@@ -14,6 +14,11 @@ class Update_Lager():
         self.combobox_bestellung_einpflegen()
         self.alle_produkte_anzeigen_table()
 
+    def update_from_fehlendes_material(self):
+        self.combobox_bestellung_einpflegen()
+        self.alle_produkte_anzeigen_table()
+        Uebersicht(self.ui).lager_uebersicht()
+
     def fehlendes_material(self):
         liste = self.data.get_liste()
         count = 0

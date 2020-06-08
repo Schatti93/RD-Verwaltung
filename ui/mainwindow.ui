@@ -766,74 +766,8 @@ background-color: rgb(130, 152, 152);
        <layout class="QGridLayout" name="gridLayout_14">
         <item row="0" column="1">
          <layout class="QGridLayout" name="gridLayout_9">
-          <item row="6" column="0">
-           <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_4">
-            <property name="font">
-             <font>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="mouseTracking">
-             <bool>true</bool>
-            </property>
-            <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Status der Fahrzeuge&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="label_6">
-            <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Fahrzeug&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <widget class="QLabel" name="label_17">
-            <property name="styleSheet">
-             <string notr="true">color: white</string>
-            </property>
-            <property name="text">
-             <string>Bemerkung</string>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="2">
-           <spacer name="horizontalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="2" column="2">
-           <widget class="QLabel" name="label_7">
-            <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Zustand&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-           </widget>
-          </item>
           <item row="3" column="2">
-           <widget class="QComboBox" name="combo_zustand">
+           <widget class="QComboBox" name="comboBox">
             <property name="styleSheet">
              <string notr="true">QComboBox
 {
@@ -902,25 +836,29 @@ QComboBox::drop-down
             </property>
            </widget>
           </item>
-          <item row="5" column="0" colspan="3">
-           <widget class="QTextEdit" name="fahrzeug_textedit">
-            <property name="styleSheet">
-             <string notr="true">QTextEdit {
-background-color: rgb(107, 109, 108);
-border: 1px inset darkgrey;
-border-radius: 5px;
-padding: 0 8px;
-font-size: 13px;
-color: white;
-gridline-color: #585759;
-}</string>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_4">
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="mouseTracking">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Status der Fahrzeuge&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
-           <widget class="Line" name="line_18">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_17">
+            <property name="styleSheet">
+             <string notr="true">color: white</string>
+            </property>
+            <property name="text">
+             <string>Bemerkung</string>
             </property>
            </widget>
           </item>
@@ -994,7 +932,7 @@ QComboBox::drop-down
             </property>
            </widget>
           </item>
-          <item row="6" column="1">
+          <item row="6" column="2">
            <widget class="QPushButton" name="button_fahrzeuge">
             <property name="styleSheet">
              <string notr="true">QPushButton{
@@ -1037,6 +975,96 @@ background-color: rgb(130, 152, 152);
             </property>
            </widget>
           </item>
+          <item row="3" column="4">
+           <widget class="QComboBox" name="combo_zustand">
+            <property name="styleSheet">
+             <string notr="true">QComboBox
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    selection-background-color: #111;
+    selection-color: white;
+
+    background-color: #464646;
+    border-style: solid;
+    border: 1px solid #1e1e1e;
+    border-radius: 5;
+    padding: 1px 0px 1px 20px;
+}
+
+
+QComboBox:hover, QPushButton:hover
+{
+    border: 1px solid teal;
+
+}
+
+QComboBox:editable {
+    background: red;
+    color: white;
+}
+
+QComboBox:on
+{
+    padding-top: 0px;
+    padding-left: 0px;
+
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+    selection-background-color: rgb(67, 131, 202);
+}
+
+QComboBox:!on
+{
+
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #666, stop: 0.1 #555, stop: 0.5 #555, stop: 0.9 #444, stop: 1 #333);
+}
+
+QComboBox QAbstractItemView
+{
+    border: 2px solid darkgray;
+    color: black;
+    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #333);
+}
+
+QComboBox::drop-down
+{
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 15px;
+
+     border-left-width: 1px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 3px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 3px;
+     padding-left: 10px;
+ }
+
+
+</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="5">
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Zustand&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
           <item row="7" column="1">
            <spacer name="verticalSpacer_5">
             <property name="orientation">
@@ -1046,6 +1074,58 @@ background-color: rgb(130, 152, 152);
              <size>
               <width>20</width>
               <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="5" column="0" colspan="5">
+           <widget class="QTextEdit" name="fahrzeug_textedit">
+            <property name="styleSheet">
+             <string notr="true">QTextEdit {
+background-color: rgb(107, 109, 108);
+border: 1px inset darkgrey;
+border-radius: 5px;
+padding: 0 8px;
+font-size: 13px;
+color: white;
+gridline-color: #585759;
+}</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Fahrzeug&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="Line" name="line_18">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="3">
+           <widget class="QLabel" name="label_116">
+            <property name="styleSheet">
+             <string notr="true">color: white;</string>
+            </property>
+            <property name="text">
+             <string>Funkkenner</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="4">
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
              </size>
             </property>
            </spacer>
@@ -2046,7 +2126,7 @@ background-color: rgb(130, 152, 152);
              <enum>QTabWidget::North</enum>
             </property>
             <property name="currentIndex">
-             <number>5</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="tab_6">
              <attribute name="title">
@@ -2056,7 +2136,7 @@ background-color: rgb(130, 152, 152);
               <item row="1" column="0" rowspan="2">
                <widget class="QTabWidget" name="tabWidget_2">
                 <property name="currentIndex">
-                 <number>3</number>
+                 <number>4</number>
                 </property>
                 <widget class="QWidget" name="tab_9">
                  <attribute name="title">
@@ -3623,7 +3703,66 @@ background-color: rgb(130, 152, 152);
                  <layout class="QGridLayout" name="gridLayout_21">
                   <item row="0" column="0">
                    <layout class="QGridLayout" name="gridLayout_20">
-                    <item row="0" column="1">
+                    <item row="3" column="3">
+                     <widget class="QLabel" name="label_41">
+                      <property name="text">
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Anzahl&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="4" column="3">
+                     <widget class="QLabel" name="label_42">
+                      <property name="text">
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Produkt&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="2">
+                     <widget class="QLineEdit" name="admin_material_speichern_barcode">
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+border: 1px inset darkgrey;
+border-radius: 10px;
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 13px;
+color: white;
+}
+QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}
+</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="2">
+                     <widget class="QLineEdit" name="admin_material_speichern_anzahl">
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+border: 1px inset darkgrey;
+border-radius: 10px;
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 13px;
+color: white;
+}
+QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}
+</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="5" column="0">
+                     <spacer name="horizontalSpacer_18">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item row="0" column="2">
                      <widget class="QLabel" name="label_43">
                       <property name="font">
                        <font>
@@ -3635,7 +3774,63 @@ background-color: rgb(130, 152, 152);
                       </property>
                      </widget>
                     </item>
-                    <item row="6" column="1" colspan="2">
+                    <item row="1" column="2">
+                     <widget class="Line" name="line_5">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="5" column="2" colspan="2">
+                     <widget class="QTableWidget" name="admin_material_speichern_table">
+                      <property name="styleSheet">
+                       <string notr="true">QTableView {
+border: 1px inset darkgrey;
+border-radius: 5px;
+padding: 0 8px;
+font-size: 13px;
+color: white;
+gridline-color: rgb(164, 164, 165);
+Background-color: rgb(164, 164, 165);
+
+}
+QHeaderView::section{
+
+border-style: none;
+Color: white;
+gridline-color: rgb(164, 164, 165);
+background-color: rgb(164, 164, 165);
+border-bottom: 1px inset black;
+
+}
+QTableView::item{
+border-bottom : 1px inset black;
+gridline-color: rgb(164, 164, 165);
+text-align: center;
+}</string>
+                      </property>
+                      <attribute name="horizontalHeaderCascadingSectionResizes">
+                       <bool>true</bool>
+                      </attribute>
+                      <attribute name="horizontalHeaderStretchLastSection">
+                       <bool>true</bool>
+                      </attribute>
+                      <attribute name="verticalHeaderVisible">
+                       <bool>false</bool>
+                      </attribute>
+                      <column>
+                       <property name="text">
+                        <string>Produkt</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Anzahl</string>
+                       </property>
+                      </column>
+                     </widget>
+                    </item>
+                    <item row="6" column="2" colspan="2">
                      <widget class="QPushButton" name="admin_material_speichern_button">
                       <property name="styleSheet">
                        <string notr="true">QPushButton{
@@ -3679,13 +3874,6 @@ background-color: rgb(130, 152, 152);
                      </widget>
                     </item>
                     <item row="4" column="2">
-                     <widget class="QLabel" name="label_42">
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Produkt&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="4" column="1">
                      <widget class="QComboBox" name="admin_material_speichern_combo">
                       <property name="styleSheet">
                        <string notr="true">QComboBox
@@ -3755,107 +3943,25 @@ QComboBox::drop-down
                       </property>
                      </widget>
                     </item>
-                    <item row="2" column="1">
-                     <widget class="QLineEdit" name="admin_material_speichern_barcode">
-                      <property name="styleSheet">
-                       <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
-border: 1px inset darkgrey;
-border-radius: 10px;
-padding: 0 8px;
-selection-background-color: darkgray;
-font-size: 13px;
-color: white;
-}
-QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}
-</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="1">
-                     <widget class="Line" name="line_5">
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="3" column="2">
-                     <widget class="QLabel" name="label_41">
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Anzahl&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="5" column="1" colspan="2">
-                     <widget class="QTableWidget" name="admin_material_speichern_table">
-                      <property name="styleSheet">
-                       <string notr="true">QTableView {
-border: 1px inset darkgrey;
-border-radius: 5px;
-padding: 0 8px;
-font-size: 13px;
-color: white;
-gridline-color: rgb(164, 164, 165);
-Background-color: rgb(164, 164, 165);
-
-}
-QHeaderView::section{
-
-border-style: none;
-Color: white;
-gridline-color: rgb(164, 164, 165);
-background-color: rgb(164, 164, 165);
-border-bottom: 1px inset black;
-
-}
-QTableView::item{
-border-bottom : 1px inset black;
-gridline-color: rgb(164, 164, 165);
-text-align: center;
-}</string>
-                      </property>
-                      <attribute name="horizontalHeaderCascadingSectionResizes">
-                       <bool>true</bool>
-                      </attribute>
-                      <attribute name="horizontalHeaderStretchLastSection">
-                       <bool>true</bool>
-                      </attribute>
-                      <attribute name="verticalHeaderVisible">
-                       <bool>false</bool>
-                      </attribute>
-                      <column>
-                       <property name="text">
-                        <string>Produkt</string>
-                       </property>
-                      </column>
-                      <column>
-                       <property name="text">
-                        <string>Anzahl</string>
-                       </property>
-                      </column>
-                     </widget>
-                    </item>
-                    <item row="2" column="2">
+                    <item row="2" column="3">
                      <widget class="QLabel" name="label_37">
                       <property name="text">
                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Barcode&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                       </property>
                      </widget>
                     </item>
-                    <item row="3" column="1">
-                     <widget class="QLineEdit" name="admin_material_speichern_anzahl">
-                      <property name="styleSheet">
-                       <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
-border: 1px inset darkgrey;
-border-radius: 10px;
-padding: 0 8px;
-selection-background-color: darkgray;
-font-size: 13px;
-color: white;
-}
-QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}
-</string>
+                    <item row="3" column="4">
+                     <spacer name="horizontalSpacer_17">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
                       </property>
-                     </widget>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
                     </item>
                    </layout>
                   </item>
@@ -7742,7 +7848,6 @@ background-color: rgb(130, 152, 152);
   <tabstop>combo_rtw</tabstop>
   <tabstop>combo_zustand</tabstop>
   <tabstop>fahrzeug_textedit</tabstop>
-  <tabstop>button_fahrzeuge</tabstop>
   <tabstop>mpg_Fahrzeuge_combo</tabstop>
   <tabstop>mpg_geraete_tabelle_fahrzeug</tabstop>
   <tabstop>mpg_user_geraete_barcode</tabstop>

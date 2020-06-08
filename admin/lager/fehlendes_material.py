@@ -5,6 +5,7 @@ from admin.pdf_bestellung.pdf_bestellung import Pdf_Bestellung
 from uebersicht.uebersicht import Uebersicht
 from admin.lager.update_lager import Update_Lager
 from admin.lager.online_bestellung import Online_Bestellung
+from PyQt5 import QtCore
 
 class Fehlendes_Material():
     def __init__(self, ui):
@@ -17,7 +18,7 @@ class Fehlendes_Material():
 
     def fehlendes_material(self):
         liste = self.data.get_liste()
-        count = 0
+
         self.ui.admin_lager_fehlendes_material.setRowCount(0)
 
         for i in range(0, len(liste)):
@@ -29,34 +30,37 @@ class Fehlendes_Material():
             else:
                 if liste[i][8] == "NULL":
                     self.data.update_status(liste[i][1], "Bestand zu gering")
-                    status = QtWidgets.QTableWidgetItem("Bestand zu gering")
-                    status.setTextAlignment(Qt.AlignCenter)
-
+                    status = "Bestand zu gering"
                 else:
                     status = "Bestand zu gering"
-                status = QtWidgets.QTableWidgetItem(str(liste[i][8]))
+                status = QtWidgets.QTableWidgetItem(status)
                 status.setTextAlignment(Qt.AlignCenter)
+                status.setFlags(QtCore.Qt.ItemIsEnabled)
 
                 produkt = QtWidgets.QTableWidgetItem(liste[i][1])
                 produkt.setTextAlignment(Qt.AlignCenter)
-                vorhanden = QtWidgets.QTableWidgetItem(str(liste[i][2]))
+                produkt.setFlags(QtCore.Qt.ItemIsEnabled)
+                vorhanden = QtWidgets.QTableWidgetItem()
                 vorhanden.setTextAlignment(Qt.AlignCenter)
-                mindest = QtWidgets.QTableWidgetItem(str(liste[i][3]))
+                vorhanden.setData(QtCore.Qt.EditRole, liste[i][2])
+                mindest = QtWidgets.QTableWidgetItem()
                 mindest.setTextAlignment(Qt.AlignCenter)
-                max = QtWidgets.QTableWidgetItem(str(liste[i][4]))
+                mindest.setData(QtCore.Qt.EditRole, liste[i][3])
+                max = QtWidgets.QTableWidgetItem()
                 max.setTextAlignment(Qt.AlignCenter)
+                max.setData(QtCore.Qt.EditRole, liste[i][4])
                 artikelnr = QtWidgets.QTableWidgetItem(str(liste[i][7]))
                 artikelnr.setTextAlignment(Qt.AlignCenter)
-                count = count + 1
+
 
                 row = self.ui.admin_lager_fehlendes_material.rowCount()
                 self.ui.admin_lager_fehlendes_material.insertRow(row)
-                self.ui.admin_lager_fehlendes_material.setItem(row, 0, QtWidgets.QTableWidgetItem(produkt))
-                self.ui.admin_lager_fehlendes_material.setItem(row, 1, QtWidgets.QTableWidgetItem(vorhanden))
-                self.ui.admin_lager_fehlendes_material.setItem(row, 2, QtWidgets.QTableWidgetItem(mindest))
-                self.ui.admin_lager_fehlendes_material.setItem(row, 3, QtWidgets.QTableWidgetItem(max))
-                self.ui.admin_lager_fehlendes_material.setItem(row, 4, QtWidgets.QTableWidgetItem(artikelnr))
-                self.ui.admin_lager_fehlendes_material.setItem(row, 5, QtWidgets.QTableWidgetItem(status))
+                self.ui.admin_lager_fehlendes_material.setItem(row, 0, produkt)
+                self.ui.admin_lager_fehlendes_material.setItem(row, 1, vorhanden)
+                self.ui.admin_lager_fehlendes_material.setItem(row, 2, mindest)
+                self.ui.admin_lager_fehlendes_material.setItem(row, 3, max)
+                self.ui.admin_lager_fehlendes_material.setItem(row, 4, artikelnr)
+                self.ui.admin_lager_fehlendes_material.setItem(row, 5, status)
                 self.ui.admin_lager_fehlendes_material.horizontalHeader().setSectionResizeMode(1)
         Uebersicht(self.ui).lager_uebersicht()
-        self.update.update()
+        self.update.update_from_fehlendes_material()

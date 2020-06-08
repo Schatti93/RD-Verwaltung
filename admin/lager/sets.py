@@ -56,6 +56,7 @@ class Sets():
         self.ui.edit_set_table.removeRow(row)
 
     # actions from pressed enter
+
     def write_entry_in_new_set_table(self):
         barcode = self.ui.new_set_inhalt_text.text()
         produkt = self.data.ask_product_name(barcode)
@@ -87,7 +88,8 @@ class Sets():
             self.ui.edit_set_table.setItem(rows, 1, QtWidgets.QTableWidgetItem(entry))
         self.ui.edit_set_add_barcode.setText("")
 
-    ### just loading, not doing anything with user
+    # just loading, not doing anything with user
+
     def edit_set_combo_fill(self):
         self.ui.edit_set_combo.clear()
         entrys = self.data.all_set_names()
@@ -96,7 +98,8 @@ class Sets():
             entry_list.append(entrys[element][0])
         self.ui.edit_set_combo.addItems(entry_list)
 
-   #actions from combobox
+   # actions from combobox
+
     def edit_set_table_fill(self):
         self.ui.edit_set_table.setRowCount(0)
         set_text = self.ui.edit_set_combo.currentText()
@@ -126,3 +129,4 @@ class Sets():
                 self.ui.edit_set_table.horizontalHeader().setSectionResizeMode(1)
                 barcode = self.data.get_set_barcode(set_text)[0][0]
                 self.ui.edit_set_barcode.setText(barcode)
+
