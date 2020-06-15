@@ -1522,8 +1522,8 @@ class Ui_MainWindow(object):
         self.gridLayout_5.setObjectName("gridLayout_5")
         spacerItem13 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_5.addItem(spacerItem13, 15, 1, 1, 1)
-        self.admin_new_prod_inhalt_menge = QtWidgets.QLineEdit(self.tab_9)
-        self.admin_new_prod_inhalt_menge.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.admin_new_prod_content = QtWidgets.QLineEdit(self.tab_9)
+        self.admin_new_prod_content.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -1533,8 +1533,8 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
-        self.admin_new_prod_inhalt_menge.setObjectName("admin_new_prod_inhalt_menge")
-        self.gridLayout_5.addWidget(self.admin_new_prod_inhalt_menge, 8, 0, 1, 2)
+        self.admin_new_prod_content.setObjectName("admin_new_prod_content")
+        self.gridLayout_5.addWidget(self.admin_new_prod_content, 8, 0, 1, 2)
         self.label_35 = QtWidgets.QLabel(self.tab_9)
         self.label_35.setObjectName("label_35")
         self.gridLayout_5.addWidget(self.label_35, 12, 0, 1, 3)
@@ -1554,8 +1554,8 @@ class Ui_MainWindow(object):
         self.label24.setFont(font)
         self.label24.setObjectName("label24")
         self.gridLayout_5.addWidget(self.label24, 1, 0, 1, 1)
-        self.admin_new_prod_bes = QtWidgets.QLineEdit(self.tab_9)
-        self.admin_new_prod_bes.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.admin_new_prod_in_stock = QtWidgets.QLineEdit(self.tab_9)
+        self.admin_new_prod_in_stock.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -1565,8 +1565,8 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
-        self.admin_new_prod_bes.setObjectName("admin_new_prod_bes")
-        self.gridLayout_5.addWidget(self.admin_new_prod_bes, 4, 0, 1, 2)
+        self.admin_new_prod_in_stock.setObjectName("admin_new_prod_in_stock")
+        self.gridLayout_5.addWidget(self.admin_new_prod_in_stock, 4, 0, 1, 2)
         spacerItem14 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_5.addItem(spacerItem14, 15, 3, 1, 1)
         self.line_12 = QtWidgets.QFrame(self.tab_9)
@@ -1723,8 +1723,8 @@ class Ui_MainWindow(object):
         self.label_23 = QtWidgets.QLabel(self.tab_9)
         self.label_23.setObjectName("label_23")
         self.gridLayout_5.addWidget(self.label_23, 3, 2, 1, 1)
-        self.admin_new_prod_artikel = QtWidgets.QLineEdit(self.tab_9)
-        self.admin_new_prod_artikel.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.admin_new_prod_item = QtWidgets.QLineEdit(self.tab_9)
+        self.admin_new_prod_item.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -1734,8 +1734,8 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
-        self.admin_new_prod_artikel.setObjectName("admin_new_prod_artikel")
-        self.gridLayout_5.addWidget(self.admin_new_prod_artikel, 10, 0, 1, 2)
+        self.admin_new_prod_item.setObjectName("admin_new_prod_item")
+        self.gridLayout_5.addWidget(self.admin_new_prod_item, 10, 0, 1, 2)
         self.label_26 = QtWidgets.QLabel(self.tab_9)
         self.label_26.setObjectName("label_26")
         self.gridLayout_5.addWidget(self.label_26, 6, 2, 1, 1)
@@ -1841,10 +1841,10 @@ class Ui_MainWindow(object):
 "")
         self.admin_del_prod_prod.setObjectName("admin_del_prod_prod")
         self.gridLayout_6.addWidget(self.admin_del_prod_prod, 4, 0, 1, 2)
-        self.admin_lager_loeschen_error = QtWidgets.QLabel(self.tab_9)
-        self.admin_lager_loeschen_error.setText("")
-        self.admin_lager_loeschen_error.setObjectName("admin_lager_loeschen_error")
-        self.gridLayout_6.addWidget(self.admin_lager_loeschen_error, 6, 1, 1, 1)
+        self.admin_stock_delete_error = QtWidgets.QLabel(self.tab_9)
+        self.admin_stock_delete_error.setText("")
+        self.admin_stock_delete_error.setObjectName("admin_stock_delete_error")
+        self.gridLayout_6.addWidget(self.admin_stock_delete_error, 6, 1, 1, 1)
         self.admin_del_prod_btn = QtWidgets.QPushButton(self.tab_9)
         self.admin_del_prod_btn.setMinimumSize(QtCore.QSize(172, 0))
         self.admin_del_prod_btn.setMaximumSize(QtCore.QSize(80, 16777215))
@@ -2771,12 +2771,12 @@ class Ui_MainWindow(object):
         self.gridLayout_18.addItem(spacerItem18, 0, 2, 1, 1)
         self.gridLayout_7 = QtWidgets.QGridLayout()
         self.gridLayout_7.setObjectName("gridLayout_7")
-        self.fahrzeug_admin_error_label = QtWidgets.QLabel(self.tab_7)
-        self.fahrzeug_admin_error_label.setText("")
-        self.fahrzeug_admin_error_label.setObjectName("fahrzeug_admin_error_label")
-        self.gridLayout_7.addWidget(self.fahrzeug_admin_error_label, 9, 1, 1, 1)
-        self.fahrzeug_admin_kennz = QtWidgets.QLineEdit(self.tab_7)
-        self.fahrzeug_admin_kennz.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.admin_car_error_label = QtWidgets.QLabel(self.tab_7)
+        self.admin_car_error_label.setText("")
+        self.admin_car_error_label.setObjectName("admin_car_error_label")
+        self.gridLayout_7.addWidget(self.admin_car_error_label, 9, 1, 1, 1)
+        self.admin_car_license_plate = QtWidgets.QLineEdit(self.tab_7)
+        self.admin_car_license_plate.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -2786,8 +2786,8 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
-        self.fahrzeug_admin_kennz.setObjectName("fahrzeug_admin_kennz")
-        self.gridLayout_7.addWidget(self.fahrzeug_admin_kennz, 5, 0, 1, 2)
+        self.admin_car_license_plate.setObjectName("admin_car_license_plate")
+        self.gridLayout_7.addWidget(self.admin_car_license_plate, 5, 0, 1, 2)
         self.label_33 = QtWidgets.QLabel(self.tab_7)
         self.label_33.setObjectName("label_33")
         self.gridLayout_7.addWidget(self.label_33, 5, 2, 1, 1)
@@ -2797,8 +2797,8 @@ class Ui_MainWindow(object):
         self.label_32 = QtWidgets.QLabel(self.tab_7)
         self.label_32.setObjectName("label_32")
         self.gridLayout_7.addWidget(self.label_32, 4, 2, 1, 1)
-        self.fahrzeug_admin_ort = QtWidgets.QLineEdit(self.tab_7)
-        self.fahrzeug_admin_ort.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.admin_car_town = QtWidgets.QLineEdit(self.tab_7)
+        self.admin_car_town.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -2808,8 +2808,8 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
-        self.fahrzeug_admin_ort.setObjectName("fahrzeug_admin_ort")
-        self.gridLayout_7.addWidget(self.fahrzeug_admin_ort, 6, 0, 1, 2)
+        self.admin_car_town.setObjectName("admin_car_town")
+        self.gridLayout_7.addWidget(self.admin_car_town, 6, 0, 1, 2)
         self.label_22 = QtWidgets.QLabel(self.tab_7)
         self.label_22.setObjectName("label_22")
         self.gridLayout_7.addWidget(self.label_22, 2, 0, 1, 1)
@@ -2821,8 +2821,8 @@ class Ui_MainWindow(object):
         self.label_34 = QtWidgets.QLabel(self.tab_7)
         self.label_34.setObjectName("label_34")
         self.gridLayout_7.addWidget(self.label_34, 6, 2, 1, 1)
-        self.fahrzeug_admin_tuev = QtWidgets.QLineEdit(self.tab_7)
-        self.fahrzeug_admin_tuev.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.admin_car_tuev = QtWidgets.QLineEdit(self.tab_7)
+        self.admin_car_tuev.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -2832,10 +2832,10 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
-        self.fahrzeug_admin_tuev.setObjectName("fahrzeug_admin_tuev")
-        self.gridLayout_7.addWidget(self.fahrzeug_admin_tuev, 8, 0, 1, 2)
-        self.fahrzeug_admin_funkkenn = QtWidgets.QLineEdit(self.tab_7)
-        self.fahrzeug_admin_funkkenn.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.admin_car_tuev.setObjectName("admin_car_tuev")
+        self.gridLayout_7.addWidget(self.admin_car_tuev, 8, 0, 1, 2)
+        self.admin_car_radio_identification = QtWidgets.QLineEdit(self.tab_7)
+        self.admin_car_radio_identification.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -2845,8 +2845,8 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
-        self.fahrzeug_admin_funkkenn.setObjectName("fahrzeug_admin_funkkenn")
-        self.gridLayout_7.addWidget(self.fahrzeug_admin_funkkenn, 4, 0, 1, 2)
+        self.admin_car_radio_identification.setObjectName("admin_car_radio_identification")
+        self.gridLayout_7.addWidget(self.admin_car_radio_identification, 4, 0, 1, 2)
         self.fahrzeug_admin_save_btn = QtWidgets.QPushButton(self.tab_7)
         self.fahrzeug_admin_save_btn.setStyleSheet("QPushButton{\n"
 "   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
@@ -5507,8 +5507,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.tabWidget.setCurrentIndex(5)
-        self.admin_bereich.setCurrentIndex(6)
-        self.tabWidget_2.setCurrentIndex(4)
+        self.admin_bereich.setCurrentIndex(0)
+        self.tabWidget_2.setCurrentIndex(0)
         self.tabWidget_3.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.admin_text_user, self.admin_text_pw)
@@ -5542,13 +5542,13 @@ class Ui_MainWindow(object):
         MainWindow.setTabOrder(self.clothes_back, self.admin_bereich)
         MainWindow.setTabOrder(self.admin_bereich, self.tabWidget_2)
         MainWindow.setTabOrder(self.tabWidget_2, self.admin_new_prod_prod)
-        MainWindow.setTabOrder(self.admin_new_prod_prod, self.admin_new_prod_bes)
-        MainWindow.setTabOrder(self.admin_new_prod_bes, self.admin_new_prod_min)
+        MainWindow.setTabOrder(self.admin_new_prod_prod, self.admin_new_prod_in_stock)
+        MainWindow.setTabOrder(self.admin_new_prod_in_stock, self.admin_new_prod_min)
         MainWindow.setTabOrder(self.admin_new_prod_min, self.admin_new_prod_max)
         MainWindow.setTabOrder(self.admin_new_prod_max, self.admin_new_prod_bar)
-        MainWindow.setTabOrder(self.admin_new_prod_bar, self.admin_new_prod_inhalt_menge)
-        MainWindow.setTabOrder(self.admin_new_prod_inhalt_menge, self.admin_new_prod_artikel)
-        MainWindow.setTabOrder(self.admin_new_prod_artikel, self.admin_new_prod_table)
+        MainWindow.setTabOrder(self.admin_new_prod_bar, self.admin_new_prod_content)
+        MainWindow.setTabOrder(self.admin_new_prod_content, self.admin_new_prod_item)
+        MainWindow.setTabOrder(self.admin_new_prod_item, self.admin_new_prod_table)
         MainWindow.setTabOrder(self.admin_new_prod_table, self.admin_new_prod_btn)
         MainWindow.setTabOrder(self.admin_new_prod_btn, self.admin_del_prod_prod)
         MainWindow.setTabOrder(self.admin_del_prod_prod, self.admin_del_prod_bar)
@@ -5563,11 +5563,11 @@ class Ui_MainWindow(object):
         MainWindow.setTabOrder(self.admin_material_speichern_anzahl, self.admin_material_speichern_combo)
         MainWindow.setTabOrder(self.admin_material_speichern_combo, self.admin_material_speichern_table)
         MainWindow.setTabOrder(self.admin_material_speichern_table, self.admin_material_speichern_button)
-        MainWindow.setTabOrder(self.admin_material_speichern_button, self.fahrzeug_admin_funkkenn)
-        MainWindow.setTabOrder(self.fahrzeug_admin_funkkenn, self.fahrzeug_admin_kennz)
-        MainWindow.setTabOrder(self.fahrzeug_admin_kennz, self.fahrzeug_admin_ort)
-        MainWindow.setTabOrder(self.fahrzeug_admin_ort, self.fahrzeug_admin_tuev)
-        MainWindow.setTabOrder(self.fahrzeug_admin_tuev, self.fahrzeug_admin_save_btn)
+        MainWindow.setTabOrder(self.admin_material_speichern_button, self.admin_car_radio_identification)
+        MainWindow.setTabOrder(self.admin_car_radio_identification, self.admin_car_license_plate)
+        MainWindow.setTabOrder(self.admin_car_license_plate, self.admin_car_town)
+        MainWindow.setTabOrder(self.admin_car_town, self.admin_car_tuev)
+        MainWindow.setTabOrder(self.admin_car_tuev, self.fahrzeug_admin_save_btn)
         MainWindow.setTabOrder(self.fahrzeug_admin_save_btn, self.tabWidget_3)
         MainWindow.setTabOrder(self.tabWidget_3, self.geraete_verwalten_inventarnummer)
         MainWindow.setTabOrder(self.geraete_verwalten_inventarnummer, self.geraete_verwalten_geraetenummer)

@@ -2136,7 +2136,7 @@ background-color: rgb(130, 152, 152);
              <enum>QTabWidget::North</enum>
             </property>
             <property name="currentIndex">
-             <number>6</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="tab_6">
              <attribute name="title">
@@ -2146,7 +2146,7 @@ background-color: rgb(130, 152, 152);
               <item row="1" column="0" rowspan="2">
                <widget class="QTabWidget" name="tabWidget_2">
                 <property name="currentIndex">
-                 <number>4</number>
+                 <number>0</number>
                 </property>
                 <widget class="QWidget" name="tab_9">
                  <attribute name="title">
@@ -2169,7 +2169,7 @@ background-color: rgb(130, 152, 152);
                      </spacer>
                     </item>
                     <item row="8" column="0" colspan="2">
-                     <widget class="QLineEdit" name="admin_new_prod_inhalt_menge">
+                     <widget class="QLineEdit" name="admin_new_prod_content">
                       <property name="styleSheet">
                        <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
 border: 1px inset darkgrey;
@@ -2221,7 +2221,7 @@ QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1,
                      </widget>
                     </item>
                     <item row="4" column="0" colspan="2">
-                     <widget class="QLineEdit" name="admin_new_prod_bes">
+                     <widget class="QLineEdit" name="admin_new_prod_in_stock">
                       <property name="styleSheet">
                        <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
 border: 1px inset darkgrey;
@@ -2472,7 +2472,7 @@ background-color: rgb(130, 152, 152);
                      </widget>
                     </item>
                     <item row="10" column="0" colspan="2">
-                     <widget class="QLineEdit" name="admin_new_prod_artikel">
+                     <widget class="QLineEdit" name="admin_new_prod_item">
                       <property name="styleSheet">
                        <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
 border: 1px inset darkgrey;
@@ -2664,7 +2664,7 @@ QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1,
                      </widget>
                     </item>
                     <item row="6" column="1">
-                     <widget class="QLabel" name="admin_lager_loeschen_error">
+                     <widget class="QLabel" name="admin_stock_delete_error">
                       <property name="text">
                        <string/>
                       </property>
@@ -4015,14 +4015,14 @@ QComboBox::drop-down
               <item row="0" column="1">
                <layout class="QGridLayout" name="gridLayout_7">
                 <item row="9" column="1">
-                 <widget class="QLabel" name="fahrzeug_admin_error_label">
+                 <widget class="QLabel" name="admin_car_error_label">
                   <property name="text">
                    <string/>
                   </property>
                  </widget>
                 </item>
                 <item row="5" column="0" colspan="2">
-                 <widget class="QLineEdit" name="fahrzeug_admin_kennz">
+                 <widget class="QLineEdit" name="admin_car_license_plate">
                   <property name="styleSheet">
                    <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
 border: 1px inset darkgrey;
@@ -4059,7 +4059,7 @@ QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1,
                  </widget>
                 </item>
                 <item row="6" column="0" colspan="2">
-                 <widget class="QLineEdit" name="fahrzeug_admin_ort">
+                 <widget class="QLineEdit" name="admin_car_town">
                   <property name="styleSheet">
                    <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
 border: 1px inset darkgrey;
@@ -4096,7 +4096,7 @@ QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1,
                  </widget>
                 </item>
                 <item row="8" column="0" colspan="2">
-                 <widget class="QLineEdit" name="fahrzeug_admin_tuev">
+                 <widget class="QLineEdit" name="admin_car_tuev">
                   <property name="styleSheet">
                    <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
 border: 1px inset darkgrey;
@@ -4112,7 +4112,7 @@ QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1,
                  </widget>
                 </item>
                 <item row="4" column="0" colspan="2">
-                 <widget class="QLineEdit" name="fahrzeug_admin_funkkenn">
+                 <widget class="QLineEdit" name="admin_car_radio_identification">
                   <property name="styleSheet">
                    <string notr="true">QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
 border: 1px inset darkgrey;
@@ -7858,12 +7858,12 @@ background-color: rgb(130, 152, 152);
   <tabstop>admin_bereich</tabstop>
   <tabstop>tabWidget_2</tabstop>
   <tabstop>admin_new_prod_prod</tabstop>
-  <tabstop>admin_new_prod_bes</tabstop>
+  <tabstop>admin_new_prod_in_stock</tabstop>
   <tabstop>admin_new_prod_min</tabstop>
   <tabstop>admin_new_prod_max</tabstop>
   <tabstop>admin_new_prod_bar</tabstop>
-  <tabstop>admin_new_prod_inhalt_menge</tabstop>
-  <tabstop>admin_new_prod_artikel</tabstop>
+  <tabstop>admin_new_prod_content</tabstop>
+  <tabstop>admin_new_prod_item</tabstop>
   <tabstop>admin_new_prod_table</tabstop>
   <tabstop>admin_new_prod_btn</tabstop>
   <tabstop>admin_del_prod_prod</tabstop>
@@ -7879,10 +7879,10 @@ background-color: rgb(130, 152, 152);
   <tabstop>admin_material_speichern_combo</tabstop>
   <tabstop>admin_material_speichern_table</tabstop>
   <tabstop>admin_material_speichern_button</tabstop>
-  <tabstop>fahrzeug_admin_funkkenn</tabstop>
-  <tabstop>fahrzeug_admin_kennz</tabstop>
-  <tabstop>fahrzeug_admin_ort</tabstop>
-  <tabstop>fahrzeug_admin_tuev</tabstop>
+  <tabstop>admin_car_radio_identification</tabstop>
+  <tabstop>admin_car_license_plate</tabstop>
+  <tabstop>admin_car_town</tabstop>
+  <tabstop>admin_car_tuev</tabstop>
   <tabstop>fahrzeug_admin_save_btn</tabstop>
   <tabstop>tabWidget_3</tabstop>
   <tabstop>geraete_verwalten_inventarnummer</tabstop>

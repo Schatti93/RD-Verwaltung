@@ -45,3 +45,5 @@ stock/test.py
 ui/test.py
 stock/geckodriver_macos
 stock/geckodriver_linux64
+lager/geckodriver_linux64
+lager/geckodriver_macos
