@@ -1,4 +1,4 @@
-from uebersicht.uebersicht_fahrzeuge_anzeige import Fahrzeug_Anzeige
+from overview.uebersicht_fahrzeuge_anzeige import Fahrzeug_Anzeige
 from fahrzeuge.fahrzeug_data import Data_Fahrzeug
 
 class Fahrzeuge_Uebersicht():

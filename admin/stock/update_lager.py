@@ -1,15 +1,17 @@
-from uebersicht.uebersicht import Uebersicht
-from admin.lager.admin_lager_data import Admin_Lager_Data
+from overview.overview import Overview
+from admin.stock.admin_lager_data import Admin_Lager_Data
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt
+from fill_table import Fill_Table
 
-class Update_Lager():
+class Update_Stock():
     def __init__(self, ui):
         self.ui = ui
+        self.fill_table = Fill_Table(self.ui)
         self.data = Admin_Lager_Data()
 
     def update(self):
-        Uebersicht(self.ui).lager_uebersicht()
+        Overview(self.ui).stock_overview()
         self.fehlendes_material()
         self.combobox_bestellung_einpflegen()
         self.alle_produkte_anzeigen_table()
@@ -17,13 +19,11 @@ class Update_Lager():
     def update_from_fehlendes_material(self):
         self.combobox_bestellung_einpflegen()
         self.alle_produkte_anzeigen_table()
-        Uebersicht(self.ui).lager_uebersicht()
+        Overview(self.ui).stock_overview()
 
     def fehlendes_material(self):
         liste = self.data.get_liste()
-        count = 0
         self.ui.admin_lager_fehlendes_material.setRowCount(0)
-
         for i in range(0, len(liste)):
             if liste[i][2] >= liste[i][3]:
                 if liste[i][8] == "Ausreichend":
@@ -37,30 +37,9 @@ class Update_Lager():
                     status.setTextAlignment(Qt.AlignCenter)
                 else:
                     status = "Bestand zu gering"
-                status = QtWidgets.QTableWidgetItem(str(liste[i][8]))
-                status.setTextAlignment(Qt.AlignCenter)
-
-                produkt = QtWidgets.QTableWidgetItem(liste[i][1])
-                produkt.setTextAlignment(Qt.AlignCenter)
-                vorhanden = QtWidgets.QTableWidgetItem(str(liste[i][2]))
-                vorhanden.setTextAlignment(Qt.AlignCenter)
-                mindest = QtWidgets.QTableWidgetItem(str(liste[i][3]))
-                mindest.setTextAlignment(Qt.AlignCenter)
-                max = QtWidgets.QTableWidgetItem(str(liste[i][4]))
-                max.setTextAlignment(Qt.AlignCenter)
-                artikelnr = QtWidgets.QTableWidgetItem(str(liste[i][7]))
-                artikelnr.setTextAlignment(Qt.AlignCenter)
-                count = count + 1
-
-                row = self.ui.admin_lager_fehlendes_material.rowCount()
-                self.ui.admin_lager_fehlendes_material.insertRow(row)
-                self.ui.admin_lager_fehlendes_material.setItem(row, 0, QtWidgets.QTableWidgetItem(produkt))
-                self.ui.admin_lager_fehlendes_material.setItem(row, 1, QtWidgets.QTableWidgetItem(vorhanden))
-                self.ui.admin_lager_fehlendes_material.setItem(row, 2, QtWidgets.QTableWidgetItem(mindest))
-                self.ui.admin_lager_fehlendes_material.setItem(row, 3, QtWidgets.QTableWidgetItem(max))
-                self.ui.admin_lager_fehlendes_material.setItem(row, 4, QtWidgets.QTableWidgetItem(artikelnr))
-                self.ui.admin_lager_fehlendes_material.setItem(row, 5, QtWidgets.QTableWidgetItem(status))
-                self.ui.admin_lager_fehlendes_material.horizontalHeader().setSectionResizeMode(1)
+                list = [liste[i][1], str(liste[i][2]), str(liste[i][3]), str(liste[i][4]), str(liste[i][7]),  status]
+                mode = (0, 2, 2, 2, 0, 1)
+                self.fill_table.fill_table(list, self.ui.admin_lager_fehlendes_material, mode)
 
     def combobox_bestellung_einpflegen(self):
         self.ui.admin_material_speichern_combo.clear()

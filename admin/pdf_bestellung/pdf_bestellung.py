@@ -2,8 +2,6 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 import datetime
 from admin.pdf_bestellung.pdf_bestellung_data import Pdf_Bestellung_Data
-from uebersicht.uebersicht import Uebersicht
-from admin.lager.update_lager import Update_Lager
 
 class Pdf_Bestellung():
     def __init__(self, ui):

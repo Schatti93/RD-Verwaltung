@@ -1,4 +1,4 @@
-from admin.lager.sets_data import Sets_Data
+from admin.stock.sets_data import Sets_Data
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt
 

@@ -1,5 +1,5 @@
 import sqlite3
-from uebersicht.uebersicht_fahrzeuge_anzeige import Fahrzeug_Anzeige
+from overview.uebersicht_fahrzeuge_anzeige import Fahrzeug_Anzeige
 
 class Data_Fahrzeug():
     def __init__(self):

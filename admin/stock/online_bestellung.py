@@ -1,5 +1,5 @@
 import sqlite3
-from lager.data_lagerverwaltung import Database_Lagerverwaltung
+from stock.stock_management_data import Stock_Management_Data
 from selenium import webdriver
 import platform
 
@@ -7,7 +7,7 @@ class Online_Bestellung():
     def __init__(self):
         self.conn = sqlite3.connect("Database.db")
         self.c = self.conn.cursor()
-        self.lager = Database_Lagerverwaltung()
+        self.lager = Stock_Management_Data()
 
 
     def nachbestellen(self):
@@ -35,13 +35,13 @@ class Online_Bestellung():
             system = platform.system()
             architektur = platform.architecture()[0]
             if system == "Darwin":
-                driver = webdriver.Firefox(executable_path=r"lager/geckodriver_macos")
+                driver = webdriver.Firefox(executable_path=r"stock/geckodriver_macos")
             if system == "Linux":
-                driver = webdriver.Firefox(executable_path=r"lager/geckodriver_linux64")
+                driver = webdriver.Firefox(executable_path=r"stock/geckodriver_linux64")
             if system == "Windows" and architektur == "64bit":
-                driver = webdriver.Firefox(executable_path=r"lager/geckodriver_win64.exe")
+                driver = webdriver.Firefox(executable_path=r"stock/geckodriver_win64.exe")
             if system == "Windows" and architektur == "32bit":
-                driver = webdriver.Firefox(executable_path=r"lager/geckodriver_win32.exe")
+                driver = webdriver.Firefox(executable_path=r"stock/geckodriver_win32.exe")
 
             for i in range(0, len(nachbestellen)):
                 url = "https://www.meetb.de/search?sSearch=" + nachbestellen[i]

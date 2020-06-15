@@ -1,7 +1,7 @@
 from datetime import date
 import sqlite3
 
-class Database_Lagerverwaltung():
+class Stock_Management_Data():
     def __init__(self):
         self.conn = sqlite3.connect("Database.db")
         self.c = self.conn.cursor()

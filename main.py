@@ -1,12 +1,12 @@
 import sys
-from kleidung.Kleidung import Kleidung
+from clothes.clothes import Clothes
 from ui.mainwindow import Ui_MainWindow
 from PyQt5 import QtWidgets
-from lager.lagerverwaltung import Lagerverwaltung
-from uebersicht.uebersicht import Uebersicht
-from admin.login.login_admin import Login_Admin
-from admin.fahrzeuge.fahrzeug_admin import Admin_Fahrzeug
-from admin.lager.admin_lager import Admin_Lager
+from stock.stock_management import Stock_Management
+from overview.overview import Overview
+from admin.login.admin_login import Login_Admin
+from admin.cars.admin_car import Admin_cars
+from admin.stock.admin_lager import Admin_Stock
 from fahrzeuge.fahrzeug import Fahrzeug_Mitarbeiter
 from admin.benutzerverwaltung.benutzer_verwaltung import Benutzer_Verwaltung
 from admin.einstellungen.ui_einstellungen import Ui_Einstellungen
@@ -15,6 +15,7 @@ from admin.mpg.mpg_geraete import Mpg_Geraete
 from mpg.mpg_user import Mpg_User
 from admin.mitarbeiter.mitarbeiter import Mitarbeiter
 from admin.mission.missions import Missions_Proof
+from fill_table import Fill_Table
 
 app = QtWidgets.QApplication(sys.argv)
 
@@ -24,12 +25,13 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.setWindowTitle("Rettungsdienst Verwaltung")
-        self.kleidung = Kleidung(self.ui)
-        self.Lager = Lagerverwaltung(self.ui)
-        self.uebersicht = Uebersicht(self.ui)
+        self.fill_table = Fill_Table(self.ui)
+        self.clothes = Clothes(self.ui, self.fill_table)
+        self.stock = Stock_Management(self.ui, self.fill_table)
+        self.overview = Overview(self.ui)
         self.admin_login = Login_Admin(self.ui)
-        self.admin_fahrzeug = Admin_Fahrzeug(self.ui)
-        self.admin_lager = Admin_Lager(self.ui)
+        self.admin_cars = Admin_cars(self.ui)
+        self.admin_stock = Admin_Stock(self.ui)
         self.fahrzeug = Fahrzeug_Mitarbeiter(self.ui)
         self.einstellungen = Ui_Einstellungen(self.ui, self)
         self.pdf = Pdf_Bestellung(self.ui)
@@ -38,6 +40,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.mpg_user = Mpg_User(self.ui)
         self.mitarbeiter = Mitarbeiter(self.ui)
         self.mission_proof = Missions_Proof(self.ui)
+
 
 window = MainWindow()
 window.show()

@@ -1,24 +1,21 @@
-from PyQt5 import QtWidgets
-from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIntValidator
-from uebersicht.uebersicht import Uebersicht
-from lager.data_lagerverwaltung import Database_Lagerverwaltung
-from admin.lager.fehlendes_material import Fehlendes_Material
-from admin.lager.material_einpfl import Material_einpflegen
-from admin.lager.bearbeiten import Bearbeiten
-from admin.lager.neu_loeschen import Neu_Loeschen
-from admin.lager.sets import Sets
+from stock.stock_management_data import Stock_Management_Data
+from admin.stock.missing_material import Missing_Material
+from admin.stock.material_einpfl import Material_einpflegen
+from admin.stock.bearbeiten import Bearbeiten
+from admin.stock.new_delete import New_Delete
+from admin.stock.sets import Sets
 
-class Admin_Lager():
+class Admin_Stock():
     def __init__(self, ui):
         self.ui = ui
-        self.lager = Database_Lagerverwaltung()
+        self.lager = Stock_Management_Data()
 
         ### aufruf bei start des programms
         self.eingabefelder_int()
 
-        self.fehlendes_Material = Fehlendes_Material(self.ui)
-        self.fehlendes_Material.fehlendes_material()
+        self.missing_Material = Missing_Material(self.ui)
+        self.missing_Material.show_missing_material()
 
         self.einpflegen = Material_einpflegen(self.ui)
         self.einpflegen.combobox_bestellung_einpflegen()
@@ -26,7 +23,7 @@ class Admin_Lager():
         self.bearbeiten = Bearbeiten(self.ui)
         self.bearbeiten.alle_produkte_anzeigen_table()
 
-        self.neu_loeschen = Neu_Loeschen(self.ui)
+        self.new_delete = New_Delete(self.ui)
 
         self.sets = Sets(self.ui)
         self.sets.edit_set_combo_fill()

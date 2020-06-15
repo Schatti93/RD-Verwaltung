@@ -16,13 +16,13 @@ build.py
 
 generel.py
 geckodriver.log
-lager/test.py
-lager/geckodriver_macos
+stock/test.py
+stock/geckodriver_macos
 .idea
 .DS_Store
 bestellungen/benötigtes material vom 19.03.2020.pdf
 
-lager/geckodriver_linux64
+stock/geckodriver_linux64
 
 ui/mainwindow.ui.autosave
 
@@ -32,7 +32,7 @@ bestellungen/benötigtes material vom 19.03.2020.pdf
 ui/ui.pro.user.67515d6
 .vscode/launch.json
 ui/ui.pro.user.67515d6.4.9-pre1
-uebersicht/grid_fahrzeuge.py
+overview/grid_fahrzeuge.py
 admin/data_einstellungen.py
 bestellungen/benoetigtes material vom 23.05.2020.pdf
 bestellungen/benötigtes material vom 23.05.2020.pdf
@@ -41,5 +41,7 @@ RDV.ico
 RDV.psd
 bestellungen/benoetigtes material vom 25.05.2020.pdf
 bestellungen/benoetigtes material vom 25.05.2020.pdf
-lager/test.py
+stock/test.py
 ui/test.py
+stock/geckodriver_macos
+stock/geckodriver_linux64

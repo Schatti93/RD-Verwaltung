@@ -20,20 +20,20 @@ class Ui_Einstellungen():
             self.ui.check_dienstbekleidung.setChecked(True)
         else:
             for i in range(0, len(parameter)):
-                if parameter[i][2] == "lager":
+                if parameter[i][2] == "stock":
                     self.ui.check_lager.setChecked(int(parameter[i][1]))
-                if parameter[i][2] == "uebersicht":
+                if parameter[i][2] == "overview":
                     self.ui.check_uebersicht.setChecked(int(parameter[i][1]))
-                if parameter[i][2] == "fahrzeuge":
+                if parameter[i][2] == "cars":
                     self.ui.check_fahrzeuge.setChecked(int(parameter[i][1]))
                 if parameter[i][2] == "dienstbekleidung":
                     self.ui.check_dienstbekleidung.setChecked(int(parameter[i][1]))
 
     def einstellungen_speichern(self):
         self.data.einstellungen_speichern(self.ui.check_dienstbekleidung.isChecked(), "dienstbekleidung")
-        self.data.einstellungen_speichern(self.ui.check_fahrzeuge.isChecked(), "fahrzeuge")
-        self.data.einstellungen_speichern(self.ui.check_uebersicht.isChecked(), "uebersicht")
-        self.data.einstellungen_speichern(self.ui.check_lager.isChecked(), "lager")
+        self.data.einstellungen_speichern(self.ui.check_fahrzeuge.isChecked(), "cars")
+        self.data.einstellungen_speichern(self.ui.check_uebersicht.isChecked(), "overview")
+        self.data.einstellungen_speichern(self.ui.check_lager.isChecked(), "stock")
 
     def einstellungen_umsetzen(self):
         liste = self.data.einstellungen_abfragen()
@@ -42,11 +42,11 @@ class Ui_Einstellungen():
             if int(liste[i][1]) == 0:
                 if liste[i][2] == "dienstbekleidung":
                     self.ui.tabWidget.removeTab(3)
-                if liste[i][2] == "fahrzeuge":
+                if liste[i][2] == "cars":
                     self.ui.tabWidget.removeTab(2)
-                if liste[i][2] == "lager":
+                if liste[i][2] == "stock":
                     self.ui.tabWidget.removeTab(1)
-                if liste[i][2] == "uebersicht":
+                if liste[i][2] == "overview":
                     self.ui.tabWidget.removeTab(0)
 
     def speicherort_festlegen(self):

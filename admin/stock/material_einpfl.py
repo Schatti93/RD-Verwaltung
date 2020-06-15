@@ -1,14 +1,14 @@
-from admin.lager.admin_lager_data import Admin_Lager_Data
+from admin.stock.admin_lager_data import Admin_Lager_Data
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt
-from admin.lager.update_lager import Update_Lager
+from admin.stock.update_lager import Update_Stock
 from PyQt5 import QtCore
 
 class Material_einpflegen():
     def __init__(self, ui):
         self.ui = ui
         self.data = Admin_Lager_Data()
-        self.update = Update_Lager(self.ui)
+        self.update = Update_Stock(self.ui)
         # return actions
         self.ui.admin_material_speichern_barcode.returnPressed.connect(self.bestellung_einpflegen_barcode_enter)
         self.ui.admin_material_speichern_anzahl.returnPressed.connect(self.bestellung_einpflegen_tabelle)

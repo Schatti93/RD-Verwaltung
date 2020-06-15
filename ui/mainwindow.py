@@ -125,9 +125,9 @@ class Ui_MainWindow(object):
         self.label_12.setText("")
         self.label_12.setObjectName("label_12")
         self.gridLayout.addWidget(self.label_12, 0, 4, 1, 1)
-        self.uebersicht_lager_table = QtWidgets.QTableWidget(self.tab_4)
-        self.uebersicht_lager_table.setMinimumSize(QtCore.QSize(0, 0))
-        self.uebersicht_lager_table.setStyleSheet("QTableView {\n"
+        self.overview_stock_table = QtWidgets.QTableWidget(self.tab_4)
+        self.overview_stock_table.setMinimumSize(QtCore.QSize(0, 0))
+        self.overview_stock_table.setStyleSheet("QTableView {\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 5px;\n"
 "padding: 0 8px;\n"
@@ -151,25 +151,25 @@ class Ui_MainWindow(object):
 "gridline-color: rgb(164, 164, 165);\n"
 "text-align: center;\n"
 "}")
-        self.uebersicht_lager_table.setEditTriggers(QtWidgets.QAbstractItemView.EditKeyPressed)
-        self.uebersicht_lager_table.setDragDropOverwriteMode(False)
-        self.uebersicht_lager_table.setObjectName("uebersicht_lager_table")
-        self.uebersicht_lager_table.setColumnCount(4)
-        self.uebersicht_lager_table.setRowCount(0)
+        self.overview_stock_table.setEditTriggers(QtWidgets.QAbstractItemView.EditKeyPressed)
+        self.overview_stock_table.setDragDropOverwriteMode(False)
+        self.overview_stock_table.setObjectName("overview_stock_table")
+        self.overview_stock_table.setColumnCount(4)
+        self.overview_stock_table.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
-        self.uebersicht_lager_table.setHorizontalHeaderItem(0, item)
+        self.overview_stock_table.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
-        self.uebersicht_lager_table.setHorizontalHeaderItem(1, item)
+        self.overview_stock_table.setHorizontalHeaderItem(1, item)
         item = QtWidgets.QTableWidgetItem()
-        self.uebersicht_lager_table.setHorizontalHeaderItem(2, item)
+        self.overview_stock_table.setHorizontalHeaderItem(2, item)
         item = QtWidgets.QTableWidgetItem()
-        self.uebersicht_lager_table.setHorizontalHeaderItem(3, item)
-        self.uebersicht_lager_table.horizontalHeader().setCascadingSectionResizes(True)
-        self.uebersicht_lager_table.horizontalHeader().setDefaultSectionSize(147)
-        self.uebersicht_lager_table.horizontalHeader().setMinimumSectionSize(110)
-        self.uebersicht_lager_table.horizontalHeader().setStretchLastSection(True)
-        self.uebersicht_lager_table.verticalHeader().setVisible(False)
-        self.gridLayout.addWidget(self.uebersicht_lager_table, 4, 0, 1, 1)
+        self.overview_stock_table.setHorizontalHeaderItem(3, item)
+        self.overview_stock_table.horizontalHeader().setCascadingSectionResizes(True)
+        self.overview_stock_table.horizontalHeader().setDefaultSectionSize(147)
+        self.overview_stock_table.horizontalHeader().setMinimumSectionSize(110)
+        self.overview_stock_table.horizontalHeader().setStretchLastSection(True)
+        self.overview_stock_table.verticalHeader().setVisible(False)
+        self.gridLayout.addWidget(self.overview_stock_table, 4, 0, 1, 1)
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
         self.gridLayout.addLayout(self.verticalLayout, 4, 2, 1, 1)
@@ -205,10 +205,10 @@ class Ui_MainWindow(object):
         self.label_20.setFont(font)
         self.label_20.setObjectName("label_20")
         self.gridLayout.addWidget(self.label_20, 0, 2, 1, 1)
-        self.label_uebersicht_lager = QtWidgets.QLabel(self.tab_4)
-        self.label_uebersicht_lager.setMaximumSize(QtCore.QSize(500, 30))
-        self.label_uebersicht_lager.setObjectName("label_uebersicht_lager")
-        self.gridLayout.addWidget(self.label_uebersicht_lager, 3, 0, 1, 1)
+        self.label_overview_stock = QtWidgets.QLabel(self.tab_4)
+        self.label_overview_stock.setMaximumSize(QtCore.QSize(500, 30))
+        self.label_overview_stock.setObjectName("label_overview_stock")
+        self.gridLayout.addWidget(self.label_overview_stock, 3, 0, 1, 1)
         self.line_9 = QtWidgets.QFrame(self.tab_4)
         self.line_9.setFrameShape(QtWidgets.QFrame.VLine)
         self.line_9.setFrameShadow(QtWidgets.QFrame.Sunken)
@@ -232,8 +232,8 @@ class Ui_MainWindow(object):
         self.label_13 = QtWidgets.QLabel(self.tab_3)
         self.label_13.setObjectName("label_13")
         self.gridLayout_4.addWidget(self.label_13, 5, 0, 1, 1)
-        self.combobox_lager = QtWidgets.QComboBox(self.tab_3)
-        self.combobox_lager.setStyleSheet("QComboBox\n"
+        self.combobox_stock = QtWidgets.QComboBox(self.tab_3)
+        self.combobox_stock.setStyleSheet("QComboBox\n"
 "{\n"
 "    subcontrol-origin: padding;\n"
 "    subcontrol-position: top right;\n"
@@ -297,11 +297,11 @@ class Ui_MainWindow(object):
 "\n"
 "\n"
 "")
-        self.combobox_lager.setObjectName("combobox_lager")
-        self.combobox_lager.addItem("")
-        self.combobox_lager.addItem("")
-        self.combobox_lager.addItem("")
-        self.gridLayout_4.addWidget(self.combobox_lager, 3, 1, 1, 6)
+        self.combobox_stock.setObjectName("combobox_stock")
+        self.combobox_stock.addItem("")
+        self.combobox_stock.addItem("")
+        self.combobox_stock.addItem("")
+        self.gridLayout_4.addWidget(self.combobox_stock, 3, 1, 1, 6)
         self.label_9 = QtWidgets.QLabel(self.tab_3)
         font = QtGui.QFont()
         font.setBold(True)
@@ -309,8 +309,8 @@ class Ui_MainWindow(object):
         self.label_9.setFont(font)
         self.label_9.setObjectName("label_9")
         self.gridLayout_4.addWidget(self.label_9, 0, 0, 1, 5)
-        self.lager_textfeld_einsatz = QtWidgets.QLineEdit(self.tab_3)
-        self.lager_textfeld_einsatz.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.stock_textfield_mission = QtWidgets.QLineEdit(self.tab_3)
+        self.stock_textfield_mission.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -320,14 +320,14 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
-        self.lager_textfeld_einsatz.setObjectName("lager_textfeld_einsatz")
-        self.gridLayout_4.addWidget(self.lager_textfeld_einsatz, 4, 1, 1, 6)
+        self.stock_textfield_mission.setObjectName("stock_textfield_mission")
+        self.gridLayout_4.addWidget(self.stock_textfield_mission, 4, 1, 1, 6)
         self.label_11 = QtWidgets.QLabel(self.tab_3)
         self.label_11.setText("")
         self.label_11.setObjectName("label_11")
         self.gridLayout_4.addWidget(self.label_11, 11, 0, 1, 1)
-        self.lager_table = QtWidgets.QTableWidget(self.tab_3)
-        self.lager_table.setStyleSheet("QTableView {\n"
+        self.stock_table = QtWidgets.QTableWidget(self.tab_3)
+        self.stock_table.setStyleSheet("QTableView {\n"
 "border: 1px solid black;\n"
 "border-radius: 5px;\n"
 "padding: 0 8px;\n"
@@ -349,24 +349,24 @@ class Ui_MainWindow(object):
 "border-bottom : 1px solid black;\n"
 "gridline-color: #807F81;\n"
 "}")
-        self.lager_table.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-        self.lager_table.setObjectName("lager_table")
-        self.lager_table.setColumnCount(3)
-        self.lager_table.setRowCount(0)
+        self.stock_table.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.stock_table.setObjectName("stock_table")
+        self.stock_table.setColumnCount(3)
+        self.stock_table.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
-        self.lager_table.setHorizontalHeaderItem(0, item)
+        self.stock_table.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
-        self.lager_table.setHorizontalHeaderItem(1, item)
+        self.stock_table.setHorizontalHeaderItem(1, item)
         item = QtWidgets.QTableWidgetItem()
-        self.lager_table.setHorizontalHeaderItem(2, item)
-        self.lager_table.horizontalHeader().setCascadingSectionResizes(True)
-        self.lager_table.horizontalHeader().setDefaultSectionSize(100)
-        self.lager_table.horizontalHeader().setStretchLastSection(True)
-        self.lager_table.verticalHeader().setVisible(False)
-        self.lager_table.verticalHeader().setCascadingSectionResizes(True)
-        self.gridLayout_4.addWidget(self.lager_table, 7, 1, 1, 6)
-        self.lager_textfeld_produkt = QtWidgets.QLineEdit(self.tab_3)
-        self.lager_textfeld_produkt.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.stock_table.setHorizontalHeaderItem(2, item)
+        self.stock_table.horizontalHeader().setCascadingSectionResizes(True)
+        self.stock_table.horizontalHeader().setDefaultSectionSize(100)
+        self.stock_table.horizontalHeader().setStretchLastSection(True)
+        self.stock_table.verticalHeader().setVisible(False)
+        self.stock_table.verticalHeader().setCascadingSectionResizes(True)
+        self.gridLayout_4.addWidget(self.stock_table, 7, 1, 1, 6)
+        self.stock_textfield_product = QtWidgets.QLineEdit(self.tab_3)
+        self.stock_textfield_product.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -376,8 +376,8 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
-        self.lager_textfeld_produkt.setObjectName("lager_textfeld_produkt")
-        self.gridLayout_4.addWidget(self.lager_textfeld_produkt, 5, 1, 1, 6)
+        self.stock_textfield_product.setObjectName("stock_textfield_product")
+        self.gridLayout_4.addWidget(self.stock_textfield_product, 5, 1, 1, 6)
         self.label_15 = QtWidgets.QLabel(self.tab_3)
         self.label_15.setText("")
         self.label_15.setObjectName("label_15")
@@ -391,8 +391,8 @@ class Ui_MainWindow(object):
         self.line_3.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_3.setObjectName("line_3")
         self.gridLayout_4.addWidget(self.line_3, 2, 0, 1, 1)
-        self.lager_btn = QtWidgets.QPushButton(self.tab_3)
-        self.lager_btn.setStyleSheet("QPushButton{\n"
+        self.stock_save_btn = QtWidgets.QPushButton(self.tab_3)
+        self.stock_save_btn.setStyleSheet("QPushButton{\n"
 "   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "      border-style: solid;\n"
 "    border: 1px solid #1e1e1e;\n"
@@ -426,10 +426,10 @@ class Ui_MainWindow(object):
 "    color: white;\n"
 "\n"
 "}")
-        self.lager_btn.setObjectName("lager_btn")
-        self.gridLayout_4.addWidget(self.lager_btn, 10, 2, 1, 3)
-        self.lager_uebernehmen_btn = QtWidgets.QPushButton(self.tab_3)
-        self.lager_uebernehmen_btn.setStyleSheet("QPushButton{\n"
+        self.stock_save_btn.setObjectName("stock_save_btn")
+        self.gridLayout_4.addWidget(self.stock_save_btn, 10, 2, 1, 3)
+        self.stock_accept_btn = QtWidgets.QPushButton(self.tab_3)
+        self.stock_accept_btn.setStyleSheet("QPushButton{\n"
 "   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "      border-style: solid;\n"
 "    border: 1px solid #1e1e1e;\n"
@@ -463,15 +463,15 @@ class Ui_MainWindow(object):
 "    color: white;\n"
 "\n"
 "}")
-        self.lager_uebernehmen_btn.setObjectName("lager_uebernehmen_btn")
-        self.gridLayout_4.addWidget(self.lager_uebernehmen_btn, 6, 2, 1, 3)
-        self.lager_error_label = QtWidgets.QLabel(self.tab_3)
-        self.lager_error_label.setText("")
-        self.lager_error_label.setAlignment(QtCore.Qt.AlignCenter)
-        self.lager_error_label.setObjectName("lager_error_label")
-        self.gridLayout_4.addWidget(self.lager_error_label, 9, 1, 1, 6)
-        self.lager_eintrag_loeschen = QtWidgets.QPushButton(self.tab_3)
-        self.lager_eintrag_loeschen.setStyleSheet("QPushButton{\n"
+        self.stock_accept_btn.setObjectName("stock_accept_btn")
+        self.gridLayout_4.addWidget(self.stock_accept_btn, 6, 2, 1, 3)
+        self.stock_error_label = QtWidgets.QLabel(self.tab_3)
+        self.stock_error_label.setText("")
+        self.stock_error_label.setAlignment(QtCore.Qt.AlignCenter)
+        self.stock_error_label.setObjectName("stock_error_label")
+        self.gridLayout_4.addWidget(self.stock_error_label, 9, 1, 1, 6)
+        self.delete_entry_btn = QtWidgets.QPushButton(self.tab_3)
+        self.delete_entry_btn.setStyleSheet("QPushButton{\n"
 "   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "      border-style: solid;\n"
 "    border: 1px solid #1e1e1e;\n"
@@ -505,10 +505,10 @@ class Ui_MainWindow(object):
 "    color: white;\n"
 "\n"
 "}")
-        self.lager_eintrag_loeschen.setObjectName("lager_eintrag_loeschen")
-        self.gridLayout_4.addWidget(self.lager_eintrag_loeschen, 10, 5, 1, 1)
-        self.lager_tabelle_leeren = QtWidgets.QPushButton(self.tab_3)
-        self.lager_tabelle_leeren.setStyleSheet("QPushButton{\n"
+        self.delete_entry_btn.setObjectName("delete_entry_btn")
+        self.gridLayout_4.addWidget(self.delete_entry_btn, 10, 5, 1, 1)
+        self.clear_table_btn = QtWidgets.QPushButton(self.tab_3)
+        self.clear_table_btn.setStyleSheet("QPushButton{\n"
 "   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "      border-style: solid;\n"
 "    border: 1px solid #1e1e1e;\n"
@@ -543,8 +543,8 @@ class Ui_MainWindow(object):
 "\n"
 "}\n"
 "")
-        self.lager_tabelle_leeren.setObjectName("lager_tabelle_leeren")
-        self.gridLayout_4.addWidget(self.lager_tabelle_leeren, 10, 6, 1, 1)
+        self.clear_table_btn.setObjectName("clear_table_btn")
+        self.gridLayout_4.addWidget(self.clear_table_btn, 10, 6, 1, 1)
         self.gridLayout_10.addLayout(self.gridLayout_4, 1, 1, 1, 1)
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_10.addItem(spacerItem1, 1, 0, 1, 1)
@@ -1171,8 +1171,8 @@ class Ui_MainWindow(object):
         self.label_2 = QtWidgets.QLabel(self.tab)
         self.label_2.setObjectName("label_2")
         self.gridLayout_3.addWidget(self.label_2, 2, 3, 1, 1)
-        self.klamotten_tabelle = QtWidgets.QTableWidget(self.tab)
-        self.klamotten_tabelle.setStyleSheet("QTableView {\n"
+        self.clothes_away = QtWidgets.QTableWidget(self.tab)
+        self.clothes_away.setStyleSheet("QTableView {\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 5px;\n"
 "padding: 0 8px;\n"
@@ -1196,23 +1196,23 @@ class Ui_MainWindow(object):
 "gridline-color: rgb(164, 164, 165);\n"
 "text-align: center;\n"
 "}")
-        self.klamotten_tabelle.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
-        self.klamotten_tabelle.setColumnCount(2)
-        self.klamotten_tabelle.setObjectName("klamotten_tabelle")
-        self.klamotten_tabelle.setRowCount(0)
+        self.clothes_away.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.clothes_away.setColumnCount(2)
+        self.clothes_away.setObjectName("clothes_away")
+        self.clothes_away.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
-        self.klamotten_tabelle.setHorizontalHeaderItem(0, item)
+        self.clothes_away.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
-        self.klamotten_tabelle.setHorizontalHeaderItem(1, item)
-        self.klamotten_tabelle.horizontalHeader().setCascadingSectionResizes(True)
-        self.klamotten_tabelle.horizontalHeader().setDefaultSectionSize(99)
-        self.klamotten_tabelle.horizontalHeader().setMinimumSectionSize(19)
-        self.klamotten_tabelle.horizontalHeader().setStretchLastSection(True)
-        self.klamotten_tabelle.verticalHeader().setVisible(False)
-        self.klamotten_tabelle.verticalHeader().setDefaultSectionSize(30)
-        self.gridLayout_3.addWidget(self.klamotten_tabelle, 3, 1, 1, 1)
-        self.kleidung_zurueck_tabelle = QtWidgets.QTableWidget(self.tab)
-        self.kleidung_zurueck_tabelle.setStyleSheet("QTableView {\n"
+        self.clothes_away.setHorizontalHeaderItem(1, item)
+        self.clothes_away.horizontalHeader().setCascadingSectionResizes(True)
+        self.clothes_away.horizontalHeader().setDefaultSectionSize(99)
+        self.clothes_away.horizontalHeader().setMinimumSectionSize(19)
+        self.clothes_away.horizontalHeader().setStretchLastSection(True)
+        self.clothes_away.verticalHeader().setVisible(False)
+        self.clothes_away.verticalHeader().setDefaultSectionSize(30)
+        self.gridLayout_3.addWidget(self.clothes_away, 3, 1, 1, 1)
+        self.clothes_back = QtWidgets.QTableWidget(self.tab)
+        self.clothes_back.setStyleSheet("QTableView {\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 5px;\n"
 "padding: 0 8px;\n"
@@ -1236,20 +1236,20 @@ class Ui_MainWindow(object):
 "gridline-color: rgb(164, 164, 165);\n"
 "text-align: center;\n"
 "}")
-        self.kleidung_zurueck_tabelle.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
-        self.kleidung_zurueck_tabelle.setObjectName("kleidung_zurueck_tabelle")
-        self.kleidung_zurueck_tabelle.setColumnCount(2)
-        self.kleidung_zurueck_tabelle.setRowCount(0)
+        self.clothes_back.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.clothes_back.setObjectName("clothes_back")
+        self.clothes_back.setColumnCount(2)
+        self.clothes_back.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
-        self.kleidung_zurueck_tabelle.setHorizontalHeaderItem(0, item)
+        self.clothes_back.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
-        self.kleidung_zurueck_tabelle.setHorizontalHeaderItem(1, item)
-        self.kleidung_zurueck_tabelle.horizontalHeader().setCascadingSectionResizes(True)
-        self.kleidung_zurueck_tabelle.horizontalHeader().setDefaultSectionSize(99)
-        self.kleidung_zurueck_tabelle.horizontalHeader().setHighlightSections(True)
-        self.kleidung_zurueck_tabelle.horizontalHeader().setStretchLastSection(True)
-        self.kleidung_zurueck_tabelle.verticalHeader().setVisible(False)
-        self.gridLayout_3.addWidget(self.kleidung_zurueck_tabelle, 3, 3, 1, 1)
+        self.clothes_back.setHorizontalHeaderItem(1, item)
+        self.clothes_back.horizontalHeader().setCascadingSectionResizes(True)
+        self.clothes_back.horizontalHeader().setDefaultSectionSize(99)
+        self.clothes_back.horizontalHeader().setHighlightSections(True)
+        self.clothes_back.horizontalHeader().setStretchLastSection(True)
+        self.clothes_back.verticalHeader().setVisible(False)
+        self.gridLayout_3.addWidget(self.clothes_back, 3, 3, 1, 1)
         self.label_3 = QtWidgets.QLabel(self.tab)
         self.label_3.setObjectName("label_3")
         self.gridLayout_3.addWidget(self.label_3, 2, 1, 1, 1)
@@ -1270,9 +1270,9 @@ class Ui_MainWindow(object):
         self.label.setStyleSheet("")
         self.label.setObjectName("label")
         self.gridLayout_2.addWidget(self.label, 1, 0, 1, 1)
-        self.klamotten_button = QtWidgets.QPushButton(self.tab)
-        self.klamotten_button.setMaximumSize(QtCore.QSize(120, 30))
-        self.klamotten_button.setStyleSheet("QPushButton{\n"
+        self.clothes_button = QtWidgets.QPushButton(self.tab)
+        self.clothes_button.setMaximumSize(QtCore.QSize(120, 30))
+        self.clothes_button.setStyleSheet("QPushButton{\n"
 "   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "      border-style: solid;\n"
 "    border: 1px solid #1e1e1e;\n"
@@ -1306,12 +1306,12 @@ class Ui_MainWindow(object):
 "    color: white;\n"
 "\n"
 "}")
-        self.klamotten_button.setObjectName("klamotten_button")
-        self.gridLayout_2.addWidget(self.klamotten_button, 5, 1, 1, 2)
+        self.clothes_button.setObjectName("clothes_button")
+        self.gridLayout_2.addWidget(self.clothes_button, 5, 1, 1, 2)
         spacerItem8 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_2.addItem(spacerItem8, 5, 0, 1, 1)
-        self.aufnahme = QtWidgets.QTableWidget(self.tab)
-        self.aufnahme.setStyleSheet("QTableView {\n"
+        self.cloth_to_save = QtWidgets.QTableWidget(self.tab)
+        self.cloth_to_save.setStyleSheet("QTableView {\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 5px;\n"
 "padding: 0 8px;\n"
@@ -1335,18 +1335,18 @@ class Ui_MainWindow(object):
 "gridline-color: rgb(164, 164, 165);\n"
 "text-align: center;\n"
 "}")
-        self.aufnahme.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
-        self.aufnahme.setObjectName("aufnahme")
-        self.aufnahme.setColumnCount(1)
-        self.aufnahme.setRowCount(0)
+        self.cloth_to_save.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.cloth_to_save.setObjectName("cloth_to_save")
+        self.cloth_to_save.setColumnCount(1)
+        self.cloth_to_save.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
-        self.aufnahme.setHorizontalHeaderItem(0, item)
-        self.aufnahme.horizontalHeader().setDefaultSectionSize(400)
-        self.aufnahme.horizontalHeader().setStretchLastSection(True)
-        self.aufnahme.verticalHeader().setVisible(False)
-        self.gridLayout_2.addWidget(self.aufnahme, 4, 0, 1, 4)
-        self.klamotten_textfeld = QtWidgets.QLineEdit(self.tab)
-        self.klamotten_textfeld.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.cloth_to_save.setHorizontalHeaderItem(0, item)
+        self.cloth_to_save.horizontalHeader().setDefaultSectionSize(400)
+        self.cloth_to_save.horizontalHeader().setStretchLastSection(True)
+        self.cloth_to_save.verticalHeader().setVisible(False)
+        self.gridLayout_2.addWidget(self.cloth_to_save, 4, 0, 1, 4)
+        self.clothes_textfield = QtWidgets.QLineEdit(self.tab)
+        self.clothes_textfield.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -1356,8 +1356,8 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
-        self.klamotten_textfeld.setObjectName("klamotten_textfeld")
-        self.gridLayout_2.addWidget(self.klamotten_textfeld, 3, 0, 1, 3)
+        self.clothes_textfield.setObjectName("clothes_textfield")
+        self.gridLayout_2.addWidget(self.clothes_textfield, 3, 0, 1, 3)
         self.label_5 = QtWidgets.QLabel(self.tab)
         self.label_5.setStyleSheet("color: white;")
         self.label_5.setObjectName("label_5")
@@ -1447,9 +1447,9 @@ class Ui_MainWindow(object):
 "")
         self.admin_text_pw.setObjectName("admin_text_pw")
         self.admin_login.addWidget(self.admin_text_pw, 2, 1, 1, 1)
-        self.admin_text_ben = QtWidgets.QLineEdit(self.tab_5)
-        self.admin_text_ben.setMaximumSize(QtCore.QSize(300, 16777215))
-        self.admin_text_ben.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.admin_text_user = QtWidgets.QLineEdit(self.tab_5)
+        self.admin_text_user.setMaximumSize(QtCore.QSize(300, 16777215))
+        self.admin_text_user.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -1459,8 +1459,8 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
-        self.admin_text_ben.setObjectName("admin_text_ben")
-        self.admin_login.addWidget(self.admin_text_ben, 1, 1, 1, 1)
+        self.admin_text_user.setObjectName("admin_text_user")
+        self.admin_login.addWidget(self.admin_text_user, 1, 1, 1, 1)
         self.login_btn = QtWidgets.QPushButton(self.tab_5)
         self.login_btn.setMaximumSize(QtCore.QSize(100, 30))
         self.login_btn.setStyleSheet("QPushButton{\n"
@@ -5328,57 +5328,13 @@ class Ui_MainWindow(object):
         self.tab_8.setObjectName("tab_8")
         self.gridLayout_19 = QtWidgets.QGridLayout(self.tab_8)
         self.gridLayout_19.setObjectName("gridLayout_19")
-        self.label_99 = QtWidgets.QLabel(self.tab_8)
-        self.label_99.setText("")
-        self.label_99.setObjectName("label_99")
-        self.gridLayout_19.addWidget(self.label_99, 2, 5, 1, 1)
-        self.pushButton = QtWidgets.QPushButton(self.tab_8)
-        self.pushButton.setMaximumSize(QtCore.QSize(150, 16777215))
-        self.pushButton.setStyleSheet("QPushButton{\n"
-"   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"      border-style: solid;\n"
-"    border: 1px solid #1e1e1e;\n"
-"    border-radius: 5;\n"
-"    padding: 1px 0px 1px 20px;\n"
-"    font: 13px;\n"
-"    min-width: 10em;\n"
-"    padding: 5px;\n"
-"    color: white;\n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
-"      border-style: solid;\n"
-"    border: 1px solid rgb(59, 204, 179);\n"
-"    border-radius: 5;\n"
-"    padding: 1px 0px 1px 20px;\n"
-"    font: 13px;\n"
-"    min-width: 10em;\n"
-"    padding: 5px;\n"
-"    color: white;\n"
-"}\n"
-"QPushButton:pressed {\n"
-"background-color: rgb(130, 152, 152);\n"
-"      border-style: solid;\n"
-"    border: 1px solid #1EFFFF;\n"
-"    border-radius: 5;\n"
-"    padding: 1px 0px 1px 20px;\n"
-"    font: 13px;\n"
-"    min-width: 10em;\n"
-"    padding: 5px;\n"
-"    color: white;\n"
-"\n"
-"}")
-        self.pushButton.setObjectName("pushButton")
-        self.gridLayout_19.addWidget(self.pushButton, 6, 1, 1, 1)
-        self.check_uebersicht = QtWidgets.QCheckBox(self.tab_8)
-        self.check_uebersicht.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
-        self.check_uebersicht.setStyleSheet("color:#ffffff")
-        self.check_uebersicht.setObjectName("check_uebersicht")
-        self.gridLayout_19.addWidget(self.check_uebersicht, 1, 0, 1, 1)
-        self.check_lager = QtWidgets.QCheckBox(self.tab_8)
-        self.check_lager.setStyleSheet("color:#ffffff")
-        self.check_lager.setObjectName("check_lager")
-        self.gridLayout_19.addWidget(self.check_lager, 2, 0, 1, 1)
+        self.label_96 = QtWidgets.QLabel(self.tab_8)
+        self.label_96.setText("")
+        self.label_96.setObjectName("label_96")
+        self.gridLayout_19.addWidget(self.label_96, 2, 4, 1, 1)
+        self.label_98 = QtWidgets.QLabel(self.tab_8)
+        self.label_98.setObjectName("label_98")
+        self.gridLayout_19.addWidget(self.label_98, 0, 3, 1, 1)
         self.line = QtWidgets.QFrame(self.tab_8)
         self.line.setFrameShape(QtWidgets.QFrame.VLine)
         self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
@@ -5422,10 +5378,73 @@ class Ui_MainWindow(object):
 "}")
         self.pdf_speicheror_btn.setObjectName("pdf_speicheror_btn")
         self.gridLayout_19.addWidget(self.pdf_speicheror_btn, 2, 3, 1, 1)
-        self.label_96 = QtWidgets.QLabel(self.tab_8)
-        self.label_96.setText("")
-        self.label_96.setObjectName("label_96")
-        self.gridLayout_19.addWidget(self.label_96, 2, 4, 1, 1)
+        spacerItem24 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_19.addItem(spacerItem24, 2, 7, 1, 1)
+        spacerItem25 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_19.addItem(spacerItem25, 7, 0, 1, 1)
+        self.check_uebersicht = QtWidgets.QCheckBox(self.tab_8)
+        self.check_uebersicht.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
+        self.check_uebersicht.setStyleSheet("color:#ffffff")
+        self.check_uebersicht.setObjectName("check_uebersicht")
+        self.gridLayout_19.addWidget(self.check_uebersicht, 1, 0, 1, 1)
+        self.check_fahrzeuge = QtWidgets.QCheckBox(self.tab_8)
+        self.check_fahrzeuge.setStyleSheet("color:#ffffff")
+        self.check_fahrzeuge.setObjectName("check_fahrzeuge")
+        self.gridLayout_19.addWidget(self.check_fahrzeuge, 3, 0, 1, 1)
+        self.check_dienstbekleidung = QtWidgets.QCheckBox(self.tab_8)
+        self.check_dienstbekleidung.setStyleSheet("color:#ffffff")
+        self.check_dienstbekleidung.setObjectName("check_dienstbekleidung")
+        self.gridLayout_19.addWidget(self.check_dienstbekleidung, 4, 0, 1, 1)
+        self.pushButton = QtWidgets.QPushButton(self.tab_8)
+        self.pushButton.setMaximumSize(QtCore.QSize(150, 16777215))
+        self.pushButton.setStyleSheet("QPushButton{\n"
+"   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"      border-style: solid;\n"
+"    border: 1px solid #1e1e1e;\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"    font: 13px;\n"
+"    min-width: 10em;\n"
+"    padding: 5px;\n"
+"    color: white;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+"      border-style: solid;\n"
+"    border: 1px solid rgb(59, 204, 179);\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"    font: 13px;\n"
+"    min-width: 10em;\n"
+"    padding: 5px;\n"
+"    color: white;\n"
+"}\n"
+"QPushButton:pressed {\n"
+"background-color: rgb(130, 152, 152);\n"
+"      border-style: solid;\n"
+"    border: 1px solid #1EFFFF;\n"
+"    border-radius: 5;\n"
+"    padding: 1px 0px 1px 20px;\n"
+"    font: 13px;\n"
+"    min-width: 10em;\n"
+"    padding: 5px;\n"
+"    color: white;\n"
+"\n"
+"}")
+        self.pushButton.setObjectName("pushButton")
+        self.gridLayout_19.addWidget(self.pushButton, 6, 1, 1, 1)
+        self.label_18 = QtWidgets.QLabel(self.tab_8)
+        self.label_18.setObjectName("label_18")
+        self.gridLayout_19.addWidget(self.label_18, 0, 0, 1, 1)
+        self.label_100 = QtWidgets.QLabel(self.tab_8)
+        self.label_100.setMinimumSize(QtCore.QSize(30, 0))
+        self.label_100.setText("")
+        self.label_100.setObjectName("label_100")
+        self.gridLayout_19.addWidget(self.label_100, 2, 6, 1, 1)
+        self.pdf_speicherort_label = QtWidgets.QLabel(self.tab_8)
+        self.pdf_speicherort_label.setText("")
+        self.pdf_speicherort_label.setObjectName("pdf_speicherort_label")
+        self.gridLayout_19.addWidget(self.pdf_speicherort_label, 1, 3, 1, 4)
         self.einstellungen_speichern = QtWidgets.QPushButton(self.tab_8)
         self.einstellungen_speichern.setMaximumSize(QtCore.QSize(150, 16777215))
         self.einstellungen_speichern.setStyleSheet("QPushButton{\n"
@@ -5464,33 +5483,14 @@ class Ui_MainWindow(object):
 "}")
         self.einstellungen_speichern.setObjectName("einstellungen_speichern")
         self.gridLayout_19.addWidget(self.einstellungen_speichern, 6, 0, 1, 1)
-        spacerItem24 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_19.addItem(spacerItem24, 2, 7, 1, 1)
-        self.check_dienstbekleidung = QtWidgets.QCheckBox(self.tab_8)
-        self.check_dienstbekleidung.setStyleSheet("color:#ffffff")
-        self.check_dienstbekleidung.setObjectName("check_dienstbekleidung")
-        self.gridLayout_19.addWidget(self.check_dienstbekleidung, 4, 0, 1, 1)
-        self.check_fahrzeuge = QtWidgets.QCheckBox(self.tab_8)
-        self.check_fahrzeuge.setStyleSheet("color:#ffffff")
-        self.check_fahrzeuge.setObjectName("check_fahrzeuge")
-        self.gridLayout_19.addWidget(self.check_fahrzeuge, 3, 0, 1, 1)
-        self.label_18 = QtWidgets.QLabel(self.tab_8)
-        self.label_18.setObjectName("label_18")
-        self.gridLayout_19.addWidget(self.label_18, 0, 0, 1, 1)
-        self.label_98 = QtWidgets.QLabel(self.tab_8)
-        self.label_98.setObjectName("label_98")
-        self.gridLayout_19.addWidget(self.label_98, 0, 3, 1, 1)
-        self.label_100 = QtWidgets.QLabel(self.tab_8)
-        self.label_100.setMinimumSize(QtCore.QSize(30, 0))
-        self.label_100.setText("")
-        self.label_100.setObjectName("label_100")
-        self.gridLayout_19.addWidget(self.label_100, 2, 6, 1, 1)
-        self.pdf_speicherort_label = QtWidgets.QLabel(self.tab_8)
-        self.pdf_speicherort_label.setText("")
-        self.pdf_speicherort_label.setObjectName("pdf_speicherort_label")
-        self.gridLayout_19.addWidget(self.pdf_speicherort_label, 1, 3, 1, 4)
-        spacerItem25 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_19.addItem(spacerItem25, 7, 0, 1, 1)
+        self.label_99 = QtWidgets.QLabel(self.tab_8)
+        self.label_99.setText("")
+        self.label_99.setObjectName("label_99")
+        self.gridLayout_19.addWidget(self.label_99, 2, 5, 1, 1)
+        self.check_lager = QtWidgets.QCheckBox(self.tab_8)
+        self.check_lager.setStyleSheet("color:#ffffff")
+        self.check_lager.setObjectName("check_lager")
+        self.gridLayout_19.addWidget(self.check_lager, 2, 0, 1, 1)
         self.admin_bereich.addTab(self.tab_8, "")
         self.admin_login.addWidget(self.admin_bereich, 6, 0, 1, 4)
         self.gridLayout_16.addLayout(self.admin_login, 1, 3, 1, 1)
@@ -5507,24 +5507,24 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.tabWidget.setCurrentIndex(5)
-        self.admin_bereich.setCurrentIndex(2)
+        self.admin_bereich.setCurrentIndex(6)
         self.tabWidget_2.setCurrentIndex(4)
         self.tabWidget_3.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-        MainWindow.setTabOrder(self.admin_text_ben, self.admin_text_pw)
+        MainWindow.setTabOrder(self.admin_text_user, self.admin_text_pw)
         MainWindow.setTabOrder(self.admin_text_pw, self.login_btn)
         MainWindow.setTabOrder(self.login_btn, self.admin_logout_btn)
         MainWindow.setTabOrder(self.admin_logout_btn, self.tabWidget)
-        MainWindow.setTabOrder(self.tabWidget, self.uebersicht_lager_table)
-        MainWindow.setTabOrder(self.uebersicht_lager_table, self.combobox_lager)
-        MainWindow.setTabOrder(self.combobox_lager, self.lager_textfeld_einsatz)
-        MainWindow.setTabOrder(self.lager_textfeld_einsatz, self.lager_textfeld_produkt)
-        MainWindow.setTabOrder(self.lager_textfeld_produkt, self.lager_uebernehmen_btn)
-        MainWindow.setTabOrder(self.lager_uebernehmen_btn, self.lager_table)
-        MainWindow.setTabOrder(self.lager_table, self.lager_btn)
-        MainWindow.setTabOrder(self.lager_btn, self.lager_eintrag_loeschen)
-        MainWindow.setTabOrder(self.lager_eintrag_loeschen, self.lager_tabelle_leeren)
-        MainWindow.setTabOrder(self.lager_tabelle_leeren, self.combo_rtw)
+        MainWindow.setTabOrder(self.tabWidget, self.overview_stock_table)
+        MainWindow.setTabOrder(self.overview_stock_table, self.combobox_stock)
+        MainWindow.setTabOrder(self.combobox_stock, self.stock_textfield_mission)
+        MainWindow.setTabOrder(self.stock_textfield_mission, self.stock_textfield_product)
+        MainWindow.setTabOrder(self.stock_textfield_product, self.stock_accept_btn)
+        MainWindow.setTabOrder(self.stock_accept_btn, self.stock_table)
+        MainWindow.setTabOrder(self.stock_table, self.stock_save_btn)
+        MainWindow.setTabOrder(self.stock_save_btn, self.delete_entry_btn)
+        MainWindow.setTabOrder(self.delete_entry_btn, self.clear_table_btn)
+        MainWindow.setTabOrder(self.clear_table_btn, self.combo_rtw)
         MainWindow.setTabOrder(self.combo_rtw, self.combo_zustand)
         MainWindow.setTabOrder(self.combo_zustand, self.fahrzeug_textedit)
         MainWindow.setTabOrder(self.fahrzeug_textedit, self.mpg_Fahrzeuge_combo)
@@ -5534,12 +5534,12 @@ class Ui_MainWindow(object):
         MainWindow.setTabOrder(self.mpg_user_geraete_aufrufen_btn, self.mpg_user_geraete_standort_combo)
         MainWindow.setTabOrder(self.mpg_user_geraete_standort_combo, self.mpg_user_bemerkung)
         MainWindow.setTabOrder(self.mpg_user_bemerkung, self.mpg_user_geraete_speichern_btn)
-        MainWindow.setTabOrder(self.mpg_user_geraete_speichern_btn, self.klamotten_textfeld)
-        MainWindow.setTabOrder(self.klamotten_textfeld, self.aufnahme)
-        MainWindow.setTabOrder(self.aufnahme, self.klamotten_button)
-        MainWindow.setTabOrder(self.klamotten_button, self.klamotten_tabelle)
-        MainWindow.setTabOrder(self.klamotten_tabelle, self.kleidung_zurueck_tabelle)
-        MainWindow.setTabOrder(self.kleidung_zurueck_tabelle, self.admin_bereich)
+        MainWindow.setTabOrder(self.mpg_user_geraete_speichern_btn, self.clothes_textfield)
+        MainWindow.setTabOrder(self.clothes_textfield, self.cloth_to_save)
+        MainWindow.setTabOrder(self.cloth_to_save, self.clothes_button)
+        MainWindow.setTabOrder(self.clothes_button, self.clothes_away)
+        MainWindow.setTabOrder(self.clothes_away, self.clothes_back)
+        MainWindow.setTabOrder(self.clothes_back, self.admin_bereich)
         MainWindow.setTabOrder(self.admin_bereich, self.tabWidget_2)
         MainWindow.setTabOrder(self.tabWidget_2, self.admin_new_prod_prod)
         MainWindow.setTabOrder(self.admin_new_prod_prod, self.admin_new_prod_bes)
@@ -5641,34 +5641,34 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        item = self.uebersicht_lager_table.horizontalHeaderItem(0)
+        item = self.overview_stock_table.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "Produkt"))
-        item = self.uebersicht_lager_table.horizontalHeaderItem(1)
+        item = self.overview_stock_table.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Vorhanden"))
-        item = self.uebersicht_lager_table.horizontalHeaderItem(2)
+        item = self.overview_stock_table.horizontalHeaderItem(2)
         item.setText(_translate("MainWindow", "Mindestbestand"))
-        item = self.uebersicht_lager_table.horizontalHeaderItem(3)
+        item = self.overview_stock_table.horizontalHeaderItem(3)
         item.setText(_translate("MainWindow", "Status"))
         self.label_19.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Lager Übersicht</span></p></body></html>"))
         self.label_20.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Fahrzeug Übersicht</span></p></body></html>"))
-        self.label_uebersicht_lager.setText(_translate("MainWindow", "<html><head/><body><p><br/></p></body></html>"))
+        self.label_overview_stock.setText(_translate("MainWindow", "<html><head/><body><p><br/></p></body></html>"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), _translate("MainWindow", "Übersicht"))
         self.label_einsatznummer.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Einsatznummer</span></p></body></html>"))
         self.label_13.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Produkt Barcode</span></p></body></html>"))
-        self.combobox_lager.setItemText(0, _translate("MainWindow", "Auffüllen nach Einsatz"))
-        self.combobox_lager.setItemText(1, _translate("MainWindow", "Auffüllen wegen Fehlbestand"))
-        self.combobox_lager.setItemText(2, _translate("MainWindow", "Falsch Entnahme - wieder zurück geben"))
+        self.combobox_stock.setItemText(0, _translate("MainWindow", "Auffüllen nach Einsatz"))
+        self.combobox_stock.setItemText(1, _translate("MainWindow", "Auffüllen wegen Fehlbestand"))
+        self.combobox_stock.setItemText(2, _translate("MainWindow", "Falsch Entnahme - wieder zurück geben"))
         self.label_9.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Produkte austragen</span></p></body></html>"))
-        item = self.lager_table.horizontalHeaderItem(0)
+        item = self.stock_table.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "Produkt"))
-        item = self.lager_table.horizontalHeaderItem(1)
+        item = self.stock_table.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Menge"))
-        item = self.lager_table.horizontalHeaderItem(2)
+        item = self.stock_table.horizontalHeaderItem(2)
         item.setText(_translate("MainWindow", "Keyword"))
-        self.lager_btn.setText(_translate("MainWindow", "Speichern"))
-        self.lager_uebernehmen_btn.setText(_translate("MainWindow", "Übernehmen"))
-        self.lager_eintrag_loeschen.setText(_translate("MainWindow", "Eintrag löschen"))
-        self.lager_tabelle_leeren.setText(_translate("MainWindow", "Tabelle leeren"))
+        self.stock_save_btn.setText(_translate("MainWindow", "Speichern"))
+        self.stock_accept_btn.setText(_translate("MainWindow", "Übernehmen"))
+        self.delete_entry_btn.setText(_translate("MainWindow", "Eintrag löschen"))
+        self.clear_table_btn.setText(_translate("MainWindow", "Tabelle leeren"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("MainWindow", "Lagerverwaltung"))
         self.label_4.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Status der Fahrzeuge</span></p></body></html>"))
         self.label_17.setText(_translate("MainWindow", "Bemerkung"))
@@ -5694,18 +5694,18 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_17), _translate("MainWindow", "MPG"))
         self.label_8.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600; color:#ffffff;\">Übersicht der Ein- und Ausgänge von Dienstkleidung</span></p></body></html>"))
         self.label_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Wäsche, die zurückgekommen ist</span></p></body></html>"))
-        item = self.klamotten_tabelle.horizontalHeaderItem(0)
+        item = self.clothes_away.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "Barcode"))
-        item = self.klamotten_tabelle.horizontalHeaderItem(1)
+        item = self.clothes_away.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Datum"))
-        item = self.kleidung_zurueck_tabelle.horizontalHeaderItem(0)
+        item = self.clothes_back.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "Barcode"))
-        item = self.kleidung_zurueck_tabelle.horizontalHeaderItem(1)
+        item = self.clothes_back.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Datum"))
         self.label_3.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Wäsche, die abgegeben wurde</span></p></body></html>"))
         self.label.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600; color:#ffffff;\">Dienstkleidung Eingang und Abgabe</span></p></body></html>"))
-        self.klamotten_button.setText(_translate("MainWindow", "Wäsche Speichern"))
-        item = self.aufnahme.horizontalHeaderItem(0)
+        self.clothes_button.setText(_translate("MainWindow", "Wäsche Speichern"))
+        item = self.cloth_to_save.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "Barcode"))
         self.label_5.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">mit Enter bestätigen</span></p></body></html>"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "Dienstkleidung"))
@@ -5971,15 +5971,15 @@ class Ui_MainWindow(object):
         self.missions_proof_get_btn.setText(_translate("MainWindow", "Abrufen"))
         self.label_118.setText(_translate("MainWindow", "Einsatznachweise"))
         self.admin_bereich.setTabText(self.admin_bereich.indexOf(self.tab_22), _translate("MainWindow", "Einsatznachweise"))
-        self.pushButton.setText(_translate("MainWindow", "Abbrechen"))
-        self.check_uebersicht.setText(_translate("MainWindow", "Übersicht"))
-        self.check_lager.setText(_translate("MainWindow", "Lagerverwaltung"))
-        self.pdf_speicheror_btn.setText(_translate("MainWindow", "Ort auswählen"))
-        self.einstellungen_speichern.setText(_translate("MainWindow", "Speichern"))
-        self.check_dienstbekleidung.setText(_translate("MainWindow", "Dienstkleidung"))
-        self.check_fahrzeuge.setText(_translate("MainWindow", "Fahrzeugstatus"))
-        self.label_18.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Bereiche Anzeigen oder nicht Anzeigen.</span></p></body></html>"))
         self.label_98.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Bestellungen PDF Speicherort festlegen</span></p></body></html>"))
+        self.pdf_speicheror_btn.setText(_translate("MainWindow", "Ort auswählen"))
+        self.check_uebersicht.setText(_translate("MainWindow", "Übersicht"))
+        self.check_fahrzeuge.setText(_translate("MainWindow", "Fahrzeugstatus"))
+        self.check_dienstbekleidung.setText(_translate("MainWindow", "Dienstkleidung"))
+        self.pushButton.setText(_translate("MainWindow", "Abbrechen"))
+        self.label_18.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Bereiche Anzeigen oder nicht Anzeigen.</span></p></body></html>"))
+        self.einstellungen_speichern.setText(_translate("MainWindow", "Speichern"))
+        self.check_lager.setText(_translate("MainWindow", "Lagerverwaltung"))
         self.admin_bereich.setTabText(self.admin_bereich.indexOf(self.tab_8), _translate("MainWindow", "Einstellungen"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), _translate("MainWindow", "Admin"))
 

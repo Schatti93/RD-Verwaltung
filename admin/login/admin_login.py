@@ -13,25 +13,25 @@ class Login_Admin():
         self.ui.admin_logout_btn.clicked.connect(self.logout)
         self.ui.admin_text_pw.returnPressed.connect(self.check)
         self.ui.admin_text_pw.setEchoMode(QLineEdit.Password)
-        self.bei_start_alte_admin_logins_loeschen()
+        self.delete_old_admins_in_database()
         self.ui.admin_logout_btn.setVisible(False)
 
-    def bei_start_alte_admin_logins_loeschen(self):
-        alte_nutzer = self.data.alle_benutzer_abfragen()
-        for element in range(0, len(alte_nutzer)):
-            self.data.benutzer_ausloggen(alte_nutzer[element][0])
+    def delete_old_admins_in_database(self):
+        old_admins = self.data.old_logins()
+        for element in range(0, len(old_admins)):
+            self.data.logout_user(old_admins[element][0])
 
     def check(self):
-        benutzer = self.ui.admin_text_ben.text()
-        passwort = self.ui.admin_text_pw.text()
-        passwort_hash = hashlib.sha512(passwort.encode('utf-8')).hexdigest()
-        liste = self.data.passwort_check(benutzer, passwort_hash)
+        user = self.ui.admin_text_user.text()
+        password = self.ui.admin_text_pw.text()
+        password_hash = hashlib.sha512(password.encode('utf-8')).hexdigest()
+        list = self.data.password_check(user, password_hash)
 
-        if len(liste) == 1:
-            self.data.eingeloggter_benutzer_speichern(benutzer)
-            self.ui.admin_text_ben.setText("")
+        if len(list) == 1:
+            self.data.save_login(user)
+            self.ui.admin_text_user.setText("")
             self.ui.admin_text_pw.setText("")
-            self.ui.admin_text_ben.setVisible(False)
+            self.ui.admin_text_user.setVisible(False)
             self.ui.admin_text_pw.setVisible(False)
             self.ui.login_btn.setVisible(False)
             self.ui.benutzer_label.setVisible(False)
@@ -42,7 +42,7 @@ class Login_Admin():
             self.ui.login_btn.setMaximumSize(QtCore.QSize(0, 0))
             self.ui.login_label.setMaximumSize(QtCore.QSize(0, 0))
             self.ui.admin_text_pw.setMaximumSize(QtCore.QSize(0, 0))
-            self.ui.admin_text_ben.setMaximumSize(QtCore.QSize(0, 0))
+            self.ui.admin_text_user.setMaximumSize(QtCore.QSize(0, 0))
             self.ui.benutzer_label.setMaximumSize(QtCore.QSize(0, 0))
             self.ui.passwort_label.setMaximumSize(QtCore.QSize(0, 0))
             Update_Mpg(self.ui).update_tabellen_und_combos()
@@ -55,9 +55,9 @@ class Login_Admin():
             self.ui.login_error_label.setText("<html><head/><body><p><span style=\" color:#cc3300 ;\">Passwort / Benutzer falsch</span></p></body></html>")
 
     def logout(self):
-        eingeloggter_user = self.data.alle_benutzer_abfragen()
-        self.data.benutzer_ausloggen(eingeloggter_user[0][0])
-        self.ui.admin_text_ben.setVisible(True)
+        user_logged_in = self.data.old_logins()
+        self.data.logout_user(user_logged_in[0][0])
+        self.ui.admin_text_user.setVisible(True)
         self.ui.admin_text_pw.setVisible(True)
         self.ui.login_btn.setVisible(True)
         self.ui.benutzer_label.setVisible(True)
@@ -69,7 +69,7 @@ class Login_Admin():
         self.ui.login_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.ui.login_label.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.ui.admin_text_pw.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.ui.admin_text_ben.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.ui.admin_text_user.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.ui.benutzer_label.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.ui.passwort_label.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.ui.admin_logout_btn.setVisible(False)

@@ -8,6 +8,7 @@ class Verwertet():
     def __init__(self, ui):
         self.data = Mpg_Data()
         self.ui = ui
+
         self.ui.verwertet_speichern_button.clicked.connect \
             (self.geraet_verwerten)
 

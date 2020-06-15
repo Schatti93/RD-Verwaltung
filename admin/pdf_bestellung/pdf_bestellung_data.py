@@ -10,18 +10,18 @@ class Pdf_Bestellung_Data():
 
     def produkt_abfragen(self, produkt):
         params = (produkt, )
-        sql = "SELECT * FROM lager WHERE produkt = ?"
+        sql = "SELECT * FROM stock WHERE produkt = ?"
         self.c.execute(sql, params)
         return self.c.fetchall()
 
     def alle_produkte(self):
-        sql = "SELECT * FROM lager"
+        sql = "SELECT * FROM stock"
         self.c.execute(sql)
         return self.c.fetchall()
 
     def status_aendern(self, produkt):
         params = ("Bestellt", produkt)
-        sql = "UPDATE lager SET status = ? WHERE Produkt = ?"
+        sql = "UPDATE stock SET status = ? WHERE Produkt = ?"
         self.c.execute(sql, params)
         self.conn.commit()
 

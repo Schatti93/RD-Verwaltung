@@ -10,32 +10,32 @@ class Admin_Lager_Data():
         self.today = today = date.today()
         self.datum = str(today.day) + '.' + str(today.month) + '.' + str(today.year)
 
-    def new_produkt(self, produkt, bestand, mindest, maximal, barcode, inhalt, artikel_nr, status):
-        params = (produkt, bestand, mindest, maximal, barcode, inhalt, artikel_nr, status)
+    def new_produkt(self, product, in_stock, min, max, barcode, content, item_number, status):
+        params = (product, in_stock, min, max, barcode, content, item_number, status)
         sql = "INSERT INTO lager VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?)"
         self.c.execute(sql, params)
         self.conn.commit()
 
-    def barcode_abfrage(self, produkt):
-        params = (produkt,)
+    def get_barcode(self, product):
+        params = (product,)
         sql = "SELECT barcode FROM lager WHERE Produkt = ?"
         self.c.execute(sql, params)
         return self.c.fetchall()
 
-    def produkt_abfrage(self, barcode):
+    def get_product(self, barcode):
         params = (barcode, )
         sql = "SELECT Produkt FROM lager WHERE Barcode = ?"
         self.c.execute(sql, params)
         return self.c.fetchall()
 
-    def del_produkt(self, produkt):
-        params = (produkt, )
+    def del_product(self, product):
+        params = (product, )
         sql = "DELETE FROM lager WHERE Produkt = ?"
         self.c.execute(sql, params)
         self.conn.commit()
 
-    def update_alle_produkte(self, id, produkt, bestand, mindest, maximun, barcode, inhalt, artnr):
-        params = (produkt, bestand, mindest, maximun, barcode, inhalt, artnr, id)
+    def update_all_products(self, id, product, in_stock, min, max, barcode, content, item_number):
+        params = (product, in_stock, min, max, barcode, content, item_number, id)
         sql = "UPDATE lager SET Produkt = ?, Bestand = ?, 'Mindest bestand' = ?, 'Maximal Bestand' = ?," \
               " Barcode = ?, inhalt_menge = ?, artikel_nr = ? WHERE id = ?"
         self.c.execute(sql, params)
@@ -46,16 +46,16 @@ class Admin_Lager_Data():
         self.c.execute(sql)
         return self.c.fetchall()
 
-    def auffuellen(self, produkt, menge):
-        params = (produkt, )
-        liste = []
+    def fill_up(self, product, amount):
+        params = (product, )
+        list = []
         sql = "SELECT Bestand FROM lager WHERE Produkt = ?"
         self.c.execute(sql, params)
         for row in self.c.fetchall():
-            liste.append(int(row[0]))
-        neue_menge = liste[0] + menge
+            list.append(int(row[0]))
+        new_amount = list[0] + amount
 
-        params = (neue_menge, produkt)
+        params = (new_amount, product)
         sql = "UPDATE lager SET Bestand = ? WHERE Produkt = ?"
         self.c.execute(sql, params)
         self.conn.commit()
