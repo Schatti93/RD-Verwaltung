@@ -2,11 +2,13 @@ from admin.stock.admin_lager_data import Admin_Lager_Data
 from PyQt5.QtWidgets import QMessageBox
 from admin.stock.update_lager import Update_Stock
 from fill_table import Fill_Table
+from admin.barcodes.barcodes import Generate_Barcodes
 
 class New_Delete():
     def __init__(self, ui):
         self.ui = ui
         self.data = Admin_Lager_Data()
+        self.barcode = Generate_Barcodes()
         self.update = Update_Stock(self.ui)
         self.fill_table = Fill_Table(self.ui)
         #return actions
@@ -16,6 +18,8 @@ class New_Delete():
         # button actions
         self.ui.admin_del_prod_btn.clicked.connect(self.del_message_box)
         self.ui.admin_new_prod_btn.clicked.connect(self.sammeln)
+        self.ui.admin_new_prod_create_barcode.clicked.connect(self.set_barcode)
+
 
     def show_new_product_in_table(self):
         mode = (0, 2, 2, 2, 0, 2, 0)
@@ -76,6 +80,10 @@ class New_Delete():
         self.ui.admin_del_prod_label.setText("<html><head/><body><p><span style=\" color:#00FF00;\">"
                                           "Eingabe Gespeichert</span></p></body></html>")
         self.update.update()
+
+    def set_barcode(self):
+        barcode = self.barcode.generate_barcode()
+        self.ui.admin_new_prod_bar.setText(barcode)
 
     def del_message_box(self):
         msgBox = QMessageBox()

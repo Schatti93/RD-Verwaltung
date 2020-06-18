@@ -33,3 +33,20 @@ class Ui_Einstellungen_Data():
         sql = "SELECT * FROM speicherort_bestellung"
         self.c.execute(sql)
         return self.c.fetchall()
+
+    def get_barcode_location(self):
+        sql = "SELECT * FROM settings_barcode"
+        self.c.execute(sql)
+        return self.c.fetchall()
+
+    def save_barcode_location(self, location, id):
+        params = (location, id)
+        sql = "UPDATE settings_barcode SET location = ? WHERE id = ?"
+        self.conn.execute(sql, params)
+        self.conn.commit()
+
+    def save_barcode_minimum(self, id, minimum):
+        params = (minimum, id)
+        sql = "UPDATE settings_barcode SET minimum = ? WHERE id = ?"
+        self.c.execute(sql, params)
+        self.conn.commit()

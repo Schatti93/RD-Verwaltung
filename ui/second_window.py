@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ui\second_window.ui'
+# Form implementation generated from reading ui file 'ui/second_window.ui'
 #
-# Created by: PyQt5 UI code generator 5.9.2
+# Created by: PyQt5 UI code generator 5.14.2
 #
 # WARNING! All changes made in this file will be lost!
 
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_second_window(object):
     def setupUi(self, second_window):
@@ -109,4 +111,3 @@ class Ui_second_window(object):
         self.label.setText(_translate("second_window", "Standard URL"))
         self.pushButton.setText(_translate("second_window", "Speichern"))
         self.pushButton_2.setText(_translate("second_window", "Abbrechen"))
-
