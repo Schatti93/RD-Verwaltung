@@ -47,3 +47,7 @@ stock/geckodriver_macos
 stock/geckodriver_linux64
 lager/geckodriver_linux64
 lager/geckodriver_macos
+update/Database.db
+update/download/test.py
+update/test.db
+update/test/test.py

@@ -11,7 +11,6 @@ class Fill_Table():
 
         rows = table.rowCount()
         table.insertRow(rows)
-        print(content)
         for i in range(0, len(content)):
             if mode[i] == 0:
                 entry = self.create_widget(str(content[i]))

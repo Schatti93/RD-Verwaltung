@@ -46,17 +46,13 @@ class Admin_Lager_Data():
         self.c.execute(sql)
         return self.c.fetchall()
 
-    def fill_up(self, product, amount):
-        params = (product, )
-        list = []
-        sql = "SELECT Bestand FROM lager WHERE Produkt = ?"
+    def fill_up(self, barcode, amount):
+        params = (barcode, )
+        sql = "SELECT Bestand FROM lager WHERE barcode = ?"
         self.c.execute(sql, params)
-        for row in self.c.fetchall():
-            list.append(int(row[0]))
-        new_amount = list[0] + amount
-
-        params = (new_amount, product)
-        sql = "UPDATE lager SET Bestand = ? WHERE Produkt = ?"
+        new_amount = self.c.fetchall()[0][0] + amount
+        params = (new_amount, barcode)
+        sql = "UPDATE lager SET Bestand = ? WHERE barcode = ?"
         self.c.execute(sql, params)
         self.conn.commit()
 

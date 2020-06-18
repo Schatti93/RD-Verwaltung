@@ -2723,7 +2723,7 @@ QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1,
                      <widget class="QPushButton" name="admin_del_prod_btn">
                       <property name="minimumSize">
                        <size>
-                        <width>192</width>
+                        <width>172</width>
                         <height>0</height>
                        </size>
                       </property>
@@ -8002,6 +8002,13 @@ background-color: rgb(130, 152, 152);
                 </property>
                </widget>
               </item>
+              <item row="2" column="9">
+               <widget class="QPushButton" name="admin_update">
+                <property name="text">
+                 <string>update</string>
+                </property>
+               </widget>
+              </item>
              </layout>
             </widget>
            </widget>
@@ -8021,7 +8028,7 @@ background-color: rgb(130, 152, 152);
      <x>0</x>
      <y>0</y>
      <width>1920</width>
-     <height>30</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

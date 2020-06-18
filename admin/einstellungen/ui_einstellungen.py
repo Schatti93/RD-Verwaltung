@@ -1,5 +1,7 @@
 from admin.einstellungen.ui_einstellungen_data import Ui_Einstellungen_Data
 from PyQt5.QtWidgets import QFileDialog
+from update.update import Updater
+
 class Ui_Einstellungen():
     def __init__(self, ui, mainwindow):
         self.ui = ui
@@ -10,11 +12,12 @@ class Ui_Einstellungen():
         self.speicherort_anzeigen()
         self.show_barcode_location()
         self.show_barcode_minimum()
+        self.update = Updater(self.ui)
         self.ui.einstellungen_speichern.clicked.connect(self.einstellungen_speichern)
         self.ui.pdf_speicheror_btn.clicked.connect(self.save_pdf_location)
         self.ui.barcode_location_btn.clicked.connect(self.save_barcode_location)
         self.ui.barcode_number_btn.clicked.connect(self.save_barcode_minimum)
-
+        self.ui.admin_update.clicked.connect(self.update.update_or_not)
 
     def einstellungen_setzen(self):
         parameter = self.data.einstellungen_abfragen()
