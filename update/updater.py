@@ -13,6 +13,7 @@ import subprocess
 
 app = QtWidgets.QApplication(sys.argv)
 
+# TODO add backup folder
 class Update_Software(QtWidgets.QMainWindow):
     def __init__(self, parent = None):
         super().__init__(parent)
@@ -29,6 +30,7 @@ class Update_Software(QtWidgets.QMainWindow):
         self.ui.update_btn.clicked.connect(self.updater)
         self.ui.update_finish_btn.clicked.connect(self.start_rdv)
 
+    # TODO give the loop variables better names
     def database_copy(self):
         for database in range(0, len(self.safe_list)): # loop to go through all databases
             if ".db" in self.safe_list[database]:
@@ -208,6 +210,7 @@ class Update_Software(QtWidgets.QMainWindow):
         self.ui.update_finish_btn.setVisible(True)
         self.ui.update_btn.setVisible(False)
 
+    # TODO change to backup if an failure happens -> copy backup to old folder
     def start_rdv(self):
         subprocess.Popen([sys.executable, self.old_version_directory + "/main.py"])
         sys.exit(0)

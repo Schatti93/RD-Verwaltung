@@ -58,7 +58,9 @@ class Geraete():
                     naechste_pruefung = str(naechste_pruefung.strftime("%d.%m.%Y"))
 
                     entry = QtWidgets.QTableWidgetItem(naechste_pruefung)
+                    # TODO That fucking table does not show the foreground color!
                     if int(kritisch.days) <= 60:
+                        print("geht rein")
                         entry.setForeground(QtGui.QColor(255, 0, 0))
                     entry.setTextAlignment(Qt.AlignCenter)
 
@@ -131,6 +133,7 @@ class Geraete():
                 self.geraete_verwalten_felder_leeren()
                 Mpg_User(self.ui).update()
             except ValueError:
+                # TODO was da unten steht -.- todo funktion zuspät entdeckt
                 pass # error label einfügen das anzeigt das monate nicht korrekt angegeben ist.
         else:
             pass # error label einfügen was falsches datum auswirft

@@ -6,6 +6,7 @@ class Generate_Barcodes():
     def __init__(self):
         self.data = Barcode_Data()
 
+    # TODO change barcode size
     def generate_barcode(self):
         barcodes = self.data.get_barcodes()
         min = self.data.get_barcode_location()[0][2]

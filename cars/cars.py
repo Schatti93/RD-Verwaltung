@@ -2,7 +2,7 @@ from cars.cars_data import Cars_Data
 from cars.car_overview import Car_Overview
 from PyQt5 import QtCore
 
-
+# TODO insert combox radio_identification and let the user change this
 class Cars_Employee():
     def __init__(self, ui):
         self.ui = ui
