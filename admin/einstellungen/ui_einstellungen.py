@@ -20,7 +20,6 @@ class Ui_Einstellungen():
         self.ui.barcode_location_btn.clicked.connect(self.save_barcode_location)
         self.ui.barcode_number_btn.clicked.connect(self.save_barcode_minimum)
         self.ui.admin_update.clicked.connect(self.update.version_check)
-        self.update.version_check()
 
     def einstellungen_setzen(self):
         parameter = self.data.einstellungen_abfragen()

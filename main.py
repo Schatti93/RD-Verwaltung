@@ -41,7 +41,6 @@ class MainWindow(QtWidgets.QMainWindow):
         self.mitarbeiter = Mitarbeiter(self.ui)
         self.mission_proof = Missions_Proof(self.ui)
 
-
 window = MainWindow()
 window.show()
 sys.exit(app.exec_())

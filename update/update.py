@@ -20,7 +20,7 @@ class Updater():
         msgBox = QMessageBox()
         msgBox.setIcon(QMessageBox.Information)
         msgBox.setText("Möchten Sie wirklich Updaten? \nAlles was nicht gespeichert ist, geht verloren.")
-        msgBox.setWindowTitle("Wirklich löschen?")
+        msgBox.setWindowTitle("Wirklich Updaten?")
         msgBox.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
         returnValue = msgBox.exec()
         if returnValue == QMessageBox.Ok:
@@ -36,11 +36,11 @@ class Updater():
         if returnValue == QMessageBox.Ok:
             self.update_or_not()
 
-    def no_update_available(self):
+    def clear_messagebox(self, text, window_tile):
         msgBox = QMessageBox()
         msgBox.setIcon(QMessageBox.Information)
-        msgBox.setText("Kein neues Update_verfügbar")
-        msgBox.setWindowTitle("Update Manager")
+        msgBox.setText(text)
+        msgBox.setWindowTitle(window_tile)
         msgBox.setStandardButtons(QMessageBox.Ok)
 
         returnValue = msgBox.exec()
@@ -57,29 +57,34 @@ class Updater():
         sys.exit(0)
 
     def version_check(self):
-        url = 'http://rd-v.site/version.txt'
-        urllib.request.urlretrieve(url, 'update/version.txt')
-        actual_version = self.get_current_version()[0][0]
-        version = ""
+        try:
+            url = 'http://rd-v.site/version.txt'
+            urllib.request.urlretrieve(url, 'update/version.txt')
 
-        path = str("update/version.txt")
-        with open(path, "r") as f:
-           for line in f:
-               version = line
-        actual_version = actual_version.split(".")
-        version = version.split(".")
-        check = False
-        if version[0] > actual_version[0]:
-            check =  True
-        elif version[0] == actual_version[0]:
-            if version[1] > actual_version[1]:
+            actual_version = self.get_current_version()[0][0]
+            version = ""
+
+            path = str("update/version.txt")
+            with open(path, "r") as f:
+                for line in f:
+                    version = line
+            actual_version = actual_version.split(".")
+            version = version.split(".")
+            check = False
+            if version[0] > actual_version[0]:
                 check = True
-            if version[1] == actual_version[1] and version[2] > actual_version[2]:
-                check = True
-        if check == False:
-            self.no_update_available()
-        else:
-            self.update_available()
+            elif version[0] == actual_version[0]:
+                if version[1] > actual_version[1]:
+                    check = True
+                if version[1] == actual_version[1] and version[2] > actual_version[2]:
+                    check = True
+            if check == False:
+                self.clear_messagebox("Kein neues Update_verfügbar",
+                                      "Update Manager")
+            else:
+                self.update_available()
+        except urllib.error.URLError:
+            self.clear_messagebox("Es besteht keine Verbindung zum Internet", "Update Manager")
 
     def get_current_version(self):
         conn = sqlite3.connect("version.db")
