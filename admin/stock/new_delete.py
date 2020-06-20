@@ -1,6 +1,6 @@
 from admin.stock.admin_lager_data import Admin_Lager_Data
 from PyQt5.QtWidgets import QMessageBox
-from admin.stock.update_lager import Update_Stock
+from admin.stock.update_stock import Update_Stock
 from fill_table import Fill_Table
 from admin.barcodes.barcodes import Generate_Barcodes
 

@@ -330,6 +330,7 @@ class Ui_MainWindow(object):
         self.label_11.setObjectName("label_11")
         self.gridLayout_4.addWidget(self.label_11, 11, 0, 1, 1)
         self.stock_table = QtWidgets.QTableWidget(self.tab_3)
+        self.stock_table.setMinimumSize(QtCore.QSize(800, 0))
         self.stock_table.setStyleSheet("QTableView {\n"
 "border: 1px solid black;\n"
 "border-radius: 5px;\n"
@@ -707,8 +708,8 @@ class Ui_MainWindow(object):
 "")
         self.combo_rtw.setObjectName("combo_rtw")
         self.gridLayout_9.addWidget(self.combo_rtw, 3, 0, 1, 1)
-        self.button_fahrzeuge = QtWidgets.QPushButton(self.tab_2)
-        self.button_fahrzeuge.setStyleSheet("QPushButton{\n"
+        self.cars_save_status_button = QtWidgets.QPushButton(self.tab_2)
+        self.cars_save_status_button.setStyleSheet("QPushButton{\n"
 "   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "      border-style: solid;\n"
 "    border: 1px solid #1e1e1e;\n"
@@ -742,10 +743,10 @@ class Ui_MainWindow(object):
 "    color: white;\n"
 "\n"
 "}")
-        self.button_fahrzeuge.setObjectName("button_fahrzeuge")
-        self.gridLayout_9.addWidget(self.button_fahrzeuge, 6, 2, 1, 1)
-        self.combo_zustand = QtWidgets.QComboBox(self.tab_2)
-        self.combo_zustand.setStyleSheet("QComboBox\n"
+        self.cars_save_status_button.setObjectName("cars_save_status_button")
+        self.gridLayout_9.addWidget(self.cars_save_status_button, 6, 2, 1, 1)
+        self.combo_status = QtWidgets.QComboBox(self.tab_2)
+        self.combo_status.setStyleSheet("QComboBox\n"
 "{\n"
 "    subcontrol-origin: padding;\n"
 "    subcontrol-position: top right;\n"
@@ -809,8 +810,8 @@ class Ui_MainWindow(object):
 "\n"
 "\n"
 "")
-        self.combo_zustand.setObjectName("combo_zustand")
-        self.gridLayout_9.addWidget(self.combo_zustand, 3, 4, 1, 1)
+        self.combo_status.setObjectName("combo_status")
+        self.gridLayout_9.addWidget(self.combo_status, 3, 4, 1, 1)
         self.label_7 = QtWidgets.QLabel(self.tab_2)
         self.label_7.setObjectName("label_7")
         self.gridLayout_9.addWidget(self.label_7, 3, 5, 1, 1)
@@ -818,8 +819,8 @@ class Ui_MainWindow(object):
         self.gridLayout_9.addItem(spacerItem3, 6, 0, 1, 1)
         spacerItem4 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.gridLayout_9.addItem(spacerItem4, 7, 1, 1, 1)
-        self.fahrzeug_textedit = QtWidgets.QTextEdit(self.tab_2)
-        self.fahrzeug_textedit.setStyleSheet("QTextEdit {\n"
+        self.car_textedit = QtWidgets.QTextEdit(self.tab_2)
+        self.car_textedit.setStyleSheet("QTextEdit {\n"
 "background-color: rgb(107, 109, 108);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 5px;\n"
@@ -828,8 +829,8 @@ class Ui_MainWindow(object):
 "color: white;\n"
 "gridline-color: #585759;\n"
 "}")
-        self.fahrzeug_textedit.setObjectName("fahrzeug_textedit")
-        self.gridLayout_9.addWidget(self.fahrzeug_textedit, 5, 0, 1, 5)
+        self.car_textedit.setObjectName("car_textedit")
+        self.gridLayout_9.addWidget(self.car_textedit, 5, 0, 1, 5)
         self.label_6 = QtWidgets.QLabel(self.tab_2)
         self.label_6.setObjectName("label_6")
         self.gridLayout_9.addWidget(self.label_6, 3, 1, 1, 1)
@@ -2614,8 +2615,8 @@ class Ui_MainWindow(object):
         self.label_42 = QtWidgets.QLabel(self.tab_11)
         self.label_42.setObjectName("label_42")
         self.gridLayout_20.addWidget(self.label_42, 4, 3, 1, 1)
-        self.admin_material_speichern_barcode = QtWidgets.QLineEdit(self.tab_11)
-        self.admin_material_speichern_barcode.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.admin_material_save_barcode = QtWidgets.QLineEdit(self.tab_11)
+        self.admin_material_save_barcode.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -2625,10 +2626,10 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
-        self.admin_material_speichern_barcode.setObjectName("admin_material_speichern_barcode")
-        self.gridLayout_20.addWidget(self.admin_material_speichern_barcode, 2, 2, 1, 1)
-        self.admin_material_speichern_anzahl = QtWidgets.QLineEdit(self.tab_11)
-        self.admin_material_speichern_anzahl.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
+        self.admin_material_save_barcode.setObjectName("admin_material_save_barcode")
+        self.gridLayout_20.addWidget(self.admin_material_save_barcode, 2, 2, 1, 1)
+        self.admin_material_save_number = QtWidgets.QLineEdit(self.tab_11)
+        self.admin_material_save_number.setStyleSheet("QLineEdit{ background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #929394, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 10px;\n"
 "padding: 0 8px;\n"
@@ -2638,8 +2639,8 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #bababa, stop: 0.5 #919191, stop: 0.9 #7a7a7a, stop: 1 #5b5b5b);}\n"
 "")
-        self.admin_material_speichern_anzahl.setObjectName("admin_material_speichern_anzahl")
-        self.gridLayout_20.addWidget(self.admin_material_speichern_anzahl, 3, 2, 1, 1)
+        self.admin_material_save_number.setObjectName("admin_material_save_number")
+        self.gridLayout_20.addWidget(self.admin_material_save_number, 3, 2, 1, 1)
         spacerItem15 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_20.addItem(spacerItem15, 5, 0, 1, 1)
         self.label_43 = QtWidgets.QLabel(self.tab_11)
@@ -2653,8 +2654,8 @@ class Ui_MainWindow(object):
         self.line_5.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_5.setObjectName("line_5")
         self.gridLayout_20.addWidget(self.line_5, 1, 2, 1, 1)
-        self.admin_material_speichern_table = QtWidgets.QTableWidget(self.tab_11)
-        self.admin_material_speichern_table.setStyleSheet("QTableView {\n"
+        self.admin_material_save_table = QtWidgets.QTableWidget(self.tab_11)
+        self.admin_material_save_table.setStyleSheet("QTableView {\n"
 "border: 1px inset darkgrey;\n"
 "border-radius: 5px;\n"
 "padding: 0 8px;\n"
@@ -2678,19 +2679,19 @@ class Ui_MainWindow(object):
 "gridline-color: rgb(164, 164, 165);\n"
 "text-align: center;\n"
 "}")
-        self.admin_material_speichern_table.setObjectName("admin_material_speichern_table")
-        self.admin_material_speichern_table.setColumnCount(2)
-        self.admin_material_speichern_table.setRowCount(0)
+        self.admin_material_save_table.setObjectName("admin_material_save_table")
+        self.admin_material_save_table.setColumnCount(2)
+        self.admin_material_save_table.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
-        self.admin_material_speichern_table.setHorizontalHeaderItem(0, item)
+        self.admin_material_save_table.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
-        self.admin_material_speichern_table.setHorizontalHeaderItem(1, item)
-        self.admin_material_speichern_table.horizontalHeader().setCascadingSectionResizes(True)
-        self.admin_material_speichern_table.horizontalHeader().setStretchLastSection(True)
-        self.admin_material_speichern_table.verticalHeader().setVisible(False)
-        self.gridLayout_20.addWidget(self.admin_material_speichern_table, 5, 2, 1, 2)
-        self.admin_material_speichern_button = QtWidgets.QPushButton(self.tab_11)
-        self.admin_material_speichern_button.setStyleSheet("QPushButton{\n"
+        self.admin_material_save_table.setHorizontalHeaderItem(1, item)
+        self.admin_material_save_table.horizontalHeader().setCascadingSectionResizes(True)
+        self.admin_material_save_table.horizontalHeader().setStretchLastSection(True)
+        self.admin_material_save_table.verticalHeader().setVisible(False)
+        self.gridLayout_20.addWidget(self.admin_material_save_table, 5, 2, 1, 2)
+        self.admin_material_save_button = QtWidgets.QPushButton(self.tab_11)
+        self.admin_material_save_button.setStyleSheet("QPushButton{\n"
 "   background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);\n"
 "      border-style: solid;\n"
 "    border: 1px solid #1e1e1e;\n"
@@ -2724,10 +2725,10 @@ class Ui_MainWindow(object):
 "    color: white;\n"
 "\n"
 "}")
-        self.admin_material_speichern_button.setObjectName("admin_material_speichern_button")
-        self.gridLayout_20.addWidget(self.admin_material_speichern_button, 6, 2, 1, 2)
-        self.admin_material_speichern_combo = QtWidgets.QComboBox(self.tab_11)
-        self.admin_material_speichern_combo.setStyleSheet("QComboBox\n"
+        self.admin_material_save_button.setObjectName("admin_material_save_button")
+        self.gridLayout_20.addWidget(self.admin_material_save_button, 6, 2, 1, 2)
+        self.admin_material_save_combo = QtWidgets.QComboBox(self.tab_11)
+        self.admin_material_save_combo.setStyleSheet("QComboBox\n"
 "{\n"
 "    subcontrol-origin: padding;\n"
 "    subcontrol-position: top right;\n"
@@ -2791,8 +2792,8 @@ class Ui_MainWindow(object):
 "\n"
 "\n"
 "")
-        self.admin_material_speichern_combo.setObjectName("admin_material_speichern_combo")
-        self.gridLayout_20.addWidget(self.admin_material_speichern_combo, 4, 2, 1, 1)
+        self.admin_material_save_combo.setObjectName("admin_material_save_combo")
+        self.gridLayout_20.addWidget(self.admin_material_save_combo, 4, 2, 1, 1)
         self.label_37 = QtWidgets.QLabel(self.tab_11)
         self.label_37.setObjectName("label_37")
         self.gridLayout_20.addWidget(self.label_37, 2, 3, 1, 1)
@@ -5657,9 +5658,9 @@ class Ui_MainWindow(object):
         MainWindow.setMenuBar(self.menuBar)
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(5)
-        self.admin_bereich.setCurrentIndex(6)
-        self.tabWidget_2.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(2)
+        self.admin_bereich.setCurrentIndex(1)
+        self.tabWidget_2.setCurrentIndex(4)
         self.tabWidget_3.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.admin_text_user, self.admin_text_pw)
@@ -5676,9 +5677,9 @@ class Ui_MainWindow(object):
         MainWindow.setTabOrder(self.stock_save_btn, self.delete_entry_btn)
         MainWindow.setTabOrder(self.delete_entry_btn, self.clear_table_btn)
         MainWindow.setTabOrder(self.clear_table_btn, self.combo_rtw)
-        MainWindow.setTabOrder(self.combo_rtw, self.combo_zustand)
-        MainWindow.setTabOrder(self.combo_zustand, self.fahrzeug_textedit)
-        MainWindow.setTabOrder(self.fahrzeug_textedit, self.mpg_Fahrzeuge_combo)
+        MainWindow.setTabOrder(self.combo_rtw, self.combo_status)
+        MainWindow.setTabOrder(self.combo_status, self.car_textedit)
+        MainWindow.setTabOrder(self.car_textedit, self.mpg_Fahrzeuge_combo)
         MainWindow.setTabOrder(self.mpg_Fahrzeuge_combo, self.mpg_geraete_tabelle_fahrzeug)
         MainWindow.setTabOrder(self.mpg_geraete_tabelle_fahrzeug, self.mpg_user_geraete_barcode)
         MainWindow.setTabOrder(self.mpg_user_geraete_barcode, self.mpg_user_geraete_aufrufen_btn)
@@ -5709,12 +5710,12 @@ class Ui_MainWindow(object):
         MainWindow.setTabOrder(self.admin_lager_alle_produkte, self.admin_produkte_update)
         MainWindow.setTabOrder(self.admin_produkte_update, self.admin_lager_fehlendes_material)
         MainWindow.setTabOrder(self.admin_lager_fehlendes_material, self.lager_bestellung)
-        MainWindow.setTabOrder(self.lager_bestellung, self.admin_material_speichern_barcode)
-        MainWindow.setTabOrder(self.admin_material_speichern_barcode, self.admin_material_speichern_anzahl)
-        MainWindow.setTabOrder(self.admin_material_speichern_anzahl, self.admin_material_speichern_combo)
-        MainWindow.setTabOrder(self.admin_material_speichern_combo, self.admin_material_speichern_table)
-        MainWindow.setTabOrder(self.admin_material_speichern_table, self.admin_material_speichern_button)
-        MainWindow.setTabOrder(self.admin_material_speichern_button, self.admin_car_radio_identification)
+        MainWindow.setTabOrder(self.lager_bestellung, self.admin_material_save_barcode)
+        MainWindow.setTabOrder(self.admin_material_save_barcode, self.admin_material_save_number)
+        MainWindow.setTabOrder(self.admin_material_save_number, self.admin_material_save_combo)
+        MainWindow.setTabOrder(self.admin_material_save_combo, self.admin_material_save_table)
+        MainWindow.setTabOrder(self.admin_material_save_table, self.admin_material_save_button)
+        MainWindow.setTabOrder(self.admin_material_save_button, self.admin_car_radio_identification)
         MainWindow.setTabOrder(self.admin_car_radio_identification, self.admin_car_license_plate)
         MainWindow.setTabOrder(self.admin_car_license_plate, self.admin_car_town)
         MainWindow.setTabOrder(self.admin_car_town, self.admin_car_tuev)
@@ -5823,7 +5824,7 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("MainWindow", "Lagerverwaltung"))
         self.label_4.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Status der Fahrzeuge</span></p></body></html>"))
         self.label_17.setText(_translate("MainWindow", "Bemerkung"))
-        self.button_fahrzeuge.setText(_translate("MainWindow", "Speichern"))
+        self.cars_save_status_button.setText(_translate("MainWindow", "Speichern"))
         self.label_7.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Zustand</span></p></body></html>"))
         self.label_6.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Fahrzeug</span></p></body></html>"))
         self.label_116.setText(_translate("MainWindow", "Funkkenner"))
@@ -5960,11 +5961,11 @@ class Ui_MainWindow(object):
         self.label_41.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Anzahl</span></p></body></html>"))
         self.label_42.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Produkt</span></p></body></html>"))
         self.label_43.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Eingehendes Material</span></p></body></html>"))
-        item = self.admin_material_speichern_table.horizontalHeaderItem(0)
+        item = self.admin_material_save_table.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "Produkt"))
-        item = self.admin_material_speichern_table.horizontalHeaderItem(1)
+        item = self.admin_material_save_table.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Anzahl"))
-        self.admin_material_speichern_button.setText(_translate("MainWindow", "Speichern"))
+        self.admin_material_save_button.setText(_translate("MainWindow", "Speichern"))
         self.label_37.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Barcode</span></p></body></html>"))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_11), _translate("MainWindow", "Material einpflegen"))
         self.admin_bereich.setTabText(self.admin_bereich.indexOf(self.tab_6), _translate("MainWindow", "Lager"))

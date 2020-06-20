@@ -9,7 +9,7 @@ class Online_Bestellung():
         self.c = self.conn.cursor()
         self.lager = Stock_Management_Data()
 
-
+    # TODO check for website, i think actually is everything to do...
     def nachbestellen(self):
         liste = self.lager.get_liste()
         nachbestellen = []

@@ -6,8 +6,8 @@ from stock.stock_management import Stock_Management
 from overview.overview import Overview
 from admin.login.admin_login import Login_Admin
 from admin.cars.admin_car import Admin_cars
-from admin.stock.admin_lager import Admin_Stock
-from fahrzeuge.fahrzeug import Fahrzeug_Mitarbeiter
+from admin.stock.admin_stock import Admin_Stock
+from cars.cars import Cars_Employee
 from admin.benutzerverwaltung.benutzer_verwaltung import Benutzer_Verwaltung
 from admin.einstellungen.ui_einstellungen import Ui_Einstellungen
 from admin.pdf_bestellung.pdf_bestellung import Pdf_Bestellung
@@ -32,7 +32,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.admin_login = Login_Admin(self.ui)
         self.admin_cars = Admin_cars(self.ui)
         self.admin_stock = Admin_Stock(self.ui)
-        self.fahrzeug = Fahrzeug_Mitarbeiter(self.ui)
+        self.cars = Cars_Employee(self.ui)
         self.einstellungen = Ui_Einstellungen(self.ui, self)
         self.pdf = Pdf_Bestellung(self.ui)
         self.benutzer_verwaltung = Benutzer_Verwaltung(self.ui)

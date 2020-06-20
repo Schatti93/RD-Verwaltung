@@ -4,7 +4,7 @@ from PyQt5.QtCore import Qt
 from PyQt5 import QtCore
 from datetime import date
 from PyQt5.QtGui import QIntValidator
-from admin.stock.update_lager import Update_Stock
+from admin.stock.update_stock import Update_Stock
 
 class Stock_Management():
     def __init__(self, ui, fill_table):

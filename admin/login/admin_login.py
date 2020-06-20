@@ -3,6 +3,7 @@ import hashlib
 from PyQt5 import QtCore
 from admin.login.admin_login_data import Admin_Login_Data
 from admin.mpg.update_mpg import Update_Mpg
+from admin.stock.edit_stock_content import Edit_Stock_Content
 
 class Login_Admin():
     def __init__(self, ui):
@@ -46,6 +47,8 @@ class Login_Admin():
             self.ui.benutzer_label.setMaximumSize(QtCore.QSize(0, 0))
             self.ui.passwort_label.setMaximumSize(QtCore.QSize(0, 0))
             Update_Mpg(self.ui).update_tabellen_und_combos()
+            # TODO delete Edit Stock entry when Edit_Stock_content.show_all_products_in_table shows all products
+            Edit_Stock_Content(self.ui).change_product()
             self.ui.admin_bereich.setVisible(True)
             self.ui.admin_logout_btn.setVisible(True)
             self.ui.login_error_label.setText("")

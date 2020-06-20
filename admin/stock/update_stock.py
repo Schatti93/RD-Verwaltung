@@ -42,12 +42,12 @@ class Update_Stock():
                 self.fill_table.fill_table(list, self.ui.admin_lager_fehlendes_material, mode)
 
     def combobox_bestellung_einpflegen(self):
-        self.ui.admin_material_speichern_combo.clear()
+        self.ui.admin_material_save_combo.clear()
         liste_der_daten = self.data.get_liste()
         liste_der_eintraege = ["---"]
         for eintrag in liste_der_daten:
             liste_der_eintraege.append(eintrag[1])
-        self.ui.admin_material_speichern_combo.addItems(liste_der_eintraege)
+        self.ui.admin_material_save_combo.addItems(liste_der_eintraege)
 
     def alle_produkte_anzeigen_table(self):
         self.ui.admin_lager_alle_produkte.setRowCount(0)

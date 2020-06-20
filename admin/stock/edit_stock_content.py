@@ -1,5 +1,5 @@
 from admin.stock.admin_lager_data import Admin_Lager_Data
-from admin.stock.update_lager import Update_Stock
+from admin.stock.update_stock import Update_Stock
 from fill_table import Fill_Table
 
 class Edit_Stock_Content():
@@ -11,7 +11,7 @@ class Edit_Stock_Content():
         self.ui.admin_produkte_update.clicked.connect(self.change_product)
 
     def change_product(self):
-        rows = self.ui.admin_lager_alle_produkte.rowCount(0)
+        rows = self.ui.admin_lager_alle_produkte.rowCount()
         for element in range(0, rows):
             id = self.ui.admin_lager_alle_produkte.item(element, 0).text()
             product = self.ui.admin_lager_alle_produkte.item(element, 1).text()
@@ -24,13 +24,14 @@ class Edit_Stock_Content():
             self.data.update_all_products(id, product, in_stock, minimal, maximum, barcode, content, item_number)
         self.update.update()
 
+    # TODO this function shows only one entry. why???
     def show_all_products_in_table(self):
         all_products = self.data.get_liste()
-        list = []
         mode = (1, 0, 2, 2, 2, 0, 2, 0)
         for element in range(0, len(all_products)):
+            list = []
             for list_element in range(0, len(all_products[element]) - 1):
                 list.append(all_products[element][list_element])
             self.ui.admin_lager_alle_produkte.setRowCount(0)
             self.fill_table.fill_table(list, self.ui.admin_lager_alle_produkte, mode)
-            list = []
+

@@ -11,6 +11,7 @@ class Fill_Table():
 
         rows = table.rowCount()
         table.insertRow(rows)
+
         for i in range(0, len(content)):
             if mode[i] == 0:
                 entry = self.create_widget(str(content[i]))
@@ -22,6 +23,7 @@ class Fill_Table():
                 entry.setData(QtCore.Qt.EditRole, content[i])
                 entry.setTextAlignment(Qt.AlignCenter)
             table.setItem(rows, i, entry)
+
         table.horizontalHeader().setSectionResizeMode(1)
 
     def create_widget(self, item):
