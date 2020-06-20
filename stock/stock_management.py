@@ -39,9 +39,9 @@ class Stock_Management():
         rows = self.ui.stock_table.rowCount()
         count = 0
         for i in range(0, rows):
-            produkt_tabelle = self.ui.stock_table.item(i, 0).text()
+            product_tabelle = self.ui.stock_table.item(i, 0).text()
             keyword_tabelle = self.ui.stock_table.item(i, 2).text()
-            if produkt_tabelle == product and keyword_tabelle == keyword:
+            if product_tabelle == product and keyword_tabelle == keyword:
                 amount = int(self.ui.stock_table.item(i, 1).text())
                 amount += 1
                 number = QtWidgets.QTableWidgetItem()

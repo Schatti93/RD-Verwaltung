@@ -4,7 +4,6 @@ import shutil
 import subprocess
 from PyQt5.QtWidgets import QMessageBox
 import urllib.request
-import sqlite3
 
 class Updater():
     def __init__(self, ui):
@@ -59,7 +58,7 @@ class Updater():
     def version_check(self):
         url = 'http://rd-v.site/version.txt'
         urllib.request.urlretrieve(url, 'update/version.txt')
-        actual_version = self.get_current_version()[0][0]
+        actual_version = "1.0.0" # datenbank!
         version = ""
 
         path = str("update/version.txt")
@@ -76,14 +75,8 @@ class Updater():
                 check = True
             if version[1] == actual_version[1] and version[2] > actual_version[2]:
                 check = True
+        print(check)
         if check == False:
             self.no_update_available()
         else:
             self.update_available()
-
-    def get_current_version(self):
-        conn = sqlite3.connect("version.db")
-        c = conn.cursor()
-        sql = "SELECT * FROM version"
-        c.execute(sql)
-        return c.fetchall()

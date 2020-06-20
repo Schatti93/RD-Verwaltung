@@ -12,7 +12,7 @@ import time
 import subprocess
 
 app = QtWidgets.QApplication(sys.argv)
-
+# TODO change names
 class Update_Software(QtWidgets.QMainWindow):
     def __init__(self, parent = None):
         super().__init__(parent)
@@ -24,57 +24,63 @@ class Update_Software(QtWidgets.QMainWindow):
         self.update_path = ""
         self.backup_path = ""
         self.system = ""
-        self.safe_list = ["venv", "Database.db", "mitarbeiter.db",
-                          "mpg.db", "sets.db", "version.db"]
+        self.safe_list = ["venv", "Database.db", "mitarbeiter.db", "mpg.db", "sets.db"]
         self.ui.update_btn.clicked.connect(self.updater)
         self.ui.update_finish_btn.clicked.connect(self.start_rdv)
 
     def database_copy(self):
-        for database in range(0, len(self.safe_list)): # loop to go through all databases
-            if ".db" in self.safe_list[database]:
-                con_update = sqlite3.connect("../update/rdv/" + self.safe_list[database])
-                c_update = con_update.cursor()
-                con_old = sqlite3.connect(self.safe_list[database])
-                c_old = con_old.cursor()
-                c_update.execute("SELECT `name` FROM `sqlite_master` WHERE `type` = 'table'")
-                list_new = []
-                for tables in c_update: # loop to get all tables of the database
-                    list_new.append(tables[0])
-                list_old = []
-                c_old.execute("SELECT `name` FROM `sqlite_master` WHERE `type` = 'table'")
-                for tables in c_old:  # loop to get all tables of the the old database
-                    list_old.append(tables[0])
+        # TODO go through all databases
+        for i in range(0, len(self.safe_list)):
+            if ".db" in self.safe_list[i]:
+                print(self.safe_list[i])
+        con = sqlite3.connect("../update/rdv/Database.db")
+        dbcursor = con.cursor()
+        dahin = sqlite3.connect("Database.db")
+        dahin_cursor = dahin.cursor()
+        dbcursor.execute("SELECT `name` FROM `sqlite_master` WHERE `type` = 'table'")
+        list_new = []
+        for tables in dbcursor:
+            list_new.append(tables[0])
+        list_old = []
+        dahin_cursor.execute("SELECT `name` FROM `sqlite_master` WHERE `type` = 'table'")
+        for tables in dahin_cursor:
+            list_old.append(tables[0])
 
-                for i in range(0, len(list_new)): # loop to insert not existing tables
-                    if list_new[i] in list_old:
-                        pass
-                    else:
-                        tables = list_new[i]
+        for i in range(0, len(list_new)):
+            if list_new[i] in list_old:
+                pass
+            else:
+                database = list_new[i]
+                print(database)
+                sql = "SELECT sql FROM sqlite_master WHERE name='" + list_new[i] + "'"
+                dbcursor.execute(sql)
+                table = dbcursor.fetchall()
+                dahin.execute(str(table[0][0]))
 
-                        sql = "SELECT sql FROM sqlite_master WHERE name='" + list_new[i] + "'"
-                        c_update.execute(sql)
-                        table = c_update.fetchall()
-                        con_old.execute(str(table[0][0]))
+                sql = "SELECT * FROM " + list_new[i]
+                print(sql)
+                dbcursor.execute(sql)
+                datas = dbcursor.fetchall()
 
-                        sql = "SELECT * FROM " + list_new[i]
-                        c_update.execute(sql)
-                        datas = c_update.fetchall()
-
-                        for p in range(0, len(datas)): # loop to go through the datas of new table
-                            insert_questionmark = ""
-                            for j in range(0, len(datas[i])): # loop to create the questionmarks for sql
-                                if j == 0:
-                                    if datas[p][0] == "NULL":
-                                        insert_questionmark = "NULL,"
-                                    else:
-                                        insert_questionmark = "?,"
-                                elif j == len(datas[i]) - 1:
-                                    insert_questionmark = insert_questionmark + "?"
-                                else:
-                                    insert_questionmark = insert_questionmark + " ?,"
-                            sql = "INSERT INTO " + tables + " VALUES (" + insert_questionmark + ")"
-                            c_old.execute(sql, datas[i])
-                            con_old.commit()
+                print(datas)
+                print(list_new[i])
+                for i in range(0, len(datas)):
+                    insert_questionmark = ""
+                    for j in range(0, len(datas[i])):
+                        if j == 0:
+                            if datas[i][0] == "NULL":
+                                insert_questionmark = "NULL,"
+                            else:
+                                insert_questionmark = "?,"
+                        elif j == len(datas[i]) - 1:
+                            insert_questionmark = insert_questionmark + "?"
+                        else:
+                            insert_questionmark = insert_questionmark + " ?,"
+                    print(insert_questionmark)
+                    sql = "INSERT INTO " + database + " VALUES (" + insert_questionmark + ")"
+                    print(sql)
+                    dahin_cursor.execute(sql, datas[i])
+                    dahin.commit()
 
     def get_installation_path(self):
         path = os.getcwd()
@@ -124,7 +130,7 @@ class Update_Software(QtWidgets.QMainWindow):
             directory = self.old_version_directory + "/" + list[i]
             check = os.path.isdir(directory)
             if check == True:
-                shutil.rmtree(directory)
+             shutil.rmtree(directory)
             else:
                 os.remove(directory)
 
@@ -132,6 +138,7 @@ class Update_Software(QtWidgets.QMainWindow):
         url = 'http://rd-v.site/rdv/rdv.zip'
         urllib.request.urlretrieve(url, self.update_path + "/rdv.zip")
         with ZipFile(self.update_path + '/rdv.zip', 'r') as zipObj:
+
             zipObj.extractall(self.update_path)
 
     def copy_update_files(self):
@@ -155,22 +162,8 @@ class Update_Software(QtWidgets.QMainWindow):
         shutil.rmtree(self.update_path)
 
     def update_version_in_database(self):
-        conn = sqlite3.connect(self.old_version_directory + "/version.db")
-        c = conn.cursor()
-        sql = "SELECT * FROM version"
-        c.execute(sql)
-        old_version = c.fetchall()[0][0]
-        url = 'http://rd-v.site/version.txt'
-        urllib.request.urlretrieve(url, 'update/version.txt')
-        path = str("update/version.txt")
-        with open(path, "r") as f:
-            for line in f:
-                new_version = line
-        sql = "UPDATE version SET version = ? Where version = ?"
-        params = (new_version, old_version)
-        c.execute(sql, params)
-        conn.commit()
-
+        pass
+        # TODO update version in database
     def make_backup(self):
         shutil.copytree(self.old_version_directory, self.backup_path)
 
@@ -180,7 +173,7 @@ class Update_Software(QtWidgets.QMainWindow):
         self.get_installation_path()
         time.sleep(0.5)
         self.ui.progressBar.setProperty("value", 2)
-        self.ui.show_status_label.setText("Erstelle Backup")
+        self.ui.show_status_label.setText("Erstelle Backup!")
         self.make_backup()
         self.ui.progressBar.setProperty("value", 15)
         time.sleep(2)
@@ -188,7 +181,7 @@ class Update_Software(QtWidgets.QMainWindow):
         self.download_new_version()
         self.ui.progressBar.setProperty("value", 20)
         time.sleep(2)
-        self.ui.show_status_label.setText("Lösche alte Dateien")
+        self.ui.show_status_label.setText("Lösche alte Dateien)")
         self.delete_folders_and_files()
         self.ui.progressBar.setProperty("value", 50)
         time.sleep(2)
