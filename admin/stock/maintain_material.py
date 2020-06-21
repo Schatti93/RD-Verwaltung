@@ -30,9 +30,12 @@ class Maintain_Material():
     def maintain_order_barcode_enter(self):
         barcode = self.ui.admin_material_save_barcode.text()
         product = self.data.get_product(barcode)
-        index = self.ui.admin_material_save_combo.findText(product[0][0])
-        self.ui.admin_material_save_combo.setCurrentIndex(index)
-        self.ui.admin_material_save_number.setFocus()
+        try:
+            index = self.ui.admin_material_save_combo.findText(product[0][0])
+            self.ui.admin_material_save_combo.setCurrentIndex(index)
+            self.ui.admin_material_save_number.setFocus()
+        except IndexError:
+            self.error.message_box_only_ok("Der Barcode ist nicht hinterlegt.", "Barcode nicht bekannt")
 
     def maintain_order_tabelle(self):
         product = self.ui.admin_material_save_combo.currentText()
@@ -43,6 +46,9 @@ class Maintain_Material():
         list = [product, int(number)]
         mode = [1, 2]
         self.fill_table.fill_table(list, self.ui.admin_material_save_table, mode)
+        self.ui.admin_material_save_combo.setCurrentIndex(0)
+        self.ui.admin_material_save_number.setText("")
+        self.ui.admin_material_save_barcode.setText("")
 
     def maintain_order(self):
         rows = self.ui.admin_material_save_table.rowCount()
@@ -53,6 +59,7 @@ class Maintain_Material():
             if len(vorhanden) > 0:
                 self.data.fill_up(vorhanden[0][0], anzahl)
                 self.ui.admin_material_save_table.removeRow(0)
+                self.data.update_status(produkt, "Ausreichend")
             else:
                 self.error.message_box_only_ok("Das produkt: " + produkt + " ist nicht in der Datenbank hinterlegt",
                                               " Produkt nicht vorhanden")

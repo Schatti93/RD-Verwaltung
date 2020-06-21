@@ -1,12 +1,12 @@
 from admin.stock.sets_data import Sets_Data
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt
-
+from error_message_boxes import Error_Message_Boxes
 class Sets():
     def __init__(self, ui):
         self.ui = ui
         self.data = Sets_Data()
-
+        self.error = Error_Message_Boxes()
         self.ui.new_set_inhalt_text.returnPressed.connect(self.write_entry_in_new_set_table)
         self.ui.edit_set_combo.currentTextChanged.connect(self.edit_set_table_fill)
         self.ui.new_set_save_btn.clicked.connect(self.new_set)
@@ -111,7 +111,7 @@ class Sets():
 
             set = self.data.get_set_products(set_text)
             if len(set) == 0:
-                pass
+                self.error.message_box_only_ok("Das Set ist nicht vorhanden / nicht hinterlegt.", "Set nicht vorhanden")
             else:
                 set = set[0][0]
                 if "," in set:

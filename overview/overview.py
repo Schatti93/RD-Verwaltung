@@ -16,12 +16,10 @@ class Overview():
         for i in range(0, len(list)):
 
             if list[i][2] < list[i][3]:
-                if list[i][8] == "NULL":
-                    self.data.update_status(list[i][1], "Bestand zu gering")
-                    status = "Bestand zu gering"
                 if list[i][8] == "Bestellt":
                     status = "Bestellt"
                 else:
+                    self.data.update_status(list[i][1], "Bestand zu gering")
                     status = "Bestand zu gering"
                 list_to_set = [list[i][1], str(list[i][2]), str(list[i][3]), status]
                 mode = (1, 1, 1, 1)

@@ -23,22 +23,24 @@ class Update_Stock():
         Overview(self.ui).stock_overview()
 
     def fehlendes_material(self):
-        liste = self.data.get_liste()
+        list_of_data = self.data.get_liste()
+
         self.ui.admin_lager_fehlendes_material.setRowCount(0)
-        for i in range(0, len(liste)):
-            if liste[i][2] >= liste[i][3]:
-                if liste[i][8] == "Ausreichend":
+
+        for i in range(0, len(list_of_data)):
+            if list_of_data[i][2] >= list_of_data[i][3]:
+                if list_of_data[i][8] == "Ausreichend":
                     pass
                 else:
-                    self.data.update_status(liste[i][1], "Ausreichend")
+                    self.data.update_status(list_of_data[i][1], "Ausreichend")
             else:
-                if liste[i][8] == "NULL":
-                    self.data.update_status(liste[i][1], "Bestand zu gering")
-                    status = QtWidgets.QTableWidgetItem("Bestand zu gering")
-                    status.setTextAlignment(Qt.AlignCenter)
+                if list_of_data[i][8] == "Bestellt":
+                    status = "Bestellt"
                 else:
+                    self.data.update_status(list_of_data[i][1], "Bestand zu gering")
                     status = "Bestand zu gering"
-                list = [liste[i][1], str(liste[i][2]), str(liste[i][3]), str(liste[i][4]), str(liste[i][7]),  status]
+                list = [list_of_data[i][1], list_of_data[i][2], list_of_data[i][3], list_of_data[i][4],
+                        str(list_of_data[i][7]), status]
                 mode = (0, 2, 2, 2, 0, 1)
                 self.fill_table.fill_table(list, self.ui.admin_lager_fehlendes_material, mode)
 

@@ -24,6 +24,7 @@ class Pdf_Bestellung():
             self.data.status_aendern(liste[i])
 
     def pdf_erstellen(self):
+
         material_liste = self.unter_mindest_bestand()
         if len(material_liste) == 0:
             pass

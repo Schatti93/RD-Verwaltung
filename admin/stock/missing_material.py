@@ -9,10 +9,15 @@ class Missing_Material():
         self.ui = ui
         self.fill_table = Fill_Table(self.ui)
         self.data = Admin_Lager_Data()
-        self.ui.pdf_erstellen.clicked.connect(Pdf_Bestellung(self.ui).pdf_erstellen)
+        self.pdf = Pdf_Bestellung(self.ui)
+        self.ui.pdf_erstellen.clicked.connect(self.pdf_erstellen)
         self.update = Update_Stock(self.ui)
         self.bestellen = Online_Bestellung()
         #self.ui.lager_bestellung.clicked.connect(self.bestellen.nachbestellen)
+
+    def pdf_erstellen(self):
+        self.pdf.pdf_erstellen()
+        self.update.update()
 
     def show_missing_material(self):
         list_of_data = self.data.get_liste()
@@ -26,10 +31,10 @@ class Missing_Material():
                 else:
                     self.data.update_status(list_of_data[i][1], "Ausreichend")
             else:
-                if list_of_data[i][8] == "NULL":
-                    self.data.update_status(list_of_data[i][1], "Bestand zu gering")
-                    status = "Bestand zu gering"
+                if list_of_data[i][8] == "Bestellt":
+                    status = "Bestellt"
                 else:
+                    self.data.update_status(list_of_data[i][1], "Bestand zu gering")
                     status = "Bestand zu gering"
                 list = [list_of_data[i][1], list_of_data[i][2], list_of_data[i][3], list_of_data[i][4], str(list_of_data[i][7]), status]
                 mode = (0, 2, 2, 2, 0, 1)
