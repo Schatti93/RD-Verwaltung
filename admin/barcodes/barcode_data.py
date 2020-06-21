@@ -10,7 +10,7 @@ class Barcode_Data():
         self.c.execute(sql)
         return self.c.fetchall()
 
-    def get_barcode_location(self):
+    def get_barcode_data(self):
         sql = "select * from settings_barcode"
         self.c.execute(sql)
         return self.c.fetchall()

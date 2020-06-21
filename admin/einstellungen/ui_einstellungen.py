@@ -1,11 +1,12 @@
 from admin.einstellungen.ui_einstellungen_data import Ui_Einstellungen_Data
 from PyQt5.QtWidgets import QFileDialog
 from update.update import Updater
-
+from PyQt5.QtGui import QIntValidator
 
 class Ui_Einstellungen():
     def __init__(self, ui, mainwindow):
         self.ui = ui
+        self.text_fields_only_int()
         self.mainwindow = mainwindow
         self.data = Ui_Einstellungen_Data()
         self.einstellungen_setzen()
@@ -13,13 +14,24 @@ class Ui_Einstellungen():
         self.speicherort_anzeigen()
         self.show_barcode_location()
         self.show_barcode_minimum()
+        self.show_barcode_sizes()
         self.update = Updater(self.ui)
         self.update.delete_update_path()
         self.ui.einstellungen_speichern.clicked.connect(self.einstellungen_speichern)
         self.ui.pdf_speicheror_btn.clicked.connect(self.save_pdf_location)
         self.ui.barcode_location_btn.clicked.connect(self.save_barcode_location)
         self.ui.barcode_number_btn.clicked.connect(self.save_barcode_minimum)
+        self.ui.barcode_save_size_btn.clicked.connect(self.save_barcode_sizes)
         self.ui.admin_update.clicked.connect(self.update.version_check)
+
+    def text_fields_only_int(self):
+        validator = QIntValidator(0, 999999999)
+        self.ui.barcode_height.setValidator(validator)
+        self.ui.barcode_width.setValidator(validator)
+        self.ui.barcode_font_size.setValidator(validator)
+        self.ui.barcode_distanz_font.setValidator(validator)
+        self.ui.barcode_number_text.setValidator(validator)
+
 
     def einstellungen_setzen(self):
         parameter = self.data.einstellungen_abfragen()
@@ -99,3 +111,23 @@ class Ui_Einstellungen():
     def show_barcode_minimum(self):
         number = self.data.get_barcode_location()[0][2]
         self.ui.barcode_number_text.setText(str(number))
+
+    def save_barcode_sizes(self):
+        barcode_datas = self.data.get_barcode_location()
+        if len(barcode_datas) > 0:
+            # hight and width need to be float for the barcode generator, but saved as text in database
+            # font_size and font_distance need to be int but also saved as text in database
+            id = barcode_datas[0][0]
+            hight = self.ui.barcode_height.text() + ".0"
+            width = "0." + self.ui.barcode_width.text()
+            font_size = self.ui.barcode_font_size.text()
+            font_distance = self.ui.barcode_distanz_font.text()
+            self.data.save_barcode_sizes(id, hight, width, font_size, font_distance)
+
+    def show_barcode_sizes(self):
+        data = self.data.get_barcode_location()
+        if len(data) > 0:
+            self.ui.barcode_height.setText(data[0][3].split(".")[0])
+            self.ui.barcode_width.setText(data[0][4].split(".")[1])
+            self.ui.barcode_font_size.setText(data[0][5])
+            self.ui.barcode_distanz_font.setText(data[0][6])

@@ -1,10 +1,8 @@
-from admin.mpg.mpg_data import Mpg_Data
 from admin.mpg.geraete import Geraete
 from admin.mpg.standorte import Standorte
 from admin.mpg.einweisungen import Einweisungen
 from admin.mpg.verwertet import Verwertet
-
-from mpg.mpg_user import Mpg_User
+from PyQt5.QtGui import QIntValidator
 
 class Mpg_Geraete():
     def __init__(self, ui):
@@ -12,7 +10,6 @@ class Mpg_Geraete():
         #geraete initialisieren
         self.geraete = Geraete(self.ui)
         self.geraete.standort_combo_fuellen()
-        self.geraete.geraete_tabelle_fuellen()
         #standorte initialisieren
         self.standorte = Standorte(self.ui)
         self.standorte.standorte_tabelle_fuellen()
@@ -28,6 +25,12 @@ class Mpg_Geraete():
         self.verwertet = Verwertet(self.ui)
         self.verwertet.verwertet_tabelle_fuellen()
         self.verwertet.geraete_inventarnummer_combos_fuellen()
+
+        self.only_int_fields()
+
+    def only_int_fields(self):
+        validator = QIntValidator(0, 999999999)
+        self.ui.geraete_verwalten_prueffrist.setValidator(validator)
 
 
 

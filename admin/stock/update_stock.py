@@ -7,18 +7,19 @@ from fill_table import Fill_Table
 class Update_Stock():
     def __init__(self, ui):
         self.ui = ui
-        self.fill_table = Fill_Table(self.ui)
         self.data = Admin_Lager_Data()
+        self.fill_table = Fill_Table(self.ui)
+
 
     def update(self):
         Overview(self.ui).stock_overview()
         self.fehlendes_material()
         self.combobox_bestellung_einpflegen()
-        self.alle_produkte_anzeigen_table()
+        self.show_all_products_in_table()
 
     def update_from_fehlendes_material(self):
         self.combobox_bestellung_einpflegen()
-        self.alle_produkte_anzeigen_table()
+        self.show_all_products_in_table()
         Overview(self.ui).stock_overview()
 
     def fehlendes_material(self):
@@ -49,16 +50,12 @@ class Update_Stock():
             liste_der_eintraege.append(eintrag[1])
         self.ui.admin_material_save_combo.addItems(liste_der_eintraege)
 
-    def alle_produkte_anzeigen_table(self):
+    def show_all_products_in_table(self):
         self.ui.admin_lager_alle_produkte.setRowCount(0)
-        alle_produkte = self.data.get_liste()
-        for element in range(0, len(alle_produkte)):
-            rows = self.ui.admin_lager_alle_produkte.rowCount()
-            count = 0
-            self.ui.admin_lager_alle_produkte.insertRow(rows)
-            for eigenschaft in range(0, 8):
-                einzusetzen = QtWidgets.QTableWidgetItem(str(alle_produkte[element][eigenschaft]))
-                einzusetzen.setTextAlignment(Qt.AlignCenter)
-                self.ui.admin_lager_alle_produkte.setItem(rows, count, QtWidgets.QTableWidgetItem(einzusetzen))
-                count += 1
-        self.ui.admin_lager_alle_produkte.horizontalHeader().setSectionResizeMode(1)
+        all_products = self.data.get_liste()
+        mode = (1, 0, 2, 2, 2, 0, 2, 0)
+        for element in range(0, len(all_products)):
+            list = []
+            for list_element in range(0, len(all_products[element]) - 1):
+                list.append(all_products[element][list_element])
+            self.fill_table.fill_table(list, self.ui.admin_lager_alle_produkte, mode)

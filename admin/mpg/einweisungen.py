@@ -3,10 +3,12 @@ from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt
 import datetime
 from PyQt5 import QtCore
+from error_message_boxes import Error_Message_Boxes
 
 class Einweisungen():
     def __init__(self, ui):
         self.ui = ui
+        self.error = Error_Message_Boxes()
         self.data = Mpg_Data()
         self.ui.einweisung_speichern_btn.clicked.connect(self.geraete_einweisung)
         self.ui.einweisung_standardwerte_loeschen_btn.clicked.connect \
@@ -163,17 +165,19 @@ class Einweisungen():
                 self.data.einweisung_speichern(geraet, softwareversion, datum, eingewiesener, einweisender,
                                                original)
 
-        self.ui.einweisung_geraete_combo.setCurrentIndex(0)
-        self.ui.einweisung_softwareversion.setText("")
-        self.ui.einweisung_datum.setText("")
-        self.ui.einweisung_ma_combo.setCurrentIndex(0)
-        self.ui.einweisung_einweisender.setText("")
-        self.ui.einweisung_original.setText("")
-        self.ui.einweisung_tabelle_filtern_anzahl.setText(str(0))
-        self.ui.einweisung_tabelle_filtern_anzahl.setStyleSheet("color:#ffffff;")
-        self.tabellen_filter_ma_combo_fuellen()
-        self.einweisung_tabelle_fuellen()
-        self.fehlende_einweisung_fuellen()
+            self.ui.einweisung_geraete_combo.setCurrentIndex(0)
+            self.ui.einweisung_softwareversion.setText("")
+            self.ui.einweisung_datum.setText("")
+            self.ui.einweisung_ma_combo.setCurrentIndex(0)
+            self.ui.einweisung_einweisender.setText("")
+            self.ui.einweisung_original.setText("")
+            self.ui.einweisung_tabelle_filtern_anzahl.setText(str(0))
+            self.ui.einweisung_tabelle_filtern_anzahl.setStyleSheet("color:#ffffff;")
+            self.tabellen_filter_ma_combo_fuellen()
+            self.einweisung_tabelle_fuellen()
+            self.fehlende_einweisung_fuellen()
+        else:
+            self.error.message_box_only_ok("Das Datum wurde nicht korrekt angegeben", "Fehlerhaftes Datum")
 
     def standard_werte_loeschen(self):
         self.ui.einweisung_geraete_combo_standard.setCurrentIndex(0)

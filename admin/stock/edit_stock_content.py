@@ -5,9 +5,9 @@ from fill_table import Fill_Table
 class Edit_Stock_Content():
     def __init__(self, ui):
         self.ui = ui
-        self.fill_table = Fill_Table(self.ui)
         self.data = Admin_Lager_Data()
         self.update = Update_Stock(self.ui)
+        self.fill_table = Fill_Table(self.ui)
         self.ui.admin_produkte_update.clicked.connect(self.change_product)
 
     def change_product(self):
@@ -24,14 +24,14 @@ class Edit_Stock_Content():
             self.data.update_all_products(id, product, in_stock, minimal, maximum, barcode, content, item_number)
         self.update.update()
 
-    # TODO this function shows only one entry. why???
+
     def show_all_products_in_table(self):
+        self.ui.admin_lager_alle_produkte.setRowCount(0)
         all_products = self.data.get_liste()
         mode = (1, 0, 2, 2, 2, 0, 2, 0)
         for element in range(0, len(all_products)):
             list = []
             for list_element in range(0, len(all_products[element]) - 1):
                 list.append(all_products[element][list_element])
-            self.ui.admin_lager_alle_produkte.setRowCount(0)
             self.fill_table.fill_table(list, self.ui.admin_lager_alle_produkte, mode)
 

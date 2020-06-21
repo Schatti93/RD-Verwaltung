@@ -50,3 +50,10 @@ class Ui_Einstellungen_Data():
         sql = "UPDATE settings_barcode SET minimum = ? WHERE id = ?"
         self.c.execute(sql, params)
         self.conn.commit()
+
+    def save_barcode_sizes(self, id, hight, width, font_size, font_distance):
+        params = (hight, width, font_size, font_distance, id)
+        sql = "UPDATE settings_barcode SET hight = ?, width = ?, font_size = ?, font_distance = ? WHERE id = ?"
+        print(params)
+        self.c.execute(sql, params)
+        self.conn.commit()

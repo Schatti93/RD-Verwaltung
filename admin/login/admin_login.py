@@ -47,8 +47,6 @@ class Login_Admin():
             self.ui.benutzer_label.setMaximumSize(QtCore.QSize(0, 0))
             self.ui.passwort_label.setMaximumSize(QtCore.QSize(0, 0))
             Update_Mpg(self.ui).update_tabellen_und_combos()
-            # TODO delete Edit Stock entry when Edit_Stock_content.show_all_products_in_table shows all products
-            Edit_Stock_Content(self.ui).change_product()
             self.ui.admin_bereich.setVisible(True)
             self.ui.admin_logout_btn.setVisible(True)
             self.ui.login_error_label.setText("")
