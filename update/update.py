@@ -36,11 +36,11 @@ class Updater():
         if returnValue == QMessageBox.Ok:
             self.update_or_not()
 
-    def clear_messagebox(self, text, window_tile):
+    def clear_messagebox(self, text, window_title):
         msgBox = QMessageBox()
         msgBox.setIcon(QMessageBox.Information)
         msgBox.setText(text)
-        msgBox.setWindowTitle(window_tile)
+        msgBox.setWindowTitle(window_title)
         msgBox.setStandardButtons(QMessageBox.Ok)
 
         returnValue = msgBox.exec()
