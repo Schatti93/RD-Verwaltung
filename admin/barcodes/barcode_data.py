@@ -1,5 +1,6 @@
 import sqlite3
 
+
 class Barcode_Data():
     def __init__(self):
         self.conn = sqlite3.connect("Database.db")

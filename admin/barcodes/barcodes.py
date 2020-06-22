@@ -7,7 +7,7 @@ class Generate_Barcodes():
     def __init__(self):
         self.data = Barcode_Data()
         self.error = Error_Message_Boxes()
-        self.generate_barcode_image("test", "test")
+
 
     # TODO user button for barcode_generator_image. But at this time I dont now where.
     def generate_barcode(self):
@@ -28,6 +28,8 @@ class Generate_Barcodes():
             new_barcode = min + 1
         if len(str(new_barcode)) < 4:
             einsetzen = 4 - len(str(new_barcode))
+            if einsetzen < 0:
+                einsetzen = 0
             barcode_string = einsetzen * "0" + str(new_barcode)
         else:
             barcode_string = str(new_barcode)

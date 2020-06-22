@@ -20,7 +20,7 @@ class Sets_Data():
 
     def ask_product_name(self, barcode):
         params = (barcode, )
-        sql = "SELECT Produkt from stock WHERE Barcode = ?"
+        sql = "SELECT Produkt from lager WHERE Barcode = ?"
         self.c_lager.execute(sql, params)
         return self.c_lager.fetchall()
 

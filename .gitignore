@@ -60,3 +60,8 @@ ui/ui/ui.pro.user.67515d6.4.9-pre1
 update/update/version.txt
 update/update/version.py
 update/version.txt
+clothes/test_clothes.py
+error_message_boxes.py
+admin/benutzerverwaltung/user_management_test.py
+admin/barcodes/barcode_test.py
+stock/test_stock_management.py

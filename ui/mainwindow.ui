@@ -119,7 +119,7 @@ QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
 }</string>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_4">
        <attribute name="title">
@@ -2142,7 +2142,7 @@ QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1,
              <enum>QTabWidget::North</enum>
             </property>
             <property name="currentIndex">
-             <number>6</number>
+             <number>3</number>
             </property>
             <widget class="QWidget" name="tab_6">
              <attribute name="title">
@@ -2729,7 +2729,7 @@ QLineEdit:focus { background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1,
                      <widget class="QPushButton" name="admin_del_prod_btn">
                       <property name="minimumSize">
                        <size>
-                        <width>192</width>
+                        <width>172</width>
                         <height>0</height>
                        </size>
                       </property>
@@ -8288,7 +8288,7 @@ background-color: rgb(130, 152, 152);
      <x>0</x>
      <y>0</y>
      <width>1920</width>
-     <height>30</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

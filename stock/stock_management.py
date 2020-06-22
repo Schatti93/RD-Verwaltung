@@ -52,20 +52,21 @@ class Stock_Management():
                 self.ui.stock_table.resizeColumnsToContents()
                 self.ui.stock_table.horizontalHeader().setSectionResizeMode(1)
                 count = 1
+                break
         return count
 
     def save_in_table(self): # speichert die daten zunaechst in der tabelle zur ansicht
         mode = self.ui.combobox_stock.currentText()
         mission = self.ui.stock_textfield_mission.text()
-        transact = 1
+        transact = True
         if mode == "Auffüllen nach Einsatz":
             if mission == "":
                 self.ui.stock_textfield_mission.setFocus()
                 self.ui.stock_error_label.setText("Einsatznummer eingeben!")
                 self.ui.stock_error_label.setStyleSheet("color:#ffffff; border: 1px solid red; border-radius: 5px")
                 self.ui.stock_textfield_product.setText("")
-                transact = 0
-        if transact == 1:
+                return False
+        if transact:
             self.ui.stock_error_label.setText(" ")
             self.ui.stock_error_label.setStyleSheet("")
             barcode = self.ui.stock_textfield_product.text()
@@ -74,13 +75,16 @@ class Stock_Management():
                 product = self.data.get_set_products(barcode)
                 if len(product) > 0:
                     self.buffer_set(product[0][0])
-                if len(product) == 0:
+                else:
                     self.ui.stock_error_label.setText("Produkt mit dem Barcode nicht vorhanden!")
                     self.ui.stock_error_label.setStyleSheet(
                         "color:#ffffff; border: 1px solid red; border-radius: 5px")
                     self.ui.stock_textfield_product.setText("")
-            else:
+            elif len(product) > 0:
                 self.buffer_product(product)
+                return True
+            else:
+                return False
 
     def mode_check(self, text):
         keyword = ""
@@ -98,15 +102,13 @@ class Stock_Management():
         if "," in product:
             barcode = product.split(", ")
         else:
-            barcode = [product]
+            barcode = [product, ]
         for element in range(0, len(barcode)):
-            product = self.data.produkt_abfrage(barcode[element])
             test = self.check_content_in_table(barcode[element], keyword)
             if test == 0:
                 mode = (1, 2, 1)
-                list = [str(product[0][0]), 1, str(keyword)]
+                list = [str(barcode[element]), 1, str(keyword)]
                 self.fill_table.fill_table(list, self.ui.stock_table, mode)
-
                 self.ui.stock_textfield_product.setText("")
 
     def buffer_product(self, product,):
@@ -119,6 +121,7 @@ class Stock_Management():
             self.fill_table.fill_table(list, self.ui.stock_table, mode)
 
             self.ui.stock_textfield_product.setText("")
+        return True
 
     def save(self): #holt die daten aus der Tabelle und übergibt sie an die passende funktion zum entnehmen etc.
         row = self.ui.stock_table.rowCount()

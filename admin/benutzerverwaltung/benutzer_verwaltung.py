@@ -31,14 +31,17 @@ class Benutzer_Verwaltung():
                 self.ui.pw_aendern_neues_pw_wied.setText("")
                 self.ui.pw_aendern_label.setText("")
                 self.ui.pw_aendern_label.setStyleSheet("")
+                return True
             else:
                 self.ui.pw_aendern_label.setText("Neue Passwörter stimmen nicht überein")
                 self.ui.pw_aendern_label.setStyleSheet(
                     "color:#ffffff; font-size:9pt; border: 1px solid red; border-radius: 5px")
+                return False
         else:
             self.ui.pw_aendern_label.setText("Altes Passwort nicht korrekt.")
             self.ui.pw_aendern_label.setStyleSheet(
                 "color:#ffffff; font-size:9pt; border: 1px solid red; border-radius: 5px")
+            return False
 
     def neuer_benutzer(self):
         benutzer = self.ui.neuer_admin_name.text()
@@ -46,7 +49,7 @@ class Benutzer_Verwaltung():
         passwort_vergleich = self.ui.neuer_admin_pw_wied.text()
         count = 0
         alle_benutzer = self.data.alle_benutzer_abfragen()
-        gespeichert = 0
+        gespeichert = False
         for i in range(0, len(alle_benutzer)):
 
             if alle_benutzer[i][1] == benutzer:
@@ -56,16 +59,18 @@ class Benutzer_Verwaltung():
             if passwort == passwort_vergleich:
                 passwort_hash = hashlib.sha512(passwort.encode('utf-8')).hexdigest()
                 self.data.neuer_benutzer(benutzer, passwort_hash)
-                gespeichert = 1
+                gespeichert = True
             else:
                 self.ui.neuer_admin_label.setText("Passwörter stimmen nicht überein")
                 self.ui.neuer_admin_label.setStyleSheet(
                     "color:#ffffff; font-size:9pt; border: 1px solid red; border-radius: 5px")
+                return False
         else:
             self.ui.neuer_admin_label.setText("Benutzer schon vorhanden")
             self.ui.neuer_admin_label.setStyleSheet(
                 "color:#ffffff; font-size:9pt; border: 1px solid red; border-radius: 5px")
-        if gespeichert == 1:
+            return False
+        if gespeichert:
             self.ui.neuer_admin_label.setStyleSheet("")
             self.ui.neuer_admin_label.setText("")
             self.tabelle_alle_admins_fuellen()
@@ -73,6 +78,7 @@ class Benutzer_Verwaltung():
             self.ui.neuer_admin_name.setText("")
             self.ui.neuer_admin_pw.setText("")
             self.ui.neuer_admin_pw_wied.setText("")
+            return True
 
     def benutzer_loeschen(self):
         benutzer = self.ui.admin_loeschen_combo.currentText()
@@ -80,20 +86,22 @@ class Benutzer_Verwaltung():
         passwort = self.ui.admin_loeschen_pw.text()
         passwort_hash = hashlib.sha512(passwort.encode('utf-8')).hexdigest()
         benutzer_daten = self.data.benutzerdaten_abfragen(eingeloggter_admin)
-        gespeichert = 0
+        gespeichert = False
         if passwort_hash == benutzer_daten[0][2]:
             self.data.benutzer_loeschen(benutzer)
-            gespeichert = 1
+            gespeichert = True
         else:
             self.ui.admin_loeschen_label.setText("passwort nicht korrekt")
             self.ui.admin_loeschen_label.setStyleSheet(
                 "color:#ffffff; font-size:9pt; border: 1px solid red; border-radius: 5px")
-        if gespeichert == 1:
+            return False
+        if gespeichert:
             self.ui.admin_loeschen_label.setText("")
             self.ui.admin_loeschen_label.setStyleSheet("")
             self.combo_admins_fuellen()
             self.tabelle_alle_admins_fuellen()
             self.ui.admin_loeschen_pw.setText("")
+            return True
 
     def combo_admins_fuellen(self):
         self.ui.admin_loeschen_combo.clear()
