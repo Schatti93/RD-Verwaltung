@@ -65,3 +65,9 @@ error_message_boxes.py
 admin/benutzerverwaltung/user_management_test.py
 admin/barcodes/barcode_test.py
 stock/test_stock_management.py
+update/update/updater.py
+update/update/update.py
+update/update/ui/ui.pro.user
+update/update/ui/mainwindow.ui
+update/update/ui/mainwindow.py
+update/update/updater.py

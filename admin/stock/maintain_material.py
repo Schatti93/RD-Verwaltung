@@ -1,8 +1,5 @@
 from admin.stock.admin_lager_data import Admin_Lager_Data
-from PyQt5 import QtWidgets
-from PyQt5.QtCore import Qt
 from admin.stock.update_stock import Update_Stock
-from PyQt5 import QtCore
 from fill_table import Fill_Table
 from error_message_boxes import Error_Message_Boxes
 
@@ -64,4 +61,3 @@ class Maintain_Material():
                 self.error.message_box_only_ok("Das produkt: " + produkt + " ist nicht in der Datenbank hinterlegt",
                                               " Produkt nicht vorhanden")
         self.update.update()
-            # TODO update status from "Bestellt" to "ausreichend" but first proof if it is really "ausreichend"

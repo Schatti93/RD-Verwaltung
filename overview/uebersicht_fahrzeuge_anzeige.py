@@ -1,4 +1,4 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtWidgets
 
 class Fahrzeug_Anzeige():
     def __init__(self, ui):
@@ -49,7 +49,6 @@ class Fahrzeug_Anzeige():
             funk_wert.setObjectName("funk_wert")
             count.addWidget(funk_wert, 0, 1, 1, 1)
             spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-            self.ui.verticalLayout.addLayout(count)
             self.ui.verticalLayout.addLayout(count)
             self.ui.verticalLayout.addItem(spacerItem)
 

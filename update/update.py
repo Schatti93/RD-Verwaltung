@@ -42,7 +42,6 @@ class Updater():
         msgBox.setText(text)
         msgBox.setWindowTitle(window_title)
         msgBox.setStandardButtons(QMessageBox.Ok)
-
         returnValue = msgBox.exec()
         if returnValue == QMessageBox.Ok:
             pass
