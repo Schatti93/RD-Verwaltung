@@ -21,6 +21,7 @@ class Cars_Employee():
         pass
 
     def init_combo_cars_license_plate(self):
+        self.ui.combo_rtw.clear()
         cars = self.data.datas_for_combobox_cars()
         out = [item for t in cars for item in t]
         self.ui.combo_rtw.addItems(out)

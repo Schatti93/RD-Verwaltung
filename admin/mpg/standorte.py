@@ -1,9 +1,8 @@
 from admin.mpg.mpg_data import Mpg_Data
-from PyQt5 import QtWidgets
-from PyQt5.QtCore import Qt
 from mpg.mpg_user import Mpg_User
 from admin.mpg.update_mpg import Update_Mpg
 from fill_table import Fill_Table
+
 class Standorte():
     def __init__(self, ui):
         self.ui = ui
@@ -14,12 +13,10 @@ class Standorte():
 
     def standorte_tabelle_fuellen(self):
         standorte = self.data.standorte_abfragen()
-        list = []
         mode = (0, )
         self.ui.mpg_standorte_tabelle.setRowCount(0)
         for element in range(0, len(standorte)):
-            list.append(standorte[element][0])
-        self.fill_table.fill_table(list, self.ui.mpg_standorte_tabelle, mode)
+            self.fill_table.fill_table([standorte[element][0]], self.ui.mpg_standorte_tabelle, mode)
 
 
     def mpg_standort_hinzufuegen(self):

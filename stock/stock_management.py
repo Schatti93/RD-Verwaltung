@@ -133,6 +133,7 @@ class Stock_Management():
                 self.data.auffuellen(item, int(menge))
                 self.ui.stock_table.removeRow(0)
             else:
+
                 item = self.ui.stock_table.item(0, 0).text()
                 menge = self.ui.stock_table.item(0, 1).text()
                 self.data.entnahme(item, int(menge))
@@ -145,22 +146,22 @@ class Stock_Management():
                         self.data.einsatz_nachweis(nummer, item, menge, today_format)
                 except (TypeError, ValueError):
                     pass
-            self.ui.stock_table.removeRow(0)
+                self.ui.stock_table.removeRow(0)
         self.ui.stock_error_label.setText("Eingabe Gespeichert")
         self.ui.stock_error_label.setStyleSheet("color:#ffffff; font-size:13pt; border: 1px solid #00FF00; border-radius: 5px")
         self.ui.stock_textfield_mission.setText("")
         Update_Stock(self.ui).update()
+
 
     def check_combobox_content(self): # prueft auf welchem text gerade dei Combobox steht um das Einsatznummer feld anzuzeigen oder nicht.
         text = self.ui.combobox_stock.currentText()
         if text == "Falsch Entnahme - wieder zurück geben" or text == "Auffüllen wegen Fehlbestand":
             self.ui.stock_textfield_mission.setVisible(False)
             self.ui.label_einsatznummer.setVisible(False)
-            self.ui.stock_textfield_mission.setText("")
         else:
             self.ui.stock_textfield_mission.setVisible(True)
             self.ui.label_einsatznummer.setVisible(True)
-            self.ui.stock_textfield_mission.setText("")
+        self.ui.stock_textfield_mission.setText("")
 
 
 

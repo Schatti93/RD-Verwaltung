@@ -69,8 +69,6 @@ class Mpg_User():
             index = self.ui.mpg_user_geraete_standort_combo.findText(standort, QtCore.Qt.MatchFixedString)
             self.ui.mpg_user_geraete_standort_combo.setCurrentIndex(index)
 
-
-
     def neuen_standort_von_geraet_speichern(self):
         neuer_standort = self.ui.mpg_user_geraete_standort_combo.currentText()
         inventarnummer = self.ui.mpg_user_geraete_barcode.text()

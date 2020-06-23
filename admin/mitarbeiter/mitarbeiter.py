@@ -1,8 +1,6 @@
 from admin.mitarbeiter.mitarbeiter_data import Mitarbeiter_Data
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt
-from admin.mpg.mpg_geraete import Mpg_Geraete
-from PyQt5.QtGui import QColor
 
 from admin.mpg.einweisungen import Einweisungen
 
@@ -26,7 +24,6 @@ class Mitarbeiter():
                 einzusetzen.setTextAlignment(Qt.AlignCenter)
                 self.ui.ma_tabelle.setItem(rows, eintrag, QtWidgets.QTableWidgetItem(
                     einzusetzen))
-
 
     def ma_loeschen_combo_fuellen(self):
         self.ui.ma_loeschen_combo.clear()
@@ -65,5 +62,3 @@ class Mitarbeiter():
             self.ma_loeschen_combo_fuellen()
             Einweisungen(self.ui).combos_ma_fuellen()
             Einweisungen(self.ui).tabellen_filter_ma_combo_fuellen()
-
-

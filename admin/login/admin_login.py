@@ -3,7 +3,6 @@ import hashlib
 from PyQt5 import QtCore
 from admin.login.admin_login_data import Admin_Login_Data
 from admin.mpg.update_mpg import Update_Mpg
-from admin.stock.edit_stock_content import Edit_Stock_Content
 
 class Login_Admin():
     def __init__(self, ui):

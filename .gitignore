@@ -71,3 +71,10 @@ update/update/ui/ui.pro.user
 update/update/ui/mainwindow.ui
 update/update/ui/mainwindow.py
 update/update/updater.py
+overview/test_overview.py
+mpg/test_mpg_user.py
+mpg/test_mpg_user.py
+admin/cars/test_admin_cars.py
+admin/login/test_admin_login.py
+admin/mission/test_mission.py
+cars/test_cars.py
