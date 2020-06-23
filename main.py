@@ -1,4 +1,5 @@
 import sys
+from ui.ui_manager import UI_Manager
 from clothes.clothes import Clothes
 from ui.mainwindow import Ui_MainWindow
 from PyQt5 import QtWidgets
@@ -25,6 +26,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.setWindowTitle("Rettungsdienst Verwaltung")
+        self.ui_manager = UI_Manager(self.ui)
         self.fill_table = Fill_Table(self.ui)
         self.clothes = Clothes(self.ui, self.fill_table)
         self.stock = Stock_Management(self.ui, self.fill_table)
