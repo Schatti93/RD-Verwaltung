@@ -17,6 +17,7 @@ from mpg.mpg_user import Mpg_User
 from admin.mitarbeiter.mitarbeiter import Mitarbeiter
 from admin.mission.missions import Missions_Proof
 from fill_table import Fill_Table
+from clothes.ui_clothes import UI_Clothes
 
 app = QtWidgets.QApplication(sys.argv)
 
@@ -28,7 +29,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.setWindowTitle("Rettungsdienst Verwaltung")
         self.ui_manager = UI_Manager(self.ui)
         self.fill_table = Fill_Table(self.ui)
-        self.clothes = Clothes(self.ui, self.fill_table)
+        #self.clothes = Clothes(self.ui, self.fill_table)
         self.stock = Stock_Management(self.ui, self.fill_table)
         self.overview = Overview(self.ui)
         self.admin_login = Login_Admin(self.ui)
@@ -42,6 +43,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.mpg_user = Mpg_User(self.ui)
         self.mitarbeiter = Mitarbeiter(self.ui)
         self.mission_proof = Missions_Proof(self.ui)
+        self.ui_clothes = UI_Clothes(self.ui)
 
 window = MainWindow()
 window.show()

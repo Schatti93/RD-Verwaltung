@@ -30,13 +30,13 @@ class Clothes_Data():
         else:
             self.add_barcode(barcode)
 
-    def switch_barcode(self, list):
-        params = (str(list), str(self.datum))
+    def switch_barcode(self, barcode):
+        params = (str(barcode), str(self.datum))
         sql = "INSERT INTO kleidung_zurueck VALUES(NULL,?,?)"
         self.c.execute(sql, params)
         self.conn.commit()
         sql = "DELETE FROM Klamotten WHERE barcode = ?"
-        params = (list, )
+        params = (barcode, )
         self.c.execute(sql, params)
         self.conn.commit()
 

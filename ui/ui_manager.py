@@ -1,5 +1,29 @@
-from clothes.ui_clothes import UI_Clothes
+from PyQt5 import QtWidgets
+from PyQt5.QtCore import Qt
+from PyQt5 import QtCore
+
 class UI_Manager():
     def __init__(self, ui):
         self.ui = ui
-        self.ui_clothes = UI_Clothes(self.ui)
+
+    def fill_table(self, content, table, mode):
+        rows = table.rowCount()
+        table.insertRow(rows)
+        for i in range(0, len(content)):
+            if mode[i] == 0:
+                entry = self.create_widget(str(content[i]))
+            if mode[i] == 1:
+                entry = self.create_widget(str(content[i]))
+                entry.setFlags(QtCore.Qt.ItemIsEnabled)
+            if mode[i] == 2:
+                entry = QtWidgets.QTableWidgetItem()
+                entry.setData(QtCore.Qt.EditRole, content[i])
+                entry.setTextAlignment(Qt.AlignCenter)
+            table.setItem(rows, i, entry)
+
+        table.horizontalHeader().setSectionResizeMode(1)
+
+    def create_widget(self, item):
+        content = QtWidgets.QTableWidgetItem(item)
+        content.setTextAlignment(Qt.AlignCenter)
+        return content
