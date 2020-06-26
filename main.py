@@ -13,7 +13,7 @@ from admin.einstellungen.ui_einstellungen import Ui_Einstellungen
 from admin.pdf_bestellung.pdf_bestellung import Pdf_Bestellung
 from admin.mpg.mpg_geraete import Mpg_Geraete
 from mpg.mpg_user import Mpg_User
-from admin.mitarbeiter.mitarbeiter import Mitarbeiter
+from admin.employees.employees import Employees
 from admin.mission.missions import Missions_Proof
 from fill_table import Fill_Table
 
@@ -38,7 +38,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.benutzer_verwaltung = Benutzer_Verwaltung(self.ui)
         self.mpg_geraete = Mpg_Geraete(self.ui)
         self.mpg_user = Mpg_User(self.ui)
-        self.mitarbeiter = Mitarbeiter(self.ui)
+        self.mitarbeiter = Employees(self.ui)
         self.mission_proof = Missions_Proof(self.ui)
 
 window = MainWindow()

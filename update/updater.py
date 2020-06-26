@@ -24,7 +24,7 @@ class Update_Software(QtWidgets.QMainWindow):
         self.update_path = ""
         self.backup_path = ""
         self.system = ""
-        self.safe_list = ["venv", "Database.db", "mitarbeiter.db",
+        self.safe_list = ["venv", "Database.db", "employees.db",
                           "mpg.db", "sets.db", "version.db"]
         self.ui.update_btn.clicked.connect(self.updater)
         self.ui.update_finish_btn.clicked.connect(self.start_rdv)

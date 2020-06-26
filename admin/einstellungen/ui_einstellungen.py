@@ -82,10 +82,15 @@ class Ui_Einstellungen():
                 "color:#ffffff; font-size:9pt; border: 1px solid green; border-radius: 5px")
 
     def speicherort_anzeigen(self):
-        speicherort = self.data.speicherort_abfragen()[0][1]
-        self.ui.pdf_speicherort_label.setText(speicherort)
-        self.ui.pdf_speicherort_label.setStyleSheet(
-            "color:#ffffff; font-size:9pt; border: 1px solid green; border-radius: 5px")
+        speicherort = self.data.speicherort_abfragen()
+        if len(speicherort) == 0:
+            pass
+        else:
+            speicherort = speicherort[0][1]
+
+            self.ui.pdf_speicherort_label.setText(speicherort)
+            self.ui.pdf_speicherort_label.setStyleSheet(
+                "color:#ffffff; font-size:9pt; border: 1px solid green; border-radius: 5px")
 
     def save_barcode_location(self):
         location = QFileDialog.getExistingDirectory(self.mainwindow, "Datei Öffnen", "/")

@@ -18,9 +18,9 @@ class Mpg_Geraete():
         self.einweisungen = Einweisungen(self.ui)
         self.einweisungen.einweisung_geraete_combos_fuellen()
         self.einweisungen.einweisung_tabelle_fuellen()
-        self.einweisungen.combos_ma_fuellen()
         self.einweisungen.tabellen_filter_ma_combo_fuellen()
         self.einweisungen.fehlende_einweisung_fuellen()
+        self.einweisungen.combos_ma_fuellen()
         #verwertet initialisieren
         self.verwertet = Verwertet(self.ui)
         self.verwertet.verwertet_tabelle_fuellen()

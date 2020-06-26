@@ -16,6 +16,19 @@ class Update_Mpg():
         self.einweisung_geraete_combos_fuellen()
         self.geraete_inventarnummer_combos_fuellen()
         self.geraete_tabelle_fuellen()
+        self.standort_combo_fuellen()
+
+    def standort_combo_fuellen(self):
+        self.ui.geraete_verwalten_standort_combo.clear()
+        alle_fahrzeuge = self.data.fahrzeuge_abfragen()
+        liste_der_eintraege = ["---"]
+        for element in range(0, len(alle_fahrzeuge)):
+            liste_der_eintraege.append(alle_fahrzeuge[element][2])
+
+        standorte = self.data.standorte_abfragen()
+        for element in range(0, len(standorte)):
+            liste_der_eintraege.append(standorte[element][0])
+        self.ui.geraete_verwalten_standort_combo.addItems(liste_der_eintraege)
 
     def einweisung_geraete_combos_fuellen(self):
         self.ui.einweisung_geraete_combo.clear()

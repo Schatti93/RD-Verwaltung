@@ -58,20 +58,22 @@ class Einweisungen():
                 if eintraege[eintrag][2] == checkliste[1]:
                     pass
                 else:
-                    rows = self.ui.fehlende_einweisungen_table.rowCount()
-                    self.ui.fehlende_einweisungen_table.insertRow(rows)
+                    status = self.ma_status_ermitteln(eintraege[eintrag][4])
+                    if status != 0:
+                        rows = self.ui.fehlende_einweisungen_table.rowCount()
+                        self.ui.fehlende_einweisungen_table.insertRow(rows)
 
-                    einzusetzen = QtWidgets.QTableWidgetItem(eintraege[eintrag][4])
-                    einzusetzen.setTextAlignment(Qt.AlignCenter)
-                    self.ui.fehlende_einweisungen_table.setItem(rows, 0, QtWidgets.QTableWidgetItem(einzusetzen))
+                        einzusetzen = QtWidgets.QTableWidgetItem(eintraege[eintrag][4])
+                        einzusetzen.setTextAlignment(Qt.AlignCenter)
+                        self.ui.fehlende_einweisungen_table.setItem(rows, 0, QtWidgets.QTableWidgetItem(einzusetzen))
 
-                    einzusetzen = QtWidgets.QTableWidgetItem(eintraege[eintrag][1])
-                    einzusetzen.setTextAlignment(Qt.AlignCenter)
-                    self.ui.fehlende_einweisungen_table.setItem(rows, 1, QtWidgets.QTableWidgetItem(einzusetzen))
+                        einzusetzen = QtWidgets.QTableWidgetItem(eintraege[eintrag][1])
+                        einzusetzen.setTextAlignment(Qt.AlignCenter)
+                        self.ui.fehlende_einweisungen_table.setItem(rows, 1, QtWidgets.QTableWidgetItem(einzusetzen))
 
-                    einzusetzen = QtWidgets.QTableWidgetItem(eintraege[eintrag][2])
-                    einzusetzen.setTextAlignment(Qt.AlignCenter)
-                    self.ui.fehlende_einweisungen_table.setItem(rows, 2, QtWidgets.QTableWidgetItem(einzusetzen))
+                        einzusetzen = QtWidgets.QTableWidgetItem(eintraege[eintrag][2])
+                        einzusetzen.setTextAlignment(Qt.AlignCenter)
+                        self.ui.fehlende_einweisungen_table.setItem(rows, 2, QtWidgets.QTableWidgetItem(einzusetzen))
         self.ui.fehlende_einweisungen_table.horizontalHeader().setSectionResizeMode(1)
 
     def combos_ma_fuellen(self):

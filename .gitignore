@@ -78,3 +78,6 @@ admin/cars/test_admin_cars.py
 admin/login/test_admin_login.py
 admin/mission/test_mission.py
 cars/test_cars.py
+admin/employees/test_employee.py
+admin/mpg/test_mpg.py
+cars/uebersicht_fahrzeuge_anzeige.py

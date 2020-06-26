@@ -2,6 +2,7 @@ from admin.stock.sets_data import Sets_Data
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt
 from error_message_boxes import Error_Message_Boxes
+
 class Sets():
     def __init__(self, ui):
         self.ui = ui
@@ -97,18 +98,20 @@ class Sets():
         for element in range(0, len(entrys)):
             entry_list.append(entrys[element][0])
         self.ui.edit_set_combo.addItems(entry_list)
+        self.ui.edit_set_combo.setCurrentIndex(0)
 
    # actions from combobox
 
     def edit_set_table_fill(self):
         self.ui.edit_set_table.setRowCount(0)
         set_text = self.ui.edit_set_combo.currentText()
-        if set_text == "---":
+        current_index = self.ui.edit_set_combo.currentIndex()
+
+        if set_text == "---" or current_index < 0:
             self.ui.edit_set_barcode.setText("")
             self.ui.edit_set_add_barcode.setText("")
             self.ui.edit_set_table.setRowCount(0)
         else:
-
             set = self.data.get_set_products(set_text)
             if len(set) == 0:
                 self.error.message_box_only_ok("Das Set ist nicht vorhanden / nicht hinterlegt.", "Set nicht vorhanden")
@@ -116,6 +119,8 @@ class Sets():
                 set = set[0][0]
                 if "," in set:
                     set = set.split(", ")
+                else:
+                    set = [set]
                 for element in range(0, len(set)):
                     rows = self.ui.edit_set_table.rowCount()
                     self.ui.edit_set_table.insertRow(rows)
