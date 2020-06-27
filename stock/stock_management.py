@@ -103,11 +103,16 @@ class Stock_Management():
             barcode = product.split(", ")
         else:
             barcode = [product, ]
-        for element in range(0, len(barcode)):
-            test = self.check_content_in_table(barcode[element], keyword)
+        products = []
+        for i in range(0, len(barcode)):
+            product = self.data.produkt_abfrage(barcode[i])
+            if len(product) > 0:
+                products.append(product[0][0])
+        for element in range(0, len(products)):
+            test = self.check_content_in_table(products[element], keyword)
             if test == 0:
                 mode = (1, 2, 1)
-                list = [str(barcode[element]), 1, str(keyword)]
+                list = [str(products[element]), 1, str(keyword)]
                 self.fill_table.fill_table(list, self.ui.stock_table, mode)
                 self.ui.stock_textfield_product.setText("")
 
