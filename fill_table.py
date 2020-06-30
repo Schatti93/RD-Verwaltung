@@ -10,6 +10,8 @@ class Fill_Table():
     def fill_table(self, content, table, mode):
         rows = table.rowCount()
         table.insertRow(rows)
+        if table == self.ui.admin_lager_alle_produkte:
+            print(content)
         for i in range(0, len(content)):
             if mode[i] == 0:
                 entry = self.create_widget(str(content[i]))

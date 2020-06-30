@@ -14,6 +14,7 @@ class Clothes():
         content = [self.ui.clothes_textfield.text()]
         mode = (1, )
         self.fill_table.fill_table(content, self.ui.cloth_to_save, mode)
+        self.ui.clothes_textfield.setText("")
 
     def go_through_table_entrys(self):
         row = self.ui.cloth_to_save.rowCount()
